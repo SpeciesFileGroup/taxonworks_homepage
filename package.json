@@ -1,0 +1,24 @@
+{
+  "name": "TaxonWorksHomepage",
+  "version": "1.0.0",
+  "description": "Homepage of TaxonWorks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianWalters/TaxonWorksHomepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianWalters/TaxonWorksHomepage/issues"
+  },
+  "homepage": "https://github.com/BrianWalters/TaxonWorksHomepage#readme",
+  "dependencies": {
+    "nunjucks": "3.0.0",
+    "stylus": "0.54.5"
+  }
+}
