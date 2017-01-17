@@ -21,8 +21,8 @@ function cleanAndMkdirBuild() {
 
 function getConfig() {
     const config = yamljs.load(constants.CONFIG_DIR + "homepage.yaml");
-    if (config.introCopy)
-        config.introHTML = parseMarkdownFile(config.introCopy);
+    if (config.introMarkdown)
+        config.introHTML = parseMarkdownFile(config.introMarkdown);
 
     return config;
 
