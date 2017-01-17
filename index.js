@@ -27,6 +27,8 @@ function buildHTML() {
 
 function buildCSS() {
     const homepageStyle = fs.readFileSync(constants.MAIN_STYLUS_SHEET, "UTF-8");
-    const homepageCSS = stylus(homepageStyle).render();
+    const homepageCSS = stylus(homepageStyle)
+        .set('paths', [constants.TEMPLATE_DIR])
+        .render();
     fs.writeFileSync(constants.MAIN_STYLESHEET, homepageCSS, {encoding: "UTF-8"});
 }
