@@ -1,5 +1,6 @@
 const nunjucks = require("nunjucks");
 const stylus = require("stylus");
+const autoprefixer = require("autoprefixer-stylus");
 const fs = require("fs");
 const del = require("del");
 const yamljs = require("yamljs");
@@ -29,6 +30,7 @@ function buildHTML() {
 function buildCSS() {
     const homepageStyle = fs.readFileSync(constants.MAIN_STYLUS_SHEET, "UTF-8");
     const homepageCSS = stylus(homepageStyle)
+        .use(autoprefixer({browsers: ['last 2 versions', 'ie 9-11']}))
         .set('paths', [constants.TEMPLATE_DIR])
         .render();
     fs.writeFileSync(constants.MAIN_STYLESHEET, homepageCSS, {encoding: "UTF-8"});

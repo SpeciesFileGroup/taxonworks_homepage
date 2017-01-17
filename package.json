@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BrianWalters/TaxonWorksHomepage#readme",
   "dependencies": {
     "animejs": "1.1.3",
+    "autoprefixer-stylus": "0.13.0",
     "del": "2.2.2",
     "nunjucks": "3.0.0",
     "stylus": "0.54.5",
