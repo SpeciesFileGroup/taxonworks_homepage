@@ -3,16 +3,30 @@ const stylus = require("stylus");
 const fs = require("fs");
 const del = require("del");
 const yamljs = require("yamljs");
+const constants = require("./constants");
 
-del.sync(["build/**"]);
-const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader('templates'));
+const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 
-const homepageContext = yamljs.load("config/homepage.yaml");
+cleanAndMkdirBuild();
+buildHTML();
+buildCSS();
 
-const homepage = nunjucksEnvironment.render("pages/homepage.njk", homepageContext);
-const homepageStyle = fs.readFileSync("templates/pages/homepage.styl", "UTF-8");
-const homepageCSS = stylus(homepageStyle).render();
+function cleanAndMkdirBuild() {
+    del.sync([constants.BUILD_DIR + "**"]);
+    fs.mkdirSync(constants.BUILD_DIR);
+}
 
-fs.mkdirSync("build");
-fs.writeFileSync("build/index.html", homepage, {encoding: "UTF-8"});
-fs.writeFileSync("build/homepage.css", homepageCSS, {encoding: "UTF-8"});
+function getConfig() {
+    return yamljs.load(constants.CONFIG_DIR + "homepage.yaml");
+}
+
+function buildHTML() {
+    const homepage = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
+    fs.writeFileSync(constants.BUILD_DIR + "index.html", homepage, {encoding: "UTF-8"});
+}
+
+function buildCSS() {
+    const homepageStyle = fs.readFileSync(constants.MAIN_STYLUS_SHEET, "UTF-8");
+    const homepageCSS = stylus(homepageStyle).render();
+    fs.writeFileSync(constants.MAIN_STYLESHEET, homepageCSS, {encoding: "UTF-8"});
+}
