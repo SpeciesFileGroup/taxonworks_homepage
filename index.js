@@ -10,6 +10,7 @@ const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoad
 cleanAndMkdirBuild();
 buildHTML();
 buildCSS();
+buildJS();
 
 function cleanAndMkdirBuild() {
     del.sync([constants.BUILD_DIR + "**"]);
@@ -31,4 +32,14 @@ function buildCSS() {
         .set('paths', [constants.TEMPLATE_DIR])
         .render();
     fs.writeFileSync(constants.MAIN_STYLESHEET, homepageCSS, {encoding: "UTF-8"});
+}
+
+function buildJS() {
+    const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
+    let script = "";
+
+    scripts.forEach(scriptFilename => {
+        script += fs.readFileSync(scriptFilename, "UTF-8");
+    });
+    fs.writeFileSync(constants.MAIN_SCRIPT, script, {encoding: "UTF-8"});
 }
