@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/BrianWalters/TaxonWorksHomepage#readme",
   "dependencies": {
+    "del": "2.2.2",
     "nunjucks": "3.0.0",
     "stylus": "0.54.5"
   }
