@@ -4,6 +4,7 @@ const autoprefixer = require("autoprefixer-stylus");
 const fs = require("fs");
 const del = require("del");
 const yamljs = require("yamljs");
+const markdown = require('markdown-it')();
 const constants = require("./constants");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
@@ -19,7 +20,19 @@ function cleanAndMkdirBuild() {
 }
 
 function getConfig() {
-    return yamljs.load(constants.CONFIG_DIR + "homepage.yaml");
+    const config = yamljs.load(constants.CONFIG_DIR + "homepage.yaml");
+    if (config.introCopy)
+        config.introHTML = parseMarkdownFile(config.introCopy);
+
+    return config;
+
+    function parseMarkdownFile(path) {
+        return markdown.render(fs.readFileSync(makePathRelativeToConfigDir(path), {encoding: 'UTF-8'}));
+    }
+
+    function makePathRelativeToConfigDir(path) {
+        return constants.CONFIG_DIR + path;
+    }
 }
 
 function buildHTML() {
