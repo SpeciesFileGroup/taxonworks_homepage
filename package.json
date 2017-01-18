@@ -1,0 +1,29 @@
+{
+  "name": "TaxonWorksHomepage",
+  "version": "1.0.0",
+  "description": "Homepage of TaxonWorks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianWalters/TaxonWorksHomepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianWalters/TaxonWorksHomepage/issues"
+  },
+  "homepage": "https://github.com/BrianWalters/TaxonWorksHomepage#readme",
+  "dependencies": {
+    "animejs": "1.1.3",
+    "autoprefixer-stylus": "0.13.0",
+    "del": "2.2.2",
+    "markdown-it": "8.2.2",
+    "nunjucks": "3.0.0",
+    "stylus": "0.54.5",
+    "yamljs": "0.2.8"
+  }
+}
