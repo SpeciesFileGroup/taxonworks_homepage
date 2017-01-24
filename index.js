@@ -29,7 +29,7 @@ function getConfig() {
         return savedConfig;
     }
 
-    const config = yamljs.load(constants.CONFIG_DIR + "homepage.yaml");
+    const config = yamljs.load(constants.HOMEPAGE_DATA);
     if (config.introMarkdown)
         config.introHTML = parseMarkdownFile(config.introMarkdown);
 
@@ -47,7 +47,7 @@ function getConfig() {
 
 function buildHTML() {
     const homepage = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
-    fs.writeFileSync(constants.BUILD_DEV_DIR + "index.html", homepage, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_DEV_DIR + constants.INDEX_FILE, homepage, {encoding: "UTF-8"});
 }
 
 function buildCSS() {
