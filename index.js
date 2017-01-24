@@ -20,6 +20,8 @@ printSuccess();
 function cleanAndMkdirBuild() {
     del.sync([constants.BUILD_DIR + "**"]);
     fs.mkdirSync(constants.BUILD_DIR);
+    fs.mkdirSync(constants.BUILD_DEV_DIR);
+    fs.mkdirSync(constants.BUILD_PROD_DIR);
 }
 
 function getConfig() {
@@ -45,7 +47,7 @@ function getConfig() {
 
 function buildHTML() {
     const homepage = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
-    fs.writeFileSync(constants.BUILD_DIR + "index.html", homepage, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_DEV_DIR + "index.html", homepage, {encoding: "UTF-8"});
 }
 
 function buildCSS() {
@@ -53,8 +55,9 @@ function buildCSS() {
     const homepageCSS = stylus(homepageStyle)
         .use(autoprefixer({browsers: ['last 2 versions', 'ie 9-11']}))
         .set('paths', [constants.TEMPLATE_DIR])
+        //.set('compress', true)
         .render();
-    fs.writeFileSync(constants.MAIN_STYLESHEET, homepageCSS, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.MAIN_DEV_STYLESHEET, homepageCSS, {encoding: "UTF-8"});
 }
 
 function buildJS() {
@@ -64,13 +67,13 @@ function buildJS() {
     scripts.forEach(scriptFilename => {
         script += fs.readFileSync(scriptFilename, "UTF-8");
     });
-    fs.writeFileSync(constants.MAIN_SCRIPT, script, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.MAIN_DEV_SCRIPT, script, {encoding: "UTF-8"});
 }
 
 function buildLogo() {
     const config = getConfig();
     const pathToLogo = constants.CONFIG_DIR + config.logo;
-    fs.copySync(pathToLogo, constants.BUILD_DIR + config.logo);
+    fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + config.logo);
 }
 
 function printSuccess() {
