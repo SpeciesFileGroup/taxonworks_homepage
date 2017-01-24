@@ -5,6 +5,8 @@ const fs = require("fs-extra");
 const del = require("del");
 const yamljs = require("yamljs");
 const markdown = require('markdown-it')();
+const uglify = require("uglify-js");
+
 const constants = require("./constants");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
@@ -75,6 +77,11 @@ function renderCSSForProd(stylusSource) {
 }
 
 function buildJS() {
+    buildJSForDev();
+    buildJSForProd();
+}
+
+function buildJSForDev() {
     const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
     let script = "";
 
@@ -82,6 +89,11 @@ function buildJS() {
         script += fs.readFileSync(scriptFilename, "UTF-8");
     });
     fs.writeFileSync(constants.MAIN_DEV_SCRIPT, script, {encoding: "UTF-8"});
+}
+
+function buildJSForProd() {
+    const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
+    let script = uglify.minify(scripts).code;
     fs.writeFileSync(constants.MAIN_PROD_SCRIPT, script, {encoding: "UTF-8"});
 }
 

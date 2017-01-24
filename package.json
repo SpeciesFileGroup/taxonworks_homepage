@@ -25,6 +25,7 @@
     "markdown-it": "8.2.2",
     "nunjucks": "3.0.0",
     "stylus": "0.54.5",
+    "uglify-js": "2.7.5",
     "yamljs": "0.2.8"
   }
 }
