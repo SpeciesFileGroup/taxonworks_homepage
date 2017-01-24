@@ -52,17 +52,25 @@ function buildHTML() {
 }
 
 function buildCSS() {
-    const homepageStyle = fs.readFileSync(constants.MAIN_STYLUS_SHEET, "UTF-8");
-    const homepageDevCSS = stylus(homepageStyle)
+    const homepageStylusSource = fs.readFileSync(constants.MAIN_STYLUS_SHEET, "UTF-8");
+
+    const homepageStylus = stylus(homepageStylusSource)
         .use(autoprefixer({browsers: ['last 2 versions', 'ie 9-11']}))
-        .set('paths', [constants.TEMPLATE_DIR])
-        .render();
-    const homepageProdCSS = stylus(homepageStyle)
-        .use(autoprefixer({browsers: ['last 2 versions', 'ie 9-11']}))
-        .set('paths', [constants.TEMPLATE_DIR])
+        .set('paths', [constants.TEMPLATE_DIR]);
+
+    renderCSSForDev(homepageStylus);
+    renderCSSForProd(homepageStylus);
+}
+
+function renderCSSForDev(stylusSource) {
+    const homepageDevCSS = stylusSource.render();
+    fs.writeFileSync(constants.MAIN_DEV_STYLESHEET, homepageDevCSS, {encoding: "UTF-8"});
+}
+
+function renderCSSForProd(stylusSource) {
+    const homepageProdCSS = stylusSource
         .set('compress', true)
         .render();
-    fs.writeFileSync(constants.MAIN_DEV_STYLESHEET, homepageDevCSS, {encoding: "UTF-8"});
     fs.writeFileSync(constants.MAIN_PROD_STYLESHEET, homepageProdCSS, {encoding: "UTF-8"});
 }
 
