@@ -1,18 +1,21 @@
 const nunjucks = require("nunjucks");
 const stylus = require("stylus");
 const autoprefixer = require("autoprefixer-stylus");
-const fs = require("fs");
+const fs = require("fs-extra");
 const del = require("del");
 const yamljs = require("yamljs");
 const markdown = require('markdown-it')();
 const constants = require("./constants");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
+let savedConfig;
 
 cleanAndMkdirBuild();
 buildHTML();
 buildCSS();
 buildJS();
+buildLogo();
+printSuccess();
 
 function cleanAndMkdirBuild() {
     del.sync([constants.BUILD_DIR + "**"]);
@@ -20,10 +23,15 @@ function cleanAndMkdirBuild() {
 }
 
 function getConfig() {
+    if(savedConfig) {
+        return savedConfig;
+    }
+
     const config = yamljs.load(constants.CONFIG_DIR + "homepage.yaml");
     if (config.introMarkdown)
         config.introHTML = parseMarkdownFile(config.introMarkdown);
 
+    savedConfig = config;
     return config;
 
     function parseMarkdownFile(path) {
@@ -57,4 +65,14 @@ function buildJS() {
         script += fs.readFileSync(scriptFilename, "UTF-8");
     });
     fs.writeFileSync(constants.MAIN_SCRIPT, script, {encoding: "UTF-8"});
+}
+
+function buildLogo() {
+    const config = getConfig();
+    const pathToLogo = constants.CONFIG_DIR + config.logo;
+    fs.copySync(pathToLogo, constants.BUILD_DIR + config.logo);
+}
+
+function printSuccess() {
+    console.log("Build successful!");
 }
