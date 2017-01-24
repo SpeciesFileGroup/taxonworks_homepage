@@ -1,6 +1,7 @@
 const nunjucks = require("nunjucks");
 const stylus = require("stylus");
 const autoprefixer = require("autoprefixer-stylus");
+const critical = require('critical');
 const fs = require("fs-extra");
 const del = require("del");
 const yamljs = require("yamljs");
@@ -12,12 +13,19 @@ const constants = require("./constants");
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
 
+printStart();
 cleanAndMkdirBuild();
-buildHTML();
+buildHTMLWithoutCritical();
 buildCSS();
 buildJS();
 buildLogo();
-printSuccess();
+buildHTMLWithCritical()
+    .then(_ => printSuccess())
+    .catch(err => console.error(err));
+
+function printStart() {
+    console.log(`Build starting. This make take some seconds.`);
+}
 
 function cleanAndMkdirBuild() {
     del.sync([constants.BUILD_DIR + "**"]);
@@ -31,7 +39,7 @@ function getConfig() {
         return savedConfig;
     }
 
-    const config = yamljs.load(constants.HOMEPAGE_DATA);
+    const config = yamljs.load(constants.HOMEPAGE_YAML);
     if (config.introMarkdown)
         config.introHTML = parseMarkdownFile(config.introMarkdown);
 
@@ -47,10 +55,10 @@ function getConfig() {
     }
 }
 
-function buildHTML() {
-    const homepage = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
-    fs.writeFileSync(constants.BUILD_DEV_DIR + constants.INDEX_FILE, homepage, {encoding: "UTF-8"});
-    fs.writeFileSync(constants.BUILD_PROD_DIR + constants.INDEX_FILE, homepage, {encoding: "UTF-8"});
+function buildHTMLWithoutCritical() {
+    const homepageHTML = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
+    fs.writeFileSync(constants.INDEX_DEV, homepageHTML, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME, homepageHTML, {encoding: "UTF-8"});
 }
 
 function buildCSS() {
@@ -66,14 +74,14 @@ function buildCSS() {
 
 function renderCSSForDev(stylusSource) {
     const homepageDevCSS = stylusSource.render();
-    fs.writeFileSync(constants.MAIN_DEV_STYLESHEET, homepageDevCSS, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_DEV_STYLESHEET, homepageDevCSS, {encoding: "UTF-8"});
 }
 
 function renderCSSForProd(stylusSource) {
     const homepageProdCSS = stylusSource
         .set('compress', true)
         .render();
-    fs.writeFileSync(constants.MAIN_PROD_STYLESHEET, homepageProdCSS, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_PROD_STYLESHEET, homepageProdCSS, {encoding: "UTF-8"});
 }
 
 function buildJS() {
@@ -88,13 +96,13 @@ function buildJSForDev() {
     scripts.forEach(scriptFilename => {
         script += fs.readFileSync(scriptFilename, "UTF-8");
     });
-    fs.writeFileSync(constants.MAIN_DEV_SCRIPT, script, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_DEV_SCRIPT, script, {encoding: "UTF-8"});
 }
 
 function buildJSForProd() {
     const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
     let script = uglify.minify(scripts).code;
-    fs.writeFileSync(constants.MAIN_PROD_SCRIPT, script, {encoding: "UTF-8"});
+    fs.writeFileSync(constants.BUILD_PROD_SCRIPT, script, {encoding: "UTF-8"});
 }
 
 function buildLogo() {
@@ -102,6 +110,18 @@ function buildLogo() {
     const pathToLogo = constants.CONFIG_DIR + config.logo;
     fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + config.logo);
     fs.copySync(pathToLogo, constants.BUILD_PROD_DIR + config.logo);
+}
+
+function buildHTMLWithCritical() {
+    return critical.generate({
+        inline: true,
+        base: constants.BUILD_PROD_DIR,
+        src: constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME,
+        dest: constants.INDEX_PROD_WITH_CRITICAL_FILENAME,
+        minify: true,
+        width: 1300,
+        height: 900
+    });
 }
 
 function printSuccess() {
