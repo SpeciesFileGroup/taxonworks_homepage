@@ -3,11 +3,11 @@
 <title>{{ title }}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% include 'partials/header/header.njk' %}
+
 <main>
-    <h1>{{ title }}</h1>
-    <div>
-        {{ introHTML | safe }}
-    </div>
+
 </main>
 
 <link href="homepage.css" rel="stylesheet">
