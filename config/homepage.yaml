@@ -2,3 +2,5 @@ logo: logo.svg
 title: TaxonWorks
 slogan: Describe life.
 introMarkdown: intro.md
+benefitsTitle: A digital companion for the modern taxonomist
+benefitsMarkdown: benefits.md

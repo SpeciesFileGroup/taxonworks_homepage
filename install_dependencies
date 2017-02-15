@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Install all project dependencies
+npm i --save --save-exact

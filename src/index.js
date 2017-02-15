@@ -8,7 +8,7 @@ const yamljs = require("yamljs");
 const markdown = require('markdown-it')();
 const uglify = require("uglify-js");
 
-const constants = require("./constants");
+const constants = require("../constants");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
@@ -42,6 +42,8 @@ function getConfig() {
     const config = yamljs.load(constants.HOMEPAGE_YAML);
     if (config.introMarkdown)
         config.introHTML = parseMarkdownFile(config.introMarkdown);
+    if (config.benefitsMarkdown)
+        config.benefitsHTML = parseMarkdownFile(config.benefitsMarkdown);
 
     savedConfig = config;
     return config;
