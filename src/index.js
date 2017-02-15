@@ -1,3 +1,5 @@
+printStart();
+
 const nunjucks = require("nunjucks");
 const stylus = require("stylus");
 const autoprefixer = require("autoprefixer-stylus");
@@ -13,7 +15,6 @@ const constants = require("../constants");
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
 
-printStart();
 cleanAndMkdirBuild();
 buildHTMLWithoutCritical();
 buildCSS();
@@ -21,7 +22,7 @@ buildJS();
 buildLogo();
 buildHTMLWithCritical()
     .then(_ => printSuccess())
-    .catch(err => console.error(err));
+    .catch(err => console.error(`Build Failed ☹️ ${err}`));
 
 function printStart() {
     console.log(`Build starting. This make take some seconds.`);
@@ -127,5 +128,5 @@ function buildHTMLWithCritical() {
 }
 
 function printSuccess() {
-    console.log("Build successful!");
+    console.log("Build successful! 😎");
 }
