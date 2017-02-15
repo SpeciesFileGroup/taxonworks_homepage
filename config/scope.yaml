@@ -1,0 +1,11 @@
+features:
+    -
+        name: Nomenclature
+        status: upcoming
+        description: Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich and deep coverage of nomenclatural rules are included to ensure adequate metadata are provided. Produce highly annotated nomenclatural catalogs for print.
+        whenComplete: this_year
+    -
+        name: Taxon, specimen and anatomical descriptions
+        status: upcoming
+        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+        whenComplete: three_year
