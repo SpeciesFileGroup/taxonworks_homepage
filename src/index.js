@@ -25,7 +25,7 @@ buildHTMLWithCritical()
     .catch(err => console.error(`Build Failed ☹️ ${err}`));
 
 function printStart() {
-    console.log(`Build starting. This make take some seconds.`);
+    console.log(`Build starting. This may take some seconds.`);
 }
 
 function cleanAndMkdirBuild() {
@@ -45,6 +45,10 @@ function getConfig() {
         config.introHTML = parseMarkdownFile(config.introMarkdown);
     if (config.benefitsMarkdown)
         config.benefitsHTML = parseMarkdownFile(config.benefitsMarkdown);
+    if (config.scopeMarkdown)
+        config.scopeHTML = parseMarkdownFile(config.scopeMarkdown);
+    if (config.gettingStartedMarkdown)
+        config.gettingStartedHTML = parseMarkdownFile(config.gettingStartedMarkdown);
 
     savedConfig = config;
     return config;

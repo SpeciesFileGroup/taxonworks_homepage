@@ -2,5 +2,11 @@ logo: logo.svg
 title: TaxonWorks
 slogan: Describe life.
 introMarkdown: intro.md
-benefitsTitle: A digital companion for the modern taxonomist
+benefitsTitle: A digital companion for the discovering biodiversity
 benefitsMarkdown: benefits.md
+scopeTitle: Like life, TaxonWorks is ever-evolving
+scopeMarkdown: scope.md
+gettingStartedTitle: Get started with TaxonWorks
+gettingStartedMarkdown: gettingStarted.md
+builtBy: Built by Pixo
+funding: TaxonWorks is funded in part by the National Science Foundation
