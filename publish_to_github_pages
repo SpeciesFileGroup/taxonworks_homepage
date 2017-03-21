@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Publish Taxonworks homepage to Github Pages hosting
-node src/publish.js
