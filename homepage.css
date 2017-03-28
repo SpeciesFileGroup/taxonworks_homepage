@@ -9,9 +9,49 @@
 *:after {
   box-sizing: inherit;
 }
-.header {
-  background-color: #bbb;
-  text-align: center;
+@mixin flexbox() {
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex($values) {
+  -ms-flex: $values;
+  flex: $values;
+}
+@mixin order($val) {
+  -ms-flex-order: $val;
+  order: $val;
+}
+@include flexbox();
+@include flex(1 200px);
+@include order(2);
+.section__container {
+  margin: 0 auto;
+  padding: 160px 0;
+  width: 960px;
+}
+.footer {
+  background-color: #fafaf5;
+  height: 400px;
+}
+.footer .section__container {
+  padding: 64px 0 0 0;
+}
+.footer .section__container .footer__details {
+  float: left;
+  width: 50%;
+}
+.footer__links {
+  display: -ms-flexbox;
+  display: flex;
+  height: 300px;
+}
+.footer__links .footer__links__list {
+  list-style-type: none;
+  margin: 0 16px 0 0;
+  width: 160px;
+}
+.footer__links .footer__links__list .footer__links__list__title {
+  font-weight: bold;
 }
 .header {
   background-color: #342d25;
@@ -25,6 +65,39 @@
   font-size: 60px;
   font-weight: 300px;
   line-height: 1.17;
+}
+.header .header__intro-copy {
+  border-top: 1px solid #00cc92;
+}
+.header .header__intro-copy > p {
+  color: #fff;
+}
+.benefits .benefits-1 {
+  background-color: #00cc92;
+}
+.benefits .benefits-2,
+.benefits .benefits-4 {
+  background-color: #fafaf5;
+}
+.benefits .benefits-3,
+.benefits .benefits-5 {
+  background-color: #fff;
+}
+.benefits .section__copy > ul {
+  list-style-type: none;
+}
+.getting-started {
+  background-color: #00cc92;
+}
+.scope {
+  background-color: #342d25;
+}
+.scope .section__title {
+  color: #00cc92;
+}
+.scope .section__copy p {
+  color: #fff;
+  opacity: 0.8;
 }
 body {
   font-family: Hind;
@@ -64,4 +137,8 @@ h4 {
 p {
   font-size: 20px;
   line-height: 1.4;
+}
+a {
+  color: #00835e;
+  text-decoration: none;
 }
