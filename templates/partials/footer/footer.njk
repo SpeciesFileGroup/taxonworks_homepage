@@ -1,11 +1,17 @@
 <footer class="footer">
-    <img class="footer__logo" src="{{ logo }}" alt="This is the logo of {{ title }}">
-    <div class="footer__built-by">
-        {{ builtBy | safe }}
-    </div>
-    <div class="footer__funding">
-        {{ funding | safe }}
-    </div>
+    <div class="section__container">
+        <div class="footer__details">
+            <img class="footer__logo" src="{{ footerLogo }}" alt="{{ sponsor }}">
+            
+            <div class="footer__funding">
+                {{ funding | safe }}
+            </div>
+            
+            <div class="footer__built-by">
+                {{ builtBy | safe }}
+            </div>
+        </div>
 
-    {% include 'partials/footer/links/footerLinks.njk' %}
+        {% include 'partials/footer/links/footerLinks.njk' %}
+    </div>
 </footer>
