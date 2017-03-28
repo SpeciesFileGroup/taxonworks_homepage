@@ -3,7 +3,11 @@ title: TaxonWorks
 slogan: Describe life.
 introMarkdown: intro.md
 benefitsTitle: A digital companion for the discovering biodiversity
-benefitsMarkdown: benefits.md
+benefits1Markdown: benefits-1.md
+benefits2Markdown: benefits-2.md
+benefits3Markdown: benefits-3.md
+benefits4Markdown: benefits-4.md
+benefits5Markdown: benefits-5.md
 scopeTitle: Like life, TaxonWorks is ever-evolving
 scopeMarkdown: scope.md
 gettingStartedTitle: Get started with TaxonWorks
@@ -12,3 +16,4 @@ footerLogo: inhs-logo.png
 sponsor: Illinois Natural History Survey Prairie Research Institute
 builtBy: Built by Pixo
 funding: TaxonWorks is funded in part by the National Science Foundation
+twitterUrl: https://twitter.com/TaxonWorks

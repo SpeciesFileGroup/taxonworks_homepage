@@ -43,8 +43,16 @@ function getConfig() {
     const config = yamljs.load(constants.HOMEPAGE_YAML);
     if (config.introMarkdown)
         config.introHTML = parseMarkdownFile(config.introMarkdown);
-    if (config.benefitsMarkdown)
-        config.benefitsHTML = parseMarkdownFile(config.benefitsMarkdown);
+    if (config.benefits1Markdown)
+        config.benefits1HTML = parseMarkdownFile(config.benefits1Markdown);
+    if (config.benefits2Markdown)
+        config.benefits2HTML = parseMarkdownFile(config.benefits2Markdown);
+    if (config.benefits3Markdown)
+        config.benefits3HTML = parseMarkdownFile(config.benefits3Markdown);
+    if (config.benefits4Markdown)
+        config.benefits4HTML = parseMarkdownFile(config.benefits4Markdown);
+    if (config.benefits5Markdown)
+        config.benefits5HTML = parseMarkdownFile(config.benefits5Markdown);
     if (config.scopeMarkdown)
         config.scopeHTML = parseMarkdownFile(config.scopeMarkdown);
     if (config.gettingStartedMarkdown)
