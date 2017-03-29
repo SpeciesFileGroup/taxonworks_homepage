@@ -4,11 +4,11 @@
             <img class="footer__logo" src="{{ footerLogo }}" alt="{{ sponsor }}">
             
             <div class="footer__funding">
-                {{ funding | safe }}
+                {{ fundingHTML | safe }}
             </div>
-            
+
             <div class="footer__built-by">
-                {{ builtBy | safe }}
+                {{ builtByHTML | safe }}
             </div>
         </div>
 

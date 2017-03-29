@@ -7,4 +7,20 @@
 
         .footer__details
             float left
+            padding $footer-details-padding
             width 50%
+
+            .footer__logo, .footer__funding, .footer__built-by
+                margin $footer-details-margin
+
+            .footer__funding, .footer__built-by
+                max-width 336px
+
+                p 
+                    color rgba(33, 29, 23, 0.6)
+                    font-size 16px
+                    line-height 1.5
+
+            .footer__logo
+                height 80%
+                width 80%

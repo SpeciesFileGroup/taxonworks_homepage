@@ -19,7 +19,7 @@ cleanAndMkdirBuild();
 buildHTMLWithoutCritical();
 buildCSS();
 buildJS();
-buildLogo();
+buildAssets();
 buildHTMLWithCritical()
     .then(_ => printSuccess())
     .catch(err => console.error(`Build Failed ☹️ ${err}`));
@@ -57,12 +57,20 @@ function getConfig() {
         config.scopeHTML = parseMarkdownFile(config.scopeMarkdown);
     if (config.gettingStartedMarkdown)
         config.gettingStartedHTML = parseMarkdownFile(config.gettingStartedMarkdown);
+    if (config.funding)
+        config.fundingHTML = parseMarkdown(config.funding);
+    if (config.builtBy)
+        config.builtByHTML = parseMarkdown(config.builtBy);
 
     savedConfig = config;
     return config;
 
     function parseMarkdownFile(path) {
         return markdown.render(fs.readFileSync(makePathRelativeToConfigDir(path), {encoding: 'UTF-8'}));
+    }
+
+    function parseMarkdown(content) {
+        return markdown.render(content);
     }
 
     function makePathRelativeToConfigDir(path) {
@@ -118,6 +126,20 @@ function buildJSForProd() {
     const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
     let script = uglify.minify(scripts).code;
     fs.writeFileSync(constants.BUILD_PROD_SCRIPT, script, {encoding: "UTF-8"});
+}
+
+function buildAssets() {
+    // buildIllustrations();
+    buildImages();
+    buildLogo();
+}
+
+function buildImages() {
+    const pathToImages = constants.IMAGE_DIR;
+    fs.mkdirsSync(constants.BUILD_DEV_DIR + constants.IMAGE_DIR);
+    fs.copySync(pathToImages, constants.BUILD_DEV_DIR + constants.IMAGE_DIR);
+    fs.mkdirsSync(constants.BUILD_PROD_DIR + constants.IMAGE_DIR);
+    fs.copySync(pathToImages, constants.BUILD_PROD_DIR + constants.IMAGE_DIR);
 }
 
 function buildLogo() {

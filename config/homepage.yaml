@@ -1,5 +1,6 @@
 logo: logo.svg
 title: TaxonWorks
+titleLogo: images/taxonworks-white.svg
 slogan: Describe life.
 introMarkdown: intro.md
 benefitsTitle: A digital companion for the discovering biodiversity
@@ -12,8 +13,8 @@ scopeTitle: Like life, TaxonWorks is ever-evolving
 scopeMarkdown: scope.md
 gettingStartedTitle: Get started with TaxonWorks
 gettingStartedMarkdown: gettingStarted.md
-footerLogo: inhs-logo.png
+footerLogo: images/inhs-footer-logo.png
 sponsor: Illinois Natural History Survey Prairie Research Institute
-builtBy: Built by Pixo
-funding: TaxonWorks is funded in part by the National Science Foundation
+builtBy: Built by [Pixo](http://www.pixotech.com)
+funding: TaxonWorks is funded in part by the [National Science Foundation](http://www.nsf.gov)
 twitterUrl: https://twitter.com/TaxonWorks

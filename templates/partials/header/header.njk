@@ -1,7 +1,8 @@
 <header class="header">
     <div class="section__container">
         <img class="header__logo" src="{{ logo }}" alt="This is the logo of {{ title }}">
-        <h1 class="header__page-title">{{ title }}</h1>
+        <h1 class="header__page-title hidden">{{ title }}</h1>
+        <img class="header__page-title__logo" src="{{ titleLogo }}" alt="{{ title }}">
         <div class="header__slogan">{{ slogan }}</div>
         <div class="header__intro-copy">
             {{ introHTML | safe }}

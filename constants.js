@@ -2,6 +2,7 @@ const BUILD_DIR = "build/";
 const BUILD_DEV_DIR = BUILD_DIR + "dev/";
 const BUILD_PROD_DIR = BUILD_DIR + "prod/";
 const CONFIG_DIR = "config/";
+const IMAGE_DIR = "images/";
 const TEMPLATE_DIR = "templates/";
 
 const INDEX_DEV = BUILD_DEV_DIR + "index.html";
@@ -23,7 +24,7 @@ const dependenciesScripts = ["./node_modules/animejs/anime.js"];
 const pageScripts = ["./scripts/animation.js"];
 
 module.exports = {
-    BUILD_DIR, BUILD_DEV_DIR, BUILD_PROD_DIR, CONFIG_DIR, TEMPLATE_DIR,
+    BUILD_DIR, BUILD_DEV_DIR, BUILD_PROD_DIR, CONFIG_DIR, IMAGE_DIR, TEMPLATE_DIR,
     INDEX_DEV, INDEX_PROD_WITHOUT_CRITICAL_FILENAME, INDEX_PROD_WITH_CRITICAL_FILENAME,
     MAIN_TEMPLATE, MAIN_STYLUS_SHEET,
     BUILD_DEV_STYLESHEET, BUILD_PROD_STYLESHEET,
