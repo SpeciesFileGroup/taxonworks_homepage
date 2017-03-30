@@ -134,6 +134,10 @@ function buildAssets() {
     buildLogo();
 }
 
+function buildIllustrations() {
+    return null;
+}
+
 function buildImages() {
     const pathToImages = constants.IMAGE_DIR;
     fs.mkdirsSync(constants.BUILD_DEV_DIR + constants.IMAGE_DIR);

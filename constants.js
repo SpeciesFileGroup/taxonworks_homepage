@@ -21,7 +21,7 @@ const BUILD_PROD_SCRIPT = BUILD_PROD_DIR + "bundle.js";
 const HOMEPAGE_YAML = CONFIG_DIR + "homepage.yaml";
 
 const dependenciesScripts = ["./node_modules/animejs/anime.js"];
-const pageScripts = ["./scripts/animation.js"];
+const pageScripts = ["./scripts/animation.js", "./scripts/navigation.js"];
 
 module.exports = {
     BUILD_DIR, BUILD_DEV_DIR, BUILD_PROD_DIR, CONFIG_DIR, IMAGE_DIR, TEMPLATE_DIR,
