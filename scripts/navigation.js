@@ -4,16 +4,21 @@ document.addEventListener("DOMContentLoaded", function() {
     var twNavBar = document.querySelector('.header__nav-bar');
     var twMain   = document.querySelector('main');
 
-    twNavBar.style.visibility = 'hidden';
-
     window.onscroll = function() {
         var scrollPos = document.getElementsByTagName("body")[0].scrollTop;
         if ( scrollPos > twMain.offsetTop )
         {
-            twNavBar.style.visibility = 'visible';
+            var showNavBar = anime({
+                targets: twNavBar,
+                translateY: twNavBar.offsetHeight
+            });
         } else {
-            twNavBar.style.visibility = 'hidden';
+            var hideNavBar = anime({
+                targets: twNavBar,
+                translateY: -(twNavBar.offsetHeight)
+            });   
         }
     };
+
 });
 

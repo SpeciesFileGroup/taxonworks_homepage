@@ -1,17 +1,30 @@
 .header__nav-bar
     background-color $color-brown
-    height 40px
+    height $header-navbar-height
     overflow hidden
     padding 2px
     position fixed
-    top 0
-    visibility hidden
+    top -($header-navbar-height)
     width 100%
 
     .header__nav-bar__logo
         float left
-        height 100%
-        padding 2px 5px
+        height 48px
+        margin-left 16px
+        object-fit contain
+        position relative
+        top 50%
+        transform translate(0, -50%)
+        width 48px
+
+    .header__nav-bar__text
+        height 27px
+        margin-left 16px
+        object-fit contain
+        position relative
+        top 50%
+        transform translate(0, -50%)
+        width 204px
 
     .header__nav-bar__links
         float right
