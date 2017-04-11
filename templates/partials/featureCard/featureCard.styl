@@ -1,0 +1,53 @@
+.feature-card
+    border-top 2px solid color-green
+    color color-white
+
+    &__feature-content
+        background-color color-cocoa
+        padding 24px
+
+    &__name
+        @extend $mediumHeader
+        margin-bottom 12px
+
+    &__description
+        margin-bottom 16px
+
+    &__details
+        display flex
+        justify-content space-between
+
+    &__status
+    &__available
+        font-weight 600
+
+        &-label
+        &-value
+            display inline-block
+
+        &-label
+            margin-right 6px
+
+    &__sub-features
+        list-style none inside
+
+    &__sub-feature-item
+        margin-top 2px
+
+    &__sub-feature-item-button
+        background-color color-cocoa
+        color color-green
+        cursor pointer
+        display block
+        font-family Hind
+        font-size 20px
+        line-height 1.4
+        padding 14px 24px
+        text-align left
+        transition background-color 1000ms, color 1000ms
+        width 100%
+
+        &:hover
+        &:focus
+            background-color color-green
+            color color-cocoa
