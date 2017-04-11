@@ -1,0 +1,9 @@
+<ul class="feature-core">
+    {% for feature in scopeFeatures %}
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                {{ feature.name }}
+            </button>
+        </li>
+    {% endfor %}
+</ul>

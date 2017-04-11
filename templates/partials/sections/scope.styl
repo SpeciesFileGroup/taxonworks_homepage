@@ -8,3 +8,26 @@
     &__copy
         color color-white
         opacity 0.8
+
+    &__features
+        display flex
+        flex-direction column
+        margin 0 24px
+
+        @media (min-width feature-core-stacked-breakpoint)
+            flex-direction row
+
+        @media (min-width 1440px)
+            margin 0 200px
+
+    &__feature-cards
+    &__feature-core-container
+        flex 1 1 0
+
+    &__feature-core-container
+        @media (min-width feature-core-stacked-breakpoint)
+            margin-right 16px
+
+    &__feature-cards
+        @media (min-width feature-core-stacked-breakpoint)
+            margin-left 16px

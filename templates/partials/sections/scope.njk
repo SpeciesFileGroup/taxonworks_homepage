@@ -6,12 +6,15 @@
         <div class="scope-section__copy">
             {{ scopeHTML | safe }}
         </div>
-        <ul>
-            {% for feature in scopeFeatures %}
-                <li>
+        <div class="scope-section__features">
+            <div class="scope-section__feature-core-container">
+                {% include 'partials/featureCore/featureCore.njk' %}
+            </div>
+            <div class="scope-section__feature-cards">
+                {% for feature in scopeFeatures %}
                     {{ featureCard.featureCard(feature) }}
-                </li>
-            {% endfor %}
-        </ul>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </article>

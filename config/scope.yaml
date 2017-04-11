@@ -10,6 +10,12 @@ features:
                 status: upcoming
                 description: Foo bar baz
                 whenComplete: this_year
+                features:
+                    -
+                        name: Nomenclature Sub Sub Feature
+                        status: upcoming
+                        description: This is a three deep feature
+                        whenComplete: this_year
     -
         name: Taxon, specimen and anatomical descriptions
         status: upcoming

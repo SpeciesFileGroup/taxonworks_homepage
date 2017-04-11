@@ -26,5 +26,9 @@
                 </li>
             {% endfor %}
         </ul>
+
+        {% for feature in feature.features %}
+            {{ featureCard(feature) }}
+        {% endfor %}
     </div>
 {% endmacro %}
