@@ -15,26 +15,30 @@ const DefaultStatus = StatusEnum.Upcoming;
 
 function process(data) {
     validate(data);
-    return data.features.map(featureDatum => {
-        const {
-            name,
-            category = null,
-            status = DefaultStatus,
-            description
-        } = featureDatum;
-
-        return {
-            name,
-            category,
-            status: checkIfStatusIsValid(status) ? status : DefaultStatus,
-            description
-        };
-    });
+    return data.features.map(transformFeature);
 }
 
 function validate(data) {
     validateFeaturesExist(data);
     data.features.forEach(validateFeature);
+}
+
+function transformFeature(featureDatum) {
+    const {
+        name,
+        category = null,
+        status = DefaultStatus,
+        description,
+        features = []
+    } = featureDatum;
+
+    return {
+        name,
+        category,
+        status: checkIfStatusIsValid(status) ? status : DefaultStatus,
+        description,
+        features: features.map(transformFeature)
+    };
 }
 
 function validateFeature(featureDatum) {

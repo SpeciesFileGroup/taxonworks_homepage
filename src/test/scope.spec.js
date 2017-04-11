@@ -253,6 +253,20 @@ describe(`the scope content model`, () => {
                 expect(actualFeature.description).to.equal(data.features[index].description);
             });
         });
+
+        it(`should transform features recursively`, () => {
+            const data = mockFrozenData();
+
+            const actual = scope.process(data);
+
+            actual.forEach((actualFeature, index) => {
+                expect(actualFeature.features.length).to.equal(data.features[index].features.length);
+
+                actualFeature.features.forEach((actualSubFeature, subIndex) => {
+                    expect(actualSubFeature.features.length).to.equal(data.features[index].features[subIndex].features.length);
+                });
+            });
+        });
     });
 });
 
