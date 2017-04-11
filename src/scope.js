@@ -37,11 +37,13 @@ function validate(data) {
     data.features.forEach(validateFeature);
 }
 
-function validateFeature(featureDatum, index) {
-    validateFeatureProperty(featureDatum, `name`, index);
-    validateFeatureProperty(featureDatum, `description`, index);
-    validateFeatureProperty(featureDatum, `whenComplete`, index);
-    validateWhenComplete(featureDatum, index);
+function validateFeature(featureDatum) {
+    validateFeatureProperty(featureDatum, `name`);
+    validateFeatureProperty(featureDatum, `description`);
+    validateFeatureProperty(featureDatum, `whenComplete`);
+    validateWhenComplete(featureDatum);
+    if (featureDatum.features)
+        featureDatum.features.forEach(validateFeature);
 }
 
 function validateFeaturesExist(data) {
@@ -49,15 +51,15 @@ function validateFeaturesExist(data) {
         throw `Data does not contain features`;
 }
 
-function validateFeatureProperty(feature, property, index) {
+function validateFeatureProperty(feature, property) {
     if (!feature[property])
-        throw `${property} missing on feature with index ${index}`;
+        throw `${property} missing on feature ${getFeatureMessageForError(feature)}`;
 }
 
-function validateWhenComplete(featureDatum, index) {
+function validateWhenComplete(featureDatum) {
     const isValidWhenComplete = checkIfWhenCompleteIsValid(featureDatum.whenComplete);
     if (!isValidWhenComplete)
-        throw `whenComplete is invalid on feature with index ${index}`;
+        throw `whenComplete is invalid on feature ${getFeatureMessageForError(featureDatum)}`;
 }
 
 function checkIfWhenCompleteIsValid(whenComplete) {
@@ -68,4 +70,18 @@ function checkIfStatusIsValid(status) {
     return Object.keys(StatusEnum).map(key => StatusEnum[key]).indexOf(status) > -1;
 }
 
-module.exports = {process};
+function getFeatureMessageForError(feature) {
+    const clonedFeature = Object.assign({}, feature);
+    const subFeatureLength = feature.features.length;
+
+    delete clonedFeature.features;
+
+    return `${buildFeatureMessageWithoutFeatures(clonedFeature)},"features":Array(${subFeatureLength})}`;
+
+    function buildFeatureMessageWithoutFeatures(feature){
+        const featureMessage = JSON.stringify(feature);
+        return featureMessage.substring(0, featureMessage.length - 1);
+    }
+}
+
+module.exports = {process, getFeatureMessageForError};

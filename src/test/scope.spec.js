@@ -2,47 +2,66 @@ const expect = require('chai').expect;
 const deepFreeze = require('deep-freeze');
 const scope = require('../scope');
 
-function mockData() {
+function makeMockData() {
     return {
         features: [
             {
                 name: 'Nomenclature',
                 status: 'upcoming',
                 description: 'Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich and deep coverage of nomenclatural rules are included to ensure adequate metadata are provided. Produce highly annotated nomenclatural catalogs for print.',
-                whenComplete: 'this_year'
+                whenComplete: 'this_year',
+                features: [
+                    makeMockFeature()
+                ],
             },
             {
                 name: 'Taxon, specimen and anatomical descriptions',
                 status: 'upcoming',
                 description: 'Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.',
-                whenComplete: 'three_year'
+                whenComplete: 'three_year',
+                features: [
+                    makeMockFeature(),
+                    makeMockFeature()
+                ],
             },
             {
                 name: 'Jimmy Buckets',
-                category: 'basketball',
                 status: "in_progress",
                 description: "Jimmy Gets Buckets",
-                whenComplete: "now"
+                whenComplete: "now",
+                features: [
+                    makeMockFeature({
+                        name: 'Kleenex',
+                        status: 'upcoming',
+                        description: 'Blow your nose.',
+                        whenComplete: 'this_year',
+                        features: [makeMockFeature()],
+                    }),
+                    makeMockFeature(),
+                    makeMockFeature()
+                ],
             },
             {
                 name: "Michael Jordan",
-                category: 'basketball',
                 status: "complete",
                 description: "His Airness",
-                whenComplete: "next_year"
+                whenComplete: "next_year",
+                features: [
+                    makeMockFeature()
+                ],
             }
         ]
     };
 }
 
 function mockFrozenData() {
-    const data = mockData();
+    const data = makeMockData();
     deepFreeze(data);
     return data;
 }
 
-function mockFeature({ name = 'Nomenclature', status = 'upcoming', description = "foo", whenComplete = 'this_year', category = null } = {}) {
-    return { name, status, description, whenComplete, category };
+function makeMockFeature({ name = 'Nomenclature', status = 'upcoming', description = "foo", whenComplete = 'this_year', features = [] } = {}) {
+    return { name, status, description, whenComplete, features };
 }
 
 describe(`the scope content model`, () => {
@@ -58,47 +77,49 @@ describe(`the scope content model`, () => {
         });
 
         it(`should require the name`, () => {
-            const data = mockData();
+            const data = makeMockData();
 
-            const indexOfFeatureWithoutName = getRandomIndexOfFeature(data.features);
+            const feature = getRandomFeature(data.features);
 
-            delete data.features[indexOfFeatureWithoutName].name;
+            delete feature.name;
             const errorFn = _ => {
                 scope.process(data);
             };
 
-            expect(errorFn).to.throw(`name missing on feature with index ${indexOfFeatureWithoutName}`);
+            expect(errorFn).to.throw(`name missing on feature ${scope.getFeatureMessageForError(feature)}`);
         });
 
         it(`should require a description`, () => {
-            const data = mockData();
-            const indexOfFeatureWithoutDescription = getRandomIndexOfFeature(data.features);
-            delete data.features[indexOfFeatureWithoutDescription].description;
+            const data = makeMockData();
+
+            const feature = getRandomFeature(data.features);
+
+            delete feature.description;
             const errorFn = _ => {
                 scope.process(data);
             };
-            expect(errorFn).to.throw(`description missing on feature with index ${indexOfFeatureWithoutDescription}`);
+            expect(errorFn).to.throw(`description missing on feature ${scope.getFeatureMessageForError(feature)}`);
         });
 
         it(`should have a completion deadline`, () => {
-            const data = mockData();
-            const indexOfFeatureWithoutDeadline = getRandomIndexOfFeature(data.features);
-            delete data.features[indexOfFeatureWithoutDeadline].whenComplete;
+            const data = makeMockData();
+
+            const feature = getRandomFeature(data.features);
+
+            delete feature.whenComplete;
             const errorFn = _ => {
                 scope.process(data);
             };
-            expect(errorFn).to.throw(`whenComplete missing on feature with index ${indexOfFeatureWithoutDeadline}`);
+            expect(errorFn).to.throw(`whenComplete missing on feature ${scope.getFeatureMessageForError(feature)}`);
         });
 
         it(`should only accept valid deadlines`, () => {
-            const validData = mockData();
-            const invalidData = mockData();
+            const validData = makeMockData();
+            const invalidData = makeMockData();
 
-            const invalidFeature = mockFeature({ whenComplete: Math.random().toString(36) });
+            const invalidFeature = makeMockFeature({ whenComplete: Math.random().toString(36) });
 
             invalidData.features = [...invalidData.features, invalidFeature];
-
-            const expectedErrorIndex = invalidData.features.length - 1;
 
             const validFn = _ => {
                 scope.process(validData);
@@ -109,7 +130,46 @@ describe(`the scope content model`, () => {
             };
 
             expect(validFn).to.not.throw();
-            expect(errorFn).to.throw(`whenComplete is invalid on feature with index ${expectedErrorIndex}`);
+            expect(errorFn).to.throw(`whenComplete is invalid on feature ${scope.getFeatureMessageForError(invalidFeature)}`);
+        });
+
+        it(`should validate features recursively`, () => {
+            const mockData = makeMockData();
+
+            delete mockData.features[2].features[0].features[0].name;
+
+            const errorFn = _ => {
+                scope.process(mockData);
+            };
+
+            expect(errorFn).to.throw();
+        });
+
+        it(`should only check sub-features if they are set`, () => {
+            const mockData = makeMockData();
+
+            delete mockData.features[2].features[0].features[0].features;
+
+            const errorFn = _ => {
+                scope.process(mockData);
+            };
+
+            expect(errorFn).to.not.throw();
+        });
+    });
+
+    describe('error logging helpers', _ => {
+        it(`should print error messages without sub-feature arrays`, () => {
+            const feature = makeMockFeature({
+                features: [
+                    makeMockFeature(),
+                    makeMockFeature()
+                ]
+            });
+
+            const expectedMessage = `{"name":"Nomenclature","status":"upcoming","description":"foo","whenComplete":"this_year","features":Array(2)}`;
+
+            expect(scope.getFeatureMessageForError(feature)).to.equal(expectedMessage);
         });
     });
 
@@ -145,19 +205,8 @@ describe(`the scope content model`, () => {
             });
         });
 
-        it(`should have a category property if one is given; else category is null`, () => {
-            const data = mockFrozenData();
-
-            const actual = scope.process(data);
-
-            const expectedCategories = [null, null, `basketball`, `basketball`];
-            actual.forEach((actualFeature, index) => {
-                expect(actualFeature.category).to.equal(expectedCategories[index]);
-            });
-        });
-
         it(`should copy the status, defaulting to upcoming if none is given`, () => {
-            const data = mockData();
+            const data = makeMockData();
             delete data.features[2].status;
 
             const expectedStatuses = [
@@ -179,10 +228,10 @@ describe(`the scope content model`, () => {
         it(`should set status to upcoming if a value not in the enum is given`, () => {
             const data = {
                 features: [
-                    mockFeature({ status: 'in_progress' }),
-                    mockFeature({ status: 'complete' }),
-                    mockFeature({ status: Math.random().toString(36) }),
-                    mockFeature({ status: Math.random().toString(36) })
+                    makeMockFeature({ status: 'in_progress' }),
+                    makeMockFeature({ status: 'complete' }),
+                    makeMockFeature({ status: Math.random().toString(36) }),
+                    makeMockFeature({ status: Math.random().toString(36) })
                 ]
             };
 
@@ -209,4 +258,8 @@ describe(`the scope content model`, () => {
 
 function getRandomIndexOfFeature(features) {
     return Math.floor((Math.random() * features.length));
+}
+
+function getRandomFeature(features) {
+    return features[getRandomIndexOfFeature(features)];
 }
