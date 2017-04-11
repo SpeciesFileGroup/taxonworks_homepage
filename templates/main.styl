@@ -1,53 +1,26 @@
 // Imports
+@import 'styles/global/variables/**'
+
 @import 'styles/fonts'
 @import 'styles/resets'
 @import 'styles/flexbox'
-
-@import 'styles/global/**'
+@import 'styles/headers'
 
 @import 'pages/**'
 @import 'partials/**'
 
 // Base elements
 body
+    color color-brown
     font-family Hind
+    font-size 20px
     font-stretch normal
     font-style normal
     letter-spacing normal
-
-h1
-    color $color-brown
-    font-size 60px
-    font-weight 300
-    line-height 1.17
-
-h2
-    color $color-brown
-    font-size 40px
-    font-weight normal
-    line-height 1.2
-
-h3, h4
-    font-size 26px
-    line-height 1.31
-
-h3
-    color $color-brown
-    font-weight 600
-
-h4, p
-    color rgba(52, 45, 37, 0.8)
-
-h4
-    font-size 26px
-    font-weight normal
-
-p
-    font-size 20px
     line-height 1.4
 
 a
-    color $color-teal
+    color color-teal
     text-decoration none
 
 // Accessibility
@@ -59,7 +32,3 @@ a
     overflow hidden
     padding 0
     position absolute
-    width 1px
-
-// Custom
-

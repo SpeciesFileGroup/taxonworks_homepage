@@ -1,0 +1,25 @@
+{% macro featureCard(feature) %}
+    <div class="feature-card">
+        <h3 class="feature-card__name">{{ feature.name }}</h3>
+        <div class="feature_card__description">
+            {{ feature.description }}
+        </div>
+        <dl>
+            <dt>Status</dt>
+            <dd>{{ feature.status }}</dd>
+        </dl>
+        <dl>
+            <dt>Available</dt>
+            <dd>{{ feature.whenComplete }}</dd>
+        </dl>
+        <ul>
+            {% for feature in feature.features %}
+                <li>
+                    <button type="button">
+                        {{ feature.name }}
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}

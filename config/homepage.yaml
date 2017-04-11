@@ -11,6 +11,7 @@ benefits4Markdown: benefits-4.md
 benefits5Markdown: benefits-5.md
 scopeTitle: Like life, TaxonWorks is ever-evolving
 scopeMarkdown: scope.md
+scopeConfig: scope.yaml
 gettingStartedTitle: Get started with TaxonWorks
 gettingStarted1Markdown: gettingStarted-1.md
 gettingStarted2Markdown: gettingStarted-2.md

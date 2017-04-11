@@ -1,8 +1,17 @@
-<article class="scope section">
-    <div class="section__container">
-        <h2 class="section__title">{{ scopeTitle  }}</h2>
-        <div class="section__copy">
+{% import 'partials/featureCard/featureCard.njk' as featureCard %}
+
+<article class="scope-section">
+    <div class="scope-section__container">
+        <h2 class="scope-section__title">{{ scopeTitle  }}</h2>
+        <div class="scope-section__copy">
             {{ scopeHTML | safe }}
         </div>
+        <ul>
+            {% for feature in scopeFeatures %}
+                <li>
+                    {{ featureCard.featureCard(feature) }}
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 </article>

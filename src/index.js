@@ -9,6 +9,7 @@ const del = require("del");
 const yamljs = require("yamljs");
 const markdown = require('markdown-it')();
 const uglify = require("uglify-js");
+const scope = require('./scope');
 
 const constants = require("../constants");
 
@@ -55,6 +56,8 @@ function getConfig() {
         config.benefits5HTML = parseMarkdownFile(config.benefits5Markdown);
     if (config.scopeMarkdown)
         config.scopeHTML = parseMarkdownFile(config.scopeMarkdown);
+    if (config.scopeConfig)
+        config.scopeFeatures = scope.process(parseYamlFile(config.scopeConfig));
     if (config.gettingStarted1Markdown)
         config.gettingStarted1HTML = parseMarkdownFile(config.gettingStarted1Markdown);
     if (config.gettingStarted2Markdown)
@@ -69,6 +72,10 @@ function getConfig() {
 
     function parseMarkdownFile(path) {
         return markdown.render(fs.readFileSync(makePathRelativeToConfigDir(path), {encoding: 'UTF-8'}));
+    }
+
+    function parseYamlFile(path) {
+        return yamljs.load(makePathRelativeToConfigDir(path));
     }
 
     function parseMarkdown(content) {
