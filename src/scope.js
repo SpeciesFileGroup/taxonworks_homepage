@@ -13,6 +13,19 @@ const StatusEnum = {
 
 const DefaultStatus = StatusEnum.Upcoming;
 
+const WhenCompleteTemplate = {
+    [WhenCompleteEnum.Now]: "Now",
+    [WhenCompleteEnum.ComingThisYear]: "This year",
+    [WhenCompleteEnum.ComingNextYear]: "Next year",
+    [WhenCompleteEnum.WithinTheNextThreeYears]: "Within the next three years"
+};
+
+const StatusTemplate = {
+    [StatusEnum.Complete]: "Complete",
+    [StatusEnum.InProgress]: "In Progress",
+    [StatusEnum.Upcoming]: "Upcoming"
+};
+
 function process(data) {
     validate(data);
     return data.features.map(transformFeature);
@@ -26,18 +39,22 @@ function validate(data) {
 function transformFeature(featureDatum) {
     const {
         name,
-        category = null,
         status = DefaultStatus,
         description,
-        features = []
+        features = [],
+        whenComplete
     } = featureDatum;
+
+    const statusAfterCheck = checkIfStatusIsValid(status) ? status : DefaultStatus;
 
     return {
         name,
-        category,
-        status: checkIfStatusIsValid(status) ? status : DefaultStatus,
+        status: statusAfterCheck,
         description,
-        features: features.map(transformFeature)
+        whenComplete,
+        features: features.map(transformFeature),
+        templateStatus: StatusTemplate[statusAfterCheck],
+        templateWhenComplete: WhenCompleteTemplate[whenComplete]
     };
 }
 

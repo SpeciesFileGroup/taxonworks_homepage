@@ -244,6 +244,16 @@ describe(`the scope content model`, () => {
             });
         });
 
+        it(`should copy whenComplete`, () => {
+            const data = makeMockData();
+
+            const actual = scope.process(data);
+
+            actual.forEach((actualFeature, index) => {
+                expect(actualFeature.whenComplete).to.equal(data.features[index].whenComplete);
+            });
+        });
+
         it(`should have a description property on each feature`, () => {
             const data = mockFrozenData();
 
@@ -266,6 +276,21 @@ describe(`the scope content model`, () => {
                     expect(actualSubFeature.features.length).to.equal(data.features[index].features[subIndex].features.length);
                 });
             });
+        });
+
+        it(`should transform status and whenComplete for templates`, () => {
+            const data = mockFrozenData();
+
+            const actual = scope.process(data);
+
+            expect(actual[0].templateStatus).to.equal(`Upcoming`);
+            expect(actual[2].templateStatus).to.equal(`In Progress`);
+            expect(actual[3].templateStatus).to.equal(`Complete`);
+
+            expect(actual[0].templateWhenComplete).to.equal(`This year`);
+            expect(actual[1].templateWhenComplete).to.equal(`Within the next three years`);
+            expect(actual[2].templateWhenComplete).to.equal(`Now`);
+            expect(actual[3].templateWhenComplete).to.equal(`Next year`);
         });
     });
 });
