@@ -1,8 +1,18 @@
-<article class="getting-started section">
-    <div class="section__container">
-        <h2 class="section__title">{{ gettingStartedTitle  }}</h2>
-        <div class="section__copy">
-            {{ gettingStartedHTML | safe }}
+<div class="getting-started">
+    <article class="getting-started-1 section">
+        <div class="section__container wrapper">
+            <h2 class="section__title">{{ gettingStartedTitle  }}</h2>
+            <div class="section__copy">
+                {{ gettingStarted1HTML | safe }}
+            </div>
         </div>
-    </div>
-</article>
+    </article>
+
+    <article class="getting-started-2 section">
+        <div class="section__container wrapper">
+            <div class="section__copy">
+                {{ gettingStarted2HTML | safe }}
+            </div>
+        </div>
+    </article>
+</div>

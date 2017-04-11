@@ -1,4 +1,4 @@
-@mixin flexbox() {
+flexbox() {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -6,7 +6,7 @@
   display: flex;
 }
 
-@mixin flex($values) {
+flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex:  $values;
   -webkit-flex:  $values;
@@ -14,7 +14,7 @@
   flex:  $values;
 }
 
-@mixin order($val) {
+order($val) {
   -webkit-box-ordinal-group: $val;  
   -moz-box-ordinal-group: $val;     
   -ms-flex-order: $val;     
@@ -23,10 +23,10 @@
 }
 
 .wrapper {
-  @include flexbox();
+  flexbox();
 }
 
 .item {
-  @include flex(1 200px);
-  @include order(2);
+  flex(1 200px);
+  order(2);
 }

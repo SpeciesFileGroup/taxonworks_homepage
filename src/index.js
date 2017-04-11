@@ -55,8 +55,10 @@ function getConfig() {
         config.benefits5HTML = parseMarkdownFile(config.benefits5Markdown);
     if (config.scopeMarkdown)
         config.scopeHTML = parseMarkdownFile(config.scopeMarkdown);
-    if (config.gettingStartedMarkdown)
-        config.gettingStartedHTML = parseMarkdownFile(config.gettingStartedMarkdown);
+    if (config.gettingStarted1Markdown)
+        config.gettingStarted1HTML = parseMarkdownFile(config.gettingStarted1Markdown);
+    if (config.gettingStarted2Markdown)
+        config.gettingStarted2HTML = parseMarkdownFile(config.gettingStarted2Markdown);
     if (config.funding)
         config.fundingHTML = parseMarkdown(config.funding);
     if (config.builtBy)
