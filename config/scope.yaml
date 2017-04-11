@@ -15,3 +15,35 @@ features:
         status: upcoming
         description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
         whenComplete: three_year
+    -
+        name: 1995-1996 Chicago Bulls
+        status: complete
+        description: 72-10, Finished 1st in NBA Central Division
+        whenComplete: now
+        features:
+            -
+                name: Michael Jordan
+                status: complete
+                description: Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
+                whenComplete: now
+
+            -
+                name: Scottie Pippen
+                status: complete
+                description: Scottie Pippen (Pip, Scott, Batman, Robin)
+                whenComplete: now
+            -
+                name: Dennis Rodman
+                status: complete
+                description: Dennis Rodman (The Worm, Dennis the Menace)
+                whenComplete: now
+            -
+                name: Steve Kerr
+                status: complete
+                description: Stephen Douglas Kerr (Ice)
+                whenComplete: now
+            -
+                name: Toni Kukoc
+                status: complete
+                description: Toni Kukoc (Croatian Sensation, The Waiter, Euro-Magic, The Pink Panther, Spider of Split, Kuki, Alien)
+                whenComplete: now
