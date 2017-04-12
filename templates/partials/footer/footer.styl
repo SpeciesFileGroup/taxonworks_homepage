@@ -1,26 +1,30 @@
-.footer
+.footer-section
     background-color color-white
     height footer-height
 
-    .section__container
-        padding footer-padding
+    &__container
+        @extends $sectionContainer
+        padding footer-padding 
 
-        .footer__details
-            float left
-            padding footer-details-padding
-            width 50%
+    &__details
+        float left
+        padding footer-details-padding
+        width 50%
 
-            .footer__logo, .footer__funding, .footer__built-by
-                margin footer-details-margin
+    &__logo
+    &__funding
+    &__built-by
+        margin footer-details-margin
 
-            .footer__funding, .footer__built-by
-                max-width 336px
+    &__funding
+    &__built-by
+        max-width 336px
 
-                p 
-                    color rgba(33, 29, 23, 0.6)
-                    font-size 16px
-                    line-height 1.5
+        p 
+            color rgba(33, 29, 23, 0.6)
+            font-size 16px
+            line-height 1.5
 
-            .footer__logo
-                height 80%
-                width 80%
+    &__logo
+        height 80%
+        width 80%

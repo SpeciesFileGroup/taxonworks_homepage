@@ -1,14 +1,31 @@
-.benefits
+.benefits-section
 
-    .benefits-1
+    &__container
+        @extends $sectionContainer
+
+    &__section-1
         background-color color-green
 
-    .benefits-2, .benefits-4
+    &__section-2
+    &__section-3
+    &__section-4
+    &__section-5
+        h3
+            @extends $mediumHeader
+
+    &__section-2
+    &__section-4
         background-color color-grey
 
-    .benefits-3, .benefits-5
+    &__section-3
+    &__section-5
         background-color color-white
 
-    .section__copy
+    &__title
+        @extends $bigHeader
+
+    &__copy
+        @extends $smallHeader
+
         > ul
             list-style-type none
