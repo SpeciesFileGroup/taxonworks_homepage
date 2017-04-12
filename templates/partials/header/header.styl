@@ -1,21 +1,32 @@
-.header
+.header-section
     background-color color-brown
     text-align center
 
-    .header__page-title
+    &__text-title
         color color-white
 
-    .header__logo
+    &__logo
+        position relative
+        text-align left
+        top -52px
+
+    &__logo-image
         object-fit contain
 
-    .header__slogan
+    &__text
+        text-align left
+
+    &__text-slogan
         color color-green
         font-size 60px
-        font-weight 300px
+        font-weight 300
         line-height 1.17
+        margin-bottom 64px
         
-    .header__intro-copy
-        border-top 1px solid color-green
+    &__text-copy
+        border-top 2px solid color-green
+        font-weight 400
+        padding-top 24px
 
         > p
             color color-white
