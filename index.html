@@ -10,7 +10,8 @@
 <div class="homepage__container">
 
 <nav class="header__nav-bar">
-    <img class="header__nav-bar__logo" src="logo.svg"></img>
+    <img class="header__nav-bar__logo" src="images/inhs-nav-logo.svg"></img>
+    <img class="header__nav-bar__text" src="images/inhs-nav-text.svg"></img>
     <div class="header__nav-bar__links">
         <a href="#">Link 1</a>
         <a href="#">Link 2</a>
@@ -18,27 +19,32 @@
     </div>
 </nav>
 
-<header class="header">
-    <div class="section__container">
-        <img class="header__logo" src="logo.svg" alt="This is the logo of TaxonWorks">
-        <h1 class="header__page-title hidden">TaxonWorks</h1>
-        <img class="header__page-title__logo" src="images/taxonworks-white.svg" alt="TaxonWorks">
-        <div class="header__slogan">Describe life.</div>
-        <div class="header__intro-copy">
-            <p>TaxonWorks is an integrated workbench for taxonomists that spans data across the domain.
+<header class="header-section">
+    <div class="header-section__container wrapper">
+        <div class="header-section__logo item">
+            <img class="header-section__logo-image" src="logo.svg" alt="This is the logo of TaxonWorks">
+        </div>
+
+        <div class="header-section__text item">
+            <h1 class="header-section__text-title hidden">TaxonWorks</h1>
+            <img class="header-section__text-title__logo" src="images/taxonworks-white.svg" alt="TaxonWorks">
+            <div class="header-section__text-slogan">Describe Life.</div>
+            <div class="header-section__text-copy">
+                <p>TaxonWorks is an integrated workbench for taxonomists that spans data across the domain.
 It organizes your world, enriches your data, and lets you push your findings out to the world.</p>
 
+            </div>
         </div>
     </div>
 </header>
 
 <main>
 
-<div class="benefits">
-    <article class="benefits-1 section">
-        <div class="section__container">
-            <h2 class="section__title">A digital companion for the discovering biodiversity</h2>
-            <div class="section__copy">
+<div class="benefits-section">
+    <article class="benefits-section__section-1">
+        <div class="benefits-section__container wrapper">
+            <h2 class="benefits-section__title item">A digital companion for discovering biodiversity</h2>
+            <div class="benefits-section__copy item">
                 <p>From observation to archive, TaxonWorks touches every step of the taxonomy process, helping you to capture your early
 observations, images, and notes. Turn your discoveries into conclusions faster, allowing you to spend more time buckling
 down in the field with fewer hours of mundane desk work.</p>
@@ -47,9 +53,9 @@ down in the field with fewer hours of mundane desk work.</p>
         </div>
     </article>
 
-    <article class="benefits-2 section">
-        <div class="section__container">
-            <div class="section__copy">
+    <article class="benefits-section__section-2">
+        <div class="benefits-section__container wrapper">
+            <div class="benefits-section__copy item">
                 <h3>The future of taxonomy</h3>
 <ul>
 <li>Built by taxonomists, for taxonomists</li>
@@ -57,12 +63,14 @@ down in the field with fewer hours of mundane desk work.</p>
 </ul>
 
             </div>
+            <div class="item"></div>
         </div>
     </article>
 
-    <article class="benefits-3 section">
-        <div class="section__container">
-            <div class="section__copy">
+    <article class="benefits-section__section-3">
+        <div class="benefits-section__container wrapper">
+            <div class="item"></div>
+            <div class="benefits-section__copy item">
                 <h3>Customize your data</h3>
 <ul>
 <li>Is available wherever you have internet access</li>
@@ -74,9 +82,9 @@ down in the field with fewer hours of mundane desk work.</p>
         </div>
     </article>
 
-    <article class="benefits-4 section">
-        <div class="section__container">
-            <div class="section__copy">
+    <article class="benefits-section__section-4">
+        <div class="benefits-section__container wrapper">
+            <div class="benefits-section__copy item">
                 <h3>Export technical documents</h3>
 <ul>
 <li>Allows data export through an ever-growing number of mechanisms, including a JSON-serving API foundation that is developer
@@ -85,12 +93,13 @@ extensible</li>
 </ul>
 
             </div>
+            <div class="item"></div>
         </div>
     </article>
 
-    <article class="benefits-5 section">
-        <div class="section__container">
-            <div class="section__copy">
+    <article class="benefits-section__section-5">
+        <div class="benefits-section__container wrapper">
+            <div class="benefits-section__copy item">
                 <h3>Long-term development support</h3>
 <ul>
 <li>Endowed and maintained by the Species File Group</li>
@@ -103,53 +112,527 @@ extensible</li>
     </article>
 </div>
 
-<article class="scope section">
-    <div class="section__container">
-        <h2 class="section__title">Like life, TaxonWorks is ever-evolving</h2>
-        <div class="section__copy">
+
+
+<article class="scope-section">
+    <div class="scope-section__container-1 wrapper">
+        <h2 class="scope-section__title item">Like life, TaxonWorks is ever-evolving</h2>
+        <div class="scope-section__copy item">
             <p>TaxonWorks has over 40 years of development experience behind it, and its future will advance beyond current technology.
 It's a companion for your career, and will continue to grow and improve.</p>
 
         </div>
     </div>
-</article>
+    <div class="scope-section__gradient"></div>
+    <div class="scope-section__container-2">
+        <h3 class="scope-section__feature-intro">Explore current & upcoming features</h3>
+        <div class="scope-section__features">
+            <div class="scope-section__feature-core-container">
+                <ul class="feature-core">
+    
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                Taxon, specimen and anatomical descriptions
+            </button>
+        </li>
+    
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                Nomenclature
+            </button>
+        </li>
+    
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                Collecting event metadata
+            </button>
+        </li>
+    
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                Specimen metadata
+            </button>
+        </li>
+    
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                Media and references
+            </button>
+        </li>
+    
+        <li class="feature-core__item">
+            <button class="feature-core__button" type="button">
+                1995-1996 Chicago Bulls
+            </button>
+        </li>
+    
+</ul>
+            </div>
+            <div class="scope-section__feature-cards">
+                
+                    
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Taxon, specimen and anatomical descriptions</h3>
+            <div class="feature-card__description">
+                Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">In Progress</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">This year</dd>
+                </dl>
+            </div>
+        </div>
 
+        <ul class="feature-card__sub-features">
+            
+        </ul>
 
-<article class="getting-started section">
-    <div class="section__container">
-        <h2 class="section__title">Get started with TaxonWorks</h2>
-        <div class="section__copy">
-            <p>TaxonWorks is an open-source web application. Each instance of TaxonWorks supports multiple projects
-and users.</p>
-<h3>Want to explore?</h3>
-<p>Find an instance of TaxonWorks</p>
-<h3>Have technical chops?</h3>
-<p>Install TaxonWorks virtually</p>
-<h3>You can also:</h3>
-<p>File an issue on Github
-Tell us your biodiversity informatics story
-Outline a specific use case
-Comment on our blog
-Clone the code and start hacking</p>
+        
+    </div>
 
+                
+                    
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Nomenclature</h3>
+            <div class="feature-card__description">
+                Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich and deep coverage of nomenclatural rules are included to ensure adequate metadata are provided. Produce highly annotated nomenclatural catalogs for print.
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Upcoming</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Within the next three years</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Nomenclature Sub Feature
+                    </button>
+                </li>
+            
+        </ul>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Nomenclature Sub Feature</h3>
+            <div class="feature-card__description">
+                Foo bar baz
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Upcoming</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Within the next three years</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Nomenclature Sub Sub Feature
+                    </button>
+                </li>
+            
+        </ul>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Nomenclature Sub Sub Feature</h3>
+            <div class="feature-card__description">
+                This is a three deep feature
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Upcoming</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Within the next three years</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+        
+    </div>
+
+        
+    </div>
+
+                
+                    
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Collecting event metadata</h3>
+            <div class="feature-card__description">
+                Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Upcoming</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Next year</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+                
+                    
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Specimen metadata</h3>
+            <div class="feature-card__description">
+                Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Upcoming</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Next year</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+                
+                    
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Media and references</h3>
+            <div class="feature-card__description">
+                Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">In Progress</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">This year</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+                
+                    
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">1995-1996 Chicago Bulls</h3>
+            <div class="feature-card__description">
+                72-10, Finished 1st in NBA Central Division
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Complete</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Now</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Michael Jordan
+                    </button>
+                </li>
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Scottie Pippen
+                    </button>
+                </li>
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Dennis Rodman
+                    </button>
+                </li>
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Steve Kerr
+                    </button>
+                </li>
+            
+                <li class="feature-card__sub-feature-item">
+                    <button class="feature-card__sub-feature-item-button" type="button">
+                        Toni Kukoc
+                    </button>
+                </li>
+            
+        </ul>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Michael Jordan</h3>
+            <div class="feature-card__description">
+                Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Complete</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Now</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Scottie Pippen</h3>
+            <div class="feature-card__description">
+                Scottie Pippen (Pip, Scott, Batman, Robin)
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Complete</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Now</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Dennis Rodman</h3>
+            <div class="feature-card__description">
+                Dennis Rodman (The Worm, Dennis the Menace)
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Complete</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Now</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Steve Kerr</h3>
+            <div class="feature-card__description">
+                Stephen Douglas Kerr (Ice)
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Complete</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Now</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+        
+            
+    <div class="feature-card">
+        <div class="feature-card__feature-content">
+            <h3 class="feature-card__name">Toni Kukoc</h3>
+            <div class="feature-card__description">
+                Toni Kukoc (Croatian Sensation, The Waiter, Euro-Magic, The Pink Panther, Spider of Split, Kuki, Alien)
+            </div>
+            <div class="feature-card__details">
+                <dl class="feature-card__status">
+                    <dt class="feature-card__status-label">Status:</dt>
+                    <dd class="feature-card__status-value">Complete</dd>
+                </dl>
+                <dl class="feature-card__available">
+                    <dt class="feature-card__available-label">Available:</dt>
+                    <dd class="feature-card__available-value">Now</dd>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="feature-card__sub-features">
+            
+        </ul>
+
+        
+    </div>
+
+        
+    </div>
+
+                
+            </div>
         </div>
     </div>
 </article>
 
+<div class="getting-started-section">
+    <article class="getting-started-section__section-1">
+        <div class="getting-started-section__container wrapper">
+            <div class="getting-started-section__section-1-text item">
+                <div>
+                    <h2 class="getting-started-section__title">Get Started with</h2>
+                    <img class="getting-started-section__logo-image" src="images/taxonworks-black.svg" alt="This is the logo of TaxonWorks">
+                </div>
+                <div class="getting-started-section__copy">
+                    <p>TaxonWorks is an open-source web application. Each instance of TaxonWorks supports multiple projects
+and users.</p>
+
+                </div>
+            </div>
+
+            <div class="getting-started-section__section-1-illustration item">
+
+            </div>
+        </div>
+    </article>
+
+    <article class="getting-started-section__section-2">
+        <div class="getting-started-section__container wrapper">
+            <div class="getting-started-section__copy">
+                <div class="getting-started-section__row-1">
+                    <h3>Want to explore?</h3>
+<ul>
+<li>Find an instance of TaxonWorks</li>
+</ul>
+<h3>Have technical chops?</h3>
+<ul>
+<li>Install TaxonWorks virtually</li>
+</ul>
+<h3>You can also:</h3>
+<ul>
+<li>File an issue on Github</li>
+<li>Tell us your biodiversity informatics story</li>
+<li>Outline a specific use case</li>
+<li>Comment on our blog</li>
+<li>Clone the code and start hacking</li>
+</ul>
+
+                </div>
+                <div class="getting-started-section__row-2">
+                    
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
 
 </main>
 
-<footer class="footer">
-    <div class="section__container">
-        <div class="footer__details">
-            <img class="footer__logo" src="images/inhs-footer-logo.png" alt="Illinois Natural History Survey Prairie Research Institute">
+<footer class="footer-section">
+    <div class="footer-section__container">
+        <div class="footer-section__details">
+            <img class="footer-section__logo" src="images/inhs-footer-logo.png" alt="Illinois Natural History Survey Prairie Research Institute">
             
-            <div class="footer__funding">
+            <div class="footer-section__funding">
                 <p>TaxonWorks is funded in part by the <a href="http://www.nsf.gov">National Science Foundation</a></p>
 
             </div>
 
-            <div class="footer__built-by">
+            <div class="footer-section__built-by">
                 <p>Built by <a href="http://www.pixotech.com">Pixo</a></p>
 
             </div>
