@@ -1,11 +1,15 @@
 {% import 'partials/featureCard/featureCard.njk' as featureCard %}
 
 <article class="scope-section">
-    <div class="scope-section__container">
-        <h2 class="scope-section__title">{{ scopeTitle  }}</h2>
-        <div class="scope-section__copy">
+    <div class="scope-section__container-1 wrapper">
+        <h2 class="scope-section__title item">{{ scopeTitle  }}</h2>
+        <div class="scope-section__copy item">
             {{ scopeHTML | safe }}
         </div>
+    </div>
+    <div class="scope-section__gradient"></div>
+    <div class="scope-section__container-2">
+        <h3 class="scope-section__feature-intro">Explore current & upcoming features</h3>
         <div class="scope-section__features">
             <div class="scope-section__feature-core-container">
                 {% include 'partials/featureCore/featureCore.njk' %}

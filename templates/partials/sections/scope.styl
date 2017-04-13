@@ -1,13 +1,37 @@
 .scope-section
     background-color color-brown
 
+    &__container-1
+    &__container-2
+        @extends $sectionContainer
+
+    &__container-1
+        padding 160px 0 144px 0
+
+    &__container-2 
+        padding 0 0 160px 0
+        position relative
+        z-index 2
+
+    &__gradient 
+        background-image linear-gradient(to bottom, gradient-brown, color-brown)
+        height 288px
+        margin-top 112px
+        position absolute
+        width 100%
+        z-index 1
+
     &__title
-        @extend $mediumHeader
+        @extends $bigHeader
         color color-green
 
     &__copy
         color color-white
-        opacity 0.8
+
+    &__feature-intro 
+        @extends $mediumHeader
+        color color-white
+        margin-bottom 32px
 
     &__features
         display flex

@@ -1,26 +1,41 @@
 features:
     -
+        name: Taxon, specimen and anatomical descriptions
+        status: in_progress
+        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+        whenComplete: this_year
+    -
         name: Nomenclature
         status: upcoming
         description: Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich and deep coverage of nomenclatural rules are included to ensure adequate metadata are provided. Produce highly annotated nomenclatural catalogs for print.
-        whenComplete: this_year
+        whenComplete: three_year
         features:
             -
                 name: Nomenclature Sub Feature
                 status: upcoming
                 description: Foo bar baz
-                whenComplete: this_year
+                whenComplete: three_year
                 features:
                     -
                         name: Nomenclature Sub Sub Feature
                         status: upcoming
                         description: This is a three deep feature
-                        whenComplete: this_year
+                        whenComplete: three_year
     -
-        name: Taxon, specimen and anatomical descriptions
+        name: Collecting event metadata
         status: upcoming
         description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
-        whenComplete: three_year
+        whenComplete: next_year
+    -
+        name: Specimen metadata
+        status: upcoming
+        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+        whenComplete: next_year
+    -
+        name: Media and references
+        status: in_progress
+        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+        whenComplete: this_year
     -
         name: 1995-1996 Chicago Bulls
         status: complete

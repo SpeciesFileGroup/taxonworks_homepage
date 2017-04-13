@@ -1,9 +1,18 @@
 <div class="getting-started-section">
     <article class="getting-started-section__section-1">
         <div class="getting-started-section__container wrapper">
-            <h2 class="getting-started-section__title">{{ gettingStartedTitle  }}</h2>
-            <div class="getting-started-section__copy">
-                {{ gettingStarted1HTML | safe }}
+            <div class="getting-started-section__section-1-text item">
+                <div>
+                    <h2 class="getting-started-section__title">{{ gettingStartedTitle }}</h2>
+                    <img class="getting-started-section__logo-image" src="{{ gettingStartedLogo }}" alt="This is the logo of {{ title }}">
+                </div>
+                <div class="getting-started-section__copy">
+                    {{ gettingStarted1HTML | safe }}
+                </div>
+            </div>
+
+            <div class="getting-started-section__section-1-illustration item">
+
             </div>
         </div>
     </article>
