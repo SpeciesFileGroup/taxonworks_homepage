@@ -1,9 +1,13 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const cardList = document.querySelectorAll('.feature-card');
+    const coreButtonList = document.querySelectorAll('.feature-core__button');
 
     changeCardDetailColors(cardList);
     setupInitialCardState(cardList);
+
+    setupCoreButtonEventListeners(coreButtonList);
+
 });
 
 function changeCardDetailColors(cardList) {
@@ -13,6 +17,7 @@ function changeCardDetailColors(cardList) {
         setStatusColor(card);
         setAvailableColor(card);
     }
+
 }
 
 function setStatusColor(card) {
@@ -44,6 +49,7 @@ function setAvailableColor(card) {
     const cardLabelElement = card.querySelector('.feature-card__available-value');
 
     addAvailableColorClass(cardLabelElement);
+
 }
 
 function addAvailableColorClass(cardLabelElement) {
@@ -61,12 +67,18 @@ function addAvailableColorClass(cardLabelElement) {
     {
         cardLabelElement.className += ' available-now';
     }
+
 }
 
 function setupInitialCardState(cardList) {
+    setAllCardsAsInactive(cardList, true);
+
+}
+
+function setAllCardsAsInactive(cardList, startingState) {
     for( i = 0; i < cardList.length; i++ )
     {
-        if(i == 0)
+        if(i == 0 && startingState == true)
         {
             continue;
         }
@@ -80,7 +92,17 @@ function setCardAsInactive(card) {
 
 }
 
-function setCardAsActive() {
+function setCardAsActive(card) {
     card.classList.remove('inactive-card');
+
+}
+
+function setupCoreButtonEventListeners(coreButtonList) {
+    for( i = 0; i < coreButtonList.length; i++ )
+    {
+        coreButtonList[i].addEventListener("click", function(){
+            // Add click event here
+        });
+    }
 
 }
