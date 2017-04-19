@@ -101,6 +101,24 @@
 .feature-card__available-label {
   margin-right: 6px;
 }
+.feature-card__status .status-upcoming,
+.feature-card__available .status-upcoming,
+.feature-card__status .available-next-or-three-years,
+.feature-card__available .available-next-or-three-years {
+  color: #f5c323;
+}
+.feature-card__status .status-in-progress,
+.feature-card__available .status-in-progress,
+.feature-card__status .available-this-year,
+.feature-card__available .available-this-year {
+  color: #9cef29;
+}
+.feature-card__status .status-complete,
+.feature-card__available .status-complete,
+.feature-card__status .available-now,
+.feature-card__available .available-now {
+  color: #38ead4;
+}
 .feature-card__sub-features {
   list-style: none inside;
 }
@@ -120,6 +138,9 @@
   background-color: #00cc92;
   border: solid 2px #00cc92;
   color: #28221c;
+}
+.feature-card.inactive-card {
+  display: none;
 }
 .feature-core__item {
   margin-bottom: 16px;
