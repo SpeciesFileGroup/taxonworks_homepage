@@ -77,6 +77,8 @@
   margin-bottom: 12px;
 }
 .feature-card__description {
+  color: #c1bfbb;
+  font-weight: 400;
   margin-bottom: 16px;
 }
 .feature-card__details {
@@ -127,6 +129,7 @@
   border: solid 2px #413a31;
   color: #00cc92;
   height: 112px;
+  outline: none;
   padding: 22px 24px;
   text-align: left;
 }
@@ -334,17 +337,11 @@
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 0 24px;
 }
 @media (min-width: 1000px) {
   .scope-section__features {
     -ms-flex-direction: row;
         flex-direction: row;
-  }
-}
-@media (min-width: 1440px) {
-  .scope-section__features {
-    margin: 0 200px;
   }
 }
 .scope-section__feature-cards,
