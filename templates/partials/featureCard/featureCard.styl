@@ -30,6 +30,18 @@
         &-label
             margin-right 6px
 
+        & .status-upcoming
+        & .available-next-or-three-years
+            color status-color-orange
+        
+        & .status-in-progress
+        & .available-this-year
+            color status-color-green
+
+        & .status-complete
+        & .available-now
+            color status-color-blue
+
     &__sub-features
         list-style none inside
 
@@ -50,3 +62,6 @@
             background-color color-green
             border solid 2px color-green
             color color-cocoa
+
+    &.inactive-card
+        display none
