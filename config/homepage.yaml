@@ -23,3 +23,6 @@ sponsor: Illinois Natural History Survey Prairie Research Institute
 builtBy: Built by [Pixo](http://www.pixotech.com)
 funding: TaxonWorks is funded in part by the [National Science Foundation](http://www.nsf.gov)
 twitterUrl: https://twitter.com/TaxonWorks
+footerLinksCodeMarkdown: footerLinksCode.md
+footerLinksContactMarkdown: footerLinksContact.md
+footerLinksSocialMarkdown: footerLinksSocial.md

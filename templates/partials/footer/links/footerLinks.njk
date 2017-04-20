@@ -1,21 +1,14 @@
 <div class="footer__links">
     <ul class="footer__links__list footer__links__list-code">
         <li class="footer__links__list__title">Code</li>
-        <li><a href="#">Source</a></li>
-        <li><a href="#">Rubydoc</a></li>
-        <li><a href="#">API</a></li>
-        <li><a href="#">Gitter</a></li>
-        <li><a href="#">Open Hub</a></li>
+        {{ footerLinksCodeHTML | safe }}
     </ul>
     <ul class="footer__links__list footer__links__list-contact">
         <li class="footer__links__list__title">Contact</li>
-        <li><a href="#">Submit feedback</a></li>
-        <li><a href="#">Request access</a></li>
-        <li><a href="#">Ask a question</a></li>
+        {{ footerLinksContactHTML | safe }}
     </ul>
     <ul class="footer__links__list footer__links__list-social">
         <li class="footer__links__list__title">Social Media</li>
-        <li><a href="{{ twitterUrl }}">@TaxonWorks</a></li>
-        <li><a href="#">Species File Group blog</a></li>
+        {{ footerLinksSocialHTML | safe }}
     </ul>
 </div>
