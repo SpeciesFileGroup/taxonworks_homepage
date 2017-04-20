@@ -2,11 +2,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const cardList = document.querySelectorAll('.feature-card');
     const coreButtonList = document.querySelectorAll('.feature-core__button');
+    const coreValueList = getCoreCardValueList(coreButtonList);
 
     changeCardDetailColors(cardList);
     setupInitialCardState(cardList);
 
-    setupCoreButtonEventListeners(coreButtonList);
+    setupCoreButtonEventListeners(coreButtonList, cardList, coreValueList);
 
 });
 
@@ -97,12 +98,23 @@ function setCardAsActive(card) {
 
 }
 
-function setupCoreButtonEventListeners(coreButtonList) {
+function setupCoreButtonEventListeners(coreButtonList, cardList, cardValueList) {
     for( i = 0; i < coreButtonList.length; i++ )
     {
         coreButtonList[i].addEventListener("click", function(){
             // Add click event here
         });
     }
+
+}
+
+function getCoreCardValueList(coreButtonList) {
+    var valueList = new Array;
+
+    for( i = 0; i < coreButtonList.length; i++ )
+    {
+        valueList.push(coreButtonList[i].outerText);
+    }
+    return valueList;
 
 }
