@@ -14,7 +14,8 @@ scopeMarkdown: scope.md
 scopeConfig: scope.yaml
 gettingStartedTitle: Get Started with
 gettingStarted1Markdown: gettingStarted-1.md
-gettingStarted2Markdown: gettingStarted-2.md
+gettingStarted2aMarkdown: gettingStarted-2a.md
+gettingStarted2bMarkdown: gettingStarted-2b.md
 gettingStartedLogo: images/taxonworks-black.svg
 footerLogo: images/inhs-footer-logo.png
 navLogo: images/inhs-nav-logo.svg

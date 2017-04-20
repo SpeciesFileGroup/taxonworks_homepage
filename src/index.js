@@ -60,8 +60,10 @@ function getConfig() {
         config.scopeFeatures = scope.process(parseYamlFile(config.scopeConfig));
     if (config.gettingStarted1Markdown)
         config.gettingStarted1HTML = parseMarkdownFile(config.gettingStarted1Markdown);
-    if (config.gettingStarted2Markdown)
-        config.gettingStarted2HTML = parseMarkdownFile(config.gettingStarted2Markdown);
+    if (config.gettingStarted2aMarkdown)
+        config.gettingStarted2aHTML = parseMarkdownFile(config.gettingStarted2aMarkdown);
+    if (config.gettingStarted2bMarkdown)
+        config.gettingStarted2bHTML = parseMarkdownFile(config.gettingStarted2bMarkdown);
     if (config.funding)
         config.fundingHTML = parseMarkdown(config.funding);
     if (config.builtBy)
