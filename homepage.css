@@ -268,9 +268,9 @@
 }
 .header-section__tree-image {
   object-fit: contain;
-  left: -45px;
+  left: -200px;
   position: absolute;
-  top: -90px;
+  top: -200px;
 }
 .header-section__logo-image {
   object-fit: contain;
