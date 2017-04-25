@@ -250,9 +250,8 @@
 }
 .header-section {
   background-color: #342d25;
-  background-image: url("images/tree-top.svg");
-  background-position: -45px -90px;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
   text-align: center;
 }
 .header-section__text-title {
@@ -265,12 +264,20 @@
   position: relative;
   text-align: left;
   top: -52px;
+  z-index: 5;
+}
+.header-section__tree-image {
+  object-fit: contain;
+  left: -45px;
+  position: absolute;
+  top: -90px;
 }
 .header-section__logo-image {
   object-fit: contain;
 }
 .header-section__text {
   text-align: left;
+  z-index: 5;
 }
 .header-section__text-slogan {
   color: #00cc92;
