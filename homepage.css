@@ -62,8 +62,7 @@
 .scope-section__container-1,
 .scope-section__container-2 {
   margin: 0 auto;
-  padding: 160px 0;
-  width: 960px;
+  padding: 160px;
 }
 .feature-card {
   border-top: 2px solid #00cc92;
@@ -353,10 +352,10 @@
   background-color: #342d25;
 }
 .scope-section__container-1 {
-  padding: 160px 0 144px 0;
+  padding: 160px 160px 144px 160px;
 }
 .scope-section__container-2 {
-  padding: 0 0 160px 0;
+  padding: 0 160px 160px 160px;
   position: relative;
   z-index: 2;
 }
