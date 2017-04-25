@@ -249,6 +249,7 @@
 }
 .header-section {
   background-color: #342d25;
+  height: 960px;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -267,9 +268,9 @@
 }
 .header-section__tree-image {
   object-fit: contain;
-  left: -200px;
+  left: -715px;
   position: absolute;
-  top: -200px;
+  top: -695px;
 }
 .header-section__logo-image {
   object-fit: contain;
