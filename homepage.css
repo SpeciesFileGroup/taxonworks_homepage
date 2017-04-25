@@ -250,6 +250,9 @@
 }
 .header-section {
   background-color: #342d25;
+  background-image: url("images/tree-top.svg");
+  background-position: -45px -90px;
+  background-repeat: no-repeat;
   text-align: center;
 }
 .header-section__text-title {
