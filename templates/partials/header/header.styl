@@ -1,8 +1,7 @@
 .header-section
     background-color color-brown
-    background-image url("images/tree-top.svg")
-    background-position -45px -90px
-    background-repeat no-repeat
+    overflow hidden
+    position relative
     text-align center
 
     &__container
@@ -18,12 +17,20 @@
         position relative
         text-align left
         top -52px
+        z-index 5
+
+    &__tree-image
+        object-fit contain
+        left -45px
+        position absolute
+        top -90px
 
     &__logo-image
         object-fit contain
 
     &__text
         text-align left
+        z-index 5
 
     &__text-slogan
         color color-green
