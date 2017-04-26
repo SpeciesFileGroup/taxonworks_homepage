@@ -1,4 +1,7 @@
 #!/bin/bash
 
+# Run a build of Taxonworks
+node src/index.js
+
 # Publish Taxonworks homepage to Github Pages hosting
 node src/publish.js
