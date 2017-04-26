@@ -141,7 +141,7 @@
   .scope-section__container-1,
   .scope-section__container-2 {
     padding: 48px 24px;
-    width: 288px;
+    width: 320px;
   }
 }
 .feature-card {
@@ -392,6 +392,11 @@
     height: 750px;
   }
 }
+@media only screen and (max-width: 320px) {
+  .header-section {
+    height: auto;
+  }
+}
 @media only screen and (min-width: 321px) and (max-width: 840px) {
   .header-section__container {
     padding: 160px 48px;
@@ -487,6 +492,11 @@
 .header-section__text-copy > p {
   color: #fff;
 }
+@media only screen and (max-width: 320px) {
+  .header-section__text-copy {
+    margin-bottom: 48px;
+  }
+}
 .benefits-section__section-1 {
   background-color: #00cc92;
 }
@@ -542,6 +552,12 @@
     width: 340px;
   }
 }
+@media only screen and (max-width: 320px) {
+  .getting-started-section__logo-image {
+    height: 36px;
+    width: 272px;
+  }
+}
 .getting-started-section__section-2 {
   background-color: #fafaf5;
 }
@@ -560,6 +576,13 @@
 @media only screen and (min-width: 841px) {
   .scope-section__container-1 {
     padding: 160px 160px 144px 160px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .scope-section__container-1 {
+    -ms-flex-flow: column;
+        flex-flow: column;
+    margin-bottom: 24px;
   }
 }
 .scope-section__container-2 {
