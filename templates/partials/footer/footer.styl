@@ -4,7 +4,11 @@
 
     &__container
         @extends $sectionContainer
-        padding footer-padding 
+        padding footer-padding
+
+        +breakpoint(small)
+            flex-flow column wrap
+
 
     &__details
         float left
@@ -26,5 +30,13 @@
             line-height 1.5
 
     &__logo
-        height 80%
-        width 80%
+        object-fit contain
+        width 100%
+
+        +breakpoint(medium)
+            height auto
+            width 100%
+
+        +breakpoint(large)
+            height 77px
+            width 336px

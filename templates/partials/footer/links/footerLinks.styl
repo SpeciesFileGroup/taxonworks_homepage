@@ -1,11 +1,26 @@
 .footer__links
-    display flex
     height 300px
+
+    +breakpoint(medium)
+        flex-flow row wrap
+
+    +breakpoint(medium)
+        height initial
 
     ul
         list-style-type none
         margin 0 16px 0 0
         width 160px
 
+        li 
+            line-height 2
+
         .footer__links__list__title
             font-weight bold
+
+        &.item
+            +breakpoint(medium)
+                flex-basis 25%
+                font-size 20px
+                line-height 1.4
+                padding 10px 0

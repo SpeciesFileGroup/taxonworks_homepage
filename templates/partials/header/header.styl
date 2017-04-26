@@ -5,8 +5,14 @@
     position relative
     text-align center
 
+    +breakpoint(medium)
+        height 750px
+
     &__container
         @extends $sectionContainer
+
+        +breakpoint(medium)
+            padding 160px 48px
 
     &__text-title
         color color-white
@@ -14,11 +20,15 @@
         &__logo
             margin-bottom 24px
 
+            +breakpoint(medium)
+                margin-bottom 16px
+                width 340px
+
     &__logo
         position relative
         text-align left
         top -52px
-        z-index 5
+        z-index 5            
 
     &__tree-image
         object-fit contain
@@ -29,16 +39,21 @@
     &__logo-image
         object-fit contain
 
+        +breakpoint(medium)
+            height 132px
+            width 136px
+
     &__text
         text-align left
         z-index 5
 
     &__text-slogan
+        @extends $bigHeader
         color color-green
-        font-size 60px
-        font-weight 300
-        line-height 1.17
         margin-bottom 64px
+
+        +breakpoint(medium)
+            margin-bottom 48px
         
     &__text-copy
         @extends $smallHeader

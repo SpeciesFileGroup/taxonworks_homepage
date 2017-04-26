@@ -6,12 +6,15 @@
         @extends $sectionContainer
 
     &__container-1
-        padding 160px 160px 144px 160px
+        +breakpoint(large)
+            padding 160px 160px 144px 160px
 
     &__container-2 
-        padding 0 160px 160px 160px
         position relative
         z-index 2
+
+        +breakpoint(large)
+            padding 0 160px 160px 160px
 
     &__gradient 
         background-image linear-gradient(to bottom, gradient-brown, color-brown)
@@ -20,6 +23,9 @@
         position absolute
         width 100%
         z-index 1
+
+        +breakpoint(medium)
+            margin-top 180px
 
     &__title
         @extends $bigHeader
@@ -35,19 +41,24 @@
 
     &__features
         display flex
-        flex-direction column
 
-        @media (min-width feature-core-stacked-breakpoint)
-            flex-direction row
+        +breakpoint(small)
+            flex-direction column
 
     &__feature-cards
     &__feature-core-container
         flex 1 1 0
 
     &__feature-core-container
-        @media (min-width feature-core-stacked-breakpoint)
+        +breakpoint(medium)
+            margin-right 16px
+
+        +breakpoint(large)
             margin-right 16px
 
     &__feature-cards
-        @media (min-width feature-core-stacked-breakpoint)
+        +breakpoint(medium)
+            margin-left 16px
+            
+        +breakpoint(large)
             margin-left 16px

@@ -1,3 +1,2 @@
 + [@TaxonWorks](#)
-+ [Species File](#)
-+ [Group blog](#)
++ [Species File Group blog](#)
