@@ -141,6 +141,7 @@
   .scope-section__container-1,
   .scope-section__container-2 {
     padding: 48px 24px;
+    width: 288px;
   }
 }
 .feature-card {
@@ -516,6 +517,12 @@
 .benefits-section__section-3,
 .benefits-section__section-5 {
   background-color: #fff;
+}
+@media only screen and (max-width: 320px) {
+  .getting-started-section__container {
+    -ms-flex-flow: column;
+        flex-flow: column;
+  }
 }
 .getting-started-section__section-1 {
   background-color: #00cc92;
