@@ -14,6 +14,10 @@
         +breakpoint(medium)
             padding 160px 48px
 
+        +breakpoint(small)
+            flex-flow column wrap
+            padding 40px 24px
+
     &__text-title
         color color-white
 
@@ -28,7 +32,10 @@
         position relative
         text-align left
         top -52px
-        z-index 5            
+        z-index 5
+
+        +breakpoint(small)
+            top 0
 
     &__tree-image
         object-fit contain
@@ -36,12 +43,21 @@
         position absolute
         top -695px
 
+        +breakpoint(small)
+            left -730px
+            top -730px
+            transform rotate3d(-1, -1, 0, -180deg) scale(.6)
+
     &__logo-image
         object-fit contain
 
         +breakpoint(medium)
             height 132px
             width 136px
+
+        +breakpoint(small)
+            height 99px
+            width 96px
 
     &__text
         text-align left
