@@ -36,6 +36,15 @@
     line-height: 1.16;
   }
 }
+@media only screen and (max-width: 320px) {
+  .header-section__text-slogan,
+  .benefits-section__title,
+  .getting-started-section__title,
+  .scope-section__title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+}
 .feature-card__name,
 .benefits-section__section-2 h3,
 .benefits-section__section-3 h3,
@@ -59,6 +68,18 @@
     line-height: 1.25;
   }
 }
+@media only screen and (max-width: 320px) {
+  .feature-card__name,
+  .benefits-section__section-2 h3,
+  .benefits-section__section-3 h3,
+  .benefits-section__section-4 h3,
+  .benefits-section__section-5 h3,
+  .getting-started-section__section-2 h3,
+  .scope-section__feature-intro {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}
 .header-section__text-copy,
 .benefits-section__copy,
 .getting-started-section__copy {
@@ -66,6 +87,14 @@
   line-height: 1.31;
 }
 @media only screen and (min-width: 321px) and (max-width: 840px) {
+  .header-section__text-copy,
+  .benefits-section__copy,
+  .getting-started-section__copy {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}
+@media only screen and (max-width: 320px) {
   .header-section__text-copy,
   .benefits-section__copy,
   .getting-started-section__copy {
@@ -230,6 +259,7 @@
 @media only screen and (max-width: 320px) {
   .footer-section__details {
     margin-bottom: 48px;
+    width: 100%;
   }
 }
 .footer-section__logo,
@@ -385,6 +415,12 @@
     width: 340px;
   }
 }
+@media only screen and (max-width: 320px) {
+  .header-section__text-title__logo {
+    margin-bottom: 12px;
+    width: 272px;
+  }
+}
 .header-section__logo {
   position: relative;
   text-align: left;
@@ -435,6 +471,11 @@
 @media only screen and (min-width: 321px) and (max-width: 840px) {
   .header-section__text-slogan {
     margin-bottom: 48px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header-section__text-slogan {
+    margin-bottom: 24px;
   }
 }
 .header-section__text-copy {
