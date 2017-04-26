@@ -3,14 +3,19 @@
 
     +breakpoint(medium)
         flex-flow row wrap
+        height auto
 
-    +breakpoint(medium)
-        height initial
+    +breakpoint(small)
+        flex-flow column
+        padding 0 24px
 
     ul
         list-style-type none
         margin 0 16px 0 0
         width 160px
+
+        +breakpoint(small)
+            margin-bottom 32px
 
         li 
             line-height 2
