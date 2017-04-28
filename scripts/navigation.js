@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var twMain   = document.querySelector('main');
 
     window.onscroll = function() {
-        var scrollPos = document.getElementsByTagName("body")[0].scrollTop;
-        if ( scrollPos > twMain.offsetTop )
+        var scrollPosition = document.getElementsByTagName("body")[0].scrollTop;
+        var windowYPosition = window.scrollY;
+
+        if ( scrollPosition > twMain.offsetTop || windowYPosition > twMain.offsetTop )
         {
             var showNavBar = anime({
                 targets: twNavBar,
