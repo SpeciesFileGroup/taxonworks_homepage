@@ -6,6 +6,22 @@
                 {{ benefits1HTML | safe }}
             </div>
         </div>
+        <div class="benefits-section__container wrapper">
+            <div class="benefits-section__container__illustrations wrapper">
+                <div class="benefits-section__illustration__1">
+                    <img src="images/inhs-01.svg" alt="" />
+                </div>
+                <div class="benefits-section__illustration__2">
+                    <img src="images/inhs-02.svg" alt="" />
+                </div>
+                <div class="benefits-section__illustration__3">
+                    <img src="images/inhs-03.svg" alt="" />
+                </div>
+                <div class="benefits-section__illustration__4">
+                    <img src="images/inhs-04.svg" alt="" />
+                </div>
+            </div>
+        </div>
     </article>
 
     <article class="benefits-section__section-2">
@@ -13,7 +29,10 @@
             <div class="benefits-section__copy item">
                 {{ benefits2HTML | safe }}
             </div>
-            <div class="benefits-section__illustration item"></div>
+            <div class="benefits-section__illustration item">
+                <img src="images/inhs-05.svg" alt="" />
+                <img src="images/inhs-06.svg" alt="" />
+            </div>
         </div>
     </article>
 
@@ -31,15 +50,12 @@
             <div class="benefits-section__copy item">
                 {{ benefits4HTML | safe }}
             </div>
-            <div class="item"></div>
-        </div>
-    </article>
-
-    <article class="benefits-section__section-5">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__illustration item"></div>
-            <div class="benefits-section__copy item">
-                {{ benefits5HTML | safe }}
+            <div class="benefits-section__sponsor-grid item">
+                <div class="benefits-section__sponsor-grid__grid wrapper">
+                    {% for sponsor in sponsors %}
+                        <img class="benefits-section__sponsor-grid__sponsor item" src="{{ sponsor.src }}" alt="{{ sponsor.name }}" />
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </article>

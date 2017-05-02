@@ -16,9 +16,9 @@ flex($values) {
 
 order($val) {
   -webkit-box-ordinal-group: $val;  
-  -moz-box-ordinal-group: $val;     
-  -ms-flex-order: $val;     
-  -webkit-order: $val;  
+  -moz-box-ordinal-group: $val;         
+  -webkit-order: $val; 
+  -ms-flex-order: $val; 
   order: $val;
 }
 
@@ -29,8 +29,4 @@ order($val) {
 .item {
   flex(1 200px);
   order(2);
-
-  &:first-child {
-    margin-right 32px
-  }
 }

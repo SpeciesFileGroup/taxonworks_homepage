@@ -3,13 +3,24 @@
     &__container
         @extends $sectionContainer
 
+        &__illustrations
+            height 330px
+            justify-content space-between
+            margin 0
+            padding 0
+            position relative
+            top -30px
+            width 100%
+
+        &:nth-child(2)
+            padding 0 200px
+
     &__section-1
         background-color color-green
 
     &__section-2
     &__section-3
     &__section-4
-    &__section-5
         height 824px 
         
         h3
@@ -28,7 +39,6 @@
         background-color color-grey
 
     &__section-3
-    &__section-5
         background-color color-white
 
     &__section-2
@@ -44,16 +54,13 @@
         background-size contain
 
     &__section-4
-        background-image url("images/branches-3.svg")
+        background-image url("images/trunk.svg")
         background-position 816px top 
         background-repeat no-repeat
         background-size contain
 
-    &__section-5
-        background-image url("images/trunk.svg")
-        background-position 199px top 
-        background-repeat no-repeat
-        background-size contain
+        > .wrapper
+            flex-direction column
 
     &__title
         @extends $bigHeader
@@ -63,3 +70,27 @@
 
         > ul
             @extends $list
+
+    &__illustration
+
+        &__2
+        &__3
+            position relative
+
+        &__2
+            top -80px
+
+        &__3
+            top 80px
+
+    &__sponsor-grid
+        width 50%
+
+        &__grid 
+            flex-wrap wrap
+            width 100%
+
+        &__sponsor
+            background-color sponsor-grid-grey
+            height 112px
+            width 160px

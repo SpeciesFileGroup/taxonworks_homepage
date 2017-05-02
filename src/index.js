@@ -12,6 +12,7 @@ const uglify = require("uglify-js");
 const scope = require('./scope');
 
 const constants = require("../constants");
+const sponsors = require("../sponsors");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
@@ -74,6 +75,8 @@ function getConfig() {
         config.footerLinksContactHTML = parseMarkdownFile(config.footerLinksContactMarkdown);
     if (config.footerLinksSocialMarkdown)
         config.footerLinksSocialHTML = parseMarkdownFile(config.footerLinksSocialMarkdown);
+
+    config.sponsors = sponsors.sponsorsList;
 
     savedConfig = config;
     return config;
@@ -165,7 +168,7 @@ function buildImages() {
 
 function buildLogo() {
     const config = getConfig();
-    const pathToLogo = constants.CONFIG_DIR + config.logo;
+    const pathToLogo = constants.IMAGE_DIR + config.logo;
     fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + config.logo);
     fs.copySync(pathToLogo, constants.BUILD_PROD_DIR + config.logo);
 }
