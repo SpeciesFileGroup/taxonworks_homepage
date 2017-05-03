@@ -21,6 +21,9 @@
             flex-flow column wrap
             padding 40px 24px
 
+        > .item:first-child
+            margin 0
+
     &__text-title
         color color-white
 
@@ -44,30 +47,14 @@
         +breakpoint(small)
             top 0
 
-    &__tree-image
-        object-fit contain
-        left -715px
-        position absolute
-        top -695px
-
-        +breakpoint(small)
-            left -730px
-            top -730px
-            transform rotate3d(-1, -1, 0, -180deg) scale(.6)
-
     &__logo-image
         left -700px
         object-fit contain
         position absolute
         top -700px
 
-        +breakpoint(medium)
-            height 132px
-            width 136px
-
         +breakpoint(small)
-            height 99px
-            width 96px
+            transform rotate3d(-1, -1, 0, -180deg) scale(.6)
 
     &__text
         text-align left

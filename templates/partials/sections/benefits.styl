@@ -86,6 +86,15 @@
     &__sponsor-grid
         width 50%
 
+        +breakpoint(medium)
+            width 100%
+
+        +breakpoint(small)
+            width 100%
+
+        +breakpoint(tiny)
+            width 100%
+
         &__grid 
             flex-wrap wrap
             width 100%
@@ -95,3 +104,12 @@
             height 112px
             margin 0 16px 16px 0
             max-width 160px
+
+            +breakpoint(medium)
+                max-width none
+
+            +breakpoint(small)
+                max-width none
+
+            +breakpoint(tiny)
+                max-width none
