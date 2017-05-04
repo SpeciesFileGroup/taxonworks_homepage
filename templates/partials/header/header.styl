@@ -57,15 +57,23 @@
 
         +breakpoint(small)
             display none
+        
+        +breakpoint(tiny)
+            display none
 
     &__logo-image-small
         display none
-        left -700px
+        height 700px
+        left -300px
         object-fit contain
         position absolute
-        top -700px
+        top -300px
+        width 700px
 
         +breakpoint(small)
+            display block
+
+        +breakpoint(tiny)
             display block
 
     &__text

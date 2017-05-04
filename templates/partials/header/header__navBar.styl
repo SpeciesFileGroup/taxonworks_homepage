@@ -1,14 +1,16 @@
 .header__nav-bar
-    background-color color-brown
-    height header-navbar-height
-    overflow hidden
-    padding 2px
+    height header-navbar-total-height
     position fixed
-    top -(header-navbar-height)
+    top -(header-navbar-total-height)
     width 100%
     z-index 10
 
-    .header__nav-bar__logo
+    &__desktop
+        background-color color-brown
+        height header-navbar-bar-height
+        padding 2px
+
+    &__logo
         float left
         height 48px
         margin-left 16px
@@ -18,7 +20,12 @@
         transform translate(0, -50%)
         width 48px
 
-    .header__nav-bar__text
+        +breakpoint(small)
+            height 36px
+            margin-left 8px
+            width 36px
+
+    &__text
         height 27px
         margin-left 16px
         object-fit contain
@@ -31,9 +38,19 @@
             margin-left 12px
             width 186px
 
-    .header__nav-bar__links
+        +breakpoint(small)
+            margin-left 8px
+            width 172px
+
+    &__links
         float right
         height inherit
+
+        +breakpoint(small)
+            display none
+
+        +breakpoint(tiny)
+            display none
 
         a 
             display block
@@ -45,3 +62,48 @@
 
             +breakpoint(medium)
                 padding 8px 16px
+
+        &__mobile
+            background-color color-grey
+            display none
+            height header-navbar-mobile-height
+
+            +breakpoint(small)
+                display block
+
+            +breakpoint(tiny)
+                display block
+
+            ul
+                list-style-image none
+                list-style-type none
+                margin 0
+                padding 0
+
+                a
+                    text-align center
+
+                    li 
+                        border-bottom 2px solid color-brown
+                        display block
+                        padding 10px 0
+
+                        &:hover
+                            background-color color-green
+                            color color-grey
+
+    &__button
+        &.hamburger
+            background-color color-brown
+            color color-white
+            display none
+            float right
+            font-size 24px
+            height 36px
+            margin-right 8px
+            position relative
+            top 25%
+            width 36px
+
+            +breakpoint(small)
+                display inline-block
