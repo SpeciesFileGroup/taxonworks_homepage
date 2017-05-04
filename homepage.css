@@ -145,7 +145,6 @@
   .scope-section__container-1,
   .scope-section__container-2 {
     padding: 48px 24px;
-    width: 320px;
   }
 }
 .footer-section__container > .item:first-child,
@@ -156,6 +155,28 @@
 .scope-section__container-1 > .item:first-child,
 .scope-section__container-2 > .item:first-child {
   margin-right: 32px;
+}
+@media only screen and (min-width: 420px) and (max-width: 599px) {
+  .footer-section__container > .item:first-child,
+  .header-section__container > .item:first-child,
+  .benefits-section__container > .item:first-child,
+  .getting-started-section__container-1 > .item:first-child,
+  .getting-started-section__container-2 > .item:first-child,
+  .scope-section__container-1 > .item:first-child,
+  .scope-section__container-2 > .item:first-child {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 419px) {
+  .footer-section__container > .item:first-child,
+  .header-section__container > .item:first-child,
+  .benefits-section__container > .item:first-child,
+  .getting-started-section__container-1 > .item:first-child,
+  .getting-started-section__container-2 > .item:first-child,
+  .scope-section__container-1 > .item:first-child,
+  .scope-section__container-2 > .item:first-child {
+    margin-right: 0;
+  }
 }
 .feature-card {
   border-top: 2px solid #00cc92;
@@ -784,6 +805,11 @@
   color: #211d17;
   margin-bottom: 16px;
 }
+@media only screen and (min-width: 420px) and (max-width: 599px) {
+  .getting-started-section__title {
+    text-align: center;
+  }
+}
 .getting-started-section__logo-image {
   height: 59px;
   margin-bottom: 112px;
@@ -798,7 +824,7 @@
 @media only screen and (min-width: 420px) and (max-width: 599px) {
   .getting-started-section__logo-image {
     height: 36px;
-    width: 272px;
+    width: 100%;
   }
 }
 .getting-started-section a {
