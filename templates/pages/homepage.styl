@@ -8,7 +8,12 @@ $sectionContainer
 
     +breakpoint(small)
         padding section-padding-small
-        width 320px
 
     > .item:first-child
         margin-right 32px
+
+        +breakpoint(small)
+            margin-right 0
+
+        +breakpoint(tiny)
+            margin-right 0
