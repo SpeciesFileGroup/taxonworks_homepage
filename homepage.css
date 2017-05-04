@@ -461,6 +461,7 @@
   }
 }
 .header-section__logo {
+  min-width: 50%;
   position: relative;
   text-align: left;
   top: -52px;
@@ -468,6 +469,7 @@
 }
 @media only screen and (min-width: 420px) and (max-width: 599px) {
   .header-section__logo {
+    min-width: none;
     top: 0;
   }
 }
@@ -479,7 +481,19 @@
 }
 @media only screen and (min-width: 420px) and (max-width: 599px) {
   .header-section__logo-image {
-    transform: rotate3d(-1, -1, 0, -180deg) scale(0.6);
+    display: none;
+  }
+}
+.header-section__logo-image-small {
+  display: none;
+  left: -700px;
+  object-fit: contain;
+  position: absolute;
+  top: -700px;
+}
+@media only screen and (min-width: 420px) and (max-width: 599px) {
+  .header-section__logo-image-small {
+    display: block;
   }
 }
 .header-section__text {
@@ -560,25 +574,42 @@
 }
 .benefits-section__section-2 {
   background-image: url("images/branches-1.svg");
-  background-position: 322px top;
+  background-position: 85% top;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .benefits-section__section-3 {
   background-image: url("images/branches-2.svg");
-  background-position: 200px top;
+  background-position: 15% top;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .benefits-section__section-4 {
   background-image: url("images/trunk.svg");
-  background-position: 816px top;
+  background-position: 85% top;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 .benefits-section__section-4 > .wrapper {
   -ms-flex-direction: column;
       flex-direction: column;
+}
+.benefits-section__illustrations {
+  max-height: 100%;
+  max-width: 100%;
+}
+.benefits-section__illustration__1,
+.benefits-section__illustration__2,
+.benefits-section__illustration__3,
+.benefits-section__illustration__4 {
+  max-height: 25%;
+  max-width: 25%;
+  object-fit: contain;
+}
+.benefits-section__illustration__1 img,
+.benefits-section__illustration__2 img,
+.benefits-section__illustration__3 img,
+.benefits-section__illustration__4 img {
+  max-width: 100%;
 }
 .benefits-section__illustration__2,
 .benefits-section__illustration__3 {
