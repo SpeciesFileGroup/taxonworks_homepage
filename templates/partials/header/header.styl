@@ -39,12 +39,14 @@
                 width 272px
 
     &__logo
+        min-width 50%
         position relative
         text-align left
         top -52px
         z-index 5
 
         +breakpoint(small)
+            min-width none
             top 0
 
     &__logo-image
@@ -54,7 +56,17 @@
         top -700px
 
         +breakpoint(small)
-            transform rotate3d(-1, -1, 0, -180deg) scale(.6)
+            display none
+
+    &__logo-image-small
+        display none
+        left -700px
+        object-fit contain
+        position absolute
+        top -700px
+
+        +breakpoint(small)
+            display block
 
     &__text
         text-align left

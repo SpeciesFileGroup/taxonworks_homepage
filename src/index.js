@@ -151,7 +151,7 @@ function buildJSForProd() {
 function buildAssets() {
     // buildIllustrations();
     buildImages();
-    buildLogo();
+    buildLogos();
 }
 
 function buildIllustrations() {
@@ -166,11 +166,19 @@ function buildImages() {
     fs.copySync(pathToImages, constants.BUILD_PROD_DIR + constants.IMAGE_DIR);
 }
 
-function buildLogo() {
+function buildLogos() {
     const config = getConfig();
-    const pathToLogo = constants.IMAGE_DIR + config.logo;
-    fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + config.logo);
-    fs.copySync(pathToLogo, constants.BUILD_PROD_DIR + config.logo);
+
+    buildLogo(config.logo);
+    buildLogo(config.logoSmall);
+}
+
+function buildLogo(logoInConfig) {
+    // const config = getConfig();
+    const pathToLogo = constants.IMAGE_DIR + logoInConfig;
+
+    fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + logoInConfig);
+    fs.copySync(pathToLogo, constants.BUILD_PROD_DIR + logoInConfig);
 }
 
 function buildHTMLWithCritical() {
