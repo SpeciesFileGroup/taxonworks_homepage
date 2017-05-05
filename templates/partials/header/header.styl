@@ -28,10 +28,9 @@
         color color-white
 
         &__logo
-            margin-bottom 24px
+            margin-bottom 16px
 
             +breakpoint(medium)
-                margin-bottom 16px
                 width 340px
 
             +breakpoint(small)
@@ -55,11 +54,25 @@
         position absolute
         top -700px
 
+        +breakpoint(medium)
+            display none
         +breakpoint(small)
             display none
         
         +breakpoint(tiny)
             display none
+
+    &__logo-image-medium
+        display none
+        height 700px
+        left -300px
+        object-fit contain
+        position absolute
+        top -300px
+        width 700px
+
+        +breakpoint(medium)
+            display block
 
     &__logo-image-small
         display none
@@ -83,10 +96,7 @@
     &__text-slogan
         @extends $bigHeader
         color color-green
-        margin-bottom 64px
-
-        +breakpoint(medium)
-            margin-bottom 48px
+        margin-bottom 32px
 
         +breakpoint(small)
             margin-bottom 24px

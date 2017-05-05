@@ -2,15 +2,18 @@
     <div class="header-section__container wrapper">
         <div class="header-section__logo item">
             <img class="header-section__logo-image" src="{{ logo }}" alt="This is the logo of {{ title }}">
+            <img class="header-section__logo-image-medium" src="{{ logoMedium }}" alt="This is the logo of {{ title }}">
             <img class="header-section__logo-image-small" src="{{ logoSmall }}" alt="This is the logo of {{ title }}">
         </div>
 
         <div class="header-section__text item">
-            <h1 class="header-section__text-title hidden">{{ title }}</h1>
-            <img class="header-section__text-title__logo" src="{{ titleLogo }}" alt="{{ title }}">
-            <div class="header-section__text-slogan">{{ slogan }}</div>
-            <div class="header-section__text-copy">
-                {{ introHTML | safe }}
+            <div clas="header-section__text__container">
+                <h1 class="header-section__text-title hidden">{{ title }}</h1>
+                <img class="header-section__text-title__logo" src="{{ titleLogo }}" alt="{{ title }}">
+                <div class="header-section__text-slogan">{{ slogan }}</div>
+                <div class="header-section__text-copy">
+                    {{ introHTML | safe }}
+                </div>
             </div>
         </div>
     </div>
