@@ -125,6 +125,17 @@
   margin: 0 auto;
   padding: 200px;
 }
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+  .footer-section__container,
+  .header-section__container,
+  .benefits-section__container,
+  .getting-started-section__container-1,
+  .getting-started-section__container-2,
+  .scope-section__container-1,
+  .scope-section__container-2 {
+    padding: 200px 80px;
+  }
+}
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .footer-section__container,
   .header-section__container,
@@ -541,6 +552,11 @@
 }
 .header-section__container.wrapper {
   padding: 0 200px;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+  .header-section__container.wrapper {
+    padding: 0 80px;
+  }
 }
 .header-section__container > .item:first-child {
   margin: 0;
