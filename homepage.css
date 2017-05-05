@@ -597,6 +597,11 @@
   position: absolute;
   top: -700px;
 }
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+  .header-section__logo-image {
+    display: none;
+  }
+}
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section__logo-image {
     display: none;
@@ -620,6 +625,15 @@
   position: absolute;
   top: -300px;
   width: 700px;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+  .header-section__logo-image-medium {
+    display: block;
+    height: 1200px;
+    left: -500px;
+    top: -500px;
+    width: 1200px;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section__logo-image-medium {
