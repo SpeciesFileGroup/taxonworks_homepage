@@ -63,8 +63,12 @@
         position absolute
         top -700px
 
+        +breakpoint(large)
+            display none
+
         +breakpoint(medium)
             display none
+
         +breakpoint(small)
             display none
         
@@ -79,6 +83,13 @@
         position absolute
         top -300px
         width 700px
+
+        +breakpoint(large)
+            display block
+            height 1200px
+            left -530px
+            top -500px
+            width 1200px
 
         +breakpoint(medium)
             display block
