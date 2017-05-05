@@ -30,6 +30,9 @@
             +breakpoint(large)
                 padding 0 section-padding-large
 
+            +breakpoint(medium)
+                padding section-padding-large
+
         > .item:first-child
             margin 0
 
@@ -40,7 +43,9 @@
             margin-bottom 16px
 
             +breakpoint(medium)
-                width 340px
+                margin-bottom 8px
+                max-width 340px
+                width 100%
 
             +breakpoint(small)
                 margin-bottom 12px
@@ -77,19 +82,15 @@
 
     &__logo-image-medium
         display none
-        height 700px
-        left -300px
+        height 1200px
+        left -530px
         object-fit contain
         position absolute
-        top -300px
-        width 700px
+        top -500px
+        width 1200px
 
         +breakpoint(large)
             display block
-            height 1200px
-            left -530px
-            top -500px
-            width 1200px
 
         +breakpoint(medium)
             display block
