@@ -558,6 +558,11 @@
     padding: 0 80px;
   }
 }
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  .header-section__container.wrapper {
+    padding: 80px;
+  }
+}
 .header-section__container > .item:first-child {
   margin: 0;
 }
