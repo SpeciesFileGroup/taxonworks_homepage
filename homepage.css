@@ -575,7 +575,8 @@
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section__text-title__logo {
     margin-bottom: 8px;
-    width: 340px;
+    max-width: 340px;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 420px) and (max-width: 599px) {
