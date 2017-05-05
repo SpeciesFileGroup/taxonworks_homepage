@@ -5,15 +5,14 @@
     position relative
     text-align center
 
+    &.wrapper
+        align-items center
+
     +breakpoint(medium)
         min-height 750px
 
     +breakpoint(small)
         height auto
-
-    &.wrapper
-        align-items center
-        padding 0 200px
 
     &__container
         @extends $sectionContainer
@@ -24,6 +23,9 @@
         +breakpoint(small)
             flex-flow column wrap
             padding 40px 24px
+
+        &.wrapper
+            padding 0 200px
 
         > .item:first-child
             margin 0
