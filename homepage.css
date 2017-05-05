@@ -542,11 +542,10 @@
   color: #fff;
 }
 .header-section__text-title__logo {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section__text-title__logo {
-    margin-bottom: 16px;
     width: 340px;
   }
 }
@@ -629,12 +628,7 @@
 }
 .header-section__text-slogan {
   color: #00cc92;
-  margin-bottom: 64px;
-}
-@media only screen and (min-width: 600px) and (max-width: 999px) {
-  .header-section__text-slogan {
-    margin-bottom: 48px;
-  }
+  margin-bottom: 32px;
 }
 @media only screen and (min-width: 420px) and (max-width: 599px) {
   .header-section__text-slogan {
