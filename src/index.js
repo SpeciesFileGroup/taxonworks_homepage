@@ -177,8 +177,8 @@ function buildLogo(logoInConfig) {
     // const config = getConfig();
     const pathToLogo = constants.IMAGE_DIR + logoInConfig;
 
-    fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + logoInConfig);
-    fs.copySync(pathToLogo, constants.BUILD_PROD_DIR + logoInConfig);
+    fs.copySync(pathToLogo, constants.BUILD_DEV_DIR + constants.IMAGE_DIR + logoInConfig);
+    fs.copySync(pathToLogo, constants.BUILD_PROD_DIR + constants.IMAGE_DIR + logoInConfig);
 }
 
 function buildHTMLWithCritical() {
