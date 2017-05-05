@@ -575,6 +575,11 @@
   position: absolute;
   top: -700px;
 }
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  .header-section__logo-image {
+    display: none;
+  }
+}
 @media only screen and (min-width: 420px) and (max-width: 599px) {
   .header-section__logo-image {
     display: none;
@@ -583,6 +588,20 @@
 @media only screen and (max-width: 419px) {
   .header-section__logo-image {
     display: none;
+  }
+}
+.header-section__logo-image-medium {
+  display: none;
+  height: 700px;
+  left: -300px;
+  object-fit: contain;
+  position: absolute;
+  top: -300px;
+  width: 700px;
+}
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  .header-section__logo-image-medium {
+    display: block;
   }
 }
 .header-section__logo-image-small {
