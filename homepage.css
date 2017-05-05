@@ -513,6 +513,10 @@
   position: relative;
   text-align: center;
 }
+.header-section.wrapper {
+  -ms-flex-align: center;
+      align-items: center;
+}
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section {
     min-height: 750px;
@@ -522,11 +526,6 @@
   .header-section {
     height: auto;
   }
-}
-.header-section.wrapper {
-  -ms-flex-align: center;
-      align-items: center;
-  padding: 0 200px;
 }
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section__container {
@@ -539,6 +538,9 @@
         flex-flow: column wrap;
     padding: 40px 24px;
   }
+}
+.header-section__container.wrapper {
+  padding: 0 200px;
 }
 .header-section__container > .item:first-child {
   margin: 0;
