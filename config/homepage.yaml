@@ -1,8 +1,9 @@
 logo: tree-logo-graphic.svg
+logoMedium: tree-logo-graphic-medium.svg
 logoSmall: tree-logo-graphic-small.svg
 title: TaxonWorks
 titleLogo: images/taxonworks-white.svg
-slogan: Describe Life.
+slogan: Describe life.
 introMarkdown: intro.md
 benefitsTitle: A digital companion for discovering biodiversity
 benefits1Markdown: benefits-1.md
