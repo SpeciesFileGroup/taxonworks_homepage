@@ -523,6 +523,11 @@
     height: auto;
   }
 }
+.header-section.wrapper {
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 200px;
+}
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .header-section__container {
     padding: 160px 48px;
