@@ -25,7 +25,10 @@
             padding 40px 24px
 
         &.wrapper
-            padding 0 200px
+            padding 0 section-padding
+
+            +breakpoint(large)
+                padding 0 section-padding-large
 
         > .item:first-child
             margin 0
