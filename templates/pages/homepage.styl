@@ -10,13 +10,12 @@ $sectionContainer
         padding section-padding-medium
 
     +breakpoint(small)
+        flex-flow column wrap
+        -ms-flex-flow column wrap
         padding section-padding-small
 
     > .item:first-child
         margin-right 32px
 
         +breakpoint(small)
-            margin-right 0
-
-        +breakpoint(tiny)
             margin-right 0

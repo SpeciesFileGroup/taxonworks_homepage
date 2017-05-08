@@ -33,6 +33,9 @@
             +breakpoint(medium)
                 padding section-padding-large
 
+            +breakpoint(small)
+                padding section-padding-small
+
         > .item:first-child
             margin 0
 
@@ -76,9 +79,6 @@
 
         +breakpoint(small)
             display none
-        
-        +breakpoint(tiny)
-            display none
 
     &__logo-image-medium
         display none
@@ -92,8 +92,15 @@
         +breakpoint(large)
             display block
 
-        +breakpoint(medium)
+        +breakpoint(medium-header)
             display block
+
+        +breakpoint(small-medium-header)
+            display block
+            height 800px
+            left -350px
+            top -300px
+            width 800px
 
     &__logo-image-small
         display none
@@ -105,9 +112,6 @@
         width 700px
 
         +breakpoint(small)
-            display block
-
-        +breakpoint(tiny)
             display block
 
     &__text

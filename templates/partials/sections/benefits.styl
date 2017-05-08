@@ -4,6 +4,7 @@
         @extends $sectionContainer
 
         &__illustrations
+            align-items center
             height 330px
             justify-content space-between
             margin 0
@@ -13,7 +14,8 @@
             width 100%
 
         &:nth-child(2)
-            padding 0 200px
+            padding-top 0
+            padding-bottom 0
 
     &__section-1
         background-color color-green
@@ -105,9 +107,6 @@
         +breakpoint(small)
             width 100%
 
-        +breakpoint(tiny)
-            width 100%
-
         &__grid 
             flex-wrap wrap
             width 100%
@@ -122,7 +121,4 @@
                 max-width none
 
             +breakpoint(small)
-                max-width none
-
-            +breakpoint(tiny)
                 max-width none
