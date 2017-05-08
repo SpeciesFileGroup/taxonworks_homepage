@@ -36,7 +36,7 @@
     line-height: 1.16;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__text-slogan,
   .benefits-section__title,
   .getting-started-section__title,
@@ -66,7 +66,7 @@
     line-height: 1.25;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .feature-card__name,
   .benefits-section__section-2 h3,
   .benefits-section__section-3 h3,
@@ -93,7 +93,7 @@
     line-height: 1.33;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__text-copy,
   .benefits-section__copy,
   .getting-started-section__copy,
@@ -147,7 +147,7 @@
     padding: 80px 48px;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .footer-section__container,
   .header-section__container,
   .benefits-section__container,
@@ -155,6 +155,8 @@
   .getting-started-section__container-2,
   .scope-section__container-1,
   .scope-section__container-2 {
+    flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
     padding: 48px 24px;
   }
 }
@@ -167,18 +169,7 @@
 .scope-section__container-2 > .item:first-child {
   margin-right: 32px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .footer-section__container > .item:first-child,
-  .header-section__container > .item:first-child,
-  .benefits-section__container > .item:first-child,
-  .getting-started-section__container-1 > .item:first-child,
-  .getting-started-section__container-2 > .item:first-child,
-  .scope-section__container-1 > .item:first-child,
-  .scope-section__container-2 > .item:first-child {
-    margin-right: 0;
-  }
-}
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 599px) {
   .footer-section__container > .item:first-child,
   .header-section__container > .item:first-child,
   .benefits-section__container > .item:first-child,
@@ -289,9 +280,9 @@
   height: 400px;
 }
 .footer-section__container {
-  padding: 64px 200px;
+  padding-top: 64px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .footer-section__container {
     -ms-flex-flow: column wrap;
         flex-flow: column wrap;
@@ -299,10 +290,9 @@
 }
 .footer-section__details {
   float: left;
-  padding: 0 35px;
   width: 50%;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .footer-section__details {
     margin-bottom: 48px;
     width: 100%;
@@ -355,11 +345,10 @@
     height: auto;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .footer__links {
     -ms-flex-flow: column;
         flex-flow: column;
-    padding: 0 24px;
   }
 }
 .footer__links ul {
@@ -367,7 +356,7 @@
   margin: 0 16px 0 0;
   width: 160px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .footer__links ul {
     margin-bottom: 32px;
   }
@@ -410,7 +399,7 @@
       transform: translate(0, -50%);
   width: 48px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header__nav-bar__logo {
     height: 36px;
     margin-left: 8px;
@@ -433,7 +422,7 @@
     width: 186px;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header__nav-bar__text {
     margin-left: 8px;
     width: 172px;
@@ -443,12 +432,7 @@
   float: right;
   height: inherit;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .header__nav-bar__links {
-    display: none;
-  }
-}
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 599px) {
   .header__nav-bar__links {
     display: none;
   }
@@ -472,12 +456,7 @@
   display: none;
   height: 150px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .header__nav-bar__links__mobile {
-    display: block;
-  }
-}
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 599px) {
   .header__nav-bar__links__mobile {
     display: block;
   }
@@ -512,7 +491,7 @@
   top: 25%;
   width: 36px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header__nav-bar__button.hamburger {
     display: inline-block;
   }
@@ -533,7 +512,7 @@
     min-height: 750px;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section {
     height: auto;
   }
@@ -543,7 +522,7 @@
     padding: 160px 48px;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__container {
     -ms-flex-flow: column wrap;
         flex-flow: column wrap;
@@ -563,6 +542,11 @@
     padding: 80px;
   }
 }
+@media only screen and (max-width: 599px) {
+  .header-section__container.wrapper {
+    padding: 48px 24px;
+  }
+}
 .header-section__container > .item:first-child {
   margin: 0;
 }
@@ -579,7 +563,7 @@
     width: 100%;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__text-title__logo {
     margin-bottom: 12px;
     width: 272px;
@@ -592,7 +576,7 @@
   top: -52px;
   z-index: 5;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__logo {
     min-width: none;
     top: 0;
@@ -614,12 +598,7 @@
     display: none;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .header-section__logo-image {
-    display: none;
-  }
-}
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 599px) {
   .header-section__logo-image {
     display: none;
   }
@@ -638,9 +617,18 @@
     display: block;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 999px) {
+@media only screen and (min-width: 750px) and (max-width: 999px) {
   .header-section__logo-image-medium {
     display: block;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+  .header-section__logo-image-medium {
+    display: block;
+    height: 800px;
+    left: -350px;
+    top: -300px;
+    width: 800px;
   }
 }
 .header-section__logo-image-small {
@@ -652,12 +640,7 @@
   top: -300px;
   width: 700px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .header-section__logo-image-small {
-    display: block;
-  }
-}
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 599px) {
   .header-section__logo-image-small {
     display: block;
   }
@@ -670,7 +653,7 @@
   color: #00cc92;
   margin-bottom: 32px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__text-slogan {
     margin-bottom: 24px;
   }
@@ -683,12 +666,14 @@
 .header-section__text-copy > p {
   color: #fff;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .header-section__text-copy {
     margin-bottom: 48px;
   }
 }
 .benefits-section__container__illustrations {
+  -ms-flex-align: center;
+      align-items: center;
   height: 330px;
   -ms-flex-pack: justify;
       justify-content: space-between;
@@ -698,8 +683,14 @@
   top: -30px;
   width: 100%;
 }
+@media only screen and (max-width: 599px) {
+  .benefits-section__container__illustrations {
+    display: none;
+  }
+}
 .benefits-section__container:nth-child(2) {
-  padding: 0 200px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .benefits-section__section-1 {
   background-color: #00cc92;
@@ -739,20 +730,41 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+@media only screen and (max-width: 599px) {
+  .benefits-section__section-2 {
+    background-image: url("images/branches-1-small.svg");
+    background-position: 85% top;
+  }
+}
 .benefits-section__section-3 {
   background-image: url("images/branches-2.svg");
   background-position: 15% top;
   background-repeat: no-repeat;
   background-size: contain;
 }
+@media only screen and (max-width: 599px) {
+  .benefits-section__section-3 {
+    background: none;
+  }
+}
 .benefits-section__section-4 {
   background-image: url("images/trunk.svg");
   background-position: 85% top;
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 599px) {
+  .benefits-section__section-4 {
+    background: none;
+  }
+}
 .benefits-section__section-4 > .wrapper {
   -ms-flex-direction: column;
       flex-direction: column;
+}
+@media only screen and (max-width: 599px) {
+  .benefits-section__copy {
+    margin-bottom: 48px;
+  }
 }
 .benefits-section__illustrations {
   max-height: 100%;
@@ -772,6 +784,14 @@
 .benefits-section__illustration__4 img {
   max-width: 100%;
 }
+@media only screen and (max-width: 599px) {
+  .benefits-section__illustration__1 img,
+  .benefits-section__illustration__2 img,
+  .benefits-section__illustration__3 img,
+  .benefits-section__illustration__4 img {
+    display: none;
+  }
+}
 .benefits-section__illustration__2,
 .benefits-section__illustration__3 {
   position: relative;
@@ -782,6 +802,33 @@
 .benefits-section__illustration__3 {
   top: 80px;
 }
+.benefits-section__illustration__small {
+  display: none;
+  width: 100%;
+}
+@media only screen and (max-width: 599px) {
+  .benefits-section__illustration__small {
+    display: block;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .benefits-section__illustration__large {
+    display: none;
+  }
+}
+.benefits-section__mobile-image {
+  display: none;
+  width: 100%;
+}
+@media only screen and (max-width: 599px) {
+  .benefits-section__mobile-image {
+    display: block;
+  }
+}
+.benefits-section__mobile-image img {
+  object-fit: contain;
+  width: 100%;
+}
 .benefits-section__sponsor-grid {
   width: 50%;
 }
@@ -790,12 +837,7 @@
     width: 100%;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .benefits-section__sponsor-grid {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 599px) {
   .benefits-section__sponsor-grid {
     width: 100%;
   }
@@ -816,21 +858,14 @@
     max-width: none;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .benefits-section__sponsor-grid__sponsor {
     max-width: none;
   }
 }
-@media only screen and (max-width: 419px) {
-  .benefits-section__sponsor-grid__sponsor {
-    max-width: none;
-  }
-}
-@media only screen and (min-width: 420px) and (max-width: 599px) {
-  .getting-started-section__container-1,
-  .getting-started-section__container-2 {
-    -ms-flex-flow: column;
-        flex-flow: column;
+@media only screen and (max-width: 599px) {
+  .benefits-section__empty {
+    display: none;
   }
 }
 .getting-started-section__container-1 {
@@ -858,7 +893,7 @@
   color: #211d17;
   margin-bottom: 16px;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .getting-started-section__title {
     text-align: center;
   }
@@ -874,7 +909,7 @@
     width: 340px;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .getting-started-section__logo-image {
     height: 36px;
     width: 100%;
@@ -905,7 +940,7 @@
     padding: 160px 160px 144px 160px;
   }
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .scope-section__container-1 {
     -ms-flex-flow: column;
         flex-flow: column;
@@ -949,7 +984,7 @@
   display: -ms-flexbox;
   display: flex;
 }
-@media only screen and (min-width: 420px) and (max-width: 599px) {
+@media only screen and (max-width: 599px) {
   .scope-section__features {
     -ms-flex-direction: column;
         flex-direction: column;
