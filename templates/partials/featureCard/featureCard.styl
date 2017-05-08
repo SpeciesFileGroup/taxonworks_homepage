@@ -2,9 +2,12 @@
     border-top 2px solid color-green
     color color-white
 
+    &[data-inactive="true"]
+        display none
+
     &__feature-content
         background-color color-cocoa
-        padding 24px
+        padding 16px
 
     &__name
         @extend $mediumHeader
@@ -53,7 +56,7 @@
         background-color color-cocoa
         color color-green
         display block
-        padding 14px 24px
+        padding 14px 16px
         text-align left
         transition background-color 300ms, color 300ms
 

@@ -1,9 +1,11 @@
 .feature-core
+    padding 24px 0
+
     &__controls
         color color-beige
         display flex
         justify-content space-between
-        padding 24px
+        padding 0 24px 24px
 
     &__controls-description
         align-items center
@@ -21,6 +23,9 @@
             height 56px
             justify-content center
             width @height
+
+    &__feature-card-container
+        padding 0 24px
         
     &__feature-button
         @extend $buttonHelper

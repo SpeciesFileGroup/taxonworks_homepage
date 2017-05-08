@@ -2,23 +2,25 @@
 
 <ul class="feature-core">
     <div class="feature-core__controls">
-        <button class="feature-core__previous-button" type="button">
+        <button class="feature-core__previous-button js-previous-button" type="button">
             <span class="feature-core__previous-button-content">
                 <img src="/images/chev-left.svg" alt="Previous">
             </span>
-        </button>a
+        </button>
 
         <div class="feature-core__controls-description">
             <div>Tap or swipe for more</div>
         </div>
 
-        <button class="feature-core__next-button" type="button">
+        <button class="feature-core__next-button js-next-button" type="button">
             <span class="feature-core__next-button-content">
                 <img src="/images/chev-right.svg" alt="Next">
             </span>
         </button>
     </div>
-    {% for feature in scopeFeatures %}
-        {{ featureCard.featureCard(feature) }}
-    {% endfor %}
+    <div class="feature-core__feature-card-container">
+        {% for feature in scopeFeatures %}
+            {{ featureCard.featureCard(feature) }}
+        {% endfor %}
+    </div>
 </ul>

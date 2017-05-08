@@ -1,18 +1,23 @@
+const Attributes = {
+    Inactive: "data-inactive"
+};
+
+let cardList;
 
 document.addEventListener("DOMContentLoaded", function() {
-    const cardList = document.querySelectorAll('.feature-card');
-    const coreButtonList = document.querySelectorAll('.feature-core__button');
+    cardList = Array.from( document.querySelectorAll('.feature-card') );
+    const coreButtonList = Array.from( document.querySelectorAll('.feature-core__button') );
     const coreValueList = getCoreCardValueList(coreButtonList);
 
     changeCardDetailColors(cardList);
     setupInitialCardState(cardList);
 
     setupCoreButtonEventListeners(coreButtonList, cardList, coreValueList);
-
+    setupControlButtons();
 });
 
 function changeCardDetailColors(cardList) {
-    for( i = 0; i < cardList.length; i++ )
+    for(var i = 0; i < cardList.length; i++ )
     {
         const card = cardList[i];
         setStatusColor(card);
@@ -31,15 +36,15 @@ function setStatusColor(card) {
 function addStatusColorClass(cardLabelElement) {
     const cardLabelValue = cardLabelElement.innerHTML;
 
-    if(cardLabelValue == 'Upcoming')
+    if(cardLabelValue === 'Upcoming')
     {
         cardLabelElement.className += ' status-upcoming';
     }
-    else if(cardLabelValue == 'In Progress')
+    else if(cardLabelValue === 'In Progress')
     {
         cardLabelElement.className += ' status-in-progress';
     }
-    else if(cardLabelValue == 'Complete')
+    else if(cardLabelValue === 'Complete')
     {
         cardLabelElement.className += ' status-complete';
     }
@@ -56,15 +61,15 @@ function setAvailableColor(card) {
 function addAvailableColorClass(cardLabelElement) {
     const cardLabelValue = cardLabelElement.innerHTML;
 
-    if(cardLabelValue == 'Within the next three years' || cardLabelValue == 'Next year')
+    if(cardLabelValue === 'Within the next three years' || cardLabelValue === 'Next year')
     {
         cardLabelElement.className += ' available-next-or-three-years';
     }
-    else if(cardLabelValue == 'This year')
+    else if(cardLabelValue === 'This year')
     {
         cardLabelElement.className += ' available-this-year';
     }
-    else if(cardLabelValue == 'Now')
+    else if(cardLabelValue === 'Now')
     {
         cardLabelElement.className += ' available-now';
     }
@@ -72,49 +77,43 @@ function addAvailableColorClass(cardLabelElement) {
 }
 
 function setupInitialCardState(cardList) {
-    setAllCardsAsInactive(cardList, true);
-
+    setAllButFirstCardAsInactive(cardList, true);
 }
 
-function setAllCardsAsInactive(cardList, startingState) {
-    for( i = 0; i < cardList.length; i++ )
-    {
-        if(i == 0 && startingState == true)
-        {
-            continue;
-        }
-        setCardAsInactive(cardList[i]);
-    }
-
+function setAllButFirstCardAsInactive(cardList) {
+    cardList.slice(1).forEach(cardNode => setCardAsInactive(cardNode));
 }
 
 function setCardAsInactive(card) {
-    card.classList.add('inactive-card');
-
+    card.setAttribute(Attributes.Inactive, true);
 }
 
 function setCardAsActive(card) {
-    card.classList.remove('inactive-card');
-
+    card.setAttribute(Attributes.Inactive, false);
 }
 
 function setupCoreButtonEventListeners(coreButtonList, cardList, cardValueList) {
-    for( i = 0; i < coreButtonList.length; i++ )
-    {
+    for( i = 0; i < coreButtonList.length; i++ ) {
         coreButtonList[i].addEventListener("click", function(){
             // Add click event here
         });
     }
+}
 
+function setupControlButtons() {
+    document.querySelector('.js-next-button').addEventListener('click', function() {
+        const index = findActiveIndex();
+    }, false);
+
+    document.querySelector('.js-previous-button').addEventListener('click', function() {
+        const index = findActiveIndex();
+    }, false);
+}
+
+function findActiveIndex() {
+    return cardList.findIndex(cardNode => cardNode.getAttribute(Attributes.Inactive) === "true");
 }
 
 function getCoreCardValueList(coreButtonList) {
-    var valueList = new Array;
-
-    for( i = 0; i < coreButtonList.length; i++ )
-    {
-        valueList.push(coreButtonList[i].outerText);
-    }
-    return valueList;
-
+    coreButtonList.map(coreButton => coreButton.outerText);
 }
