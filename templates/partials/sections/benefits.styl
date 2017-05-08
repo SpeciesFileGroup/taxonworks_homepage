@@ -13,6 +13,9 @@
             top -30px
             width 100%
 
+            +breakpoint(small)
+                display none
+
         &:nth-child(2)
             padding-top 0
             padding-bottom 0
@@ -49,16 +52,26 @@
         background-repeat no-repeat
         background-size contain
 
+        +breakpoint(small)
+            background-image url("images/branches-1-small.svg")
+            background-position 85% top 
+
     &__section-3
         background-image url("images/branches-2.svg")
         background-position 15% top 
         background-repeat no-repeat
         background-size contain
 
+        +breakpoint(small)
+            background none
+
     &__section-4
         background-image url("images/trunk.svg")
         background-position 85% top 
         background-repeat no-repeat
+
+        +breakpoint(small)
+            background none
 
         > .wrapper
             flex-direction column
@@ -68,6 +81,9 @@
 
     &__copy
         @extends $smallHeader
+
+        +breakpoint(small)
+            margin-bottom 48px
 
         > ul
             @extends $list
@@ -88,6 +104,9 @@
             img
                 max-width 100%
 
+                +breakpoint(small)
+                    display none
+
         &__2
         &__3
             position relative
@@ -97,6 +116,28 @@
 
         &__3
             top 80px
+
+        &__small
+            display none
+            width 100%
+
+            +breakpoint(small)
+                display block
+
+        &__large
+            +breakpoint(small)
+                display none
+
+    &__mobile-image
+        display none
+        width 100%
+
+        +breakpoint(small)
+            display block
+
+        img
+            object-fit contain
+            width 100%
 
     &__sponsor-grid
         width 50%
@@ -122,3 +163,7 @@
 
             +breakpoint(small)
                 max-width none
+
+    &__empty
+        +breakpoint(small)
+            display none
