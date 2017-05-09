@@ -372,6 +372,7 @@
 }
 .header__nav-bar {
   height: 230px;
+  pointer-events: none;
   position: fixed;
   top: -230px;
   width: 100%;
@@ -449,6 +450,7 @@
   background-color: #fafaf5;
   display: none;
   height: 150px;
+  pointer-events: none;
 }
 .header__nav-bar__links__mobile ul {
   list-style-image: none;
