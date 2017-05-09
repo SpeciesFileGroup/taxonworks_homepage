@@ -3,18 +3,18 @@
         <img class="header__nav-bar__logo" src="{{ navLogo }}"></img>
         <img class="header__nav-bar__text" src="{{ navText }}"></img>
         <div class="header__nav-bar__links">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            {% for navBarLink in navBarLinks %}
+                <a href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
+            {% endfor %}
         </div>
         <button class="header__nav-bar__button hamburger">&#9776;</button>
     </div>
 
     <div class="header__nav-bar__links__mobile">
         <ul>
-            <a href="#"><li>Link 1</li></a>
-            <a href="#"><li>Link 2</li></a>
-            <a href="#"><li>Link 3</li></a>
+            {% for navBarLink in navBarLinks %}
+                <a href="{{ navBarLink.href }}"><li>{{ navBarLink.name }}</li></a>
+            {% endfor %}
         </ul>
     </div>
 </nav>

@@ -12,6 +12,7 @@ const uglify = require("uglify-js");
 const scope = require('./scope');
 
 const constants = require("../constants");
+const navBarLinks = require("../navBarLinks");
 const sponsors = require("../sponsors");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
@@ -77,6 +78,7 @@ function getConfig() {
         config.footerLinksSocialHTML = parseMarkdownFile(config.footerLinksSocialMarkdown);
 
     config.sponsors = sponsors.sponsorsList;
+    config.navBarLinks = navBarLinks.navBarLinkList;
 
     savedConfig = config;
     return config;
