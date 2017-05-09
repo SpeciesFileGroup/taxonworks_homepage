@@ -11,7 +11,9 @@ function scope() {
 
     const Classes = {
         CardCollapsed: 'feature-card--collapsed',
-        SubfeatureDivider: 'feature-card__subfeature-divider'
+        SubfeatureDivider: 'feature-card__subfeature-divider',
+        CardContent: 'feature-card__feature-content',
+        SubfeatureList: 'feature-card__sub-features'
     };
 
     const ScrollTopOffset = 80; //For NAVBAR
@@ -175,7 +177,6 @@ function scope() {
         setFeatureNodeAsActive(featureNode);
         collapseParentFeatures(featureNode);
         scrollToParent(featureNode);
-        animateDividerInFor(getParentFeatureNode(featureNode));
     }
 
     function collapseParentFeatures(featureNode) {
@@ -186,14 +187,8 @@ function scope() {
         }
     }
 
-    function animateDividerInFor(featureNode) {
-        const dividerNode = featureNode.querySelector(`.${Classes.SubfeatureDivider}`);
-        anime({
-            targets: dividerNode,
-            scaleY: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 150
-        });
+    function transitionToCollapsed(featureNode) {
+
     }
 
     function getParentFeatureNode(featureNode) {

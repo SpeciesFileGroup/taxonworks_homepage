@@ -1,14 +1,16 @@
 .expand-button
     @extend $buttonReset
-    background-color color-cocoa
-    color color-green
-
-    font-size 20px
-    line-height 28px
-    padding 14px 24px
-    position relative
-    text-align left
     width 100%
+
+    &__name
+        background-color color-cocoa
+        color color-green
+        display block
+        font-size 20px
+        line-height 28px
+        padding 14px 24px
+        position relative
+        text-align left
 
     &__left-border
     &__right-border
@@ -41,3 +43,12 @@
 
     &__bottom-border
         bottom 0
+
+    &__connector
+        background-color color-green
+        display block
+        height 24px
+        margin 0 auto
+        position relative
+        transform-origin 50% 0
+        width 2px
