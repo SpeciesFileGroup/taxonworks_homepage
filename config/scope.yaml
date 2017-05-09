@@ -1,95 +1,208 @@
 features:
     -
-        name: 1986 Boston Celtics
+        name: Boston Celtics
         status: in_progress
-        description: 67-15, Finished 1st in NBA Atlantic Division
+        description: Location: Boston, Massachusetts
         whenComplete: this_year
         features:
             -
-                name: Larry Bird
-                status: upcoming
-                description: Larry Legend, The Hick from French Lick, Kodak, The Great White Hope
-                whenComplete: three_year
+                name: 1985-1986 Boston Celtics
+                status: in_progress
+                description: 67-15, Finished 1st in NBA Atlantic Division
+                whenComplete: this_year
+                features:
+                    -
+                        name: Larry Bird
+                        status: upcoming
+                        description: Larry Legend, The Hick from French Lick, Kodak, The Great White Hope
+                        whenComplete: three_year
+                    -
+                        name: Kevin McHale
+                        status: upcoming
+                        description: Black Hole
+                        whenComplete: three_year
+                    -
+                        name: Dennis Johnson
+                        status: upcoming
+                        description: D.J., Airplane
+                        whenComplete: three_year
+                    -
+                        name: Robert Parish
+                        status: upcoming
+                        description: The Chief, Slim
+                        whenComplete: three_year
+                    -
+                        name: Danny Ainge
+                        status: upcoming
+                        description: Now the GM of the Celtics
+                        whenComplete: three_year
             -
-                name: Kevin McHale
-                status: upcoming
-                description: Black Hole
-                whenComplete: three_year
-            -
-                name: Dennis Johnson
-                status: upcoming
-                description: D.J., Airplane
-                whenComplete: three_year
-            -
-                name: Robert Parish
-                status: upcoming
-                description: The Chief, Slim
-                whenComplete: three_year
-            -
-                name: Danny Ainge
-                status: upcoming
-                description: Now the GM of the Celtics
-                whenComplete: three_year
+                name: 2007-2008 Boston Celtics
+                status: in_progress
+                description: 66-16, Finished 1st in NBA Atlantic Division
+                whenComplete: this_year
+                features:
+                    -
+                        name: Ray Allen
+                        status: upcoming
+                        description: Ray-Ray, Sugar Ray, Jesus Shuttlesworth, Skinny Walt
+                        whenComplete: three_year
+                    -
+                        name: Paul Pierce
+                        status: upcoming
+                        description: The Truth, P-Double
+                        whenComplete: three_year
+                    -
+                        name: Kevin Garnett
+                        status: upcoming
+                        description: Kevin Maurice Garnett (KG, The Big Ticket, The Kid)
+                        whenComplete: three_year
+                    -
+                        name: Rajon Rondo
+                        status: upcoming
+                        description: Rajon Pierre Rondo ▪ Twitter: @RajonRondo (Johnny, Swag, The Yoga Instructor)
+                        whenComplete: three_year
+                    -
+                        name: James Posey
+                        status: upcoming
+                        description: James Mikley Mantell Posey Position: Power Forward and Small Forward and Shooting Guard ▪ Shoots: Right 6-8, 215lb (203cm, 97kg)
+                        whenComplete: three_year
     -
-        name: 1984-1985 Los Angeles Lakers
+        name: Los Angeles Lakers
         status: upcoming
-        description: 62-20, Finished 1st in NBA Pacific Division
+        description: Location: Los Angeles, California
         whenComplete: three_year
         features:
             -
-                name: Magic Johnson
+                name: 1984-1985 Los Angeles Lakers
                 status: upcoming
-                description: Magic, Buck, E.J. the Deejay
+                description: 62-20, Finished 1st in NBA Pacific Division
                 whenComplete: three_year
+                features:
+                    -
+                        name: Magic Johnson
+                        status: upcoming
+                        description: Magic, Buck, E.J. the Deejay
+                        whenComplete: three_year
+                    -
+                        name: James Worthy
+                        status: upcoming
+                        description: Big Game James
+                        whenComplete: three_year
+                    -
+                        name: Kareem Abdul-Jabbar
+                        status: upcoming
+                        description: Lew, Cap, Murdock, Big Fella
+                        whenComplete: three_year
+                    -
+                        name: Byron Scott
+                        status: upcoming
+                        description: 6-3, 195lb (190cm, 88kg)
+                        whenComplete: three_year
+                    -
+                        name: Michael Cooper
+                        status: upcoming
+                        description: Coop, Mike
+                        whenComplete: three_year
+
             -
-                name: James Worthy
+                name: 2008-2009 Los Angeles Lakers
                 status: upcoming
-                description: Big Game James
+                description: 65-17, Finished 1st in NBA Pacific Division
                 whenComplete: three_year
-            -
-                name: Kareem Abdul-Jabbar
-                status: upcoming
-                description: Lew, Cap, Murdock, Big Fella
-                whenComplete: three_year
-            -
-                name: Byron Scott
-                status: upcoming
-                description: 6-3, 195lb (190cm, 88kg)
-                whenComplete: three_year
-            -
-                name: Michael Cooper
-                status: upcoming
-                description: Coop, Mike
-                whenComplete: three_year
+                features:
+                    -
+                        name: Pau Gasol
+                        status: upcoming
+                        description: Pronunciation: \POW ga-SALL\ (Meal Ticket, ET, Kung Pow)
+                        whenComplete: three_year
+                    -
+                        name: Kobe Bryant
+                        status: upcoming
+                        description: Kobe Bean Bryant ▪ Twitter: @kobebryant (Black Mamba, KB24, Vino)
+                        whenComplete: three_year
+                    -
+                        name: Derek Fisher
+                        status: upcoming
+                        description: Derek Lamar Fisher ▪ Twitter: @derekfisher (D-Fish)
+                        whenComplete: three_year
+                    -
+                        name: Lamar Odom
+                        status: upcoming
+                        description: Lamar Joseph Odom ▪ Twitter: @RealLamarOdom (L.O., Candy Man, The Goods)
+                        whenComplete: three_year
+                    -
+                        name: Andrew Bynum
+                        status: upcoming
+                        description: Position: Center ▪ Shoots: Right 7-0, 285lb (213cm, 129kg)
+                        whenComplete: three_year
     -
-        name: 1995-1996 Chicago Bulls
+        name: Chicago Bulls
         status: complete
-        description: 72-10, Finished 1st in NBA Central Division
+        description: Location: Chicago, Illinois
         whenComplete: now
         features:
             -
-                name: Michael Jordan
+                name: 1995-1996 Chicago Bulls
                 status: complete
-                description: Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
+                description: 72-10, Finished 1st in NBA Central Division
                 whenComplete: now
+                features:
+                    -
+                        name: Michael Jordan
+                        status: complete
+                        description: Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
+                        whenComplete: now
 
+                    -
+                        name: Scottie Pippen
+                        status: complete
+                        description: Scottie Pippen (Pip, Scott, Batman, Robin)
+                        whenComplete: now
+                    -
+                        name: Dennis Rodman
+                        status: complete
+                        description: Dennis Rodman (The Worm, Dennis the Menace)
+                        whenComplete: now
+                    -
+                        name: Steve Kerr
+                        status: complete
+                        description: Stephen Douglas Kerr (Ice)
+                        whenComplete: now
+                    -
+                        name: Toni Kukoc
+                        status: complete
+                        description: Toni Kukoc (Croatian Sensation, The Waiter, Euro-Magic, The Pink Panther, Spider of Split, Kuki, Alien)
+                        whenComplete: now
             -
-                name: Scottie Pippen
+                name: 1991-1992 Chicago Bulls
                 status: complete
-                description: Scottie Pippen (Pip, Scott, Batman, Robin)
+                description: 67-15, Finished 1st in NBA Central Division
                 whenComplete: now
-            -
-                name: Dennis Rodman
-                status: complete
-                description: Dennis Rodman (The Worm, Dennis the Menace)
-                whenComplete: now
-            -
-                name: Steve Kerr
-                status: complete
-                description: Stephen Douglas Kerr (Ice)
-                whenComplete: now
-            -
-                name: Toni Kukoc
-                status: complete
-                description: Toni Kukoc (Croatian Sensation, The Waiter, Euro-Magic, The Pink Panther, Spider of Split, Kuki, Alien)
-                whenComplete: now
+                features:
+                    -
+                        name: Michael Jordan
+                        status: complete
+                        description: Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
+                        whenComplete: now
+
+                    -
+                        name: Scottie Pippen
+                        status: complete
+                        description: Scottie Pippen (Pip, Scott, Batman, Robin)
+                        whenComplete: now
+                    -
+                        name: Horace Grant
+                        status: complete
+                        description: Horace Junior Grant (The General)
+                        whenComplete: now
+                    -
+                        name: John Paxson
+                        status: complete
+                        description: John MacBeth Paxson (Pax, Johnny Pax)
+                        whenComplete: now
+                    -
+                        name: Bill Cartwright
+                        status: complete
+                        description: James William Cartwright (Mr. Bill, Teach, Dollar Bill, Medical Bill)
+                        whenComplete: now
