@@ -33,8 +33,8 @@
                 {{ benefits2HTML | safe }}
             </div>
             <div class="benefits-section__illustration item">
-                <img src="images/inhs-05.svg" class="benefits-section__illustration__large" alt="INHS 05" />
                 <img src="images/inhs-06.svg" class="benefits-section__illustration__large" alt="INHS 06" />
+                <img src="images/inhs-05.svg" class="benefits-section__illustration__large" alt="INHS 05" />
                 <img src="images/inhs-05.svg" class="benefits-section__illustration__small" alt="INHS 05" />
             </div>
         </div>
@@ -54,16 +54,19 @@
 
     <article class="benefits-section__section-4">
         <div class="benefits-section__container wrapper">
-            <div class="benefits-section__copy item">
-                {{ benefits4HTML | safe }}
-            </div>
-            <div class="benefits-section__sponsor-grid item">
-                <div class="benefits-section__sponsor-grid__grid wrapper">
-                    {% for sponsor in sponsors %}
-                        <img class="benefits-section__sponsor-grid__sponsor item" src="{{ sponsor.src }}" alt="{{ sponsor.name }}" />
-                    {% endfor %}
+            <div class="benefits-section__container__inner wrapper item">
+                <div class="benefits-section__copy item">
+                    {{ benefits4HTML | safe }}
+                </div>
+                <div class="benefits-section__sponsor-grid item">
+                    <div class="benefits-section__sponsor-grid__grid wrapper">
+                        {% for sponsor in sponsors %}
+                            <img class="benefits-section__sponsor-grid__sponsor item" src="{{ sponsor.src }}" alt="{{ sponsor.name }}" />
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
+            <div class="benefits-section__empty item"></div>
             <div class="benefits-section__mobile-image item">
                 <img src="images/trunk-small.svg" width="320px" height="636px" alt="Trunk" />
             </div>

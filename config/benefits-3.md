@@ -1,4 +1,14 @@
-### Customize your data
-* Is available wherever you have internet access
-* Offers a rich variety of data annotations and customizations
-* Uses a data model that helps users to improve and extend semantics while requiring minimal constraints
+### Rich, fluid, customizable data
+
+TaxonWorks is part of your research data pipeline.  
+
+__Flow__ data in via batch loaders, wrappers on external providers, scripts, 
+the TaxonWorks JSON API, and an optimized user interface.  
+
+__Adapt__ core data with many customizable annotations that optionally reference 
+external standards.  
+
+__Improve__ your data with a wealth of non-constraining validators.  
+
+__Export__ an ever growing number of formats directly to your analysis tools, 
+manuscript-ready documents, and global archives.

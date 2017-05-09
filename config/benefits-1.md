@@ -1,3 +1,8 @@
-From observation to archive, TaxonWorks touches every step of the taxonomy process, helping you to capture your early 
-observations, images, and notes. Turn your discoveries into conclusions faster, allowing you to spend more time buckling 
-down in the field with fewer hours of mundane desk work.
+### Our vision
+From observation to archive, TaxonWorks touches every step of the taxonomy 
+process.  
+
+Capture your early observations, images and notes. Collaboratively refine, 
+validate, and grow your datasets. Turn your discoveries into polished 
+conclusions faster. Integrate data across your career, and hand it off to 
+your protégé. Spend more time researching, and less time with the mundane.

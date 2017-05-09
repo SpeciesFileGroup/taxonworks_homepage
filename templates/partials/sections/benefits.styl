@@ -20,6 +20,10 @@
             padding-top 0
             padding-bottom 0
 
+        &__inner
+            flex-flow column
+            -ms-flex-flow column
+
     &__section-1
         background-color color-green
 
@@ -28,9 +32,6 @@
     &__section-4
         min-height 824px 
         
-        h3
-            @extends $mediumHeader
-            margin-bottom 12px
         ul
             font-size 20px
             font-weight 400
@@ -73,9 +74,6 @@
         +breakpoint(small)
             background none
 
-        > .wrapper
-            flex-direction column
-
     &__title
         @extends $bigHeader
 
@@ -84,6 +82,13 @@
 
         +breakpoint(small)
             margin-bottom 48px
+
+        h3
+        p
+            margin-bottom 12px
+
+        h3
+            @extends $mediumHeader
 
         > ul
             @extends $list
@@ -140,14 +145,8 @@
             width 100%
 
     &__sponsor-grid
-        width 50%
-
-        +breakpoint(medium)
-            width 100%
-
-        +breakpoint(small)
-            width 100%
-
+        margin-top 48px
+        
         &__grid 
             flex-wrap wrap
             width 100%

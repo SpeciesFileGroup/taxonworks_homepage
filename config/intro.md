@@ -1,2 +1,5 @@
-TaxonWorks is an integrated workbench for taxonomists that spans data across the domain.
-It organizes your world, enriches your data, and lets you push your findings out to the world.
+TaxonWorks is an integrated web-based workbench for taxonomists and 
+biodiversity scientists.  
+
+It allows you to capture, organize, and enrich your data; share it with 
+collaborators; and package it for analysis and publication.
