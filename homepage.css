@@ -450,11 +450,6 @@
   display: none;
   height: 150px;
 }
-@media only screen and (max-width: 599px) {
-  .header__nav-bar__links__mobile {
-    display: block;
-  }
-}
 .header__nav-bar__links__mobile ul {
   list-style-image: none;
   list-style-type: none;
