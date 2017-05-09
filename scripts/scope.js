@@ -15,6 +15,7 @@ function scope() {
     setupInitialCardState(featureCardNodes);
 
     setupControlButtons();
+    setupSubfeatureButtons();
 
     function changeCardDetailColors(cardList) {
         for(var i = 0; i < cardList.length; i++ )
@@ -81,15 +82,27 @@ function scope() {
     }
 
     function setAllButFirstCardAsInactive(cardList) {
-        cardList.slice(1).forEach(cardNode => setFeatureAsInactive(cardNode));
+        cardList.slice(1).forEach(cardNode => setFeatureNodeAsInactive(cardNode));
     }
 
-    function setFeatureAsInactive(card) {
+    function setFeatureNodeAsInactive(card) {
         card.setAttribute(Attributes.Inactive, '');
     }
 
-    function setFeatureAsActive(card) {
+    function setFeatureNodeAsActive(card) {
         card.removeAttribute(Attributes.Inactive);
+    }
+
+    function getFeatureCardNodeById(featureId) {
+        return featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId);
+    }
+
+    function setFeatureIdAsInactive(featureId) {
+        setFeatureNodeAsInactive( getFeatureCardNodeById(featureId) );
+    }
+
+    function setFeatureIdAsActive(featureId) {
+        setFeatureNodeAsActive( getFeatureCardNodeById(featureId) );
     }
 
     function setupCoreButtonEventListeners(coreButtonList, cardList, cardValueList) {
@@ -127,13 +140,27 @@ function scope() {
     function setIndexToActive(newActiveIndex) {
         topLevelFeatureCards.forEach((node, index) => {
             if (newActiveIndex === index)
-                setFeatureAsActive(node);
+                setFeatureNodeAsActive(node);
             else
-                setFeatureAsInactive(node);
+                setFeatureNodeAsInactive(node);
         });
     }
 
     function getCoreCardValueList(coreButtonList) {
         coreButtonList.map(coreButton => coreButton.outerText);
+    }
+
+    function setupSubfeatureButtons() {
+        Array.from( document.querySelectorAll('.js-subfeature-button') ).forEach(button => {
+            button.addEventListener('click', subfeatureButtonClicked, false);
+        });
+    }
+
+    function subfeatureButtonClicked(event) {
+        const featureId = this.getAttribute(Attributes.FeatureRef);
+        const featureNode = getFeatureCardNodeById(featureId);
+        Array.from( featureNode.parentNode.querySelectorAll(`[${Attributes.FeatureId}]`) )
+            .forEach(node => setFeatureNodeAsInactive(node));
+        setFeatureNodeAsActive(featureNode);
     }
 }
