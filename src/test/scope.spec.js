@@ -304,6 +304,18 @@ describe(`the scope content model`, () => {
                 expect(array.indexOf(featureId)).to.equal(index);
             });
         });
+
+        it(`should include the id of its parent if not top level`, () => {
+            const actual = scope.process(mockFrozenData());
+
+            actual.forEach(topLevelFeature => {
+                expect(topLevelFeature.parentId).to.equal(null);
+
+                topLevelFeature.features.forEach(subfeature => {
+                    expect(subfeature.parentId).to.equal(topLevelFeature.id);
+                });
+            });
+        });
     });
 });
 

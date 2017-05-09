@@ -1,6 +1,17 @@
 .feature-card
-    border-top 2px solid color-green
     color color-white
+    position relative
+
+    &:before
+        background-color color-green
+        content ""
+        height 2px
+        left 0
+        position absolute
+        right 0
+        top 0
+
+    collapsedSelector = '.feature-card--collapsed'
 
     &[data-inactive]
         display none
@@ -8,6 +19,9 @@
     &__feature-content
         background-color color-cocoa
         padding 16px
+
+        {collapsedSelector} > &
+            display none
 
     &__name
         @extend $mediumHeader
@@ -48,6 +62,9 @@
     &__sub-features
         list-style none inside
 
+        {collapsedSelector} > &
+            display none
+
     &__sub-feature-item
         margin-top 2px
 
@@ -65,5 +82,26 @@
             background-color color-green
             color color-cocoa
 
-    &.inactive-card
+    &__expand-button
+        @extend $buttonReset
+        border solid 2px color-green;
+        color color-green
         display none
+        font-size 20px
+        line-height 28px
+        padding 14px 24px
+        width 100%
+
+        {collapsedSelector} > &
+            display block
+
+    &__subfeature-divider
+        background-color color-green
+        display none
+        height 26px
+        margin 0 auto
+        position relative
+        width 2px
+
+        {collapsedSelector} > &
+            display block

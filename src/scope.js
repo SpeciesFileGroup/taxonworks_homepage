@@ -28,7 +28,9 @@ const StatusTemplate = {
 
 function process(data) {
     validate(data);
-    return data.features.map(transformFeature);
+    return data.features.map(datum => {
+        return transformFeature(datum);
+    });
 }
 
 function validate(data) {
@@ -36,7 +38,7 @@ function validate(data) {
     data.features.forEach(validateFeature);
 }
 
-function transformFeature(featureDatum) {
+function transformFeature(featureDatum, parentId = null) {
     const {
         name,
         status = DefaultStatus,
@@ -50,11 +52,14 @@ function transformFeature(featureDatum) {
 
     return {
         id,
+        parentId,
         name,
         status: statusAfterCheck,
         description,
         whenComplete,
-        features: features.map(transformFeature),
+        features: features.map(f => {
+            return transformFeature(f, id);
+        }),
         templateStatus: StatusTemplate[statusAfterCheck],
         templateWhenComplete: WhenCompleteTemplate[whenComplete]
     };

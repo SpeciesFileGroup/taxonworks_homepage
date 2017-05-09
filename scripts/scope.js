@@ -4,12 +4,13 @@ function scope() {
     const Attributes = {
         FeatureId: "data-feature-id",
         FeatureRef: "data-feature-ref",
+        ParentFeatureId: "data-parent-feature-id",
         TopLevel: "data-top-level",
         Inactive: "data-inactive"
     };
 
     const featureCardNodes = Array.from( document.querySelectorAll(`[${Attributes.FeatureId}]`) );
-    const topLevelFeatureCards = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
+    const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
 
     changeCardDetailColors(featureCardNodes);
     setupInitialCardState(featureCardNodes);
@@ -117,8 +118,8 @@ function scope() {
         document.querySelector('.js-next-button').addEventListener('click', function() {
             let index = findActiveIndex();
             index++;
-            if (index >= topLevelFeatureCards.length)
-                index = topLevelFeatureCards.length - 1;
+            if (index >= topLevelFeatureCardNodes.length)
+                index = topLevelFeatureCardNodes.length - 1;
 
             setIndexToActive(index);
         }, false);
@@ -134,11 +135,11 @@ function scope() {
     }
 
     function findActiveIndex() {
-        return topLevelFeatureCards.findIndex(cardNode => !cardNode.hasAttribute(Attributes.Inactive));
+        return topLevelFeatureCardNodes.findIndex(cardNode => !cardNode.hasAttribute(Attributes.Inactive));
     }
 
     function setIndexToActive(newActiveIndex) {
-        topLevelFeatureCards.forEach((node, index) => {
+        topLevelFeatureCardNodes.forEach((node, index) => {
             if (newActiveIndex === index)
                 setFeatureNodeAsActive(node);
             else
@@ -162,5 +163,15 @@ function scope() {
         Array.from( featureNode.parentNode.querySelectorAll(`[${Attributes.FeatureId}]`) )
             .forEach(node => setFeatureNodeAsInactive(node));
         setFeatureNodeAsActive(featureNode);
+        collapseParentFeatures(featureNode);
+    }
+
+    function collapseParentFeatures(featureNode) {
+        const parentId = featureNode.getAttribute(Attributes.ParentFeatureId);
+        if (parentId) {
+            const parentNode = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === parentId);
+            parentNode.classList.add('feature-card--collapsed');
+            collapseParentFeatures(parentNode);
+        }
     }
 }
