@@ -1,6 +1,6 @@
 {% import 'partials/featureCard/featureCard.njk' as featureCard %}
 
-<ul class="feature-core">
+<div class="feature-core">
     <div class="feature-core__controls">
         <button class="feature-core__previous-button js-previous-button" type="button">
             <span class="feature-core__previous-button-content">
@@ -23,4 +23,4 @@
             {{ featureCard.featureCard(feature, true) }}
         {% endfor %}
     </div>
-</ul>
+</div>

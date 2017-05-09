@@ -31,7 +31,13 @@
             {% endfor %}
         </ul>
 
-        <button class="feature-card__expand-button" type="button">{{ feature.name }}</button>
+        <button
+            class="feature-card__expand-button js-expand-button"
+            data-feature-ref="{{ feature.id }}"
+            type="button">
+
+            {{ feature.name }}
+        </button>
 
         <div class="feature-card__subfeature-divider"></div>
 

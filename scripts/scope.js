@@ -9,6 +9,10 @@ function scope() {
         Inactive: "data-inactive"
     };
 
+    const Classes = {
+        CardCollapsed: 'feature-card--collapsed'
+    };
+
     const featureCardNodes = Array.from( document.querySelectorAll(`[${Attributes.FeatureId}]`) );
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
 
@@ -17,6 +21,7 @@ function scope() {
 
     setupControlButtons();
     setupSubfeatureButtons();
+    setupExpandButtons();
 
     function changeCardDetailColors(cardList) {
         for(var i = 0; i < cardList.length; i++ )
@@ -87,10 +92,12 @@ function scope() {
     }
 
     function setFeatureNodeAsInactive(card) {
+        console.log(`setFeatureNodeAsInactive`, card.getAttribute(Attributes.FeatureId));
         card.setAttribute(Attributes.Inactive, '');
     }
 
     function setFeatureNodeAsActive(card) {
+        console.log(`setFeatureNodeAsActive`, card.getAttribute(Attributes.FeatureId));
         card.removeAttribute(Attributes.Inactive);
     }
 
@@ -170,8 +177,34 @@ function scope() {
         const parentId = featureNode.getAttribute(Attributes.ParentFeatureId);
         if (parentId) {
             const parentNode = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === parentId);
-            parentNode.classList.add('feature-card--collapsed');
+            parentNode.classList.add(Classes.CardCollapsed);
             collapseParentFeatures(parentNode);
         }
+    }
+
+    function setupExpandButtons() {
+        Array.from( document.querySelectorAll('.js-expand-button') )
+            .forEach(button => {
+                button.addEventListener('click', expandButtonClicked, false)
+            });
+    }
+
+    function expandButtonClicked(event) {
+        const featureId = this.getAttribute(Attributes.FeatureRef);
+        featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId)
+            .classList.remove(Classes.CardCollapsed);
+        setChildFeaturesInactive(featureId);
+    }
+
+    function setChildFeaturesInactive(featureId) {
+        featureCardNodes.filter(node => {
+            const parentFeatureId = node.getAttribute(Attributes.ParentFeatureId);
+            if (parentFeatureId)
+                return parentFeatureId === featureId;
+            return false;
+        }).forEach(childNode => {
+            setFeatureNodeAsInactive(childNode);
+            setChildFeaturesInactive(childNode.getAttribute(Attributes.FeatureId));
+        });
     }
 }
