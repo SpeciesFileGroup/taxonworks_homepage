@@ -10,8 +10,13 @@ function scope() {
     };
 
     const Classes = {
-        CardCollapsed: 'feature-card--collapsed'
+        CardCollapsed: 'feature-card--collapsed',
+        SubfeatureDivider: 'feature-card__subfeature-divider'
     };
+
+    const ScrollTopOffset = 80; //For NAVBAR
+
+    const ScrollDurationInFrames = 16;
 
     const featureCardNodes = Array.from( document.querySelectorAll(`[${Attributes.FeatureId}]`) );
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
@@ -92,12 +97,10 @@ function scope() {
     }
 
     function setFeatureNodeAsInactive(card) {
-        console.log(`setFeatureNodeAsInactive`, card.getAttribute(Attributes.FeatureId));
         card.setAttribute(Attributes.Inactive, '');
     }
 
     function setFeatureNodeAsActive(card) {
-        console.log(`setFeatureNodeAsActive`, card.getAttribute(Attributes.FeatureId));
         card.removeAttribute(Attributes.Inactive);
     }
 
@@ -171,15 +174,31 @@ function scope() {
             .forEach(node => setFeatureNodeAsInactive(node));
         setFeatureNodeAsActive(featureNode);
         collapseParentFeatures(featureNode);
+        scrollToParent(featureNode);
+        animateDividerInFor(getParentFeatureNode(featureNode));
     }
 
     function collapseParentFeatures(featureNode) {
-        const parentId = featureNode.getAttribute(Attributes.ParentFeatureId);
-        if (parentId) {
-            const parentNode = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === parentId);
+        const parentNode = getParentFeatureNode(featureNode);
+        if (parentNode) {
             parentNode.classList.add(Classes.CardCollapsed);
             collapseParentFeatures(parentNode);
         }
+    }
+
+    function animateDividerInFor(featureNode) {
+        const dividerNode = featureNode.querySelector(`.${Classes.SubfeatureDivider}`);
+        anime({
+            targets: dividerNode,
+            scaleY: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 150
+        });
+    }
+
+    function getParentFeatureNode(featureNode) {
+        const parentId = featureNode.getAttribute(Attributes.ParentFeatureId);
+        return featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === parentId);
     }
 
     function setupExpandButtons() {
@@ -191,9 +210,10 @@ function scope() {
 
     function expandButtonClicked(event) {
         const featureId = this.getAttribute(Attributes.FeatureRef);
-        featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId)
-            .classList.remove(Classes.CardCollapsed);
+        const featureCard = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId);
+        featureCard.classList.remove(Classes.CardCollapsed);
         setChildFeaturesInactive(featureId);
+        scrollTo(featureCard);
     }
 
     function setChildFeaturesInactive(featureId) {
@@ -206,5 +226,28 @@ function scope() {
             setFeatureNodeAsInactive(childNode);
             setChildFeaturesInactive(childNode.getAttribute(Attributes.FeatureId));
         });
+    }
+
+    function scrollToParent(featureNode) {
+        const parentNode = getParentFeatureNode(featureNode);
+        if (parentNode)
+            scrollTo(parentNode);
+    }
+
+    function scrollTo(node) {
+        const amountToScroll = node.getBoundingClientRect().top - ScrollTopOffset;
+        const scrollRate = amountToScroll / ScrollDurationInFrames;
+        scrollABit(amountToScroll, scrollRate);
+    }
+
+    function scrollABit(remainingScroll, idealScrollRate) {
+        if (remainingScroll !== 0) {
+            requestAnimationFrame(function() {
+                const scrollOnThisFrame = Math.abs(remainingScroll) > Math.abs(idealScrollRate) ? idealScrollRate : remainingScroll;
+                window.scrollBy(0, scrollOnThisFrame);
+                remainingScroll -= scrollOnThisFrame;
+                scrollABit(remainingScroll, idealScrollRate);
+            });
+        }
     }
 }

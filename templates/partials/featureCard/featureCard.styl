@@ -82,17 +82,8 @@
             background-color color-green
             color color-cocoa
 
-    &__expand-button
-        @extend $buttonReset
-        background-color color-cocoa
-        border solid 2px color-green;
-        color color-green
+    &__expand-button-container
         display none
-        font-size 20px
-        line-height 28px
-        padding 14px 24px
-        text-align left
-        width 100%
 
         {collapsedSelector} > &
             display block
@@ -103,6 +94,7 @@
         height 26px
         margin 0 auto
         position relative
+        transform-origin 50% 0
         width 2px
 
         {collapsedSelector} > &
