@@ -1,41 +1,66 @@
 features:
     -
-        name: Taxon, specimen and anatomical descriptions
+        name: 1986 Boston Celtics
         status: in_progress
-        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
+        description: 67-15, Finished 1st in NBA Atlantic Division
         whenComplete: this_year
+        features:
+            -
+                name: Larry Bird
+                status: upcoming
+                description: Larry Legend, The Hick from French Lick, Kodak, The Great White Hope
+                whenComplete: three_year
+            -
+                name: Kevin McHale
+                status: upcoming
+                description: Black Hole
+                whenComplete: three_year
+            -
+                name: Dennis Johnson
+                status: upcoming
+                description: D.J., Airplane
+                whenComplete: three_year
+            -
+                name: Robert Parish
+                status: upcoming
+                description: The Chief, Slim
+                whenComplete: three_year
+            -
+                name: Danny Ainge
+                status: upcoming
+                description: Now the GM of the Celtics
+                whenComplete: three_year
     -
-        name: Nomenclature
+        name: 1984-1985 Los Angeles Lakers
         status: upcoming
-        description: Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich and deep coverage of nomenclatural rules are included to ensure adequate metadata are provided. Produce highly annotated nomenclatural catalogs for print.
+        description: 62-20, Finished 1st in NBA Pacific Division
         whenComplete: three_year
         features:
             -
-                name: Nomenclature Sub Feature
+                name: Magic Johnson
                 status: upcoming
-                description: Foo bar baz
+                description: Magic, Buck, E.J. the Deejay
                 whenComplete: three_year
-                features:
-                    -
-                        name: Nomenclature Sub Sub Feature
-                        status: upcoming
-                        description: This is a three deep feature
-                        whenComplete: three_year
-    -
-        name: Collecting event metadata
-        status: upcoming
-        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
-        whenComplete: next_year
-    -
-        name: Specimen metadata
-        status: upcoming
-        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
-        whenComplete: next_year
-    -
-        name: Media and references
-        status: in_progress
-        description: Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.
-        whenComplete: this_year
+            -
+                name: James Worthy
+                status: upcoming
+                description: Big Game James
+                whenComplete: three_year
+            -
+                name: Kareem Abdul-Jabbar
+                status: upcoming
+                description: Lew, Cap, Murdock, Big Fella
+                whenComplete: three_year
+            -
+                name: Byron Scott
+                status: upcoming
+                description: 6-3, 195lb (190cm, 88kg)
+                whenComplete: three_year
+            -
+                name: Michael Cooper
+                status: upcoming
+                description: Coop, Mike
+                whenComplete: three_year
     -
         name: 1995-1996 Chicago Bulls
         status: complete

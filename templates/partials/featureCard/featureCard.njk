@@ -1,5 +1,5 @@
 {% macro featureCard(feature) %}
-    <div class="feature-card">
+    <div class="feature-card" data-feature-id="{{ feature.id }}">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">{{ feature.name }}</h3>
             <div class="feature-card__description">
@@ -20,7 +20,11 @@
         <ul class="feature-card__sub-features">
             {% for feature in feature.features %}
                 <li class="feature-card__sub-feature-item">
-                    <button class="feature-card__sub-feature-item-button" type="button">
+                    <button
+                        class="feature-card__sub-feature-item-button js-subfeature-button"
+                        data-feature-ref="{{ feature.id }}"
+                        type="button">
+
                         {{ feature.name }}
                     </button>
                 </li>

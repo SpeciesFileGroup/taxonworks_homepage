@@ -46,8 +46,10 @@ function transformFeature(featureDatum) {
     } = featureDatum;
 
     const statusAfterCheck = checkIfStatusIsValid(status) ? status : DefaultStatus;
+    const id = generateProbablyUniqueId();
 
     return {
+        id,
         name,
         status: statusAfterCheck,
         description,
@@ -99,10 +101,14 @@ function getFeatureMessageForError(feature) {
 
     return `${buildFeatureMessageWithoutFeatures(clonedFeature)},"features":Array(${subFeatureLength})}`;
 
-    function buildFeatureMessageWithoutFeatures(feature){
+    function buildFeatureMessageWithoutFeatures(feature) {
         const featureMessage = JSON.stringify(feature);
         return featureMessage.substring(0, featureMessage.length - 1);
     }
+}
+
+function generateProbablyUniqueId() {
+    return `id-${(0 | Math.random() * 9e6).toString(36)}`;
 }
 
 module.exports = {process, getFeatureMessageForError};
