@@ -28,7 +28,9 @@ const StatusTemplate = {
 
 function process(data) {
     validate(data);
-    return data.features.map(transformFeature);
+    return data.features.map(datum => {
+        return transformFeature(datum);
+    });
 }
 
 function validate(data) {
@@ -36,7 +38,7 @@ function validate(data) {
     data.features.forEach(validateFeature);
 }
 
-function transformFeature(featureDatum) {
+function transformFeature(featureDatum, parentId = null) {
     const {
         name,
         status = DefaultStatus,
@@ -46,13 +48,18 @@ function transformFeature(featureDatum) {
     } = featureDatum;
 
     const statusAfterCheck = checkIfStatusIsValid(status) ? status : DefaultStatus;
+    const id = generateProbablyUniqueId();
 
     return {
+        id,
+        parentId,
         name,
         status: statusAfterCheck,
         description,
         whenComplete,
-        features: features.map(transformFeature),
+        features: features.map(f => {
+            return transformFeature(f, id);
+        }),
         templateStatus: StatusTemplate[statusAfterCheck],
         templateWhenComplete: WhenCompleteTemplate[whenComplete]
     };
@@ -99,10 +106,14 @@ function getFeatureMessageForError(feature) {
 
     return `${buildFeatureMessageWithoutFeatures(clonedFeature)},"features":Array(${subFeatureLength})}`;
 
-    function buildFeatureMessageWithoutFeatures(feature){
+    function buildFeatureMessageWithoutFeatures(feature) {
         const featureMessage = JSON.stringify(feature);
         return featureMessage.substring(0, featureMessage.length - 1);
     }
+}
+
+function generateProbablyUniqueId() {
+    return `id-${(0 | Math.random() * 9e6).toString(36)}`;
 }
 
 module.exports = {process, getFeatureMessageForError};

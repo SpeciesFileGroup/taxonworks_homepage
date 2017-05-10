@@ -1,8 +1,32 @@
 .feature-core
-    &__item
-        margin 0 32px 16px 0
+    padding 24px 0
+
+    &__controls
+        color color-beige
+        display flex
+        justify-content space-between
+        padding 0 0 24px
+
+    &__controls-description
+        align-items center
+        display flex
+
+    &__previous-button
+    &__next-button
+        @extend $buttonReset
+
+        &-content
+            align-items center
+            background-color cocoa
+            border 2px solid color-khaki
+            display flex
+            height 56px
+            justify-content center
+            width @height
+
+    //&__feature-card-container
         
-    &__button
+    &__feature-button
         @extend $buttonHelper
         background-color color-cocoa
         border solid 2px color-khaki

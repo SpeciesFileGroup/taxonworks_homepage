@@ -292,6 +292,30 @@ describe(`the scope content model`, () => {
             expect(actual[2].templateWhenComplete).to.equal(`Now`);
             expect(actual[3].templateWhenComplete).to.equal(`Next year`);
         });
+
+        it(`should add a unique id to each feature`, () => {
+            const actual = scope.process(mockFrozenData());
+
+            actual.forEach(f => {
+                expect(f.id).to.be.a('string');
+            });
+
+            actual.map(f => f.id).forEach((featureId, index, array) => {
+                expect(array.indexOf(featureId)).to.equal(index);
+            });
+        });
+
+        it(`should include the id of its parent if not top level`, () => {
+            const actual = scope.process(mockFrozenData());
+
+            actual.forEach(topLevelFeature => {
+                expect(topLevelFeature.parentId).to.equal(null);
+
+                topLevelFeature.features.forEach(subfeature => {
+                    expect(subfeature.parentId).to.equal(topLevelFeature.id);
+                });
+            });
+        });
     });
 });
 

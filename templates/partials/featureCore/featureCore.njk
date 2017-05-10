@@ -1,9 +1,26 @@
-<ul class="feature-core">
-    {% for feature in scopeFeatures %}
-        <li class="feature-core__item">
-            <button class="feature-core__button" type="button">
-                {{ feature.name }}
-            </button>
-        </li>
-    {% endfor %}
-</ul>
+{% import 'partials/featureCard/featureCard.njk' as featureCard %}
+
+<div class="feature-core">
+    <div class="feature-core__controls">
+        <button class="feature-core__previous-button js-previous-button" type="button">
+            <span class="feature-core__previous-button-content">
+                <img src="/images/chev-left.svg" alt="Previous">
+            </span>
+        </button>
+
+        <div class="feature-core__controls-description">
+            <div>Tap or swipe for more</div>
+        </div>
+
+        <button class="feature-core__next-button js-next-button" type="button">
+            <span class="feature-core__next-button-content">
+                <img src="/images/chev-right.svg" alt="Next">
+            </span>
+        </button>
+    </div>
+    <div class="feature-core__feature-card-container">
+        {% for feature in scopeFeatures %}
+            {{ featureCard.featureCard(feature, true) }}
+        {% endfor %}
+    </div>
+</div>

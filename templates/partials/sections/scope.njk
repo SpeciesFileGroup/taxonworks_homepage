@@ -1,7 +1,5 @@
-{% import 'partials/featureCard/featureCard.njk' as featureCard %}
-
 <article class="scope-section">
-    <div class="scope-section__container-1 wrapper">
+    <div class="scope-section__container-1">
         <h2 class="scope-section__title item">{{ scopeTitle  }}</h2>
         <div class="scope-section__copy item">
             {{ scopeHTML | safe }}
@@ -13,11 +11,6 @@
         <div class="scope-section__features">
             <div class="scope-section__feature-core-container">
                 {% include 'partials/featureCore/featureCore.njk' %}
-            </div>
-            <div class="scope-section__feature-cards">
-                {% for feature in scopeFeatures %}
-                    {{ featureCard.featureCard(feature) }}
-                {% endfor %}
             </div>
         </div>
     </div>
