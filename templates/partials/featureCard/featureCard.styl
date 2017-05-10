@@ -1,27 +1,29 @@
 .feature-card
     color color-white
+    overflow hidden
     position relative
 
-    &:before
-        background-color color-green
-        content ""
-        height 2px
-        left 0
-        position absolute
-        right 0
-        top 0
+    //&:before
+    //    background-color color-green
+    //    content ""
+    //    height 2px
+    //    left 0
+    //    position absolute
+    //    right 0
+    //    top 0
 
     collapsedSelector = '.feature-card--collapsed'
 
     &[data-inactive]
         display none
 
+    &__content
+        {collapsedSelector} > &
+            display none
+
     &__feature-content
         background-color color-cocoa
         padding 16px
-
-        {collapsedSelector} > &
-            display none
 
     &__name
         @extend $mediumHeader
@@ -61,9 +63,6 @@
 
     &__sub-features
         list-style none inside
-
-        {collapsedSelector} > &
-            display none
 
     &__sub-feature-item
         margin-top 2px

@@ -11,12 +11,17 @@ function scope() {
 
     const Classes = {
         CardCollapsed: 'feature-card--collapsed',
-        SubfeatureDivider: 'feature-card__subfeature-divider',
-        CardContent: 'feature-card__feature-content',
-        SubfeatureList: 'feature-card__sub-features'
+        ExpandButtonContainer: 'feature-card__expand-button-container',
+        CardContent: 'feature-card__content',
+        ExpandTopBorder: 'expand-button__top-border',
+        ExpandRightBorder: 'expand-button__right-border',
+        ExpandLeftBorder: 'expand-button__left-border',
+        ExpandBottomLeftBorder: 'expand-button__bottom-left-border',
+        ExpandBottomRightBorder: 'expand-button__bottom-right-border',
+        Connector: 'expand-button__connector'
     };
 
-    const ScrollTopOffset = 80; //For NAVBAR
+    const ScrollTopOffset = 80; //For navbar
 
     const ScrollDurationInFrames = 16;
 
@@ -174,21 +179,111 @@ function scope() {
         const featureNode = getFeatureCardNodeById(featureId);
         Array.from( featureNode.parentNode.querySelectorAll(`[${Attributes.FeatureId}]`) )
             .forEach(node => setFeatureNodeAsInactive(node));
-        setFeatureNodeAsActive(featureNode);
-        collapseParentFeatures(featureNode);
         scrollToParent(featureNode);
+        transitionToCollapsed( getParentFeatureNode(featureNode), _ => {
+            setFeatureNodeAsActive(featureNode);
+        } );
     }
 
     function collapseParentFeatures(featureNode) {
         const parentNode = getParentFeatureNode(featureNode);
         if (parentNode) {
-            parentNode.classList.add(Classes.CardCollapsed);
+            collapseFeature(parentNode);
             collapseParentFeatures(parentNode);
         }
     }
 
-    function transitionToCollapsed(featureNode) {
+    function collapseFeature(featureNode) {
+        featureNode.classList.add(Classes.CardCollapsed);
+    }
 
+    function transitionToCollapsed(featureNode, callback) {
+        const expandButtonContainerNode = featureNode.querySelector(`.${Classes.ExpandButtonContainer}`);
+        expandButtonContainerNode.style.display = 'block';
+        const expandButtonContainerHeight = expandButtonContainerNode.getBoundingClientRect().height;
+
+        const featureContentNode = featureNode.querySelector(`.${Classes.CardContent}`);
+
+        const expandTopBorder = expandButtonContainerNode.querySelector(`.${Classes.ExpandTopBorder}`);
+        const expandRightBorder = expandButtonContainerNode.querySelector(`.${Classes.ExpandRightBorder}`);
+        const expandLeftBorder = expandButtonContainerNode.querySelector(`.${Classes.ExpandLeftBorder}`);
+        const expandBottomLeftBorder = expandButtonContainerNode.querySelector(`.${Classes.ExpandBottomLeftBorder}`);
+        const expandBottomRightBorder = expandButtonContainerNode.querySelector(`.${Classes.ExpandBottomRightBorder}`);
+
+        const connector = expandButtonContainerNode.querySelector(`.${Classes.Connector}`);
+
+        expandTopBorder.style.transform = 'scaleX(0)';
+        expandLeftBorder.style.transform = 'scaleY(0)';
+        expandRightBorder.style.transform = 'scaleY(0)';
+        expandBottomLeftBorder.style.transform = 'scaleX(0)';
+        expandBottomRightBorder.style.transform = 'scaleX(0)';
+        connector.style.transform = 'scaleY(0)';
+
+        const timeline = anime.timeline()
+            .add({
+                targets: featureNode,
+                height: expandButtonContainerHeight,
+                easing: 'easeInOutQuart',
+                duration: 200,
+                offset: 0
+            }).add({
+                targets: featureContentNode,
+                opacity: 0,
+                easing: 'easeInOutQuart',
+                duration: 200,
+                offset: 0,
+                complete: function() {
+                    collapseFeature(featureNode);
+                    featureContentNode.style.opacity = '';
+                    expandButtonContainerNode.style.display = '';
+                }
+            }).add({
+                targets: expandButtonContainerNode,
+                opacity: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 150,
+                offset: 200
+            }).add({
+                targets: expandTopBorder,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 100,
+                offset: 250
+            }).add({
+                targets: expandLeftBorder,
+                scaleY: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 350
+            }).add({
+                targets: expandRightBorder,
+                scaleY: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 350
+            }).add({
+                targets: expandBottomLeftBorder,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 400
+            }).add({
+                targets: expandBottomRightBorder,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 400
+            }).add({
+                targets: connector,
+                scaleY: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 450,
+                complete: function() {
+                    featureNode.style.height = '';
+                    callback();
+                }
+            });
     }
 
     function getParentFeatureNode(featureNode) {
