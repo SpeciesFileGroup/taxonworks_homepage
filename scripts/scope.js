@@ -18,14 +18,15 @@ function scope() {
         ExpandLeftBorder: 'expand-button__left-border',
         ExpandBottomLeftBorder: 'expand-button__bottom-left-border',
         ExpandBottomRightBorder: 'expand-button__bottom-right-border',
-        Connector: 'expand-button__connector'
+        Connector: 'expand-button__connector',
+        FeatureTopLine: 'feature-card__top-border-line'
     };
 
     const ScrollTopOffset = 80; //For navbar
 
     const ScrollDurationInFrames = 16;
 
-    const featureCardNodes = Array.from( document.querySelectorAll(`[${Attributes.FeatureId}]`) );
+    const featureCardNodes = Array.from(document.querySelectorAll(`[${Attributes.FeatureId}]`));
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
 
     changeCardDetailColors(featureCardNodes);
@@ -36,8 +37,7 @@ function scope() {
     setupExpandButtons();
 
     function changeCardDetailColors(cardList) {
-        for(var i = 0; i < cardList.length; i++ )
-        {
+        for (var i = 0; i < cardList.length; i++) {
             const card = cardList[i];
             setStatusColor(card);
             setAvailableColor(card);
@@ -55,16 +55,13 @@ function scope() {
     function addStatusColorClass(cardLabelElement) {
         const cardLabelValue = cardLabelElement.innerHTML;
 
-        if(cardLabelValue === 'Upcoming')
-        {
+        if (cardLabelValue === 'Upcoming') {
             cardLabelElement.className += ' status-upcoming';
         }
-        else if(cardLabelValue === 'In Progress')
-        {
+        else if (cardLabelValue === 'In Progress') {
             cardLabelElement.className += ' status-in-progress';
         }
-        else if(cardLabelValue === 'Complete')
-        {
+        else if (cardLabelValue === 'Complete') {
             cardLabelElement.className += ' status-complete';
         }
 
@@ -80,16 +77,13 @@ function scope() {
     function addAvailableColorClass(cardLabelElement) {
         const cardLabelValue = cardLabelElement.innerHTML;
 
-        if(cardLabelValue === 'Within the next three years' || cardLabelValue === 'Next year')
-        {
+        if (cardLabelValue === 'Within the next three years' || cardLabelValue === 'Next year') {
             cardLabelElement.className += ' available-next-or-three-years';
         }
-        else if(cardLabelValue === 'This year')
-        {
+        else if (cardLabelValue === 'This year') {
             cardLabelElement.className += ' available-this-year';
         }
-        else if(cardLabelValue === 'Now')
-        {
+        else if (cardLabelValue === 'Now') {
             cardLabelElement.className += ' available-now';
         }
 
@@ -116,16 +110,16 @@ function scope() {
     }
 
     function setFeatureIdAsInactive(featureId) {
-        setFeatureNodeAsInactive( getFeatureCardNodeById(featureId) );
+        setFeatureNodeAsInactive(getFeatureCardNodeById(featureId));
     }
 
     function setFeatureIdAsActive(featureId) {
-        setFeatureNodeAsActive( getFeatureCardNodeById(featureId) );
+        setFeatureNodeAsActive(getFeatureCardNodeById(featureId));
     }
 
     function setupCoreButtonEventListeners(coreButtonList, cardList, cardValueList) {
-        for( i = 0; i < coreButtonList.length; i++ ) {
-            coreButtonList[i].addEventListener("click", function(){
+        for (i = 0; i < coreButtonList.length; i++) {
+            coreButtonList[i].addEventListener("click", function() {
                 // Add click event here
             });
         }
@@ -169,7 +163,7 @@ function scope() {
     }
 
     function setupSubfeatureButtons() {
-        Array.from( document.querySelectorAll('.js-subfeature-button') ).forEach(button => {
+        Array.from(document.querySelectorAll('.js-subfeature-button')).forEach(button => {
             button.addEventListener('click', subfeatureButtonClicked, false);
         });
     }
@@ -177,20 +171,13 @@ function scope() {
     function subfeatureButtonClicked(event) {
         const featureId = this.getAttribute(Attributes.FeatureRef);
         const featureNode = getFeatureCardNodeById(featureId);
-        Array.from( featureNode.parentNode.querySelectorAll(`[${Attributes.FeatureId}]`) )
+        Array.from(featureNode.parentNode.querySelectorAll(`[${Attributes.FeatureId}]`))
             .forEach(node => setFeatureNodeAsInactive(node));
         scrollToParent(featureNode);
-        transitionToCollapsed( getParentFeatureNode(featureNode), _ => {
+        transitionToCollapsed(getParentFeatureNode(featureNode), _ => {
             setFeatureNodeAsActive(featureNode);
-        } );
-    }
-
-    function collapseParentFeatures(featureNode) {
-        const parentNode = getParentFeatureNode(featureNode);
-        if (parentNode) {
-            collapseFeature(parentNode);
-            collapseParentFeatures(parentNode);
-        }
+            transitionFeatureToActive(featureNode);
+        });
     }
 
     function collapseFeature(featureNode) {
@@ -219,7 +206,7 @@ function scope() {
         expandBottomRightBorder.style.transform = 'scaleX(0)';
         connector.style.transform = 'scaleY(0)';
 
-        const timeline = anime.timeline()
+        anime.timeline()
             .add({
                 targets: featureNode,
                 height: expandButtonContainerHeight,
@@ -227,62 +214,87 @@ function scope() {
                 duration: 200,
                 offset: 0
             }).add({
-                targets: featureContentNode,
-                opacity: 0,
+            targets: featureContentNode,
+            opacity: 0,
+            easing: 'easeInOutQuart',
+            duration: 200,
+            offset: 0,
+            complete: function() {
+                collapseFeature(featureNode);
+                featureContentNode.style.opacity = '';
+                expandButtonContainerNode.style.display = '';
+            }
+        }).add({
+            targets: expandButtonContainerNode,
+            opacity: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 150,
+            offset: 200
+        }).add({
+            targets: expandTopBorder,
+            scaleX: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 100,
+            offset: 250
+        }).add({
+            targets: expandLeftBorder,
+            scaleY: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 50,
+            offset: 350
+        }).add({
+            targets: expandRightBorder,
+            scaleY: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 50,
+            offset: 350
+        }).add({
+            targets: expandBottomLeftBorder,
+            scaleX: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 50,
+            offset: 400
+        }).add({
+            targets: expandBottomRightBorder,
+            scaleX: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 50,
+            offset: 400
+        }).add({
+            targets: connector,
+            scaleY: [0, 1],
+            easing: 'easeInOutQuart',
+            duration: 50,
+            offset: 450,
+            complete: function() {
+                featureNode.style.height = '';
+                callback();
+            }
+        });
+    }
+
+    function transitionFeatureToActive(featureNode) {
+        const height = featureNode.getBoundingClientRect().height;
+        const topLineNode = featureNode.querySelector(`.${Classes.FeatureTopLine}`);
+
+        topLineNode.style.transform = 'scaleX(0)';
+
+        anime.timeline()
+            .add({
+                targets: featureNode,
+                height: [0, height],
                 easing: 'easeInOutQuart',
-                duration: 200,
-                offset: 0,
-                complete: function() {
-                    collapseFeature(featureNode);
-                    featureContentNode.style.opacity = '';
-                    expandButtonContainerNode.style.display = '';
-                }
-            }).add({
-                targets: expandButtonContainerNode,
-                opacity: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 150,
-                offset: 200
-            }).add({
-                targets: expandTopBorder,
-                scaleX: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 100,
-                offset: 250
-            }).add({
-                targets: expandLeftBorder,
-                scaleY: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 50,
-                offset: 350
-            }).add({
-                targets: expandRightBorder,
-                scaleY: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 50,
-                offset: 350
-            }).add({
-                targets: expandBottomLeftBorder,
-                scaleX: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 50,
-                offset: 400
-            }).add({
-                targets: expandBottomRightBorder,
-                scaleX: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 50,
-                offset: 400
-            }).add({
-                targets: connector,
-                scaleY: [0, 1],
-                easing: 'easeInOutQuart',
-                duration: 50,
-                offset: 450,
+                duration: 250,
                 complete: function() {
                     featureNode.style.height = '';
-                    callback();
                 }
+            })
+            .add({
+                targets: topLineNode,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 250,
+                offset: 75
             });
     }
 
@@ -292,7 +304,7 @@ function scope() {
     }
 
     function setupExpandButtons() {
-        Array.from( document.querySelectorAll('.js-expand-button') )
+        Array.from(document.querySelectorAll('.js-expand-button'))
             .forEach(button => {
                 button.addEventListener('click', expandButtonClicked, false)
             });

@@ -1,6 +1,8 @@
 {% macro featureCard(feature, isTopLevel = false) %}
     <div class="feature-card" data-feature-id="{{ feature.id }}" {{ 'data-top-level' if isTopLevel }} {% if feature.parentId %}data-parent-feature-id="{{ feature.parentId }}"{% endif %}>
 
+        <div class="feature-card__top-border-line"></div>
+
         <div class="feature-card__content">
             <div class="feature-card__feature-content">
                 <h3 class="feature-card__name">{{ feature.name }}</h3>
