@@ -8,7 +8,7 @@ const fs = require("fs-extra");
 const del = require("del");
 const yamljs = require("yamljs");
 const markdown = require('markdown-it')();
-const uglify = require("uglify-js");
+const uglify = require("uglify-es");
 const scope = require('./scope');
 
 const constants = require("../constants");
