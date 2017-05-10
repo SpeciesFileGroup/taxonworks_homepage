@@ -314,11 +314,11 @@ function scope() {
         const featureId = this.getAttribute(Attributes.FeatureRef);
         const featureCard = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId);
         featureCard.classList.remove(Classes.CardCollapsed);
-        setChildFeaturesInactive(featureId);
+        resetChildFeatures(featureId);
         scrollTo(featureCard);
     }
 
-    function setChildFeaturesInactive(featureId) {
+    function resetChildFeatures(featureId) {
         featureCardNodes.filter(node => {
             const parentFeatureId = node.getAttribute(Attributes.ParentFeatureId);
             if (parentFeatureId)
@@ -326,7 +326,8 @@ function scope() {
             return false;
         }).forEach(childNode => {
             setFeatureNodeAsInactive(childNode);
-            setChildFeaturesInactive(childNode.getAttribute(Attributes.FeatureId));
+            childNode.classList.remove(Classes.CardCollapsed);
+            resetChildFeatures(childNode.getAttribute(Attributes.FeatureId));
         });
     }
 
