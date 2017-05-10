@@ -101,13 +101,24 @@
   list-style-type: none;
 }
 .feature-card__sub-feature-item-button,
-.feature-core__button,
+.feature-core__feature-button,
 .getting-started-section a {
   cursor: pointer;
   font-family: Hind;
   font-size: 20px;
   line-height: 1.4;
   width: 100%;
+}
+.expand-button,
+.feature-core__previous-button,
+.feature-core__next-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
 }
 .footer-section__container,
 .header-section__container,
@@ -174,13 +185,84 @@
     margin-right: 0;
   }
 }
+.expand-button {
+  width: 100%;
+}
+.expand-button__name {
+  background-color: #28221c;
+  color: #00cc92;
+  display: block;
+  font-size: 20px;
+  line-height: 28px;
+  padding: 14px 24px;
+  position: relative;
+  text-align: left;
+}
+.expand-button__left-border,
+.expand-button__right-border,
+.expand-button__top-border,
+.expand-button__bottom-border {
+  background-color: #00cc92;
+  position: absolute;
+}
+.expand-button__top-border,
+.expand-button__bottom-border {
+  left: 0;
+  height: 2px;
+  right: 0;
+}
+.expand-button__right-border,
+.expand-button__left-border {
+  bottom: 0;
+  top: 0;
+  -ms-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+  width: 2px;
+}
+.expand-button__left-border {
+  left: 0;
+}
+.expand-button__right-border {
+  right: 0;
+}
+.expand-button__top-border {
+  top: 0;
+}
+.expand-button__bottom-border {
+  bottom: 0;
+}
+.expand-button__connector {
+  background-color: #00cc92;
+  display: block;
+  height: 24px;
+  margin: 0 auto;
+  position: relative;
+  -ms-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+  width: 2px;
+}
 .feature-card {
-  border-top: 2px solid #00cc92;
   color: #fff;
+  position: relative;
+}
+.feature-card:before {
+  background-color: #00cc92;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.feature-card[data-inactive] {
+  display: none;
 }
 .feature-card__feature-content {
   background-color: #28221c;
-  padding: 24px;
+  padding: 16px;
+}
+.feature-card--collapsed > .feature-card__feature-content {
+  display: none;
 }
 .feature-card__name {
   margin-bottom: 12px;
@@ -231,6 +313,9 @@
 .feature-card__sub-features {
   list-style: none inside;
 }
+.feature-card--collapsed > .feature-card__sub-features {
+  display: none;
+}
 .feature-card__sub-feature-item {
   margin-top: 2px;
 }
@@ -238,23 +323,52 @@
   background-color: #28221c;
   color: #00cc92;
   display: block;
-  padding: 14px 24px;
+  padding: 14px 16px;
   text-align: left;
   transition: background-color 300ms, color 300ms;
 }
 .feature-card__sub-feature-item-button:hover,
 .feature-card__sub-feature-item-button:focus {
   background-color: #00cc92;
-  border: solid 2px #00cc92;
   color: #28221c;
 }
-.feature-card.inactive-card {
+.feature-card__expand-button-container {
   display: none;
 }
-.feature-core__item {
-  margin: 0 32px 16px 0;
+.feature-card--collapsed > .feature-card__expand-button-container {
+  display: block;
 }
-.feature-core__button {
+.feature-core {
+  padding: 24px 0;
+}
+.feature-core__controls {
+  color: #c1bfbb;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 0 0 24px;
+}
+.feature-core__controls-description {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+}
+.feature-core__previous-button-content,
+.feature-core__next-button-content {
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: cocoa;
+  border: 2px solid #413a31;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 56px;
+}
+.feature-core__feature-button {
   background-color: #28221c;
   border: solid 2px #413a31;
   color: #00cc92;
@@ -263,8 +377,8 @@
   padding: 22px 24px;
   text-align: left;
 }
-.feature-core__button:hover,
-.feature-core__button:focus {
+.feature-core__feature-button:hover,
+.feature-core__feature-button:focus {
   background-color: #00cc92;
   color: #28221c;
   transition: background-color 300ms, color 300ms;
@@ -915,6 +1029,12 @@
 }
 .scope-section {
   background-color: #342d25;
+}
+.scope-section__container-1 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 @media only screen and (min-width: 1000px) and (max-width: 1199px) {
   .scope-section__container-1 {
