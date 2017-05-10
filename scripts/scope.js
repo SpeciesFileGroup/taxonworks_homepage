@@ -10,6 +10,7 @@ function scope() {
     };
 
     const Classes = {
+        FeatureCore: 'feature-core',
         CardCollapsed: 'feature-card--collapsed',
         ExpandButtonContainer: 'feature-card__expand-button-container',
         CardContent: 'feature-card__content',
@@ -28,6 +29,7 @@ function scope() {
 
     const featureCardNodes = Array.from(document.querySelectorAll(`[${Attributes.FeatureId}]`));
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
+    const featureCoreNode = document.querySelector(`.${Classes.FeatureCore}`);
 
     changeCardDetailColors(featureCardNodes);
     setupInitialCardState(featureCardNodes);
@@ -174,9 +176,12 @@ function scope() {
         Array.from(featureNode.parentNode.querySelectorAll(`[${Attributes.FeatureId}]`))
             .forEach(node => setFeatureNodeAsInactive(node));
         scrollToParent(featureNode);
+        lockCoreHeight();
         transitionToCollapsed(getParentFeatureNode(featureNode), _ => {
             setFeatureNodeAsActive(featureNode);
-            transitionFeatureToActive(featureNode);
+            transitionFeatureToActive(featureNode, _ => {
+                unlockCoreHeight();
+            });
         });
     }
 
@@ -213,67 +218,76 @@ function scope() {
                 easing: 'easeInOutQuart',
                 duration: 200,
                 offset: 0
-            }).add({
-            targets: featureContentNode,
-            opacity: 0,
-            easing: 'easeInOutQuart',
-            duration: 200,
-            offset: 0,
-            complete: function() {
-                collapseFeature(featureNode);
-                featureContentNode.style.opacity = '';
-                expandButtonContainerNode.style.display = '';
-            }
-        }).add({
-            targets: expandButtonContainerNode,
-            opacity: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 150,
-            offset: 200
-        }).add({
-            targets: expandTopBorder,
-            scaleX: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 100,
-            offset: 250
-        }).add({
-            targets: expandLeftBorder,
-            scaleY: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 50,
-            offset: 350
-        }).add({
-            targets: expandRightBorder,
-            scaleY: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 50,
-            offset: 350
-        }).add({
-            targets: expandBottomLeftBorder,
-            scaleX: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 50,
-            offset: 400
-        }).add({
-            targets: expandBottomRightBorder,
-            scaleX: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 50,
-            offset: 400
-        }).add({
-            targets: connector,
-            scaleY: [0, 1],
-            easing: 'easeInOutQuart',
-            duration: 50,
-            offset: 450,
-            complete: function() {
-                featureNode.style.height = '';
-                callback();
-            }
-        });
+            })
+            .add({
+                targets: featureContentNode,
+                opacity: 0,
+                easing: 'easeInOutQuart',
+                duration: 200,
+                offset: 0,
+                complete: function() {
+                    collapseFeature(featureNode);
+                    featureContentNode.style.opacity = '';
+                    expandButtonContainerNode.style.display = '';
+                }
+            })
+            .add({
+                targets: expandButtonContainerNode,
+                opacity: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 150,
+                offset: 200
+            })
+            .add({
+                targets: expandTopBorder,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 100,
+                offset: 250
+            })
+            .add({
+                targets: expandLeftBorder,
+                scaleY: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 350
+            })
+            .add({
+                targets: expandRightBorder,
+                scaleY: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 350
+            })
+            .add({
+                targets: expandBottomLeftBorder,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 400
+            })
+            .add({
+                targets: expandBottomRightBorder,
+                scaleX: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 400
+            })
+            .add({
+                targets: connector,
+                scaleY: [0, 1],
+                easing: 'easeInOutQuart',
+                duration: 50,
+                offset: 450,
+                complete: function() {
+                    featureNode.style.height = '';
+                    callback();
+                }
+            });
     }
 
-    function transitionFeatureToActive(featureNode) {
+    function transitionFeatureToActive(featureNode, callback) {
+        lockCoreHeight();
         const height = featureNode.getBoundingClientRect().height;
         const topLineNode = featureNode.querySelector(`.${Classes.FeatureTopLine}`);
 
@@ -294,8 +308,21 @@ function scope() {
                 scaleX: [0, 1],
                 easing: 'easeInOutQuart',
                 duration: 250,
-                offset: 75
+                offset: 75,
+                complete: function() {
+                    callback();
+                }
             });
+    }
+
+    function lockCoreHeight() {
+        featureCoreNode.style.minHeight = '';
+        const height = featureCoreNode.getBoundingClientRect().height;
+        featureCoreNode.style.minHeight = `${height}px`;
+    }
+
+    function unlockCoreHeight() {
+        featureCoreNode.style.minHeight = '';
     }
 
     function getParentFeatureNode(featureNode) {
