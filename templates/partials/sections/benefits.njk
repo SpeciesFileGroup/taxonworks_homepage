@@ -1,16 +1,16 @@
 <div class="benefits-section">
     <article class="benefits-section__section-1">
-        <div class="benefits-section__container wrapper">
-            <h2 class="benefits-section__title item">{{ benefitsTitle  }}</h2>
-            <div class="benefits-section__copy item">
+        <div class="benefits-section__container">
+            <h2 class="benefits-section__title">{{ benefitsTitle  }}</h2>
+            <div class="benefits-section__copy">
                 {{ benefits1HTML | safe }}
             </div>
-            <div class="benefits-section__mobile-image item">
+            <div class="benefits-section__mobile-image">
                 <img src="images/inhs-01.svg" alt="INHS 01" />
             </div>
         </div>
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__container__illustrations wrapper">
+        <div class="benefits-section__container">
+            <div class="benefits-section__container__illustrations">
                 <div class="benefits-section__illustration__1">
                     <img src="images/inhs-01.svg" alt="" />
                 </div>
@@ -28,11 +28,11 @@
     </article>
 
     <article class="benefits-section__section-2">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__copy item">
+        <div class="benefits-section__container">
+            <div class="benefits-section__copy">
                 {{ benefits2HTML | safe }}
             </div>
-            <div class="benefits-section__illustration item">
+            <div class="benefits-section__illustration">
                 <img src="images/inhs-06.svg" class="benefits-section__illustration__large" alt="INHS 06" />
                 <img src="images/inhs-05.svg" class="benefits-section__illustration__large" alt="INHS 05" />
                 <img src="images/inhs-05.svg" class="benefits-section__illustration__small" alt="INHS 05" />
@@ -41,33 +41,29 @@
     </article>
 
     <article class="benefits-section__section-3">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__empty item"></div>
-            <div class="benefits-section__copy item">
+        <div class="benefits-section__container">
+            <div class="benefits-section__empty"></div>
+            <div class="benefits-section__copy">
                 {{ benefits3HTML | safe }}
             </div>
-            <div class="benefits-section__mobile-image item">
+            <div class="benefits-section__mobile-image">
                 <img src="images/branches-2-small.svg" width="272px" height="497px" alt="Branches 2" />
             </div>
         </div>
     </article>
 
     <article class="benefits-section__section-4">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__container__inner wrapper item">
-                <div class="benefits-section__copy item">
+        <div class="benefits-section__container">
+            <div class="benefits-section__container__inner">
+                <div class="benefits-section__copy">
                     {{ benefits4HTML | safe }}
                 </div>
-                <div class="benefits-section__sponsor-grid item">
-                    <div class="benefits-section__sponsor-grid__grid wrapper">
-                        {% for sponsor in sponsors %}
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="{{ sponsor.src }}" alt="{{ sponsor.name }}" />
-                        {% endfor %}
-                    </div>
+                <div class="benefits-section__sponsor-grid">
+                    {% include 'partials/sponsorGrid/sponsorGrid.njk' %}
                 </div>
             </div>
-            <div class="benefits-section__empty item"></div>
-            <div class="benefits-section__mobile-image item">
+            <div class="benefits-section__empty"></div>
+            <div class="benefits-section__mobile-image">
                 <img src="images/trunk-small.svg" width="320px" height="636px" alt="Trunk" />
             </div>
         </div>

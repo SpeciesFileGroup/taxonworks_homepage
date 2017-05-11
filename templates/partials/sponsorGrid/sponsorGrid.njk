@@ -1,0 +1,7 @@
+<div class="sponsor-grid">
+    {% for sponsor in sponsors %}
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="{{ sponsor.src }}" alt="{{ sponsor.name }}" />
+        </div>
+    {% endfor %}
+</div>
