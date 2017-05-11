@@ -22,10 +22,13 @@
 
     &__section-1
         background-color color-green
+        position relative
+        z-index 1
 
     &__leaves
         max-width content-max-width
         margin 0 auto
+        transform translateY(32px)
 
         +breakpoint(small)
             display none
@@ -33,6 +36,27 @@
     &__leaves-image
         height auto
         max-width 100%
+        vertical-align bottom
+
+    &__connecting-lines
+        bottom 0
+        left 'calc((100vw - %s) / 2)' % content-max-width
+        position absolute
+        right @left
+        top 0
+
+        @media (max-width content-max-width)
+            left 0
+            right 0
+
+        +breakpoint(small)
+            background url(images/branches-1-small.svg) no-repeat calc(100% - 24px) 0%
+
+        &-image
+            width 100%
+
+            +breakpoint(small)
+                display none
 
     &__section-2
     &__section-3
@@ -53,24 +77,6 @@
 
     &__section-3
         background-color color-white
-
-    &__connecting-lines
-        bottom 0
-        left section-padding
-        position absolute
-        right section-padding
-        top 0
-
-        +breakpoint(medium)
-            left section-padding-medium-x
-            right section-padding-medium-x
-
-        +breakpoint(small)
-            left 0
-            right 24px
-
-        &-image
-            width 100%
 
     &__section-3
         background-image url("images/branches-2.svg")
