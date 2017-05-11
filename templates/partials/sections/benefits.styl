@@ -55,23 +55,22 @@
         background-color color-white
 
     &__connecting-lines
-        background url(images/branches-1.svg) no-repeat
-        background-size contain
         bottom 0
-        left section-padding-large
+        left section-padding
         position absolute
-        right section-padding-large
+        right section-padding
         top 0
 
         +breakpoint(medium)
-            left section-padding-medium
-            right section-padding-medium
+            left section-padding-medium-x
+            right section-padding-medium-x
 
         +breakpoint(small)
-            background url(images/branches-1-small.svg) no-repeat
-            background-position 100% 0
             left 0
             right 24px
+
+        &-image
+            width 100%
 
     &__section-3
         background-image url("images/branches-2.svg")
