@@ -1,6 +1,6 @@
 <div class="benefits-section">
     <article class="benefits-section__section-1">
-        <div class="benefits-section__container">
+        <div class="benefits-section__container benefits-section__container--less-padding-below">
             <h2 class="benefits-section__title">{{ benefitsTitle  }}</h2>
             <div class="benefits-section__copy">
                 {{ benefits1HTML | safe }}
@@ -9,21 +9,8 @@
                 <img src="images/inhs-01.svg" alt="INHS 01" />
             </div>
         </div>
-        <div class="benefits-section__container">
-            <div class="benefits-section__container__illustrations">
-                <div class="benefits-section__illustration__1">
-                    <img src="images/inhs-01.svg" alt="" />
-                </div>
-                <div class="benefits-section__illustration__2">
-                    <img src="images/inhs-02.svg" alt="" />
-                </div>
-                <div class="benefits-section__illustration__3">
-                    <img src="images/inhs-03.svg" alt="" />
-                </div>
-                <div class="benefits-section__illustration__4">
-                    <img src="images/inhs-04.svg" alt="" />
-                </div>
-            </div>
+        <div class="benefits-section__leaves" aria-hidden="true">
+            <img class="benefits-section__leaves-image" src="images/leaves.svg">
         </div>
     </article>
 
