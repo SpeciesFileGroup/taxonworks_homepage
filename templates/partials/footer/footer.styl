@@ -4,6 +4,8 @@
 
     &__container
         @extends $sectionContainer
+        align-items flex-start
+        display flex
         padding-top footer-padding-top
 
         +breakpoint(small)
@@ -12,12 +14,17 @@
 
     &__details
         float left
-        // padding footer-details-padding
         width 50%
 
         +breakpoint(small)
             margin-bottom 48px
             width 100%
+
+    &__footer-links
+        @extend $normalFlexItem
+
+    &__logo
+        @extend $normalFlexItem
 
     &__logo
     &__funding

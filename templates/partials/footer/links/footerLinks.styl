@@ -1,5 +1,5 @@
-.footer__links
-    height 300px
+.footer-links
+    display flex
 
     +breakpoint(medium)
         flex-flow row wrap
@@ -8,23 +8,14 @@
     +breakpoint(small)
         flex-flow column
 
-    ul
-        list-style-type none
-        margin 0 16px 0 0
-        width 160px
+    $linkList
+        flex 1 1 0
+        list-style none inside
 
-        +breakpoint(small)
-            margin-bottom 32px
+    &__code
+    &__contact
+    &__social
+        @extends .footer-links $linkList
 
-        li 
+        > li
             line-height 2
-
-        .footer__links__list__title
-            font-weight bold
-
-        &.item
-            +breakpoint(medium)
-                flex-basis 25%
-                font-size 20px
-                line-height 1.4
-                padding 10px 0
