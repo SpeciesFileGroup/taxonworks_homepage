@@ -3,6 +3,7 @@
     &__container
         @extends $sectionContainer
         display flex
+        position relative
 
         &__illustrations
             align-items center
@@ -53,15 +54,24 @@
     &__section-3
         background-color color-white
 
-    &__section-2
-        background-image url("images/branches-1.svg")
-        background-position 85% top 
-        background-repeat no-repeat
+    &__connecting-lines
+        background url(images/branches-1.svg) no-repeat
         background-size contain
+        bottom 0
+        left section-padding-large
+        position absolute
+        right section-padding-large
+        top 0
+
+        +breakpoint(medium)
+            left section-padding-medium
+            right section-padding-medium
 
         +breakpoint(small)
-            background-image url("images/branches-1-small.svg")
-            background-position 85% top 
+            background url(images/branches-1-small.svg) no-repeat
+            background-position 100% 0
+            left 0
+            right 24px
 
     &__section-3
         background-image url("images/branches-2.svg")
@@ -105,6 +115,10 @@
         display flex
         max-height 100%
         max-width 100%
+
+    &__copy
+    &__illustration
+        position relative
 
     &__illustration
         @extends $normalFlexItem
