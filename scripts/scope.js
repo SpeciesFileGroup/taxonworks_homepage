@@ -32,7 +32,7 @@ function scope() {
     setupSubfeatureButtons();
     setupExpandButtons();
     setupFeatureMenuButtons();
-    featureMenuButtonState();
+    updateFeatureMenuButtonState();
 
     function changeCardDetailColors(cardList) {
         for(var i = 0; i < cardList.length; i++ )
@@ -120,14 +120,6 @@ function scope() {
 
     function setFeatureIdAsActive(featureId) {
         setFeatureNodeAsActive( getFeatureCardNodeById(featureId) );
-    }
-
-    function setupCoreButtonEventListeners(coreButtonList, cardList, cardValueList) {
-        for( i = 0; i < coreButtonList.length; i++ ) {
-            coreButtonList[i].addEventListener("click", function(){
-                // Add click event here
-            });
-        }
     }
 
     function setupControlButtons() {
@@ -251,13 +243,25 @@ function scope() {
     }
 
     function setupFeatureMenuButtons() {
-
+        featureMenuButtonNodes.forEach(node => {
+            node.addEventListener('click', featureMenuButtonClicked, false);
+        });
     }
 
-    function featureMenuButtonState() {
-        const activeTopLevelId = topLevelFeatureCardNodes.find(node => {
-            return !node.getAttribute(Attributes.Inactive);
-        }).getAttribute(Attributes.FeatureId);
+    function featureMenuButtonClicked(event) {
+        const featureIdToActivate = this.getAttribute(Attributes.FeatureRef);
+        topLevelFeatureCardNodes.forEach(node => {
+            if (node.getAttribute(Attributes.FeatureId) === featureIdToActivate)
+                setFeatureNodeAsActive(node);
+            else
+                setFeatureNodeAsInactive(node);
+        });
+        updateFeatureMenuButtonState();
+    }
+
+    function updateFeatureMenuButtonState() {
+        const activeTopLevelId = topLevelFeatureCardNodes
+            .find(node => !node.hasAttribute(Attributes.Inactive)).getAttribute(Attributes.FeatureId);
 
         featureMenuButtonNodes.forEach(node => {
             if (node.getAttribute(Attributes.FeatureRef) === activeTopLevelId)
