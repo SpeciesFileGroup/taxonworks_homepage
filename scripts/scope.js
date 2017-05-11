@@ -13,7 +13,8 @@ function scope() {
         CardCollapsed: 'feature-card--collapsed',
         SubfeatureDivider: 'feature-card__subfeature-divider',
         CardContent: 'feature-card__feature-content',
-        SubfeatureList: 'feature-card__sub-features'
+        SubfeatureList: 'feature-card__sub-features',
+        FeatureMenuButtonActive: 'feature-core__feature-menu-button--active-feature'
     };
 
     const ScrollTopOffset = 80; //For NAVBAR
@@ -22,6 +23,7 @@ function scope() {
 
     const featureCardNodes = Array.from( document.querySelectorAll(`[${Attributes.FeatureId}]`) );
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
+    const featureMenuButtonNodes = Array.from( document.querySelectorAll('.js-feature-menu-button') );
 
     changeCardDetailColors(featureCardNodes);
     setupInitialCardState(featureCardNodes);
@@ -29,6 +31,8 @@ function scope() {
     setupControlButtons();
     setupSubfeatureButtons();
     setupExpandButtons();
+    setupFeatureMenuButtons();
+    featureMenuButtonState();
 
     function changeCardDetailColors(cardList) {
         for(var i = 0; i < cardList.length; i++ )
@@ -244,5 +248,22 @@ function scope() {
                 scrollABit(remainingScroll, idealScrollRate);
             });
         }
+    }
+
+    function setupFeatureMenuButtons() {
+
+    }
+
+    function featureMenuButtonState() {
+        const activeTopLevelId = topLevelFeatureCardNodes.find(node => {
+            return !node.getAttribute(Attributes.Inactive);
+        }).getAttribute(Attributes.FeatureId);
+
+        featureMenuButtonNodes.forEach(node => {
+            if (node.getAttribute(Attributes.FeatureRef) === activeTopLevelId)
+                node.classList.add(Classes.FeatureMenuButtonActive);
+            else
+                node.classList.remove(Classes.FeatureMenuButtonActive);
+        });
     }
 }

@@ -1,11 +1,18 @@
 .feature-core
+    display flex
     padding 24px 0
+
+    +breakpoint(medium)
+        display block
 
     &__controls
         color color-beige
-        display flex
+        display none
         justify-content space-between
         padding 0 0 24px
+
+        +breakpoint(medium)
+            display flex
 
     &__controls-description
         align-items center
@@ -24,21 +31,39 @@
             justify-content center
             width @height
 
-    //&__feature-card-container
-        
-    &__feature-button
+    &__feature-menu
+        flex 1 1 0
+        list-style none inside
+        margin-right 8px
+
+        +breakpoint(medium)
+            display none
+
+    &__feature-menu-item
+        margin-bottom 8px
+
+    &__feature-menu-button
         @extend $buttonHelper
         background-color color-cocoa
         border solid 2px color-khaki
         color color-green
-        height 112px
         outline none
         padding 22px 24px
         text-align left
+        transition background-color 250ms, color 250ms, border-color 250ms
 
         &:hover
         &:focus
             background-color color-green
             color color-cocoa
-            transition background-color 300ms, color 300ms
- 
+
+        &--active-feature
+            border-color color-green
+            color white
+
+    &__feature-card-container
+        flex 1 1 0
+        margin-left 8px
+
+        +breakpoint(medium)
+            margin-left 0

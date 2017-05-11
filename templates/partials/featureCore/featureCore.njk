@@ -18,6 +18,21 @@
             </span>
         </button>
     </div>
+
+    <ul class="feature-core__feature-menu">
+        {% for feature in scopeFeatures %}
+            <li class="feature-core__feature-menu-item">
+                <button
+                    class="feature-core__feature-menu-button js-feature-menu-button"
+                    data-feature-ref="{{ feature.id }}"
+                    type="button">
+
+                    {{ feature.name }}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+
     <div class="feature-core__feature-card-container">
         {% for feature in scopeFeatures %}
             {{ featureCard.featureCard(feature, true) }}
