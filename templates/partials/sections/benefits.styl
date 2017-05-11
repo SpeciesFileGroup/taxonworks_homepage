@@ -2,9 +2,12 @@
 
     &__container
         @extends $sectionContainer
+        display flex
+        position relative
 
         &__illustrations
             align-items center
+            display flex
             height 330px
             justify-content space-between
             margin 0
@@ -21,8 +24,12 @@
             padding-bottom 0
 
         &__inner
+            @extends $normalFlexItem
+            display flex
             flex-flow column
-            -ms-flex-flow column
+
+            +breakpoint(small)
+                display block
 
     &__section-1
         background-color color-green
@@ -47,15 +54,23 @@
     &__section-3
         background-color color-white
 
-    &__section-2
-        background-image url("images/branches-1.svg")
-        background-position 85% top 
-        background-repeat no-repeat
-        background-size contain
+    &__connecting-lines
+        bottom 0
+        left section-padding
+        position absolute
+        right section-padding
+        top 0
+
+        +breakpoint(medium)
+            left section-padding-medium-x
+            right section-padding-medium-x
 
         +breakpoint(small)
-            background-image url("images/branches-1-small.svg")
-            background-position 85% top 
+            left 0
+            right 24px
+
+        &-image
+            width 100%
 
     &__section-3
         background-image url("images/branches-2.svg")
@@ -76,9 +91,11 @@
 
     &__title
         @extends $bigHeader
+        @extends $normalFlexItem
 
     &__copy
         @extends $smallHeader
+        @extends $normalFlexItem
 
         +breakpoint(small)
             margin-bottom 48px
@@ -94,10 +111,17 @@
             @extends $list
 
     &__illustrations
+        display flex
         max-height 100%
         max-width 100%
 
+    &__copy
     &__illustration
+        position relative
+
+    &__illustration
+        @extends $normalFlexItem
+
         &__1
         &__2
         &__3 
@@ -134,6 +158,7 @@
                 display none
 
     &__mobile-image
+        @extend $normalFlexItem
         display none
         width 100%
 
@@ -145,24 +170,11 @@
             width 100%
 
     &__sponsor-grid
+        @extends $normalFlexItem
         margin-top 48px
-        
-        &__grid 
-            flex-wrap wrap
-            width 100%
-
-        &__sponsor
-            background-color sponsor-grid-grey
-            height 112px
-            margin 0 16px 16px 0
-            max-width 160px
-
-            +breakpoint(medium)
-                max-width none
-
-            +breakpoint(small)
-                max-width none
 
     &__empty
+        @extends $normalFlexItem
+
         +breakpoint(small)
             display none

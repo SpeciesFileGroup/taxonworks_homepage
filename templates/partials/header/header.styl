@@ -1,12 +1,11 @@
 .header-section
+    align-items center
     background-color color-brown
+    display flex
     height 960px
     overflow hidden
     position relative
     text-align center
-
-    &.wrapper
-        align-items center
 
     +breakpoint(medium)
         min-height 750px
@@ -16,6 +15,8 @@
 
     &__container
         @extends $sectionContainer
+        display flex
+        padding 0 section-padding
 
         +breakpoint(medium)
             padding 160px 48px
@@ -24,17 +25,14 @@
             flex-flow column wrap
             padding 40px 24px
 
-        &.wrapper
-            padding 0 section-padding
+        +breakpoint(large)
+            padding 0 section-padding-large
 
-            +breakpoint(large)
-                padding 0 section-padding-large
+        +breakpoint(medium)
+            padding section-padding-large
 
-            +breakpoint(medium)
-                padding section-padding-large
-
-            +breakpoint(small)
-                padding section-padding-small
+        +breakpoint(small)
+            padding section-padding-small
 
         > .item:first-child
             margin 0
@@ -55,6 +53,7 @@
                 width 272px
 
     &__logo
+        flex 1 1 200px
         min-width 50%
         position relative
         text-align left
@@ -62,7 +61,9 @@
         z-index 5
 
         +breakpoint(small)
-            min-width none
+            flex-basis 200px
+            height 200px
+            min-width auto
             top 0
 
     &__logo-image
@@ -115,6 +116,7 @@
             display block
 
     &__text
+        flex 1 1 200px
         text-align left
         z-index 5
 
