@@ -19,3 +19,17 @@ $sectionContainer
 
         +breakpoint(small)
             margin-right 0
+
+$sectionContainerWithNoYPadding
+    display flex
+    padding 0 section-padding
+
+    +breakpoint(large)
+        padding 0 section-padding-large
+
+    +breakpoint(medium)
+        padding 0 section-padding-medium-x
+
+    +breakpoint(small)
+        flex-direction column
+        padding 0 section-padding-small-x

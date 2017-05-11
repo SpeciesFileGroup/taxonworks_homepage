@@ -31,14 +31,14 @@
     </article>
 
     <article class="benefits-section__section-3">
-        <div class="benefits-section__container">
-            <div class="benefits-section__empty"></div>
-            <div class="benefits-section__copy">
-                {{ benefits3HTML | safe }}
-            </div>
-            <div class="benefits-section__mobile-image">
-                <img src="images/branches-2-small.svg" width="272px" height="497px" alt="Branches 2" />
-            </div>
+        <div class="benefits-section__section-3-image-container" aria-hidden="true">
+            <picture>
+                <source srcset="images/branches-2-small.svg" media="(max-width: 599px)">
+                <img src="images/branches-2.svg">
+            </picture>
+        </div>
+        <div class="benefits-section__section-3-copy">
+            {{ benefits3HTML | safe }}
         </div>
     </article>
 

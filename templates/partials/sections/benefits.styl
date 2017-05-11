@@ -76,16 +76,20 @@
         background-color color-grey
 
     &__section-3
+        @extends $sectionContainerWithNoYPadding
+        align-items center
         background-color color-white
+        display flex
 
-    &__section-3
-        background-image url("images/branches-2.svg")
-        background-position 15% top 
-        background-repeat no-repeat
-        background-size contain
+        &-image-container
+            flex 0 0 467px
 
-        +breakpoint(small)
-            background none
+            +breakpoint(small)
+                order 1
+
+        &-copy
+            @extends $smallHeader
+            flex 1 1 auto
 
     &__section-4
         background-image url("images/trunk.svg")
