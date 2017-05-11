@@ -13,7 +13,8 @@ function scope() {
         CardCollapsed: 'feature-card--collapsed',
         SubfeatureDivider: 'feature-card__subfeature-divider',
         CardContent: 'feature-card__feature-content',
-        SubfeatureList: 'feature-card__sub-features'
+        SubfeatureList: 'feature-card__sub-features',
+        FeatureMenuButtonActive: 'feature-core__feature-menu-button--active-feature'
     };
 
     const ScrollTopOffset = 80; //For NAVBAR
@@ -22,6 +23,7 @@ function scope() {
 
     const featureCardNodes = Array.from( document.querySelectorAll(`[${Attributes.FeatureId}]`) );
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
+    const featureMenuButtonNodes = Array.from( document.querySelectorAll('.js-feature-menu-button') );
 
     changeCardDetailColors(featureCardNodes);
     setupInitialCardState(featureCardNodes);
@@ -29,6 +31,8 @@ function scope() {
     setupControlButtons();
     setupSubfeatureButtons();
     setupExpandButtons();
+    setupFeatureMenuButtons();
+    updateFeatureMenuButtonState();
 
     function changeCardDetailColors(cardList) {
         for(var i = 0; i < cardList.length; i++ )
@@ -116,14 +120,6 @@ function scope() {
 
     function setFeatureIdAsActive(featureId) {
         setFeatureNodeAsActive( getFeatureCardNodeById(featureId) );
-    }
-
-    function setupCoreButtonEventListeners(coreButtonList, cardList, cardValueList) {
-        for( i = 0; i < coreButtonList.length; i++ ) {
-            coreButtonList[i].addEventListener("click", function(){
-                // Add click event here
-            });
-        }
     }
 
     function setupControlButtons() {
@@ -244,5 +240,34 @@ function scope() {
                 scrollABit(remainingScroll, idealScrollRate);
             });
         }
+    }
+
+    function setupFeatureMenuButtons() {
+        featureMenuButtonNodes.forEach(node => {
+            node.addEventListener('click', featureMenuButtonClicked, false);
+        });
+    }
+
+    function featureMenuButtonClicked(event) {
+        const featureIdToActivate = this.getAttribute(Attributes.FeatureRef);
+        topLevelFeatureCardNodes.forEach(node => {
+            if (node.getAttribute(Attributes.FeatureId) === featureIdToActivate)
+                setFeatureNodeAsActive(node);
+            else
+                setFeatureNodeAsInactive(node);
+        });
+        updateFeatureMenuButtonState();
+    }
+
+    function updateFeatureMenuButtonState() {
+        const activeTopLevelId = topLevelFeatureCardNodes
+            .find(node => !node.hasAttribute(Attributes.Inactive)).getAttribute(Attributes.FeatureId);
+
+        featureMenuButtonNodes.forEach(node => {
+            if (node.getAttribute(Attributes.FeatureRef) === activeTopLevelId)
+                node.classList.add(Classes.FeatureMenuButtonActive);
+            else
+                node.classList.remove(Classes.FeatureMenuButtonActive);
+        });
     }
 }
