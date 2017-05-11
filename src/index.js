@@ -18,6 +18,8 @@ const sponsors = require("../sponsors");
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
 
+const devOnly = process.argv[2] === "DEV";
+
 cleanAndMkdirBuild();
 buildHTMLWithoutCritical();
 buildCSS();
@@ -103,7 +105,8 @@ function getConfig() {
 function buildHTMLWithoutCritical() {
     const homepageHTML = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
     fs.writeFileSync(constants.INDEX_DEV, homepageHTML, {encoding: "UTF-8"});
-    fs.writeFileSync(constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME, homepageHTML, {encoding: "UTF-8"});
+    if (!devOnly)
+        fs.writeFileSync(constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME, homepageHTML, {encoding: "UTF-8"});
 }
 
 function buildCSS() {
@@ -114,7 +117,8 @@ function buildCSS() {
         .set('paths', [constants.TEMPLATE_DIR]);
 
     renderCSSForDev(homepageStylus);
-    renderCSSForProd(homepageStylus);
+    if (!devOnly)
+        renderCSSForProd(homepageStylus);
 }
 
 function renderCSSForDev(stylusSource) {
@@ -131,7 +135,8 @@ function renderCSSForProd(stylusSource) {
 
 function buildJS() {
     buildJSForDev();
-    buildJSForProd();
+    if (!devOnly)
+        buildJSForProd();
 }
 
 function buildJSForDev() {
@@ -184,6 +189,9 @@ function buildLogo(logoInConfig) {
 }
 
 function buildHTMLWithCritical() {
+    if (devOnly)
+        return Promise.resolve();
+
     return critical.generate({
         inline: true,
         base: constants.BUILD_PROD_DIR,
