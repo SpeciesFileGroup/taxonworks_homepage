@@ -40,16 +40,16 @@
 
 
 
-<header class="header-section wrapper">
-    <div class="header-section__container wrapper">
-        <div class="header-section__logo item">
+<header class="header-section">
+    <div class="header-section__container">
+        <div class="header-section__logo">
             <img class="header-section__logo-image" src="images/tree-logo-graphic.svg" alt="This is the logo of TaxonWorks">
             <img class="header-section__logo-image-medium" src="images/tree-logo-graphic-medium.svg" alt="This is the logo of TaxonWorks">
             <img class="header-section__logo-image-small" src="images/tree-logo-graphic-small.svg" alt="This is the logo of TaxonWorks">
         </div>
 
-        <div class="header-section__text item">
-            <div clas="header-section__text__container">
+        <div class="header-section__text">
+            <div class="header-section__text__container">
                 <h1 class="header-section__text-title hidden">TaxonWorks</h1>
                 <img class="header-section__text-title__logo" src="images/taxonworks-white.svg" alt="TaxonWorks">
                 <div class="header-section__text-slogan">Describe life.</div>
@@ -69,9 +69,9 @@ collaborators; and package it for analysis and publication.</p>
 
 <div class="benefits-section">
     <article class="benefits-section__section-1">
-        <div class="benefits-section__container wrapper">
-            <h2 class="benefits-section__title item">A digital companion for discovering biodiversity</h2>
-            <div class="benefits-section__copy item">
+        <div class="benefits-section__container benefits-section__container--less-padding-below">
+            <h2 class="benefits-section__title">A digital companion for discovering biodiversity</h2>
+            <div class="benefits-section__copy">
                 <h3>Our vision</h3>
 <p>From observation to archive, TaxonWorks touches every step of the taxonomy
 process.</p>
@@ -81,31 +81,21 @@ conclusions faster. Integrate data across your career, and hand it off to
 your protégé. Spend more time researching, and less time with the mundane.</p>
 
             </div>
-            <div class="benefits-section__mobile-image item">
+            <div class="benefits-section__mobile-image">
                 <img src="images/inhs-01.svg" alt="INHS 01" />
             </div>
         </div>
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__container__illustrations wrapper">
-                <div class="benefits-section__illustration__1">
-                    <img src="images/inhs-01.svg" alt="" />
-                </div>
-                <div class="benefits-section__illustration__2">
-                    <img src="images/inhs-02.svg" alt="" />
-                </div>
-                <div class="benefits-section__illustration__3">
-                    <img src="images/inhs-03.svg" alt="" />
-                </div>
-                <div class="benefits-section__illustration__4">
-                    <img src="images/inhs-04.svg" alt="" />
-                </div>
-            </div>
+        <div class="benefits-section__leaves" aria-hidden="true">
+            <img class="benefits-section__leaves-image" src="images/leaves.svg">
         </div>
     </article>
 
     <article class="benefits-section__section-2">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__copy item">
+        <div class="benefits-section__container">
+            <div class="benefits-section__connecting-lines">
+                <img class="benefits-section__connecting-lines-image" src="images/branches-1.svg" aria-hidden="true">
+            </div>
+            <div class="benefits-section__copy">
                 <h3>For scientists and developers</h3>
 <p>We seek to surround TaxonWorks with scientists who can affect change in the
 tools they use, and software carpenters who can affect change in science
@@ -115,7 +105,7 @@ facilitates participation at many levels, and expertise from scientists at
 every stage in their careers.</p>
 
             </div>
-            <div class="benefits-section__illustration item">
+            <div class="benefits-section__illustration">
                 <img src="images/inhs-06.svg" class="benefits-section__illustration__large" alt="INHS 06" />
                 <img src="images/inhs-05.svg" class="benefits-section__illustration__large" alt="INHS 05" />
                 <img src="images/inhs-05.svg" class="benefits-section__illustration__small" alt="INHS 05" />
@@ -124,10 +114,14 @@ every stage in their careers.</p>
     </article>
 
     <article class="benefits-section__section-3">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__empty item"></div>
-            <div class="benefits-section__copy item">
-                <h3>Rich, fluid, customizable data</h3>
+        <div class="benefits-section__section-3-image-container" aria-hidden="true">
+            <picture>
+                <source srcset="images/branches-2-small.svg" media="(max-width: 599px)">
+                <img src="images/branches-2.svg">
+            </picture>
+        </div>
+        <div class="benefits-section__section-3-copy">
+            <h3>Rich, fluid, customizable data</h3>
 <p>TaxonWorks is part of your research data pipeline.</p>
 <p><strong>Flow</strong> data in via batch loaders, wrappers on external providers, scripts,
 the TaxonWorks JSON API, and an optimized user interface.</p>
@@ -137,43 +131,51 @@ external standards.</p>
 <p><strong>Export</strong> an ever growing number of formats directly to your analysis tools,
 manuscript-ready documents, and global archives.</p>
 
-            </div>
-            <div class="benefits-section__mobile-image item">
-                <img src="images/branches-2-small.svg" width="272px" height="497px" alt="Branches 2" />
-            </div>
         </div>
     </article>
 
     <article class="benefits-section__section-4">
-        <div class="benefits-section__container wrapper">
-            <div class="benefits-section__container__inner wrapper item">
-                <div class="benefits-section__copy item">
+        <div class="benefits-section__container">
+            <div class="benefits-section__container__inner">
+                <div class="benefits-section__copy">
                     <h3>Long-term development support</h3>
 <p>Endowed and maintained by the Species File Group. Supported by the National
 Science Foundation. Created in collaboration with partner universities and
 labs.</p>
 
                 </div>
-                <div class="benefits-section__sponsor-grid item">
-                    <div class="benefits-section__sponsor-grid__grid wrapper">
-                        
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="" alt="Sponsor 1" />
-                        
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="" alt="Sponsor 2" />
-                        
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="" alt="Sponsor 3" />
-                        
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="" alt="Sponsor 4" />
-                        
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="" alt="Sponsor 5" />
-                        
-                            <img class="benefits-section__sponsor-grid__sponsor item" src="" alt="Sponsor 6" />
-                        
-                    </div>
+                <div class="benefits-section__sponsor-grid">
+                    <div class="sponsor-grid">
+    
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="" alt="Sponsor 1" />
+        </div>
+    
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="" alt="Sponsor 2" />
+        </div>
+    
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="" alt="Sponsor 3" />
+        </div>
+    
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="" alt="Sponsor 4" />
+        </div>
+    
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="" alt="Sponsor 5" />
+        </div>
+    
+        <div class="sponsor-grid__sponsor">
+            <img class="sponsor-grid__image" src="" alt="Sponsor 6" />
+        </div>
+    
+</div>
                 </div>
             </div>
-            <div class="benefits-section__empty item"></div>
-            <div class="benefits-section__mobile-image item">
+            <div class="benefits-section__empty"></div>
+            <div class="benefits-section__mobile-image">
                 <img src="images/trunk-small.svg" width="320px" height="636px" alt="Trunk" />
             </div>
         </div>
@@ -182,8 +184,8 @@ labs.</p>
 
 <article class="scope-section">
     <div class="scope-section__container-1">
-        <h2 class="scope-section__title item">Like life, TaxonWorks is ever-evolving</h2>
-        <div class="scope-section__copy item">
+        <h2 class="scope-section__title">Like life, TaxonWorks is ever-evolving</h2>
+        <div class="scope-section__copy">
             <p>TaxonWorks has over 40 years of development experience behind it, and its future will advance beyond current technology.
 It's a companion for your career, and will continue to grow and improve.</p>
 
@@ -214,10 +216,45 @@ It's a companion for your career, and will continue to grow and improve.</p>
             </span>
         </button>
     </div>
+
+    <ul class="feature-core__feature-menu">
+        
+            <li class="feature-core__feature-menu-item">
+                <button
+                    class="feature-core__feature-menu-button js-feature-menu-button"
+                    data-feature-ref="id-46ank"
+                    type="button">
+
+                    Boston Celtics
+                </button>
+            </li>
+        
+            <li class="feature-core__feature-menu-item">
+                <button
+                    class="feature-core__feature-menu-button js-feature-menu-button"
+                    data-feature-ref="id-2vxwa"
+                    type="button">
+
+                    Los Angeles Lakers
+                </button>
+            </li>
+        
+            <li class="feature-core__feature-menu-item">
+                <button
+                    class="feature-core__feature-menu-button js-feature-menu-button"
+                    data-feature-ref="id-39jf5"
+                    type="button">
+
+                    Chicago Bulls
+                </button>
+            </li>
+        
+    </ul>
+
     <div class="feature-core__feature-card-container">
         
             
-    <div class="feature-card" data-feature-id="id-1tct7" data-top-level >
+    <div class="feature-card" data-feature-id="id-46ank" data-top-level >
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Boston Celtics</h3>
             <div class="feature-card__description">
@@ -240,7 +277,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3j7f9"
+                        data-feature-ref="id-2i3z2"
                         type="button">
 
                         1985-1986 Boston Celtics
@@ -250,7 +287,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-cx32"
+                        data-feature-ref="id-1g46x"
                         type="button">
 
                         2007-2008 Boston Celtics
@@ -262,7 +299,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-1tct7"
+    data-feature-ref="id-46ank"
     type="button">
 
     <span class="expand-button__name">
@@ -281,7 +318,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3j7f9"  data-parent-feature-id="id-1tct7">
+    <div class="feature-card" data-feature-id="id-2i3z2"  data-parent-feature-id="id-46ank">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">1985-1986 Boston Celtics</h3>
             <div class="feature-card__description">
@@ -304,7 +341,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-j7na"
+                        data-feature-ref="id-mksw"
                         type="button">
 
                         Larry Bird
@@ -314,7 +351,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3cbh9"
+                        data-feature-ref="id-hcwx"
                         type="button">
 
                         Kevin McHale
@@ -324,7 +361,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-2ie7w"
+                        data-feature-ref="id-1h2yx"
                         type="button">
 
                         Dennis Johnson
@@ -334,7 +371,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3ntl8"
+                        data-feature-ref="id-39tb6"
                         type="button">
 
                         Robert Parish
@@ -344,7 +381,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-2x1wn"
+                        data-feature-ref="id-5clgh"
                         type="button">
 
                         Danny Ainge
@@ -356,7 +393,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3j7f9"
+    data-feature-ref="id-2i3z2"
     type="button">
 
     <span class="expand-button__name">
@@ -375,7 +412,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-j7na"  data-parent-feature-id="id-3j7f9">
+    <div class="feature-card" data-feature-id="id-mksw"  data-parent-feature-id="id-2i3z2">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Larry Bird</h3>
             <div class="feature-card__description">
@@ -400,7 +437,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-j7na"
+    data-feature-ref="id-mksw"
     type="button">
 
     <span class="expand-button__name">
@@ -422,7 +459,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3cbh9"  data-parent-feature-id="id-3j7f9">
+    <div class="feature-card" data-feature-id="id-hcwx"  data-parent-feature-id="id-2i3z2">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Kevin McHale</h3>
             <div class="feature-card__description">
@@ -447,7 +484,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3cbh9"
+    data-feature-ref="id-hcwx"
     type="button">
 
     <span class="expand-button__name">
@@ -469,7 +506,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2ie7w"  data-parent-feature-id="id-3j7f9">
+    <div class="feature-card" data-feature-id="id-1h2yx"  data-parent-feature-id="id-2i3z2">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Dennis Johnson</h3>
             <div class="feature-card__description">
@@ -494,7 +531,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2ie7w"
+    data-feature-ref="id-1h2yx"
     type="button">
 
     <span class="expand-button__name">
@@ -516,7 +553,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3ntl8"  data-parent-feature-id="id-3j7f9">
+    <div class="feature-card" data-feature-id="id-39tb6"  data-parent-feature-id="id-2i3z2">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Robert Parish</h3>
             <div class="feature-card__description">
@@ -541,7 +578,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3ntl8"
+    data-feature-ref="id-39tb6"
     type="button">
 
     <span class="expand-button__name">
@@ -563,7 +600,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2x1wn"  data-parent-feature-id="id-3j7f9">
+    <div class="feature-card" data-feature-id="id-5clgh"  data-parent-feature-id="id-2i3z2">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Danny Ainge</h3>
             <div class="feature-card__description">
@@ -588,7 +625,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2x1wn"
+    data-feature-ref="id-5clgh"
     type="button">
 
     <span class="expand-button__name">
@@ -613,7 +650,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-cx32"  data-parent-feature-id="id-1tct7">
+    <div class="feature-card" data-feature-id="id-1g46x"  data-parent-feature-id="id-46ank">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">2007-2008 Boston Celtics</h3>
             <div class="feature-card__description">
@@ -636,7 +673,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-uxqx"
+                        data-feature-ref="id-2czjd"
                         type="button">
 
                         Ray Allen
@@ -646,7 +683,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-2d0kw"
+                        data-feature-ref="id-gfbp"
                         type="button">
 
                         Paul Pierce
@@ -656,7 +693,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-56n8o"
+                        data-feature-ref="id-2fyrb"
                         type="button">
 
                         Kevin Garnett
@@ -666,7 +703,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-4euzu"
+                        data-feature-ref="id-seul"
                         type="button">
 
                         Rajon Rondo
@@ -676,7 +713,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-16zo4"
+                        data-feature-ref="id-1jmzy"
                         type="button">
 
                         James Posey
@@ -688,7 +725,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-cx32"
+    data-feature-ref="id-1g46x"
     type="button">
 
     <span class="expand-button__name">
@@ -707,7 +744,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-uxqx"  data-parent-feature-id="id-cx32">
+    <div class="feature-card" data-feature-id="id-2czjd"  data-parent-feature-id="id-1g46x">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Ray Allen</h3>
             <div class="feature-card__description">
@@ -732,7 +769,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-uxqx"
+    data-feature-ref="id-2czjd"
     type="button">
 
     <span class="expand-button__name">
@@ -754,7 +791,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2d0kw"  data-parent-feature-id="id-cx32">
+    <div class="feature-card" data-feature-id="id-gfbp"  data-parent-feature-id="id-1g46x">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Paul Pierce</h3>
             <div class="feature-card__description">
@@ -779,7 +816,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2d0kw"
+    data-feature-ref="id-gfbp"
     type="button">
 
     <span class="expand-button__name">
@@ -801,7 +838,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-56n8o"  data-parent-feature-id="id-cx32">
+    <div class="feature-card" data-feature-id="id-2fyrb"  data-parent-feature-id="id-1g46x">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Kevin Garnett</h3>
             <div class="feature-card__description">
@@ -826,7 +863,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-56n8o"
+    data-feature-ref="id-2fyrb"
     type="button">
 
     <span class="expand-button__name">
@@ -848,7 +885,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-4euzu"  data-parent-feature-id="id-cx32">
+    <div class="feature-card" data-feature-id="id-seul"  data-parent-feature-id="id-1g46x">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Rajon Rondo</h3>
             <div class="feature-card__description">
@@ -873,7 +910,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-4euzu"
+    data-feature-ref="id-seul"
     type="button">
 
     <span class="expand-button__name">
@@ -895,7 +932,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-16zo4"  data-parent-feature-id="id-cx32">
+    <div class="feature-card" data-feature-id="id-1jmzy"  data-parent-feature-id="id-1g46x">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">James Posey</h3>
             <div class="feature-card__description">
@@ -920,7 +957,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-16zo4"
+    data-feature-ref="id-1jmzy"
     type="button">
 
     <span class="expand-button__name">
@@ -948,7 +985,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2e78b" data-top-level >
+    <div class="feature-card" data-feature-id="id-2vxwa" data-top-level >
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Los Angeles Lakers</h3>
             <div class="feature-card__description">
@@ -971,7 +1008,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-2jht"
+                        data-feature-ref="id-391yb"
                         type="button">
 
                         1984-1985 Los Angeles Lakers
@@ -981,7 +1018,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-1c68u"
+                        data-feature-ref="id-2kxss"
                         type="button">
 
                         2008-2009 Los Angeles Lakers
@@ -993,7 +1030,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2e78b"
+    data-feature-ref="id-2vxwa"
     type="button">
 
     <span class="expand-button__name">
@@ -1012,7 +1049,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2jht"  data-parent-feature-id="id-2e78b">
+    <div class="feature-card" data-feature-id="id-391yb"  data-parent-feature-id="id-2vxwa">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">1984-1985 Los Angeles Lakers</h3>
             <div class="feature-card__description">
@@ -1035,7 +1072,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-26enw"
+                        data-feature-ref="id-4xuc0"
                         type="button">
 
                         Magic Johnson
@@ -1045,7 +1082,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-4r787"
+                        data-feature-ref="id-26pzo"
                         type="button">
 
                         James Worthy
@@ -1055,7 +1092,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-rhd0"
+                        data-feature-ref="id-4467x"
                         type="button">
 
                         Kareem Abdul-Jabbar
@@ -1065,7 +1102,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-50uh"
+                        data-feature-ref="id-wm0"
                         type="button">
 
                         Byron Scott
@@ -1075,7 +1112,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-6psz"
+                        data-feature-ref="id-262vf"
                         type="button">
 
                         Michael Cooper
@@ -1087,7 +1124,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2jht"
+    data-feature-ref="id-391yb"
     type="button">
 
     <span class="expand-button__name">
@@ -1106,7 +1143,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-26enw"  data-parent-feature-id="id-2jht">
+    <div class="feature-card" data-feature-id="id-4xuc0"  data-parent-feature-id="id-391yb">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Magic Johnson</h3>
             <div class="feature-card__description">
@@ -1131,7 +1168,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-26enw"
+    data-feature-ref="id-4xuc0"
     type="button">
 
     <span class="expand-button__name">
@@ -1153,7 +1190,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-4r787"  data-parent-feature-id="id-2jht">
+    <div class="feature-card" data-feature-id="id-26pzo"  data-parent-feature-id="id-391yb">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">James Worthy</h3>
             <div class="feature-card__description">
@@ -1178,7 +1215,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-4r787"
+    data-feature-ref="id-26pzo"
     type="button">
 
     <span class="expand-button__name">
@@ -1200,7 +1237,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-rhd0"  data-parent-feature-id="id-2jht">
+    <div class="feature-card" data-feature-id="id-4467x"  data-parent-feature-id="id-391yb">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Kareem Abdul-Jabbar</h3>
             <div class="feature-card__description">
@@ -1225,7 +1262,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-rhd0"
+    data-feature-ref="id-4467x"
     type="button">
 
     <span class="expand-button__name">
@@ -1247,7 +1284,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-50uh"  data-parent-feature-id="id-2jht">
+    <div class="feature-card" data-feature-id="id-wm0"  data-parent-feature-id="id-391yb">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Byron Scott</h3>
             <div class="feature-card__description">
@@ -1272,7 +1309,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-50uh"
+    data-feature-ref="id-wm0"
     type="button">
 
     <span class="expand-button__name">
@@ -1294,7 +1331,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-6psz"  data-parent-feature-id="id-2jht">
+    <div class="feature-card" data-feature-id="id-262vf"  data-parent-feature-id="id-391yb">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Michael Cooper</h3>
             <div class="feature-card__description">
@@ -1319,7 +1356,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-6psz"
+    data-feature-ref="id-262vf"
     type="button">
 
     <span class="expand-button__name">
@@ -1344,7 +1381,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-1c68u"  data-parent-feature-id="id-2e78b">
+    <div class="feature-card" data-feature-id="id-2kxss"  data-parent-feature-id="id-2vxwa">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">2008-2009 Los Angeles Lakers</h3>
             <div class="feature-card__description">
@@ -1367,7 +1404,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-malw"
+                        data-feature-ref="id-31btl"
                         type="button">
 
                         Pau Gasol
@@ -1377,7 +1414,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-52xlx"
+                        data-feature-ref="id-4wgov"
                         type="button">
 
                         Kobe Bryant
@@ -1387,7 +1424,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-1sn92"
+                        data-feature-ref="id-42dip"
                         type="button">
 
                         Derek Fisher
@@ -1397,7 +1434,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-bqi2"
+                        data-feature-ref="id-421v0"
                         type="button">
 
                         Lamar Odom
@@ -1407,7 +1444,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3mhxz"
+                        data-feature-ref="id-1nr5s"
                         type="button">
 
                         Andrew Bynum
@@ -1419,7 +1456,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-1c68u"
+    data-feature-ref="id-2kxss"
     type="button">
 
     <span class="expand-button__name">
@@ -1438,7 +1475,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-malw"  data-parent-feature-id="id-1c68u">
+    <div class="feature-card" data-feature-id="id-31btl"  data-parent-feature-id="id-2kxss">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Pau Gasol</h3>
             <div class="feature-card__description">
@@ -1463,7 +1500,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-malw"
+    data-feature-ref="id-31btl"
     type="button">
 
     <span class="expand-button__name">
@@ -1485,7 +1522,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-52xlx"  data-parent-feature-id="id-1c68u">
+    <div class="feature-card" data-feature-id="id-4wgov"  data-parent-feature-id="id-2kxss">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Kobe Bryant</h3>
             <div class="feature-card__description">
@@ -1510,7 +1547,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-52xlx"
+    data-feature-ref="id-4wgov"
     type="button">
 
     <span class="expand-button__name">
@@ -1532,7 +1569,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-1sn92"  data-parent-feature-id="id-1c68u">
+    <div class="feature-card" data-feature-id="id-42dip"  data-parent-feature-id="id-2kxss">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Derek Fisher</h3>
             <div class="feature-card__description">
@@ -1557,7 +1594,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-1sn92"
+    data-feature-ref="id-42dip"
     type="button">
 
     <span class="expand-button__name">
@@ -1579,7 +1616,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-bqi2"  data-parent-feature-id="id-1c68u">
+    <div class="feature-card" data-feature-id="id-421v0"  data-parent-feature-id="id-2kxss">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Lamar Odom</h3>
             <div class="feature-card__description">
@@ -1604,7 +1641,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-bqi2"
+    data-feature-ref="id-421v0"
     type="button">
 
     <span class="expand-button__name">
@@ -1626,7 +1663,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3mhxz"  data-parent-feature-id="id-1c68u">
+    <div class="feature-card" data-feature-id="id-1nr5s"  data-parent-feature-id="id-2kxss">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Andrew Bynum</h3>
             <div class="feature-card__description">
@@ -1651,7 +1688,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3mhxz"
+    data-feature-ref="id-1nr5s"
     type="button">
 
     <span class="expand-button__name">
@@ -1679,7 +1716,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-30fyu" data-top-level >
+    <div class="feature-card" data-feature-id="id-39jf5" data-top-level >
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Chicago Bulls</h3>
             <div class="feature-card__description">
@@ -1702,7 +1739,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3jt59"
+                        data-feature-ref="id-1ahsy"
                         type="button">
 
                         1995-1996 Chicago Bulls
@@ -1712,7 +1749,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-4hx0z"
+                        data-feature-ref="id-4313a"
                         type="button">
 
                         1991-1992 Chicago Bulls
@@ -1724,7 +1761,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-30fyu"
+    data-feature-ref="id-39jf5"
     type="button">
 
     <span class="expand-button__name">
@@ -1743,7 +1780,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3jt59"  data-parent-feature-id="id-30fyu">
+    <div class="feature-card" data-feature-id="id-1ahsy"  data-parent-feature-id="id-39jf5">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">1995-1996 Chicago Bulls</h3>
             <div class="feature-card__description">
@@ -1766,7 +1803,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-2e3b1"
+                        data-feature-ref="id-g9ud"
                         type="button">
 
                         Michael Jordan
@@ -1776,7 +1813,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-55v7c"
+                        data-feature-ref="id-3el2"
                         type="button">
 
                         Scottie Pippen
@@ -1786,7 +1823,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3is7e"
+                        data-feature-ref="id-2za9n"
                         type="button">
 
                         Dennis Rodman
@@ -1796,7 +1833,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-tuur"
+                        data-feature-ref="id-588c6"
                         type="button">
 
                         Steve Kerr
@@ -1806,7 +1843,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3x3oz"
+                        data-feature-ref="id-36yx9"
                         type="button">
 
                         Toni Kukoc
@@ -1818,7 +1855,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3jt59"
+    data-feature-ref="id-1ahsy"
     type="button">
 
     <span class="expand-button__name">
@@ -1837,7 +1874,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2e3b1"  data-parent-feature-id="id-3jt59">
+    <div class="feature-card" data-feature-id="id-g9ud"  data-parent-feature-id="id-1ahsy">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Michael Jordan</h3>
             <div class="feature-card__description">
@@ -1862,7 +1899,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2e3b1"
+    data-feature-ref="id-g9ud"
     type="button">
 
     <span class="expand-button__name">
@@ -1884,7 +1921,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-55v7c"  data-parent-feature-id="id-3jt59">
+    <div class="feature-card" data-feature-id="id-3el2"  data-parent-feature-id="id-1ahsy">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Scottie Pippen</h3>
             <div class="feature-card__description">
@@ -1909,7 +1946,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-55v7c"
+    data-feature-ref="id-3el2"
     type="button">
 
     <span class="expand-button__name">
@@ -1931,7 +1968,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3is7e"  data-parent-feature-id="id-3jt59">
+    <div class="feature-card" data-feature-id="id-2za9n"  data-parent-feature-id="id-1ahsy">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Dennis Rodman</h3>
             <div class="feature-card__description">
@@ -1956,7 +1993,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3is7e"
+    data-feature-ref="id-2za9n"
     type="button">
 
     <span class="expand-button__name">
@@ -1978,7 +2015,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-tuur"  data-parent-feature-id="id-3jt59">
+    <div class="feature-card" data-feature-id="id-588c6"  data-parent-feature-id="id-1ahsy">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Steve Kerr</h3>
             <div class="feature-card__description">
@@ -2003,7 +2040,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-tuur"
+    data-feature-ref="id-588c6"
     type="button">
 
     <span class="expand-button__name">
@@ -2025,7 +2062,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3x3oz"  data-parent-feature-id="id-3jt59">
+    <div class="feature-card" data-feature-id="id-36yx9"  data-parent-feature-id="id-1ahsy">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Toni Kukoc</h3>
             <div class="feature-card__description">
@@ -2050,7 +2087,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3x3oz"
+    data-feature-ref="id-36yx9"
     type="button">
 
     <span class="expand-button__name">
@@ -2075,7 +2112,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-4hx0z"  data-parent-feature-id="id-30fyu">
+    <div class="feature-card" data-feature-id="id-4313a"  data-parent-feature-id="id-39jf5">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">1991-1992 Chicago Bulls</h3>
             <div class="feature-card__description">
@@ -2098,7 +2135,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-58123"
+                        data-feature-ref="id-209mo"
                         type="button">
 
                         Michael Jordan
@@ -2108,7 +2145,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-2w44e"
+                        data-feature-ref="id-jxri"
                         type="button">
 
                         Scottie Pippen
@@ -2118,7 +2155,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-4vctx"
+                        data-feature-ref="id-3gzz6"
                         type="button">
 
                         Horace Grant
@@ -2128,7 +2165,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-3kikq"
+                        data-feature-ref="id-34nft"
                         type="button">
 
                         John Paxson
@@ -2138,7 +2175,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
                 <li class="feature-card__sub-feature-item">
                     <button
                         class="feature-card__sub-feature-item-button js-subfeature-button"
-                        data-feature-ref="id-5e9j"
+                        data-feature-ref="id-4r4vh"
                         type="button">
 
                         Bill Cartwright
@@ -2150,7 +2187,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-4hx0z"
+    data-feature-ref="id-4313a"
     type="button">
 
     <span class="expand-button__name">
@@ -2169,7 +2206,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-58123"  data-parent-feature-id="id-4hx0z">
+    <div class="feature-card" data-feature-id="id-209mo"  data-parent-feature-id="id-4313a">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Michael Jordan</h3>
             <div class="feature-card__description">
@@ -2194,7 +2231,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-58123"
+    data-feature-ref="id-209mo"
     type="button">
 
     <span class="expand-button__name">
@@ -2216,7 +2253,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-2w44e"  data-parent-feature-id="id-4hx0z">
+    <div class="feature-card" data-feature-id="id-jxri"  data-parent-feature-id="id-4313a">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Scottie Pippen</h3>
             <div class="feature-card__description">
@@ -2241,7 +2278,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-2w44e"
+    data-feature-ref="id-jxri"
     type="button">
 
     <span class="expand-button__name">
@@ -2263,7 +2300,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-4vctx"  data-parent-feature-id="id-4hx0z">
+    <div class="feature-card" data-feature-id="id-3gzz6"  data-parent-feature-id="id-4313a">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Horace Grant</h3>
             <div class="feature-card__description">
@@ -2288,7 +2325,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-4vctx"
+    data-feature-ref="id-3gzz6"
     type="button">
 
     <span class="expand-button__name">
@@ -2310,7 +2347,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-3kikq"  data-parent-feature-id="id-4hx0z">
+    <div class="feature-card" data-feature-id="id-34nft"  data-parent-feature-id="id-4313a">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">John Paxson</h3>
             <div class="feature-card__description">
@@ -2335,7 +2372,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-3kikq"
+    data-feature-ref="id-34nft"
     type="button">
 
     <span class="expand-button__name">
@@ -2357,7 +2394,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
         
             
-    <div class="feature-card" data-feature-id="id-5e9j"  data-parent-feature-id="id-4hx0z">
+    <div class="feature-card" data-feature-id="id-4r4vh"  data-parent-feature-id="id-4313a">
         <div class="feature-card__feature-content">
             <h3 class="feature-card__name">Bill Cartwright</h3>
             <div class="feature-card__description">
@@ -2382,7 +2419,7 @@ It's a companion for your career, and will continue to grow and improve.</p>
         <div class="feature-card__expand-button-container">
             <button
     class="expand-button js-expand-button"
-    data-feature-ref="id-5e9j"
+    data-feature-ref="id-4r4vh"
     type="button">
 
     <span class="expand-button__name">
@@ -2419,21 +2456,21 @@ It's a companion for your career, and will continue to grow and improve.</p>
 
 <div class="getting-started-section">
     <article class="getting-started-section__section">
-        <div class="getting-started-section__container-1 wrapper">
-            <div class="getting-started-section__section-text item">
-                    <h2 class="getting-started-section__title">Get Started with</h2>
-                    <img class="getting-started-section__logo-image" src="images/taxonworks-black.svg" alt="This is the logo of TaxonWorks">
-                </div>
-                <div class="getting-started-section__copy item">
-                    <p>TaxonWorks is an open-source web application. Each instance of TaxonWorks supports multiple projects
+        <div class="getting-started-section__container-1">
+            <div class="getting-started-section__section-text">
+                <h2 class="getting-started-section__title">Get Started with</h2>
+                <img class="getting-started-section__logo-image" src="images/taxonworks-black.svg" alt="This is the logo of TaxonWorks">
+            </div>
+            <div class="getting-started-section__copy">
+                <p>TaxonWorks is an open-source web application. Each instance of TaxonWorks supports multiple projects
 and users.</p>
 
-                </div>
             </div>
+        </div>
 
-            <div class="getting-started-section__container-2 wrapper">
-                <div class="getting-started-section__copy item">
-                    <h3>Want to explore?</h3>
+        <div class="getting-started-section__container-2">
+            <div class="getting-started-section__copy getting-started-section__copy--with-gutter">
+                <h3>Want to explore?</h3>
 <ul>
 <li><a href="#">Find an instance of TaxonWorks</a></li>
 </ul>
@@ -2442,9 +2479,9 @@ and users.</p>
 <li><a href="#">Install TaxonWorks virtually</a></li>
 </ul>
 
-                </div>
-                <div class="getting-started-section__copy item">
-                    <h3>You can also</h3>
+            </div>
+            <div class="getting-started-section__copy">
+                <h3>You can also</h3>
 <ul>
 <li><a href="#">File an issue on Github</a></li>
 <li><a href="#">Tell us your biodiversity informatics story</a></li>
@@ -2452,10 +2489,6 @@ and users.</p>
 <li><a href="#">Comment on our blog</a></li>
 <li><a href="#">Clone the code and start hacking</a></li>
 </ul>
-
-                </div>
-            </div>
-        </div>
 
             </div>
         </div>
@@ -2467,8 +2500,8 @@ and users.</p>
 </main>
 
 <footer class="footer-section">
-    <div class="footer-section__container wrapper">
-        <div class="footer-section__details item">
+    <div class="footer-section__container">
+        <div class="footer-section__details">
             <img class="footer-section__logo" src="images/inhs-footer-logo.png" alt="Illinois Natural History Survey Prairie Research Institute">
             
             <div class="footer-section__funding">
@@ -2482,9 +2515,10 @@ and users.</p>
             </div>
         </div>
 
-        <div class="footer__links wrapper item">
-    <ul class="footer__links__list footer__links__list-code item">
-        <li class="footer__links__list__title">Code</li>
+        <div class="footer-section__footer-links">
+            <div class="footer-links">
+    <ul class="footer-links__code">
+        <li class="footer-links__title">Code</li>
         <ul>
 <li><a href="#">Source</a></li>
 <li><a href="#">Rubydoc</a></li>
@@ -2494,8 +2528,8 @@ and users.</p>
 </ul>
 
     </ul>
-    <ul class="footer__links__list footer__links__list-contact item">
-        <li class="footer__links__list__title">Contact</li>
+    <ul class="footer-links__contact">
+        <li class="footer-links__title">Contact</li>
         <ul>
 <li><a href="#">Submit feedback</a></li>
 <li><a href="#">Request access</a></li>
@@ -2503,8 +2537,8 @@ and users.</p>
 </ul>
 
     </ul>
-    <ul class="footer__links__list footer__links__list-social item">
-        <li class="footer__links__list__title">Social Media</li>
+    <ul class="footer-links__social">
+        <li class="footer-links__title">Social Media</li>
         <ul>
 <li><a href="#">@TaxonWorks</a></li>
 <li><a href="#">Species File Group blog</a></li>
@@ -2512,6 +2546,7 @@ and users.</p>
 
     </ul>
 </div>
+        </div>
     </div>
 </footer>
 
