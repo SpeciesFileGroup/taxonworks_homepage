@@ -2,6 +2,7 @@ const nunjucks = require('nunjucks');
 const constants = require('./src/constants');
 const scope = require('./src/scope');
 const markdown = require('markdown-it')();
+const uglify = require("uglify-es");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
@@ -102,7 +103,7 @@ module.exports = function (grunt) {
                 ]
 
             },
-            prod: {
+            production: {
                 options: {
                     compress: true
                 },
@@ -113,12 +114,33 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+        buildJS: {
+            dev: {
+                dest: constants.BUILD_DEV_SCRIPT
+            },
+            production: {
+                dest: constants.BUILD_PROD_SCRIPT,
+                uglify: true
+            }
         }
     };
 
     grunt.registerMultiTask('buildHTMLWithoutCritical', function() {
         const homepageHTML = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
-        grunt.file.write(this.data.dest, homepageHTML, {encoding: "UTF-8"});
+        grunt.file.write(this.data.dest, homepageHTML);
+    });
+
+    grunt.registerMultiTask('buildJS', function() {
+        const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
+        const script = this.data.uglify ? uglify.minify(concatScripts()).code : concatScripts();
+        grunt.file.write(this.data.dest, script);
+
+        function concatScripts() {
+            return scripts.reduce((currentScript, nextScript) => {
+                return currentScript + grunt.file.read(nextScript);
+            }, '');
+        }
     });
 
     grunt.initConfig(taskConfig);
@@ -126,6 +148,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean',
         'buildHTMLWithoutCritical',
-        'stylus'
+        'stylus',
+        'buildJS'
     ]);
 };

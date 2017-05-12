@@ -36,6 +36,7 @@
     "mocha": "3.2.0",
     "nunjucks": "3.0.0",
     "stylus": "0.54.5",
+    "uglify-es": "^3.0.4",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
     "yamljs": "0.2.8"
   }
