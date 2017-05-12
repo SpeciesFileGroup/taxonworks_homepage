@@ -15,12 +15,12 @@
     &__left-border
     &__right-border
     &__top-border
-    &__bottom-border
+    &__bottom-left-border
+    &__bottom-right-border
         background-color color-green
         position absolute
 
     &__top-border
-    &__bottom-border
         left 0
         height 2px
         right 0
@@ -33,16 +33,27 @@
         width 2px
 
     &__left-border
+    &__bottom-left-border
         left 0
 
     &__right-border
+    &__bottom-right-border
         right 0
 
     &__top-border
         top 0
 
-    &__bottom-border
+    &__bottom-left-border
+    &__bottom-right-border
         bottom 0
+        height 2px
+        width 50%
+
+    &__bottom-left-border
+        transform-origin 0 50%
+
+    &__bottom-right-border
+        transform-origin 100% 50%
 
     &__connector
         background-color color-green
