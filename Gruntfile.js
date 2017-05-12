@@ -81,6 +81,38 @@ module.exports = function (grunt) {
             production: {
                 dest: constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME
             }
+        },
+        stylus: {
+            options: {
+                use: [
+                    function() {
+                        return require('autoprefixer-stylus')({browsers: ['last 2 versions', 'ie 9-11']})
+                    }
+                ]
+            },
+            dev: {
+                options: {
+                    compress: false
+                },
+                files: [
+                    {
+                        src: constants.MAIN_STYLUS_SHEET,
+                        dest: constants.BUILD_DEV_STYLESHEET
+                    }
+                ]
+
+            },
+            prod: {
+                options: {
+                    compress: true
+                },
+                files: [
+                    {
+                        src: constants.MAIN_STYLUS_SHEET,
+                        dest: constants.BUILD_PROD_STYLESHEET
+                    }
+                ]
+            }
         }
     };
 
@@ -93,6 +125,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean',
-        'buildHTMLWithoutCritical'
+        'buildHTMLWithoutCritical',
+        'stylus'
     ]);
 };
