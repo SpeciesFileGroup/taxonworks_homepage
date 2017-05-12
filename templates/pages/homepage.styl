@@ -1,4 +1,9 @@
-// .homepage__container
+$makeGap
+    margin-right 32px
+
+    +breakpoint(small)
+        margin-right 0
+
 $sectionContainer
     margin 0 auto
     padding section-padding
@@ -12,12 +17,6 @@ $sectionContainer
     +breakpoint(small)
         flex-flow column wrap
         padding section-padding-small
-
-    > .item:first-child
-        margin-right 32px
-
-        +breakpoint(small)
-            margin-right 0
 
 $sectionContainerWithModifiedPadding
     display flex

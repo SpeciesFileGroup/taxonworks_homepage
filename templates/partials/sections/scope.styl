@@ -7,13 +7,12 @@
 
     &__container-1
         display flex
-        flex-wrap wrap
 
         +breakpoint(large)
             padding 160px 160px 144px 160px
 
         +breakpoint(small)
-            flex-flow column
+            display block
             margin-bottom 24px
 
     &__container-2 
@@ -27,22 +26,25 @@
     &__gradient 
         background-image linear-gradient(to bottom, gradient-brown, color-brown)
         height 288px
-        margin-top 112px
+        left 0
         position absolute
+        right 0
+        top 0
         width 100%
-        z-index 1
-
-        +breakpoint(medium)
-            margin-top 180px
+        z-index -1
 
     &__title
-        @extends $bigHeader
         @extends $normalFlexItem
+        @extends $bigHeader
+        @extends $makeGap
         color color-green
 
+        +breakpoint(small)
+            margin-bottom 24px
+
     &__copy
-        @extends $smallHeader
         @extends $normalFlexItem
+        @extends $copy
         color color-white
 
     &__feature-intro 
