@@ -24,8 +24,9 @@ function scope() {
     };
 
     const ScrollTopOffset = 80; //For navbar
-
     const ScrollDurationInFrames = 16;
+    const TopLevelCardDuration = 300;
+    const TopLevelCardDelay = 0;
 
     const featureCardNodes = Array.from(document.querySelectorAll(`[${Attributes.FeatureId}]`));
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
@@ -130,24 +131,45 @@ function scope() {
 
     function goToNextTopLevelFeature() {
         let index = findActiveIndex();
-        index++;
-        if (index >= topLevelFeatureCardNodes.length)
-            index = topLevelFeatureCardNodes.length - 1;
 
-        setIndexToActive(index);
+        if (index < topLevelFeatureCardNodes.length - 1) {
+            const cardGoingOut = topLevelFeatureCardNodes[index];
+            index++;
+            const cardGoingIn = topLevelFeatureCardNodes[index];
+
+            lockCoreHeight();
+
+            transitionCardOutToLeft( cardGoingOut );
+            transitionCardInFromRight( cardGoingIn, afterTopLevelAnimation);
+
+            setIndexToActive(index);
+        }
     }
 
     function goToPreviousTopLevelFeature() {
         let index = findActiveIndex();
-        index--;
-        if (index <= 0)
-            index = 0;
 
-        setIndexToActive(index);
+        if (index > 0) {
+            const cardGoingOut = topLevelFeatureCardNodes[index];
+            index--;
+            const cardGoingIn = topLevelFeatureCardNodes[index];
+
+            lockCoreHeight();
+
+            transitionCardOutToRight( cardGoingOut );
+            transitionCardInFromLeft( cardGoingIn, afterTopLevelAnimation);
+
+            setIndexToActive(index);
+        }
     }
 
     function findActiveIndex() {
         return topLevelFeatureCardNodes.findIndex(cardNode => !cardNode.hasAttribute(Attributes.Inactive));
+    }
+
+    function afterTopLevelAnimation() {
+        cleanUpTopLevelFeatureCards();
+        unlockCoreHeight();
     }
 
     function setIndexToActive(newActiveIndex) {
@@ -156,6 +178,64 @@ function scope() {
                 setFeatureNodeAsActive(node);
             else
                 setFeatureNodeAsInactive(node);
+        });
+    }
+
+    function transitionCardOutToLeft(featureCard) {
+        transitionCardOut(featureCard, '-150%');
+    }
+
+    function transitionCardOutToRight(featureCard) {
+        transitionCardOut(featureCard, '150%');
+    }
+
+    function transitionCardOut(featureCard, endX) {
+        setUpCardForAnimation(featureCard);
+        anime({
+            targets: featureCard,
+            translateX: ['0%', endX],
+            duration: TopLevelCardDuration,
+            easing: 'easeInOutQuad'
+        });
+    }
+
+    function transitionCardInFromRight(featureCard, callback) {
+        transitionCardIn(featureCard, `150%`, callback);
+    }
+
+    function transitionCardInFromLeft(featureCard, callback) {
+        transitionCardIn(featureCard, '-150%', callback);
+    }
+
+    function transitionCardIn(featureCard, startingX, callback) {
+        setUpCardForAnimation(featureCard, startingX);
+        anime({
+            targets: featureCard,
+            translateX: [startingX, '0'],
+            duration: TopLevelCardDuration,
+            delay: TopLevelCardDelay,
+            easing: 'easeInOutQuad',
+            complete: callback
+        });
+    }
+
+    function setUpCardForAnimation(featureCard, startingX = 0) {
+        featureCard.style.transform = `translateX(${startingX})`;
+        featureCard.style.display = 'block';
+        featureCard.style.position = 'absolute';
+        featureCard.style.top = 0;
+        featureCard.style.left = 0;
+        featureCard.style.right = 0;
+    }
+
+    function cleanUpTopLevelFeatureCards() {
+        topLevelFeatureCardNodes.forEach(node => {
+            node.style.transform = '';
+            node.style.display = '';
+            node.style.position = '';
+            node.style.top = '';
+            node.style.left = '';
+            node.style.right = '';
         });
     }
 
