@@ -13,7 +13,7 @@
     <div class="header__nav-bar__links__mobile header__nav-bar__links__mobile--collapsed">
         <ul>
             {% for navBarLink in navBarLinks %}
-                <a href="{{ navBarLink.href }}"><li>{{ navBarLink.name }}</li></a>
+                <a href="{{ navBarLink.href }}"><li class="header__nav-bar__links__mobile__link">{{ navBarLink.name }}</li></a>
             {% endfor %}
         </ul>
     </div>
