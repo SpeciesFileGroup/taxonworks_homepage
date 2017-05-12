@@ -83,6 +83,24 @@ module.exports = function (grunt) {
                 dest: constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME
             }
         },
+        copy: {
+            dev: {
+                files: [
+                    {
+                        src: `${constants.IMAGE_DIR}**/*`,
+                        dest: constants.BUILD_DEV_DIR
+                    }
+                ]
+            },
+            production: {
+                files: [
+                    {
+                        src: `${constants.IMAGE_DIR}**/*`,
+                        dest: constants.BUILD_PROD_DIR
+                    }
+                ]
+            }
+        },
         stylus: {
             options: {
                 use: [
@@ -149,6 +167,7 @@ module.exports = function (grunt) {
         'clean',
         'buildHTMLWithoutCritical',
         'stylus',
-        'buildJS'
+        'buildJS',
+        'copy'
     ]);
 };
