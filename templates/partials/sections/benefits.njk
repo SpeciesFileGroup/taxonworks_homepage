@@ -1,8 +1,8 @@
 <div class="benefits-section">
     <article class="benefits-section__section-1">
         <div class="benefits-section__container benefits-section__container--less-padding-below">
-            <h2 class="benefits-section__title">{{ benefitsTitle  }}</h2>
-            <div class="benefits-section__copy">
+            <h2 class="benefits-section__section-1-title">{{ benefitsTitle  }}</h2>
+            <div class="benefits-section__section-1-copy">
                 {{ benefits1HTML | safe }}
             </div>
             <div class="benefits-section__mobile-image">
@@ -15,26 +15,26 @@
     </article>
 
     <article class="benefits-section__section-2">
-        <div class="benefits-section__container">
-            <div class="benefits-section__connecting-lines">
-                <img class="benefits-section__connecting-lines-image" src="images/branches-1.svg" aria-hidden="true">
-            </div>
-            <div class="benefits-section__copy">
-                {{ benefits2HTML | safe }}
-            </div>
-            <div class="benefits-section__illustration">
-                <img src="images/inhs-06.svg" class="benefits-section__illustration__large" alt="INHS 06" />
-                <img src="images/inhs-05.svg" class="benefits-section__illustration__large" alt="INHS 05" />
-                <img src="images/inhs-05.svg" class="benefits-section__illustration__small" alt="INHS 05" />
-            </div>
+        <div class="benefits-section__connecting-lines">
+            <img class="benefits-section__connecting-lines-image" src="images/branches-1.svg" aria-hidden="true">
+        </div>
+        <div class="benefits-section__copy">
+            {{ benefits2HTML | safe }}
+        </div>
+        <div class="benefits-section__illustration">
+            <img src="images/inhs-06.svg" class="benefits-section__illustration__large" alt="INHS 06" />
+            <img src="images/inhs-05.svg" class="benefits-section__illustration__large" alt="INHS 05" />
+        </div>
+        <div class="benefits-section__mobile-image">
+            <img src="images/inhs-05.svg" alt="INHS 05" />
         </div>
     </article>
 
     <article class="benefits-section__section-3">
         <div class="benefits-section__section-3-image-container" aria-hidden="true">
             <picture>
-                <source srcset="images/branches-2-small.svg" media="(max-width: 599px)">
-                <img src="images/branches-2.svg">
+                <source srcset="images/branches-2-small.svg" media="(max-width: 689px)">
+                <img class="benefits-section__section-3-image" src="images/branches-2.svg">
             </picture>
         </div>
         <div class="benefits-section__section-3-copy">

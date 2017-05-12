@@ -25,6 +25,20 @@
         position relative
         z-index 1
 
+        &-title
+            @extends $bigHeader
+            @extends $normalFlexItem
+            margin-right 32px
+
+            +breakpoint(small)
+                flex-basis auto
+                margin-bottom 24px
+                margin-right 0
+
+        &-copy
+            @extends $normalFlexItem
+            @extends $copy
+
     &__leaves
         max-width content-max-width
         margin 0 auto
@@ -61,22 +75,25 @@
     &__section-2
     &__section-3
     &__section-4
-        min-height 824px 
-        
-        ul
-            font-size 20px
-            font-weight 400
-            line-height 1.4
+        min-height 824px
 
-        li
-            margin-bottom 16px
+        +breakpoint(small)
+            min-height 0
 
     &__section-2
     &__section-4
         background-color color-grey
 
+    &__section-2
+        @extends $sectionContainer
+        display flex
+        position relative
+
+        +breakpoint(small)
+            display block
+
     &__section-3
-        @extends $sectionContainerWithNoYPadding
+        @extends $sectionContainerWithModifiedPadding
         align-items center
         background-color color-white
         display flex
@@ -87,8 +104,11 @@
             +breakpoint(small)
                 order 1
 
+        &-image
+            vertical-align bottom
+
         &-copy
-            @extends $smallHeader
+            @extends $copy
             flex 1 1 auto
 
     &__section-4
@@ -97,28 +117,17 @@
         background-repeat no-repeat
 
         +breakpoint(small)
-            background none
+            background-image none
 
     &__title
         @extends $bigHeader
         @extends $normalFlexItem
 
     &__copy
-        @extends $smallHeader
         @extends $normalFlexItem
 
         +breakpoint(small)
             margin-bottom 48px
-
-        h3
-        p
-            margin-bottom 12px
-
-        h3
-            @extends $mediumHeader
-
-        > ul
-            @extends $list
 
     &__illustrations
         display flex
@@ -170,7 +179,8 @@
     &__mobile-image
         @extend $normalFlexItem
         display none
-        width 100%
+        margin 0 auto
+        max-width 248px
 
         +breakpoint(small)
             display block
