@@ -132,6 +132,12 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        'gh-pages': {
+            options: {
+                base: constants.BUILD_PROD_DIR
+            },
+            src: ['**']
+        },
         stylus: {
             options: {
                 use: [
