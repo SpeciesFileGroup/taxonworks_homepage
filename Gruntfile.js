@@ -74,6 +74,23 @@ module.exports = function (grunt) {
     }
 
     const taskConfig = {
+        buildHTMLWithoutCritical: {
+            dev: {
+                dest: constants.INDEX_DEV
+            },
+            production: {
+                dest: constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME
+            }
+        },
+        buildJS: {
+            dev: {
+                dest: constants.BUILD_DEV_SCRIPT
+            },
+            production: {
+                dest: constants.BUILD_PROD_SCRIPT,
+                uglify: true
+            }
+        },
         clean: {
             build: [constants.BUILD_DIR]
         },
@@ -93,14 +110,6 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-        },
-        buildHTMLWithoutCritical: {
-            dev: {
-                dest: constants.INDEX_DEV
-            },
-            production: {
-                dest: constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME
-            }
         },
         copy: {
             dev: {
@@ -154,15 +163,6 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        },
-        buildJS: {
-            dev: {
-                dest: constants.BUILD_DEV_SCRIPT
-            },
-            production: {
-                dest: constants.BUILD_PROD_SCRIPT,
-                uglify: true
-            }
         }
     };
 
@@ -194,5 +194,22 @@ module.exports = function (grunt) {
         'critical'
     ]);
 
+    grunt.registerTask('build-dev', [
+        'clean',
+        'buildHTMLWithoutCritical:dev',
+        'stylus:dev',
+        'buildJS:dev',
+        'copy:dev'
+    ]);
 
+    grunt.registerTask('build-production', [
+        'clean',
+        'buildHTMLWithoutCritical:production',
+        'stylus:production',
+        'buildJS:production',
+        'copy:production',
+        'critical'
+    ]);
+
+    grunt.registerTask('build-prod', ['build-production']);
 };
