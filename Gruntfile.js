@@ -51,7 +51,7 @@ module.exports = function (grunt) {
         config.sponsors = parseYamlFile(config.sponsorsConfig);
         config.navBarLinks = parseYamlFile(config.navBarLinkListConfig);
 
-        savedConfig = config;
+        savedConfig = Object.assign({}, config, constants.templateConstants);
         return config;
 
         function parseYamlFile(path) {
@@ -89,6 +89,9 @@ module.exports = function (grunt) {
                     {
                         src: `${constants.IMAGE_DIR}**/*`,
                         dest: constants.BUILD_DEV_DIR
+                    },
+                    {
+                        src: `${constants}`
                     }
                 ]
             },
