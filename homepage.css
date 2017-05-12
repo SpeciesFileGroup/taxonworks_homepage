@@ -1081,6 +1081,9 @@
   line-height: 1.31;
   padding-bottom: 20px;
 }
+.getting-started-section__section-text--with-gutter {
+  margin-right: 32px;
+}
 .getting-started-section__title {
   color: #211d17;
   margin-bottom: 16px;
@@ -1093,7 +1096,8 @@
 .getting-started-section__logo-image {
   height: 59px;
   margin-bottom: 112px;
-  width: 444px;
+  object-fit: contain;
+  width: 100%;
 }
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .getting-started-section__logo-image {
