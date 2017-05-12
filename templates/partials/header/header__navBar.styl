@@ -1,8 +1,8 @@
 .header__nav-bar
-    height header-navbar-total-height
-    pointer-events none
+    height header-navbar-bar-height
+    // pointer-events none
     position fixed
-    top -(header-navbar-total-height)
+    top -(header-navbar-bar-height)
     width 100%
     z-index 10
 
@@ -63,9 +63,11 @@
 
         &__mobile
             background-color color-grey
+            bottom header-navbar-mobile-height
             display none
             height header-navbar-mobile-height
-            pointer-events none
+            position relative
+            z-index -5
 
             ul
                 list-style-image none
@@ -86,17 +88,17 @@
                             color color-grey
 
     &__button
-        &.hamburger
-            background-color color-brown
-            color color-white
-            display none
-            float right
-            font-size 24px
-            height 36px
-            margin-right 8px
-            position relative
-            top 25%
-            width 36px
+        background-color color-brown
+        color color-white
+        cursor pointer
+        display none
+        float right
+        font-size 24px
+        height 36px
+        margin-right 8px
+        position relative
+        top 25%
+        width 36px
 
-            +breakpoint(small)
-                display inline-block
+        +breakpoint(small)
+            display inline-block
