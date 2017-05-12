@@ -75,6 +75,23 @@ module.exports = function (grunt) {
         clean: {
             build: [constants.BUILD_DIR]
         },
+        critical: {
+            production: {
+                options: {
+                    base: constants.BUILD_PROD_DIR,
+                    css: [
+                        constants.BUILD_PROD_STYLESHEET
+                    ],
+                    minify: true
+                },
+                files: [
+                    {
+                        src: `${constants.BUILD_PROD_DIR}${constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME}`,
+                        dest: `${constants.BUILD_PROD_DIR}${constants.INDEX_PROD_WITH_CRITICAL_FILENAME}`
+                    }
+                ]
+            },
+        },
         buildHTMLWithoutCritical: {
             dev: {
                 dest: constants.INDEX_DEV
@@ -171,6 +188,7 @@ module.exports = function (grunt) {
         'buildHTMLWithoutCritical',
         'stylus',
         'buildJS',
-        'copy'
+        'copy',
+        'critical'
     ]);
 };
