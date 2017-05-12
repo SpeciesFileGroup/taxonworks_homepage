@@ -23,6 +23,12 @@ const HOMEPAGE_YAML = CONFIG_DIR + "homepage.yaml";
 const dependenciesScripts = ["./node_modules/animejs/anime.js", "./node_modules/hammerjs/hammer.min.js"];
 const pageScripts = ["./scripts/animation.js", "./scripts/navigation.js", "./scripts/scope.js"];
 
+const templateConstants = {
+    logo: `tree-logo-graphic.svg`,
+    logoMedium: `tree-logo-graphic-medium.svg`,
+    logoSmall: `tree-logo-graphic-small.svg`
+};
+
 module.exports = {
     BUILD_DIR, BUILD_DEV_DIR, BUILD_PROD_DIR, CONFIG_DIR, IMAGE_DIR, TEMPLATE_DIR,
     INDEX_DEV, INDEX_PROD_WITHOUT_CRITICAL_FILENAME, INDEX_PROD_WITH_CRITICAL_FILENAME,
@@ -30,5 +36,6 @@ module.exports = {
     BUILD_DEV_STYLESHEET, BUILD_PROD_STYLESHEET,
     BUILD_DEV_SCRIPT, BUILD_PROD_SCRIPT,
     HOMEPAGE_YAML,
-    dependenciesScripts, pageScripts
+    dependenciesScripts, pageScripts,
+    templateConstants
 };

@@ -1,6 +1,3 @@
-logo: tree-logo-graphic.svg
-logoMedium: tree-logo-graphic-medium.svg
-logoSmall: tree-logo-graphic-small.svg
 title: TaxonWorks
 titleLogo: images/taxonworks-white.svg
 slogan: Describe life.
@@ -22,6 +19,7 @@ gettingStartedLogo: images/taxonworks-black.svg
 footerLogo: images/inhs-footer-logo.png
 navLogo: images/inhs-nav-logo.svg
 navText: images/inhs-nav-text.svg
+navBarLinkListConfig: nav.yaml
 sponsor: Illinois Natural History Survey Prairie Research Institute
 builtBy: Built by [Pixo](http://www.pixotech.com)
 funding: TaxonWorks is funded in part by the [National Science Foundation](http://www.nsf.gov)
