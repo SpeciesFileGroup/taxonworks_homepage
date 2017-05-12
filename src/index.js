@@ -11,7 +11,7 @@ const markdown = require('markdown-it')();
 const uglify = require("uglify-es");
 const scope = require('./scope');
 
-const constants = require("../constants");
+const constants = require("./constants");
 const navBarLinks = require("../navBarLinks");
 const sponsors = require("../sponsors");
 

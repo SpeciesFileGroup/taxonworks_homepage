@@ -2,7 +2,7 @@ features:
     -
         name: Boston Celtics
         status: in_progress
-        description: Location: Boston, Massachusetts
+        description: "Location Boston, Massachusetts"
         whenComplete: this_year
         features:
             -
@@ -60,17 +60,17 @@ features:
                     -
                         name: Rajon Rondo
                         status: upcoming
-                        description: Rajon Pierre Rondo ▪ Twitter: @RajonRondo (Johnny, Swag, The Yoga Instructor)
+                        description: "Rajon Pierre Rondo ▪ Twitter: @RajonRondo (Johnny, Swag, The Yoga Instructor)"
                         whenComplete: three_year
                     -
                         name: James Posey
                         status: upcoming
-                        description: James Mikley Mantell Posey Position: Power Forward and Small Forward and Shooting Guard ▪ Shoots: Right 6-8, 215lb (203cm, 97kg)
+                        description: "James Mikley Mantell Posey Position: Power Forward and Small Forward and Shooting Guard ▪ Shoots: Right 6-8, 215lb (203cm, 97kg)"
                         whenComplete: three_year
     -
         name: Los Angeles Lakers
         status: upcoming
-        description: Location: Los Angeles, California
+        description: "Location: Los Angeles, California"
         whenComplete: three_year
         features:
             -
@@ -114,32 +114,32 @@ features:
                     -
                         name: Pau Gasol
                         status: upcoming
-                        description: Pronunciation: \POW ga-SALL\ (Meal Ticket, ET, Kung Pow)
+                        description: "Pronunciation: \POW ga-SALL\ (Meal Ticket, ET, Kung Pow)"
                         whenComplete: three_year
                     -
                         name: Kobe Bryant
                         status: upcoming
-                        description: Kobe Bean Bryant ▪ Twitter: @kobebryant (Black Mamba, KB24, Vino)
+                        description: "Kobe Bean Bryant ▪ Twitter: @kobebryant (Black Mamba, KB24, Vino)"
                         whenComplete: three_year
                     -
                         name: Derek Fisher
                         status: upcoming
-                        description: Derek Lamar Fisher ▪ Twitter: @derekfisher (D-Fish)
+                        description: "Derek Lamar Fisher ▪ Twitter: @derekfisher (D-Fish)"
                         whenComplete: three_year
                     -
                         name: Lamar Odom
                         status: upcoming
-                        description: Lamar Joseph Odom ▪ Twitter: @RealLamarOdom (L.O., Candy Man, The Goods)
+                        description: "Lamar Joseph Odom ▪ Twitter: @RealLamarOdom (L.O., Candy Man, The Goods)"
                         whenComplete: three_year
                     -
                         name: Andrew Bynum
                         status: upcoming
-                        description: Position: Center ▪ Shoots: Right 7-0, 285lb (213cm, 129kg)
+                        description: "Position: Center ▪ Shoots: Right 7-0, 285lb (213cm, 129kg)"
                         whenComplete: three_year
     -
         name: Chicago Bulls
         status: complete
-        description: Location: Chicago, Illinois
+        description: "Location: Chicago, Illinois"
         whenComplete: now
         features:
             -
