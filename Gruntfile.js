@@ -51,7 +51,9 @@ module.exports = function (grunt) {
         config.sponsors = parseYamlFile(config.sponsorsConfig);
         config.navBarLinks = parseYamlFile(config.navBarLinkListConfig);
 
-        savedConfig = Object.assign({}, config, constants.templateConstants);
+        Object.assign(config, constants.templateConstants);
+
+        savedConfig = config;
         return config;
 
         function parseYamlFile(path) {
@@ -191,4 +193,6 @@ module.exports = function (grunt) {
         'copy',
         'critical'
     ]);
+
+
 };
