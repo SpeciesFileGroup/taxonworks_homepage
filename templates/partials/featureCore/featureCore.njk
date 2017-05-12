@@ -19,6 +19,12 @@
         </button>
     </div>
 
+    <ul class="feature-core__dots">
+        {% for feature in scopeFeatures %}
+            <li class="feature-core__dot js-feature-dot" data-feature-ref="{{ feature.id }}"></li>
+        {% endfor %}
+    </ul>
+
     <ul class="feature-core__feature-menu">
         {% for feature in scopeFeatures %}
             <li class="feature-core__feature-menu-item">

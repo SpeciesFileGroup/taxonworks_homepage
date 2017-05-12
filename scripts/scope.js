@@ -20,15 +20,18 @@ function scope() {
         ExpandBottomLeftBorder: 'expand-button__bottom-left-border',
         ExpandBottomRightBorder: 'expand-button__bottom-right-border',
         Connector: 'expand-button__connector',
-        FeatureTopLine: 'feature-card__top-border-line'
+        FeatureTopLine: 'feature-card__top-border-line',
+        FeatureDotActive: 'feature-core__dot--active'
     };
 
     const ScrollTopOffset = 80; //For navbar
-
     const ScrollDurationInFrames = 16;
+    const TopLevelCardDuration = 300;
+    const TopLevelCardDelay = 0;
 
     const featureCardNodes = Array.from(document.querySelectorAll(`[${Attributes.FeatureId}]`));
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
+    const topLevelFeatureDots = Array.from( document.querySelectorAll('.js-feature-dot') );
     const featureMenuButtonNodes = Array.from( document.querySelectorAll('.js-feature-menu-button') );
     const featureCoreNode = document.querySelector(`.${Classes.FeatureCore}`);
 
@@ -36,10 +39,12 @@ function scope() {
     setupInitialCardState(featureCardNodes);
 
     setupControlButtons();
+    setupFeatureCoreSwiping();
     setupSubfeatureButtons();
     setupExpandButtons();
     setupFeatureMenuButtons();
     updateFeatureMenuButtonState();
+    updateFeatureDotState();
 
     function changeCardDetailColors(cardList) {
         for (var i = 0; i < cardList.length; i++) {
@@ -123,27 +128,51 @@ function scope() {
     }
 
     function setupControlButtons() {
-        document.querySelector('.js-next-button').addEventListener('click', function() {
-            let index = findActiveIndex();
+        document.querySelector('.js-next-button').addEventListener('click', goToNextTopLevelFeature, false);
+        document.querySelector('.js-previous-button').addEventListener('click', goToPreviousTopLevelFeature, false);
+    }
+
+    function goToNextTopLevelFeature() {
+        let index = findActiveIndex();
+
+        if (index < topLevelFeatureCardNodes.length - 1) {
+            const cardGoingOut = topLevelFeatureCardNodes[index];
             index++;
-            if (index >= topLevelFeatureCardNodes.length)
-                index = topLevelFeatureCardNodes.length - 1;
+            const cardGoingIn = topLevelFeatureCardNodes[index];
+
+            lockCoreHeight();
+
+            transitionCardOutToLeft( cardGoingOut );
+            transitionCardInFromRight( cardGoingIn, afterTopLevelAnimation);
 
             setIndexToActive(index);
-        }, false);
+        }
+    }
 
-        document.querySelector('.js-previous-button').addEventListener('click', function() {
-            let index = findActiveIndex();
+    function goToPreviousTopLevelFeature() {
+        let index = findActiveIndex();
+
+        if (index > 0) {
+            const cardGoingOut = topLevelFeatureCardNodes[index];
             index--;
-            if (index <= 0)
-                index = 0;
+            const cardGoingIn = topLevelFeatureCardNodes[index];
+
+            lockCoreHeight();
+
+            transitionCardOutToRight( cardGoingOut );
+            transitionCardInFromLeft( cardGoingIn, afterTopLevelAnimation);
 
             setIndexToActive(index);
-        }, false);
+        }
     }
 
     function findActiveIndex() {
         return topLevelFeatureCardNodes.findIndex(cardNode => !cardNode.hasAttribute(Attributes.Inactive));
+    }
+
+    function afterTopLevelAnimation() {
+        cleanUpTopLevelFeatureCards();
+        unlockCoreHeight();
     }
 
     function setIndexToActive(newActiveIndex) {
@@ -153,6 +182,78 @@ function scope() {
             else
                 setFeatureNodeAsInactive(node);
         });
+        updateFeatureDotState();
+    }
+
+    function transitionCardOutToLeft(featureCard) {
+        transitionCardOut(featureCard, '-150%');
+    }
+
+    function transitionCardOutToRight(featureCard) {
+        transitionCardOut(featureCard, '150%');
+    }
+
+    function transitionCardOut(featureCard, endX) {
+        setUpCardForAnimation(featureCard);
+        anime({
+            targets: featureCard,
+            translateX: ['0%', endX],
+            duration: TopLevelCardDuration,
+            easing: 'easeInOutQuad'
+        });
+    }
+
+    function transitionCardInFromRight(featureCard, callback) {
+        transitionCardIn(featureCard, `150%`, callback);
+    }
+
+    function transitionCardInFromLeft(featureCard, callback) {
+        transitionCardIn(featureCard, '-150%', callback);
+    }
+
+    function transitionCardIn(featureCard, startingX, callback) {
+        setUpCardForAnimation(featureCard, startingX);
+        anime({
+            targets: featureCard,
+            translateX: [startingX, '0'],
+            duration: TopLevelCardDuration,
+            delay: TopLevelCardDelay,
+            easing: 'easeInOutQuad',
+            complete: callback
+        });
+    }
+
+    function setUpCardForAnimation(featureCard, startingX = 0) {
+        featureCard.style.transform = `translateX(${startingX})`;
+        featureCard.style.display = 'block';
+        featureCard.style.position = 'absolute';
+        featureCard.style.top = 0;
+        featureCard.style.left = 0;
+        featureCard.style.right = 0;
+    }
+
+    function cleanUpTopLevelFeatureCards() {
+        topLevelFeatureCardNodes.forEach(node => {
+            node.style.transform = '';
+            node.style.display = '';
+            node.style.position = '';
+            node.style.top = '';
+            node.style.left = '';
+            node.style.right = '';
+        });
+    }
+
+    function setupFeatureCoreSwiping() {
+        const hammer = new Hammer(featureCoreNode);
+        hammer.on('swipe', onFeatureCoreSwipe);
+        hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+    }
+
+    function onFeatureCoreSwipe(event) {
+        if (event.direction === Hammer.DIRECTION_LEFT)
+            goToNextTopLevelFeature();
+        else if (event.direction === Hammer.DIRECTION_RIGHT)
+            goToPreviousTopLevelFeature();
     }
 
     function setupSubfeatureButtons() {
@@ -398,6 +499,23 @@ function scope() {
                 node.classList.add(Classes.FeatureMenuButtonActive);
             else
                 node.classList.remove(Classes.FeatureMenuButtonActive);
+        });
+    }
+
+    function updateFeatureDotState() {
+        topLevelFeatureCardNodes.forEach(node => {
+            const active = !node.hasAttribute(Attributes.Inactive);
+            const dotNode = getFeatureDot(node.getAttribute(Attributes.FeatureId));
+            if (active)
+                dotNode.classList.add(Classes.FeatureDotActive);
+            else
+                dotNode.classList.remove(Classes.FeatureDotActive);
+        });
+    }
+
+    function getFeatureDot(featureId) {
+        return topLevelFeatureDots.find(node => {
+            return node.getAttribute(Attributes.FeatureRef) === featureId;
         });
     }
 }

@@ -5,13 +5,19 @@
     +breakpoint(medium)
         display block
 
+    +breakpoint(small)
+        display block
+
     &__controls
         color color-beige
         display none
         justify-content space-between
-        padding 0 0 24px
+        padding 0
 
         +breakpoint(medium)
+            display flex
+
+        +breakpoint(small)
             display flex
 
     &__controls-description
@@ -31,12 +37,42 @@
             justify-content center
             width @height
 
+    &__dots
+        display none
+        list-style none inside
+        justify-content center
+        margin 0 auto
+        padding 16px 0
+
+        +breakpoint(medium)
+            display flex
+
+        +breakpoint(small)
+            display flex
+
+    &__dot
+        background-color color-cocoa
+        border 2px solid color-green
+        border-radius 50%
+        height 14px
+        transition background-color 222ms
+        width @height
+
+        &:not(:first-child)
+            margin-left 16px
+
+        &--active
+            background-color color-green
+
     &__feature-menu
         flex 1 1 0
         list-style none inside
         margin-right 8px
 
         +breakpoint(medium)
+            display none
+
+        +breakpoint(small)
             display none
 
     &__feature-menu-item
@@ -64,6 +100,10 @@
     &__feature-card-container
         flex 1 1 0
         margin-left 8px
+        position relative
 
         +breakpoint(medium)
+            margin-left 0
+
+        +breakpoint(small)
             margin-left 0
