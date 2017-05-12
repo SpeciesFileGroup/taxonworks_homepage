@@ -20,7 +20,8 @@ function scope() {
         ExpandBottomLeftBorder: 'expand-button__bottom-left-border',
         ExpandBottomRightBorder: 'expand-button__bottom-right-border',
         Connector: 'expand-button__connector',
-        FeatureTopLine: 'feature-card__top-border-line'
+        FeatureTopLine: 'feature-card__top-border-line',
+        FeatureDotActive: 'feature-core__dot--active'
     };
 
     const ScrollTopOffset = 80; //For navbar
@@ -30,6 +31,7 @@ function scope() {
 
     const featureCardNodes = Array.from(document.querySelectorAll(`[${Attributes.FeatureId}]`));
     const topLevelFeatureCardNodes = featureCardNodes.filter(node => node.hasAttribute(Attributes.TopLevel));
+    const topLevelFeatureDots = Array.from( document.querySelectorAll('.js-feature-dot') );
     const featureMenuButtonNodes = Array.from( document.querySelectorAll('.js-feature-menu-button') );
     const featureCoreNode = document.querySelector(`.${Classes.FeatureCore}`);
 
@@ -42,6 +44,7 @@ function scope() {
     setupExpandButtons();
     setupFeatureMenuButtons();
     updateFeatureMenuButtonState();
+    updateFeatureDotState();
 
     function changeCardDetailColors(cardList) {
         for (var i = 0; i < cardList.length; i++) {
@@ -179,6 +182,7 @@ function scope() {
             else
                 setFeatureNodeAsInactive(node);
         });
+        updateFeatureDotState();
     }
 
     function transitionCardOutToLeft(featureCard) {
@@ -495,6 +499,23 @@ function scope() {
                 node.classList.add(Classes.FeatureMenuButtonActive);
             else
                 node.classList.remove(Classes.FeatureMenuButtonActive);
+        });
+    }
+
+    function updateFeatureDotState() {
+        topLevelFeatureCardNodes.forEach(node => {
+            const active = !node.hasAttribute(Attributes.Inactive);
+            const dotNode = getFeatureDot(node.getAttribute(Attributes.FeatureId));
+            if (active)
+                dotNode.classList.add(Classes.FeatureDotActive);
+            else
+                dotNode.classList.remove(Classes.FeatureDotActive);
+        });
+    }
+
+    function getFeatureDot(featureId) {
+        return topLevelFeatureDots.find(node => {
+            return node.getAttribute(Attributes.FeatureRef) === featureId;
         });
     }
 }
