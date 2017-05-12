@@ -5,6 +5,9 @@
     +breakpoint(medium)
         display block
 
+    +breakpoint(small)
+        display block
+
     &__controls
         color color-beige
         display none
@@ -12,6 +15,9 @@
         padding 0 0 24px
 
         +breakpoint(medium)
+            display flex
+
+        +breakpoint(small)
             display flex
 
     &__controls-description
@@ -37,6 +43,9 @@
         margin-right 8px
 
         +breakpoint(medium)
+            display none
+
+        +breakpoint(small)
             display none
 
     &__feature-menu-item
@@ -66,4 +75,7 @@
         margin-left 8px
 
         +breakpoint(medium)
+            margin-left 0
+
+        +breakpoint(small)
             margin-left 0

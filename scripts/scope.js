@@ -36,6 +36,7 @@ function scope() {
     setupInitialCardState(featureCardNodes);
 
     setupControlButtons();
+    setupFeatureCoreSwiping();
     setupSubfeatureButtons();
     setupExpandButtons();
     setupFeatureMenuButtons();
@@ -123,23 +124,26 @@ function scope() {
     }
 
     function setupControlButtons() {
-        document.querySelector('.js-next-button').addEventListener('click', function() {
-            let index = findActiveIndex();
-            index++;
-            if (index >= topLevelFeatureCardNodes.length)
-                index = topLevelFeatureCardNodes.length - 1;
+        document.querySelector('.js-next-button').addEventListener('click', goToNextTopLevelFeature, false);
+        document.querySelector('.js-previous-button').addEventListener('click', goToPreviousTopLevelFeature, false);
+    }
 
-            setIndexToActive(index);
-        }, false);
+    function goToNextTopLevelFeature() {
+        let index = findActiveIndex();
+        index++;
+        if (index >= topLevelFeatureCardNodes.length)
+            index = topLevelFeatureCardNodes.length - 1;
 
-        document.querySelector('.js-previous-button').addEventListener('click', function() {
-            let index = findActiveIndex();
-            index--;
-            if (index <= 0)
-                index = 0;
+        setIndexToActive(index);
+    }
 
-            setIndexToActive(index);
-        }, false);
+    function goToPreviousTopLevelFeature() {
+        let index = findActiveIndex();
+        index--;
+        if (index <= 0)
+            index = 0;
+
+        setIndexToActive(index);
     }
 
     function findActiveIndex() {
@@ -153,6 +157,19 @@ function scope() {
             else
                 setFeatureNodeAsInactive(node);
         });
+    }
+
+    function setupFeatureCoreSwiping() {
+        const hammer = new Hammer(featureCoreNode);
+        hammer.on('swipe', onFeatureCoreSwipe);
+        hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+    }
+
+    function onFeatureCoreSwipe(event) {
+        if (event.direction === Hammer.DIRECTION_LEFT)
+            goToNextTopLevelFeature();
+        else if (event.direction === Hammer.DIRECTION_RIGHT)
+            goToPreviousTopLevelFeature();
     }
 
     function setupSubfeatureButtons() {
