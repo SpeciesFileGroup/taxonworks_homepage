@@ -1,3 +1,5 @@
+// Globals
+const className = 'header__nav-bar__links__mobile--collapsed';
 
 document.addEventListener("DOMContentLoaded", function() {
     const twHeader = document.querySelector('header');
@@ -26,11 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     twMobileButton.addEventListener('click', function() {
-        const isCollapsed = checkIfCollapsed(twMobileLinks);
+        const isCollapsed = checkIfCollapsed(twMobileLinks); 
+        
         this.disabled = true;
 
         if( isCollapsed ){
-            twMobileLinks.style.display = "block";
+            removeCollapsedClass();
             var showMobileLinks = anime({
                 targets: twMobileLinks,
                 translateY: twMobileLinks.offsetHeight,
@@ -46,28 +49,35 @@ document.addEventListener("DOMContentLoaded", function() {
                 translateY: 0,
                 complete: function() {
                     twMobileButton.disabled = false;
-                    twMobileLinks.style.display = "none";
                     changeButtonHTML(twMobileButton, isCollapsed);
+                    addCollapsedClass();
                 }
             });
             
         }
 
-        function checkIfCollapsed(object) {
-            var currentObjectDisplay;
+        function checkIfCollapsed(element) {
+            const currentObjectDisplay = getCurrentCollapsedClassState(element);
 
-            if ( object.currentStyle )
-                currentObjectDisplay = object.currentStyle.display;
-            else
-                currentObjectDisplay = getComputedStyle(object, null).display;
+            return currentObjectDisplay;
+        }
 
-            if( object.style.display == "none" || currentObjectDisplay == "none" )
+        function getCurrentCollapsedClassState(element) {
+            if ( element.classList.contains(className) )
                 return true;
             else
                 return false;
         }
 
-        function changeButtonHTML(button, isCollapsed){
+        function addCollapsedClass() {
+            twMobileLinks.classList.add(className);
+        }
+
+        function removeCollapsedClass() {
+            twMobileLinks.classList.remove(className);
+        }
+
+        function changeButtonHTML(button, isCollapsed) {
             if( isCollapsed )
                 button.innerHTML = 'X';
             else

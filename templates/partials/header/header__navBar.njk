@@ -10,7 +10,7 @@
         <button class="header__nav-bar__button">&#9776;</button>
     </div>
 
-    <div class="header__nav-bar__links__mobile">
+    <div class="header__nav-bar__links__mobile header__nav-bar__links__mobile--collapsed">
         <ul>
             {% for navBarLink in navBarLinks %}
                 <a href="{{ navBarLink.href }}"><li>{{ navBarLink.name }}</li></a>

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Build the dev and production sites for Taxonworks
+node src/index.js DEV
