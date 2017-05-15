@@ -33,6 +33,18 @@
             +breakpoint(small)
                 display block
 
+    &__section-2
+    &__section-3
+    &__section-4
+        min-height 824px
+
+        +breakpoint(small)
+            min-height 0
+
+    &__section-2
+    &__section-4
+        background-color color-grey
+
     &__section-1
         background-color color-green
         position relative
@@ -112,18 +124,6 @@
                 display none
 
     &__section-2
-    &__section-3
-    &__section-4
-        min-height 824px
-
-        +breakpoint(small)
-            min-height 0
-
-    &__section-2
-    &__section-4
-        background-color color-grey
-
-    &__section-2
         @extends $sectionContainer
         display flex
         position relative
@@ -163,15 +163,27 @@
         +breakpoint(small)
             background-image none
 
-    &__title
-        @extends $bigHeader
-        @extends $normalFlexItem
+        &-copy
+            @extends $copy
+            flex 1 1 auto
 
-    &__copy
-        @extends $normalFlexItem
+    treeWidth = 424px
+
+    &__tree
+        display none
 
         +breakpoint(small)
-            margin-bottom 48px
+            display block
+
+        &-image
+            vertical-align bottom
+
+            @media (max-width treeWidth)
+                transform 'translateX( calc((%s / 2 - 50vw) * -1) )' % treeWidth
+
+            @media (min-width treeWidth + 1px)
+                display block
+                margin 0 auto
 
     &__illustrations
         display flex

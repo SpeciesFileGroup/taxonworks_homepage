@@ -48,18 +48,15 @@
 
     <article class="benefits-section__section-4">
         <div class="benefits-section__container">
-            <div class="benefits-section__container__inner">
-                <div class="benefits-section__copy">
-                    {{ benefits4HTML | safe }}
-                </div>
-                <div class="benefits-section__sponsor-grid">
-                    {% include 'partials/sponsorGrid/sponsorGrid.njk' %}
-                </div>
+            <div class="benefits-section__section-4-copy">
+                {{ benefits4HTML | safe }}
             </div>
-            <div class="benefits-section__empty"></div>
-            <div class="benefits-section__mobile-image">
-                <img src="images/trunk-small.svg" width="320px" height="636px" alt="Trunk" />
+            <div class="benefits-section__sponsor-grid">
+                {% include 'partials/sponsorGrid/sponsorGrid.njk' %}
             </div>
+        </div>
+        <div class="benefits-section__tree">
+            <img class="benefits-section__tree-image" src="images/trunk-small.svg" width="424" height="636" alt="Trunk" />
         </div>
     </article>
 </div>
