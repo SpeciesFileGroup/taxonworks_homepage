@@ -16,7 +16,7 @@ gettingStarted1Markdown: gettingStarted-1.md
 gettingStarted2aMarkdown: gettingStarted-2a.md
 gettingStarted2bMarkdown: gettingStarted-2b.md
 gettingStartedLogo: images/taxonworks-black.svg
-footerLogo: images/inhs-footer-logo.png
+footerLogo: images/inhs-footer-logo.svg
 navLogo: images/inhs-nav-logo.svg
 navText: images/inhs-nav-text.svg
 navBarLinkListConfig: nav.yaml

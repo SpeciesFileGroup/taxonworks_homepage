@@ -1,7 +1,7 @@
 .benefits-section
     $mobileImage
-        @extend $normalFlexItem
         display none
+        flex 1 1 200px
         margin 0 auto
         max-width 248px
         position relative
@@ -65,7 +65,7 @@
 
         &-copy
             @extends $normalFlexItem
-            @extends $copy
+            @extends $promoCopy
 
     &__leaves
         max-width content-max-width
@@ -85,9 +85,6 @@
 
         +breakpoint(small)
             display none
-
-    //&__mobile-top-leaves
-
 
     &__mobile-top-leaves-container
         display none
@@ -135,7 +132,7 @@
             display block
 
         &-copy
-            @extends $copy
+            @extends $normalCopy
             flex 1 1 auto
             position relative
 
@@ -155,7 +152,7 @@
             vertical-align bottom
 
         &-copy
-            @extends $copy
+            @extends $normalCopy
             flex 1 1 auto
 
     &__section-4
@@ -167,7 +164,7 @@
             background-image none
 
         &-copy
-            @extends $copy
+            @extends $normalCopy
             flex 1 1 auto
 
     treeWidth = 424px
