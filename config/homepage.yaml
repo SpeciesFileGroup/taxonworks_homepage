@@ -23,6 +23,7 @@ navBarLinkListConfig: nav.yaml
 sponsor: Illinois Natural History Survey Prairie Research Institute
 builtBy: Built by [Pixo](http://www.pixotech.com)
 funding: footerFunding.md
+disclaimer: footerDisclaimer.md
 twitterUrl: https://twitter.com/TaxonWorks
 footerLinksCode: footerLinksCode.yaml
 footerLinksContact: footerLinksContact.yaml

@@ -6,11 +6,11 @@
         @extends $sectionContainer
         align-items flex-start
         display flex
-        padding-top footer-padding-top
+        padding-top footer-padding-y
+        padding-bottom footer-padding-y
 
         +breakpoint(small)
             flex-flow column wrap
-
 
     &__details
         float left
@@ -21,7 +21,7 @@
             width 100%
 
         &--with-gutter
-            margin-right 32px
+            padding-right 32px
 
     &__footer-links
         @extend $normalFlexItem
@@ -59,3 +59,15 @@
         +breakpoint(full)
             height 77px
             width 336px
+
+    &__disclaimer-container
+        @extends $hasContentGutters
+        padding-bottom footer-padding-y
+
+    &__disclaimer
+        font-size 12px
+        line-height 20px
+        padding-left 50%
+
+        +breakpoint(small)
+            padding-left 0
