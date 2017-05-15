@@ -1,14 +1,14 @@
 // Globals
-const className = 'header__nav-bar__links__mobile--collapsed';
+const CollapsedClassName = 'navigation__links__mobile--collapsed';
 
 document.addEventListener("DOMContentLoaded", function() {
     const twHeader = document.querySelector('header');
-    const twNavBar = document.querySelector('.header__nav-bar');
+    const twNavBar = document.querySelector('.js-navigation');
     const twMain   = document.querySelector('main');
 
-    const twMobileButton = document.querySelector('.header__nav-bar__button');
-    const twMobileLinks  = document.querySelector('.header__nav-bar__links__mobile');
-    const twMobileLink   = document.querySelector('.header__nav-bar__links__mobile__link');
+    const twMobileButton = document.querySelector('.js-navigation-mobile-button');
+    const twMobileLinks  = document.querySelector('.js-mobile-links');
+    const twMobileLink   = document.querySelector('.js-mobile-link-anchor');
 
     window.onscroll = function() {
         const scrollPosition = document.getElementsByTagName("body")[0].scrollTop;
@@ -17,13 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
         if ( scrollPosition > twMain.offsetTop || windowYPosition > twMain.offsetTop )
         {
             var showNavBar = anime({
+                duration: 250,
                 targets: twNavBar,
-                translateY: twNavBar.offsetHeight
+                translateY: twNavBar.offsetHeight,
+                easing: 'easeInOutQuad'
             });
         } else {
             var hideNavBar = anime({
+                duration: 250,
                 targets: twNavBar,
                 translateY: -(twNavBar.offsetHeight),
+                easing: 'easeInOutQuad',
                 begin: function() {
                     getCollapsingAnimation();
                 }
@@ -45,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     twMobileLink.addEventListener('click', function() {
-        console.log('You clicked a link');
         getCollapsingAnimation();
     });
 
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function getCurrentCollapsedClassState(element) {
-        if ( element.classList.contains(className) )
+        if ( element.classList.contains(CollapsedClassName) )
             return true;
         else
             return false;
@@ -69,17 +72,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function addCollapsedClass() {
-        twMobileLinks.classList.add(className);
+        twMobileLinks.classList.add(CollapsedClassName);
     }
 
     function removeCollapsedClass() {
-        twMobileLinks.classList.remove(className);
+        twMobileLinks.classList.remove(CollapsedClassName);
     }
 
     function getCollapsingAnimation() {
         return anime({
+            duration: 250,
             targets: twMobileLinks,
             translateY: 0,
+            easing: 'easeInOutQuad',
             complete: function() {
                 twMobileButton.disabled = false;
                 addCollapsedClass();
@@ -91,8 +96,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function getExpandingAnimation() {
         removeCollapsedClass();
         return anime({
+            duration: 250,
             targets: twMobileLinks,
             translateY: twMobileLinks.offsetHeight,
+            easing: 'easeInOutQuad',
             complete: function() {
                 twMobileButton.disabled = false;
                 changeButtonHTML(twMobileButton, checkIfCollapsed());

@@ -1,0 +1,23 @@
+<nav class="navigation js-navigation">
+    <div class="navigation__bar">
+        <img class="navigation__logo" src="{{ navLogo }}">
+        <img class="navigation__text" src="{{ navText }}">
+        <div class="navigation__links">
+            {% for navBarLink in navBarLinks %}
+                <a class="navigation__link-anchor" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
+            {% endfor %}
+        </div>
+        <button class="navigation__button js-navigation-mobile-button">&#9776;</button>
+    </div>
+
+    <div class="navigation__links__mobile navigation__links__mobile--collapsed js-mobile-links">
+        <ul>
+            {% for navBarLink in navBarLinks %}
+                <li class="navigation__links__mobile__link js-mobile-link-anchor">
+                    <a href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+

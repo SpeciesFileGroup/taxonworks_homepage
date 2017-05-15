@@ -1,4 +1,4 @@
-.header__nav-bar
+.navigation
     height header-navbar-bar-height
     // pointer-events none
     position fixed
@@ -6,19 +6,17 @@
     width 100%
     z-index 10
 
-    &__desktop
+    &__bar
+        align-items center
         background-color color-brown
+        display flex
         height header-navbar-bar-height
         padding 2px
 
     &__logo
-        float left
         height 48px
         margin-left 16px
         object-fit contain
-        position relative
-        top 50%
-        transform translate(0, -50%)
         width 48px
 
         +breakpoint(small)
@@ -30,9 +28,6 @@
         height 27px
         margin-left 16px
         object-fit contain
-        position relative
-        top 50%
-        transform translate(0, -50%)
         width 204px
 
         +breakpoint(medium)
@@ -44,22 +39,11 @@
             width 172px
 
     &__links
-        float right
-        height inherit
+        display flex
+        margin-left auto
 
         +breakpoint(small)
             display none
-
-        a 
-            display block
-            float left
-            padding 8px 24px
-            position relative
-            top 50%
-            transform translate(0, -50%)
-
-            +breakpoint(medium)
-                padding 8px 16px
 
         &__mobile
             background-color color-grey
@@ -78,29 +62,41 @@
                 margin 0
                 padding 0
 
-                a
-                    text-align center
+                li
 
-                    li 
+                    a
                         border-bottom 2px solid color-brown
                         display block
                         padding 10px 0
+                        text-align center
 
                         &:hover
-                            background-color color-green
+                            background-color color-teal
                             color color-grey
+
+    &__link-anchor
+        color color-teal
+        display block
+        padding 8px 24px
+        transition color 222ms
+
+        &:hover
+        &:focus
+            color white
+
+        +breakpoint(medium)
+            padding 8px 16px
 
     &__button
         background-color color-brown
         color color-white
         cursor pointer
         display none
-        float right
         font-size 24px
         height 36px
+        margin-left auto
         margin-right 8px
         position relative
-        top 25%
         width 36px
 
         +breakpoint(small)
