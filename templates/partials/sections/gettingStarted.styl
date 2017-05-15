@@ -69,12 +69,13 @@
             display block
             outline none
             padding 22px 24px
-            transition background-color 250ms, border-color 250ms
+            transition background-color 250ms, border-color 250ms, color 250ms
 
             &:hover
             &:focus
-                background-color color-cocoa
+                background-color color-teal
                 border-color color-moss
+                color color-cocoa
 
     &__section-text
         flex 1 1 0
@@ -82,7 +83,7 @@
 
         +breakpoint(small)
             margin-bottom 32px
-            margin-right 0px
+            margin-right 0
 
     &__title
         @extends $bigHeader
