@@ -220,4 +220,9 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build-prod', ['build-production']);
+
+    grunt.registerTask('publish', [
+        'build-production',
+        'gh-pages'
+    ]);
 };
