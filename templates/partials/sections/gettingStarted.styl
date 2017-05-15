@@ -6,6 +6,7 @@
 
     &__container-1
         display flex
+        margin-bottom 64px
         padding-bottom 0
 
     &__container-2
@@ -17,38 +18,48 @@
 
         h3
             @extends $mediumHeader
-            padding-bottom 16px
+            margin-bottom 12px
 
         ul
             @extends $list
-            line-height 1.2
-            margin-bottom 64px
-            margin-top 12px
+            margin-bottom 48px
 
-        li 
-            line-height 1.31
-            padding-bottom 20px
+        li
+            &:not(:last-child)
+                margin-bottom 8px
+
+        a
+            @extends $promoCopyText
+            background-color color-white
+            border 2px solid sponsor-grid-grey
+            color color-moss
+            display block
+            outline none
+            padding 22px 24px
+            transition background-color 250ms, border-color 250ms
+
+            &:hover
+            &:focus
+                background-color color-cocoa
+                border-color color-moss
 
     &__section-text
-        @extends $normalFlexItem
-        flex 1 1 200px
+        flex 1 1 0
+        margin-right 32px
 
-        &--with-gutter
-            margin-right 32px
+        +breakpoint(small)
+            margin-bottom 32px
+            margin-right 0px
 
     &__title
         @extends $bigHeader
         color color-black
         margin-bottom 16px
 
-        +breakpoint(small)
-            text-align center
-
     &__logo-image
         height 59px
-        margin-bottom 112px
         object-fit contain
-        width 100%
+        max-width 100%
 
         +breakpoint(medium)
             height 44px
@@ -56,29 +67,10 @@
 
         +breakpoint(small)
             height 36px
-            width 100%
 
     &__copy
         @extends $normalCopyText
-        @extends $normalFlexItem
+        flex 1 1 0
 
         &--with-gutter
             margin-right 32px
-
-    a 
-        @extend $buttonHelper
-        background-color color-white
-        border solid 2px sponsor-grid-grey
-        color color-black
-        display block
-        font-size 26px
-        min-height 78px
-        outline none
-        padding 22px 24px
-        text-align left
-
-        &:hover
-        &:focus
-            background-color color-teal
-            color color-white
-            transition background-color 300ms, color 300ms
