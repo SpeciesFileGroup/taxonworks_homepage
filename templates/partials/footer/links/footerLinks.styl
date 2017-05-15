@@ -12,16 +12,11 @@
         flex 1 1 0
         list-style none inside
 
-    &__code
-    &__contact
-    &__social
+    &__list-container
         @extends .footer-links $linkList
 
-        > li
-            line-height 2
+        &:not(:last-child)
+            margin-right footer-space-between
 
-        ul 
-            @extends .footer-links $linkList
-
-            > li 
-                line-height 2
+            +breakpoint(small)
+                margin-bottom 32px

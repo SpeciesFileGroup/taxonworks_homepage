@@ -1,5 +1,0 @@
-+ [Source](#)
-+ [Rubydoc](#)
-+ [API](#)
-+ [Gitter](#)
-+ [Open Hub](#)

@@ -1,0 +1,10 @@
+{% macro footerLinkList(nameOfList, links) %}
+<div class="footer-link-list">
+    <div class="footer-link-list__title">{{ nameOfList }}</div>
+    <ul class="footer-link-list__unordered-list">
+        {% for link in links %}
+            <li class="footer-link-list__list-item"><a href="{{ link.href }}">{{ link.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endmacro %}

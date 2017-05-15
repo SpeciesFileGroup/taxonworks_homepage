@@ -1,14 +1,13 @@
+{% import 'partials/footer/links/footerLinkList.njk' as footerLinkList %}
+
 <div class="footer-links">
-    <ul class="footer-links__code">
-        <li class="footer-links__title">Code</li>
-        {{ footerLinksCodeHTML | safe }}
-    </ul>
-    <ul class="footer-links__contact">
-        <li class="footer-links__title">Contact</li>
-        {{ footerLinksContactHTML | safe }}
-    </ul>
-    <ul class="footer-links__social">
-        <li class="footer-links__title">Social Media</li>
-        {{ footerLinksSocialHTML | safe }}
-    </ul>
+    <div class="footer-links__list-container">
+        {{ footerLinkList.footerLinkList('Code', footerLinksCode) }}
+    </div>
+    <div class="footer-links__list-container">
+        {{ footerLinkList.footerLinkList('Contact', footerLinksContact) }}
+    </div>
+    <div class="footer-links__list-container">
+        {{ footerLinkList.footerLinkList('Social', footerLinksSocial) }}
+    </div>
 </div>

@@ -41,12 +41,12 @@ module.exports = function (grunt) {
             config.fundingHTML = parseMarkdown(config.funding);
         if (config.builtBy)
             config.builtByHTML = parseMarkdown(config.builtBy);
-        if (config.footerLinksCodeMarkdown)
-            config.footerLinksCodeHTML = parseMarkdownFile(config.footerLinksCodeMarkdown);
-        if (config.footerLinksContactMarkdown)
-            config.footerLinksContactHTML = parseMarkdownFile(config.footerLinksContactMarkdown);
-        if (config.footerLinksSocialMarkdown)
-            config.footerLinksSocialHTML = parseMarkdownFile(config.footerLinksSocialMarkdown);
+        if (config.footerLinksCode)
+            config.footerLinksCode = parseYamlFile(config.footerLinksCode);
+        if (config.footerLinksContact)
+            config.footerLinksContact = parseYamlFile(config.footerLinksContact);
+        if (config.footerLinksSocial)
+            config.footerLinksSocial = parseYamlFile(config.footerLinksSocial);
 
         config.sponsors = parseYamlFile(config.sponsorsConfig);
         config.navBarLinks = parseYamlFile(config.navBarLinkListConfig);
