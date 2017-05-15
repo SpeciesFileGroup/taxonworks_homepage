@@ -13,6 +13,8 @@
             object-fit contain
             width 100%
 
+    idealSectionHeight = 824px
+
     &__container
         @extends $sectionContainer
         display flex
@@ -39,7 +41,7 @@
     &__section-2
     &__section-3
     &__section-4
-        min-height 824px
+        min-height idealSectionHeight
 
         +breakpoint(small)
             min-height 0
@@ -105,36 +107,65 @@
 
     &__connecting-lines
         bottom 0
-        left 'calc((100vw - %s) / 2)' % content-max-width
+        left 0
+        overflow hidden
         position absolute
-        right @left
+        right section-padding-desired
         top 0
 
-        @media (max-width content-max-width)
-            left 0
-            right 0
+        +breakpoint(large)
+            right section-padding-large-x
+
+        +breakpoint(medium)
+            right section-padding-medium-x
+
+        +breakpoint(small)
+            right section-padding-small-x
 
         +breakpoint(small)
             background url(images/branches-1-small.svg) no-repeat calc(100% - 24px) 0%
 
         &-image
-            width 100%
+            height 1200px
+            position absolute
+            right 0
+            top -200px
+            width 1040px
 
             +breakpoint(small)
                 display none
 
     &__section-2
-        @extends $sectionContainer
-        display flex
+        @extends $sectionContainerWithModifiedPadding
+        align-items center
         position relative
 
         +breakpoint(small)
             display block
+            padding-bottom section-padding-small-y
 
         &-copy
             @extends $normalCopy
-            flex 1 1 auto
+            flex 0 1 50%
+            margin-right 32px
             position relative
+
+            +breakpoint(small)
+                margin-bottom 32px
+
+        &-images
+            flex 0 0 424px
+            margin-left auto
+            position relative
+
+            +breakpoint(medium)
+                flex 0 1 50%
+
+        &-images-image
+            display block
+            margin 0 auto
+            max-width 100%
+            vertical-align bottom
 
     &__section-3
         @extends $sectionContainerWithModifiedPadding
