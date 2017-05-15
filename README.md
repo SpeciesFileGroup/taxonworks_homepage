@@ -1,11 +1,15 @@
 # TaxonWorks Homepage
 
 ## How do I install this?
+Run `install_dependencies`.
+
+If you don't have the grunt command line tool:
+`npm i -g grunt-cli`.
 
 ## What commands are available?
-__1. install_dependencies
-__1. build_taxonworks
-__1. publish_to_github_pages
+1. `grunt build`
+1. `grunt build-dev`
+1. `grunt gh-pages`
 
 ## How do I modify the homepage content?
 
@@ -14,7 +18,5 @@ __1. publish_to_github_pages
 ### How are the templates organized?
 
 ## How do I modify the front-end scripts?
-
-## What do the node scripts do?
 
 ### constants.js

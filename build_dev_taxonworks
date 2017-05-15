@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Build the dev and production sites for Taxonworks
-grunt build-dev

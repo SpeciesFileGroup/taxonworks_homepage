@@ -1,4 +1,6 @@
 #!/bin/bash
 
 # Install all project dependencies
-npm i --save --save-exact
+npm prune
+npm update
+npm install
