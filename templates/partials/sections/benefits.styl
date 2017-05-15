@@ -1,4 +1,17 @@
 .benefits-section
+    $mobileImage
+        @extend $normalFlexItem
+        display none
+        margin 0 auto
+        max-width 248px
+        position relative
+
+        +breakpoint(small)
+            display block
+
+        img
+            object-fit contain
+            width 100%
 
     &__container
         @extends $sectionContainer
@@ -6,7 +19,7 @@
         position relative
 
         &--less-padding-below
-            padding-bottom 64px
+            padding-bottom 40px
 
         &:nth-child(2)
             padding-top 0
@@ -45,12 +58,38 @@
         transform translateY(32px)
 
         +breakpoint(small)
-            display none
+            padding-top 37px
+            padding-bottom 64px
+            position relative
+            transform translateY(0)
 
     &__leaves-image
         height auto
         max-width 100%
         vertical-align bottom
+
+        +breakpoint(small)
+            display none
+
+    //&__mobile-top-leaves
+
+
+    &__mobile-top-leaves-container
+        display none
+        left 0
+        position absolute
+        right 0
+        text-align center
+        top 0
+
+        +breakpoint(small)
+            display block
+
+    &__mobile-leaf
+        @extends .benefits-section $mobileImage
+
+        &--hidden
+            display none
 
     &__connecting-lines
         bottom 0
@@ -91,6 +130,11 @@
 
         +breakpoint(small)
             display block
+
+        &-copy
+            @extends $copy
+            flex 1 1 auto
+            position relative
 
     &__section-3
         @extends $sectionContainerWithModifiedPadding
@@ -177,17 +221,7 @@
                 display none
 
     &__mobile-image
-        @extend $normalFlexItem
-        display none
-        margin 0 auto
-        max-width 248px
-
-        +breakpoint(small)
-            display block
-
-        img
-            object-fit contain
-            width 100%
+        @extends .benefits-section $mobileImage
 
     &__sponsor-grid
         @extends $normalFlexItem
