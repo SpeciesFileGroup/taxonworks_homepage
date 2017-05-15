@@ -1,2 +1,4 @@
-TaxonWorks has over 40 years of development experience behind it, and its future will advance beyond current technology. 
-It's a companion for your career, and will continue to grow and improve.
+TaxonWorks has over 40 years of collective experience behind it. From experimental features to highly refined workflows, TaxonWorks aims to balance innovation and tradition. Lend your voice to a growing community of adopters and help TaxonWorks adapt.
+
+
+
