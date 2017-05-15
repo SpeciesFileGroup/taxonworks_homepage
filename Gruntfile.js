@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         if (config.gettingStarted2bMarkdown)
             config.gettingStarted2bHTML = parseMarkdownFile(config.gettingStarted2bMarkdown);
         if (config.funding)
-            config.fundingHTML = parseMarkdown(config.funding);
+            config.fundingHTML = parseMarkdownFile(config.funding);
         if (config.builtBy)
             config.builtByHTML = parseMarkdown(config.builtBy);
         if (config.footerLinksCode)

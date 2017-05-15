@@ -22,7 +22,7 @@ navText: images/inhs-nav-text.svg
 navBarLinkListConfig: nav.yaml
 sponsor: Illinois Natural History Survey Prairie Research Institute
 builtBy: Built by [Pixo](http://www.pixotech.com)
-funding: TaxonWorks is funded in part by the [National Science Foundation](http://www.nsf.gov)
+funding: footerFunding.md
 twitterUrl: https://twitter.com/TaxonWorks
 footerLinksCode: footerLinksCode.yaml
 footerLinksContact: footerLinksContact.yaml
