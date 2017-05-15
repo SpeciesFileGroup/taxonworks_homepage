@@ -61,7 +61,7 @@
             &:not(:last-child)
                 margin-bottom 8px
 
-        a
+        a:not([class])
             @extends $promoCopyText
             background-color color-white
             border 2px solid sponsor-grid-grey
@@ -69,6 +69,7 @@
             display block
             outline none
             padding 22px 24px
+            text-decoration none
             transition background-color 250ms, border-color 250ms, color 250ms
 
             &:hover

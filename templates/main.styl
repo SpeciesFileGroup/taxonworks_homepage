@@ -23,8 +23,16 @@ body
     line-height 1.4
 
 a
-    color color-moss
     text-decoration none
+
+a:not([class])
+    color color-moss
+    text-decoration underline
+
+    &:hover
+    &:focus
+        color darken(color-moss, 25%)
+        text-decoration none
 
 // Accessibility
 .hidden
