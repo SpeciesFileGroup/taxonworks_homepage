@@ -4,7 +4,9 @@
         <img class="navigation__text" src="{{ navText }}">
         <div class="navigation__links">
             {% for navBarLink in navBarLinks %}
-                <a class="navigation__link-anchor" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
+                <a class="navigation__link-anchor" href="{{ navBarLink.href }}">
+                    <span class="navigation__link-anchor-text">{{ navBarLink.name }}</span>
+                </a>
             {% endfor %}
         </div>
         <button class="navigation__button js-navigation-mobile-button">&#9776;</button>
