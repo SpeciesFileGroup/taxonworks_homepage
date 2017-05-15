@@ -1,6 +1,35 @@
 .getting-started-section
+    background-color color-grey
+
+    &__leaves-container
+        overflow hidden
+
+        +breakpoint(large)
+            padding 0 section-padding-large-x
+
+        +breakpoint(medium)
+            padding 0 section-padding-medium-x
+
+        +breakpoint(small)
+            padding 0 section-padding-small-x
+
     &__leaves
-        position absolute
+        display block
+        margin 0 auto
+        max-width 100%
+        vertical-align bottom
+
+        +breakpoint(small)
+            display none
+
+    &__leaves-small
+        display none
+        margin 0 auto
+        max-width 100%
+        vertical-align bottom
+
+        +breakpoint(small)
+            display block
 
     &__container-1
     &__container-2
@@ -9,15 +38,17 @@
     &__container-1
         display flex
         margin-bottom 64px
+        padding-top 56px
         padding-bottom 0
+
+        +breakpoint(small)
+            padding-top 24px
 
     &__container-2
         display flex
         padding-top 0
 
     &__section
-        background-color color-grey
-
         h3
             @extends $mediumHeader
             margin-bottom 12px
