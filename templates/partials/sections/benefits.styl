@@ -23,20 +23,12 @@
         &--less-padding-below
             padding-bottom 40px
 
-        &--something
+        &--no-flex
             display block
 
         &:nth-child(2)
             padding-top 0
             padding-bottom 0
-
-        &__inner
-            @extends $normalFlexItem
-            display flex
-            flex-flow column
-
-            +breakpoint(small)
-                display block
 
     &__section-2
     &__section-3
@@ -69,41 +61,30 @@
             @extends $normalFlexItem
             @extends $promoCopy
 
+    condensedLeafBreakpoint = 500px
+
     &__leaves
         max-width content-max-width
         margin 0 auto
         transform translateY(32px)
 
+        +breakpoint(large)
+            padding 0 section-padding-large-x
+
+        +breakpoint(medium)
+            padding 0 section-padding-medium-x
+
         +breakpoint(small)
-            padding-top 37px
-            padding-bottom 64px
+            padding 0 section-padding-small-x 64px
             position relative
             transform translateY(0)
 
     &__leaves-image
+        display block
         height auto
+        margin 0 auto
         max-width 100%
         vertical-align bottom
-
-        +breakpoint(small)
-            display none
-
-    &__mobile-top-leaves-container
-        display none
-        left 0
-        position absolute
-        right 0
-        text-align center
-        top 0
-
-        +breakpoint(small)
-            display block
-
-    &__mobile-leaf
-        @extends .benefits-section $mobileImage
-
-        &--hidden
-            display none
 
     &__connecting-lines
         bottom 0

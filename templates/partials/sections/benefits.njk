@@ -7,14 +7,10 @@
             </div>
         </div>
         <div class="benefits-section__leaves" aria-hidden="true">
-            <img class="benefits-section__leaves-image" src="images/leaves.svg">
-            <div class="benefits-section__mobile-top-leaves-container">
-                <img class="benefits-section__mobile-top-leaves" src="images/top-leaves-graphic.svg">
-            </div>
-            <img class="benefits-section__mobile-leaf" src="images/inhs-01.svg" alt="INHS 01" />
-            <img class="benefits-section__mobile-leaf benefits-section__mobile-leaf--hidden" src="images/inhs-02.svg" alt="INHS 02" />
-            <img class="benefits-section__mobile-leaf benefits-section__mobile-leaf--hidden" src="images/inhs-03.svg" alt="INHS 03" />
-            <img class="benefits-section__mobile-leaf benefits-section__mobile-leaf--hidden" src="images/inhs-04.svg" alt="INHS 04" />
+            <picture>
+                <source srcset="images/benefits-1-leaves-small.svg" media="(max-width: 500px)">
+                <img class="benefits-section__leaves-image" src="images/leaves.svg">
+            </picture>
         </div>
     </article>
 
@@ -43,7 +39,7 @@
     </article>
 
     <article class="benefits-section__section-4">
-        <div class="benefits-section__container benefits-section__container--something">
+        <div class="benefits-section__container benefits-section__container--no-flex">
             <div class="benefits-section__section-4-copy">
                 {{ benefits4HTML | safe }}
             </div>
