@@ -1,11 +1,32 @@
 .feature-core
     display flex
+    position relative
+
+    $gradient
+        background-image linear-gradient(to bottom, gradient-brown, color-brown)
+        height 288px
+        left 50%
+        position absolute
+        right 0
+        top 24px
+        transform translateX(-50%)
+        width 100vw
+        z-index -1
 
     +breakpoint(medium)
         display block
 
     +breakpoint(small)
         display block
+
+    &__gradient-big
+        @extends .feature-core $gradient
+
+        +breakpoint(medium)
+            display none
+
+        +breakpoint(small)
+            display none
 
     &__controls
         color color-beige
@@ -112,16 +133,8 @@
             margin-left 0
 
     &__gradient-small
-        background-image linear-gradient(to bottom, gradient-brown, color-brown)
+        @extends .feature-core $gradient
         display none
-        height 288px
-        left 50%
-        position absolute
-        right 0
-        top 24px
-        transform translateX(-50%)
-        width 100vw
-        z-index -1
 
         +breakpoint(medium)
             display block
