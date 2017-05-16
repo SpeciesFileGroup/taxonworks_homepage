@@ -159,6 +159,7 @@
             margin-left 32px
 
             +breakpoint(small)
+                margin-bottom 32px
                 margin-left 0
 
     &__section-4
@@ -169,7 +170,7 @@
         +breakpoint(benefits-4-small)
             background-image none
             display block
-            padding 48px section-padding-small-x 64px
+            padding 48px 0 64px
 
         &-content
             flex 0 1 50%
@@ -177,6 +178,7 @@
 
             +breakpoint(benefits-4-small)
                 margin-right 0
+                padding 0 section-padding-small-x
 
         &-copy
             @extends $normalCopy
