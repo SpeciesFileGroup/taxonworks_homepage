@@ -108,3 +108,18 @@
 
         +breakpoint(small)
             margin-left 0
+
+    &__gradient
+        background-image linear-gradient(to bottom, gradient-brown, color-brown)
+        display none
+        height 288px
+        left 50%
+        position absolute
+        right 0
+        top 24px
+        transform translateX(-50%)
+        width 100vw
+        z-index -1
+
+        +breakpoint(small)
+            display block
