@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 begin: function() {
                     getCollapsingAnimation();
                 }
-            });   
+            });
         }
     };
 
     twMobileButton.addEventListener('click', function() {
-        const isCollapsed = checkIfCollapsed(twMobileLinks); 
+        const isCollapsed = checkIfCollapsed(twMobileLinks);
         this.disabled = true;
 
         if( isCollapsed ){
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         else
             button.innerHTML = 'X';
     }
-    
+
     function addCollapsedClass() {
         twMobileLinks.classList.add(CollapsedClassName);
     }
@@ -108,4 +108,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
-
