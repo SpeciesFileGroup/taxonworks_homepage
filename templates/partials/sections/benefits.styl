@@ -1,18 +1,4 @@
 .benefits-section
-    $mobileImage
-        display none
-        flex 1 1 200px
-        margin 0 auto
-        max-width 248px
-        position relative
-
-        +breakpoint(small)
-            display block
-
-        img
-            object-fit contain
-            width 100%
-
     idealSectionHeight = 824px
 
     &__container
@@ -22,9 +8,6 @@
 
         &--less-padding-below
             padding-bottom 40px
-
-        &--no-flex
-            display block
 
         &:nth-child(2)
             padding-top 0
@@ -179,92 +162,49 @@
                 margin-left 0
 
     &__section-4
-        background-image url("images/trunk.svg")
-        background-position 85% top 
-        background-repeat no-repeat
+        @extends $sectionContainerWithModifiedPadding
+        align-items center
+        display flex
 
-        +breakpoint(small)
+        +breakpoint(benefits-4-small)
             background-image none
+            display block
+            padding 48px section-padding-small-x 64px
+
+        &-content
+            flex 0 1 50%
+            margin-right 32px
+
+            +breakpoint(benefits-4-small)
+                margin-right 0
 
         &-copy
             @extends $normalCopy
-            flex 1 1 auto
 
-    treeWidth = 424px
+    treeWidth = 425px
 
     &__tree
-        display none
+        align-self flex-start
+        flex 0 1 treeWidth
+        margin-left auto
         overflow hidden
 
-        +breakpoint(small)
+        +breakpoint(benefits-4-medium)
+            flex-basis 50%
+
+        +breakpoint(benefits-4-small)
             display block
 
         &-image
+            margin 0 auto
             vertical-align bottom
-
-            @media (max-width treeWidth)
-                transform 'translateX( calc((%s / 2 - 50vw) * -1) )' % treeWidth
-
-            @media (min-width treeWidth + 1px)
-                display block
-                margin 0 auto
-
-    &__illustrations
-        display flex
-        max-height 100%
-        max-width 100%
-
-    &__copy
-    &__illustration
-        position relative
-
-    &__illustration
-        @extends $normalFlexItem
-
-        &__1
-        &__2
-        &__3 
-        &__4 
-            max-height 25%
-            max-width 25%
-            object-fit contain
-
-            img
-                max-width 100%
-
-                +breakpoint(small)
-                    display none
-
-        &__2
-        &__3
-            position relative
-
-        &__2
-            top -80px
-
-        &__3
-            top 80px
-
-        &__small
-            display none
             width 100%
 
-            +breakpoint(small)
-                display block
-
-        &__large
-            +breakpoint(small)
-                display none
-
-    &__mobile-image
-        @extends .benefits-section $mobileImage
+            +breakpoint(benefits-4-small)
+                left 50%
+                position relative
+                transform translateX(-50%)
+                width treeWidth
 
     &__sponsor-grid
-        @extends $normalFlexItem
-        margin-top 48px
-
-    &__empty
-        @extends $normalFlexItem
-
-        +breakpoint(small)
-            display none
+        margin-top 24px

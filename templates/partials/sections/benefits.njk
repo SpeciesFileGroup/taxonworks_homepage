@@ -43,7 +43,7 @@
     </article>
 
     <article class="benefits-section__section-4">
-        <div class="benefits-section__container benefits-section__container--no-flex">
+        <div class="benefits-section__section-4-content">
             <div class="benefits-section__section-4-copy">
                 {{ benefits4HTML | safe }}
             </div>
@@ -51,8 +51,11 @@
                 {% include 'partials/sponsorGrid/sponsorGrid.njk' %}
             </div>
         </div>
-        <div class="benefits-section__tree">
-            <img class="benefits-section__tree-image" src="images/trunk-small.svg" width="424" height="636" alt="Trunk" />
+        <div class="benefits-section__tree" aria-hidden="true">
+            <picture>
+                <source srcset="images/trunk-small.svg" media="(max-width: 799px)">
+                <img class="benefits-section__tree-image" src="images/trunk.svg" alt="Trunk" />
+            </picture>
         </div>
     </article>
 </div>
