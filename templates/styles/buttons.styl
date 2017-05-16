@@ -11,4 +11,20 @@ $buttonReset
     border 0
     cursor pointer
     font-family inherit
-    font-size 1rem
+
+$button
+    @extends $promoCopyText
+    background-color color-white
+    border 2px solid sponsor-grid-grey
+    color color-moss
+    display block
+    outline none
+    padding 22px 24px
+    text-decoration none
+    transition background-color 250ms, border-color 250ms, color 250ms
+
+    &:hover
+    &:focus
+        background-color color-teal
+        border-color color-moss
+        color color-cocoa

@@ -1,6 +1,5 @@
 .feature-core
     display flex
-    padding 24px 0
 
     +breakpoint(medium)
         display block
@@ -80,14 +79,17 @@
         margin-bottom 8px
 
     &__feature-menu-button
-        @extend $buttonHelper
+        @extend $buttonReset
+        @extend $promoCopyText
         background-color color-cocoa
         border solid 2px color-khaki
         color color-teal
+        display block
         outline none
         padding 22px 24px
         text-align left
         transition background-color 250ms, color 250ms, border-color 250ms
+        width 100%
 
         &:hover
         &:focus
@@ -120,6 +122,9 @@
         transform translateX(-50%)
         width 100vw
         z-index -1
+
+        +breakpoint(medium)
+            display block
 
         +breakpoint(small)
             display block

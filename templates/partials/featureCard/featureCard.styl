@@ -26,6 +26,7 @@
 
     &__name
         @extend $mediumHeader
+        font-weight 400
         margin-bottom 12px
 
     &__description
@@ -36,6 +37,9 @@
     &__details
         display flex
         justify-content space-between
+
+        +breakpoint(small)
+            display block
 
     &__status
     &__available
