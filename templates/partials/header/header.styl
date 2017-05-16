@@ -8,22 +8,14 @@
     text-align center
 
     +breakpoint(medium)
-        min-height 750px
+        height auto
 
     +breakpoint(small)
         height auto
 
     &__container
-        @extends $sectionContainer
         display flex
         padding 0 section-padding-desired
-
-        +breakpoint(medium)
-            padding 160px 48px
-
-        +breakpoint(small)
-            flex-flow column wrap
-            padding 40px 24px
 
         +breakpoint(large)
             padding 0 section-padding-large
@@ -32,15 +24,13 @@
             padding section-padding-large
 
         +breakpoint(small)
+            flex-flow column wrap
             padding section-padding-small
-
-        > .item:first-child
-            margin 0
 
     &__text-title
         color color-white
 
-        &__logo
+        &-logo
             margin-bottom 16px
 
             +breakpoint(medium)
@@ -134,6 +124,3 @@
         color color-white
         font-weight 400
         padding-top 24px
-
-        +breakpoint(small)
-            margin-bottom 48px
