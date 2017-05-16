@@ -103,18 +103,20 @@
         +breakpoint(small)
             right section-padding-small-x
 
-        +breakpoint(small)
-            background url(images/branches-1-small.svg) no-repeat calc(100% - 24px) 0%
-
         &-image
-            height 1200px
+            height auto
             position absolute
             right 0
-            top -200px
-            width 1040px
+            top 50%
+            transform translateY(-50%)
+            width 348px
 
             +breakpoint(small)
-                display none
+                bottom 0
+                left 50%
+                right auto
+                transform translateX(-50%)
+                top auto
 
     &__section-2
         @extends $sectionContainerWithModifiedPadding
@@ -157,15 +159,24 @@
         &-image-container
             flex 0 0 467px
 
+            +breakpoint(medium)
+                align-self flex-end
+                flex 1 1 348px
+
             +breakpoint(small)
                 order 1
 
         &-image
+            max-width 100%
             vertical-align bottom
 
         &-copy
             @extends $normalCopy
-            flex 1 1 auto
+            flex 1 1 50%
+            margin-left 32px
+
+            +breakpoint(small)
+                margin-left 0
 
     &__section-4
         background-image url("images/trunk.svg")
