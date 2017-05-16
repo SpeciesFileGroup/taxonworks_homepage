@@ -140,10 +140,7 @@ function scope() {
             index++;
             const cardGoingIn = topLevelFeatureCardNodes[index];
 
-            lockCoreHeight();
-
-            transitionCardOutToLeft( cardGoingOut );
-            transitionCardInFromRight( cardGoingIn, afterTopLevelAnimation);
+            transitionCardsFromRight(cardGoingOut, cardGoingIn);
 
             setIndexToActive(index);
         }
@@ -157,13 +154,24 @@ function scope() {
             index--;
             const cardGoingIn = topLevelFeatureCardNodes[index];
 
-            lockCoreHeight();
-
-            transitionCardOutToRight( cardGoingOut );
-            transitionCardInFromLeft( cardGoingIn, afterTopLevelAnimation);
+            transitionCardsFromLeft(cardGoingOut, cardGoingIn);
 
             setIndexToActive(index);
         }
+    }
+
+    function transitionCardsFromRight(cardGoingOut, cardGoingIn) {
+        lockCoreHeight();
+
+        transitionCardOutToLeft( cardGoingOut );
+        transitionCardInFromRight( cardGoingIn, afterTopLevelAnimation);
+    }
+
+    function transitionCardsFromLeft(cardGoingOut, cardGoingIn) {
+        lockCoreHeight();
+
+        transitionCardOutToRight( cardGoingOut );
+        transitionCardInFromLeft( cardGoingIn, afterTopLevelAnimation);
     }
 
     function findActiveIndex() {
@@ -481,13 +489,32 @@ function scope() {
 
     function featureMenuButtonClicked(event) {
         const featureIdToActivate = this.getAttribute(Attributes.FeatureRef);
+        const featureIndexOfCardToActivate = topLevelFeatureCardNodes
+            .findIndex(node => node.getAttribute(Attributes.FeatureId) === featureIdToActivate);
+        const activeFeatureCard = topLevelFeatureCardNodes
+            .find(node => !node.hasAttribute(Attributes.Inactive));
+        const activeFeatureIndex = topLevelFeatureCardNodes
+            .findIndex(node => !node.hasAttribute(Attributes.Inactive));
+        const featureCardToActivate = topLevelFeatureCardNodes
+            .find(node => node.getAttribute(Attributes.FeatureId) === featureIdToActivate);
+
+        if (activeFeatureIndex < featureIndexOfCardToActivate)
+            transitionCardsFromRight(activeFeatureCard, featureCardToActivate);
+        else if (activeFeatureIndex > featureIndexOfCardToActivate)
+            transitionCardsFromLeft(activeFeatureCard, featureCardToActivate);
+
+        activeFeatureIdAndDeactivateAllOthers(featureIdToActivate);
+
+        updateFeatureMenuButtonState();
+    }
+
+    function activeFeatureIdAndDeactivateAllOthers(featureIdToActivate) {
         topLevelFeatureCardNodes.forEach(node => {
             if (node.getAttribute(Attributes.FeatureId) === featureIdToActivate)
                 setFeatureNodeAsActive(node);
             else
                 setFeatureNodeAsInactive(node);
         });
-        updateFeatureMenuButtonState();
     }
 
     function updateFeatureMenuButtonState() {
