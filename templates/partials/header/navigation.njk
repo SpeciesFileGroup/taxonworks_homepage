@@ -13,10 +13,10 @@
     </div>
 
     <div class="navigation__links__mobile navigation__links__mobile--collapsed js-mobile-links">
-        <ul>
+        <ul class="navigation__links__mobile__list">
             {% for navBarLink in navBarLinks %}
-                <li class="navigation__links__mobile__link js-mobile-link-anchor">
-                    <a class="navigation__links__mobile__link__anchor-text" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
+                <li class="navigation__links__mobile__list--link js-mobile-link-anchor">
+                    <a class="navigation__links__mobile__list--anchor-text" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
                 </li>
             {% endfor %}
         </ul>
