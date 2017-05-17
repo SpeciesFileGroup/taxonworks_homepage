@@ -16,7 +16,7 @@
         <ul>
             {% for navBarLink in navBarLinks %}
                 <li class="navigation__links__mobile__link js-mobile-link-anchor">
-                    <a href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
+                    <a class="navigation__links__mobile__link__anchor-text" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
                 </li>
             {% endfor %}
         </ul>
