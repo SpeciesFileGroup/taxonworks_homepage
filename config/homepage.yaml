@@ -11,7 +11,7 @@ sponsorsConfig: sponsors.yaml
 scopeTitle: Like life, TaxonWorks is ever-evolving
 scopeMarkdown: scope.md
 scopeConfig: scope.yaml
-gettingStartedTitle: Get Started with
+gettingStartedTitle: Get started with
 gettingStarted1Markdown: gettingStarted-1.md
 gettingStarted2aMarkdown: gettingStarted-2a.md
 gettingStarted2bMarkdown: gettingStarted-2b.md
