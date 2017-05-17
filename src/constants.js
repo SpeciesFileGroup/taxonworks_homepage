@@ -20,7 +20,7 @@ const BUILD_PROD_SCRIPT = BUILD_PROD_DIR + "bundle.js";
 
 const HOMEPAGE_YAML = CONFIG_DIR + "homepage.yaml";
 
-const dependenciesScripts = ["./node_modules/animejs/anime.js", "./node_modules/hammerjs/hammer.min.js"];
+const dependenciesScripts = ["./node_modules/animejs/anime.min.js", "./node_modules/hammerjs/hammer.min.js"];
 const pageScripts = ["./scripts/navigation.js", "./scripts/scope.js"];
 
 const templateConstants = {

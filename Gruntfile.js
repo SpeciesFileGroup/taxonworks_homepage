@@ -181,14 +181,24 @@ module.exports = function (grunt) {
     });
 
     grunt.registerMultiTask('buildJS', function() {
-        const scripts = constants.dependenciesScripts.concat(constants.pageScripts);
-        const script = this.data.uglify ? uglify.minify(concatScripts()).code : concatScripts();
+        const pageScripts = constants.pageScripts;
+        let script = '';
+        if (this.data.uglify) {
+            script += stringifyAndConcatScripts(constants.dependenciesScripts);
+            script += minify(stringifyAndConcatScripts(pageScripts));
+        } else {
+            script = stringifyAndConcatScripts([...constants.dependenciesScripts, ...pageScripts]);
+        }
         grunt.file.write(this.data.dest, script);
 
-        function concatScripts() {
+        function stringifyAndConcatScripts(scripts) {
             return scripts.reduce((currentScript, nextScript) => {
-                return currentScript + grunt.file.read(nextScript);
+                return currentScript + grunt.file.read(nextScript) + "\n";
             }, '');
+        }
+
+        function minify(script) {
+            return uglify.minify(script).code;
         }
     });
 
