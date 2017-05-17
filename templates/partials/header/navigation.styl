@@ -51,7 +51,11 @@
             display block
             height header-navbar-mobile-height
             position relative
+            visibility hidden
             z-index -5
+
+            +breakpoint(small)
+                visibility initial
 
             &--collapsed
                 display none
@@ -72,7 +76,7 @@
 
                     &:hover
                         background-color color-teal
-                        color color-grey
+                        color color-cocoa
 
     &__link-anchor
         color color-teal
