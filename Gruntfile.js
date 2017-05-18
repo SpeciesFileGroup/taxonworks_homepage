@@ -2,7 +2,6 @@ const nunjucks = require('nunjucks');
 const constants = require('./src/constants');
 const scope = require('./src/scope');
 const markdown = require('markdown-it')();
-const uglify = require("uglify-es");
 
 const nunjucksEnvironment = new nunjucks.Environment(new nunjucks.FileSystemLoader(constants.TEMPLATE_DIR));
 let savedConfig;
@@ -76,21 +75,28 @@ module.exports = function (grunt) {
     }
 
     const taskConfig = {
+        babel: {
+            options: {
+                presets: ['es2015']
+            },
+            production: {
+                options: {
+                    minified: true
+                },
+                files: [
+                    {
+                        src: constants.UNTRANSPILED_JS,
+                        dest: constants.TRANSPILED_JS
+                    }
+                ]
+            }
+        },
         buildHTMLWithoutCritical: {
             dev: {
                 dest: constants.INDEX_DEV
             },
             production: {
                 dest: constants.BUILD_PROD_DIR + constants.INDEX_PROD_WITHOUT_CRITICAL_FILENAME
-            }
-        },
-        buildJS: {
-            dev: {
-                dest: constants.BUILD_DEV_SCRIPT
-            },
-            production: {
-                dest: constants.BUILD_PROD_SCRIPT,
-                uglify: true
             }
         },
         clean: {
@@ -112,6 +118,32 @@ module.exports = function (grunt) {
                     }
                 ]
             },
+        },
+        concat: {
+            dev: {
+                files: [
+                    {
+                        src: [...constants.dependenciesScripts, ...constants.pageScripts],
+                        dest: constants.BUILD_DEV_SCRIPT
+                    }
+                ],
+            },
+            productionBeforeTranspile: {
+                files: [
+                    {
+                        src: constants.pageScripts,
+                        dest: constants.UNTRANSPILED_JS
+                    }
+                ]
+            },
+            productionAfterTranspile: {
+                files: [
+                    {
+                        src: [...constants.dependenciesScripts, constants.TRANSPILED_JS],
+                        dest: constants.BUILD_PROD_SCRIPT
+                    }
+                ]
+            }
         },
         copy: {
             dev: {
@@ -180,35 +212,17 @@ module.exports = function (grunt) {
         grunt.file.write(this.data.dest, homepageHTML);
     });
 
-    grunt.registerMultiTask('buildJS', function() {
-        const pageScripts = constants.pageScripts;
-        let script = '';
-        if (this.data.uglify) {
-            script += stringifyAndConcatScripts(constants.dependenciesScripts);
-            script += minify(stringifyAndConcatScripts(pageScripts));
-        } else {
-            script = stringifyAndConcatScripts([...constants.dependenciesScripts, ...pageScripts]);
-        }
-        grunt.file.write(this.data.dest, script);
-
-        function stringifyAndConcatScripts(scripts) {
-            return scripts.reduce((currentScript, nextScript) => {
-                return currentScript + grunt.file.read(nextScript) + "\n";
-            }, '');
-        }
-
-        function minify(script) {
-            return uglify.minify(script).code;
-        }
-    });
-
     grunt.initConfig(taskConfig);
 
     grunt.registerTask('build', [
         'clean',
         'buildHTMLWithoutCritical',
         'stylus',
-        'buildJS',
+        'concat:dev',
+        'concat:productionBeforeTranspile',
+        'babel',
+        'concat:productionAfterTranspile',
+        'concat',
         'copy',
         'critical'
     ]);
@@ -217,7 +231,7 @@ module.exports = function (grunt) {
         'clean',
         'buildHTMLWithoutCritical:dev',
         'stylus:dev',
-        'buildJS:dev',
+        'concat:dev',
         'copy:dev'
     ]);
 
@@ -225,7 +239,9 @@ module.exports = function (grunt) {
         'clean',
         'buildHTMLWithoutCritical:production',
         'stylus:production',
-        'buildJS:production',
+        'concat:productionBeforeTranspile',
+        'babel:production',
+        'concat:productionAfterTranspile',
         'copy:production',
         'critical'
     ]);
