@@ -21,7 +21,8 @@ function scope() {
         ExpandBottomRightBorder: 'expand-button__bottom-right-border',
         Connector: 'expand-button__connector',
         FeatureTopLine: 'feature-card__top-border-line',
-        FeatureDotActive: 'feature-core__dot--active'
+        FeatureDotActive: 'feature-core__dot--active',
+        FeatureMenuButtonActive: 'feature-core__feature-menu-button--active-feature'
     };
 
     const ScrollTopOffset = 80; //For navbar
