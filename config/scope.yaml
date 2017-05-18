@@ -1,208 +1,143 @@
 features:
     -
-        name: Boston Celtics
-        status: in_progress
-        description: "Location Boston, Massachusetts"
-        whenComplete: this_year
-        features:
-            -
-                name: 1985-1986 Boston Celtics
-                status: in_progress
-                description: 67-15, Finished 1st in NBA Atlantic Division
-                whenComplete: this_year
-                features:
-                    -
-                        name: Larry Bird
-                        status: upcoming
-                        description: Larry Legend, The Hick from French Lick, Kodak, The Great White Hope
-                        whenComplete: three_year
-                    -
-                        name: Kevin McHale
-                        status: upcoming
-                        description: Black Hole
-                        whenComplete: three_year
-                    -
-                        name: Dennis Johnson
-                        status: upcoming
-                        description: D.J., Airplane
-                        whenComplete: three_year
-                    -
-                        name: Robert Parish
-                        status: upcoming
-                        description: The Chief, Slim
-                        whenComplete: three_year
-                    -
-                        name: Danny Ainge
-                        status: upcoming
-                        description: Now the GM of the Celtics
-                        whenComplete: three_year
-            -
-                name: 2007-2008 Boston Celtics
-                status: in_progress
-                description: 66-16, Finished 1st in NBA Atlantic Division
-                whenComplete: this_year
-                features:
-                    -
-                        name: Ray Allen
-                        status: upcoming
-                        description: Ray-Ray, Sugar Ray, Jesus Shuttlesworth, Skinny Walt
-                        whenComplete: three_year
-                    -
-                        name: Paul Pierce
-                        status: upcoming
-                        description: The Truth, P-Double
-                        whenComplete: three_year
-                    -
-                        name: Kevin Garnett
-                        status: upcoming
-                        description: Kevin Maurice Garnett (KG, The Big Ticket, The Kid)
-                        whenComplete: three_year
-                    -
-                        name: Rajon Rondo
-                        status: upcoming
-                        description: "Rajon Pierre Rondo ▪ Twitter: @RajonRondo (Johnny, Swag, The Yoga Instructor)"
-                        whenComplete: three_year
-                    -
-                        name: James Posey
-                        status: upcoming
-                        description: "James Mikley Mantell Posey Position: Power Forward and Small Forward and Shooting Guard ▪ Shoots: Right 6-8, 215lb (203cm, 97kg)"
-                        whenComplete: three_year
-    -
-        name: Los Angeles Lakers
+        name: Taxon, specimen and anatomical descriptions
         status: upcoming
-        description: "Location: Los Angeles, California"
+        description: "Manage a wide variety of metadata at the taxon, specimen, or anatomical levels."
         whenComplete: three_year
         features:
             -
-                name: 1984-1985 Los Angeles Lakers
+                name: Biological relationships
                 status: upcoming
-                description: 62-20, Finished 1st in NBA Pacific Division
+                description: "Create and manage biological relationships between taxa or specimens or some combination of both.  For example host-parasites."
                 whenComplete: three_year
-                features:
-                    -
-                        name: Magic Johnson
-                        status: upcoming
-                        description: Magic, Buck, E.J. the Deejay
-                        whenComplete: three_year
-                    -
-                        name: James Worthy
-                        status: upcoming
-                        description: Big Game James
-                        whenComplete: three_year
-                    -
-                        name: Kareem Abdul-Jabbar
-                        status: upcoming
-                        description: Lew, Cap, Murdock, Big Fella
-                        whenComplete: three_year
-                    -
-                        name: Byron Scott
-                        status: upcoming
-                        description: 6-3, 195lb (190cm, 88kg)
-                        whenComplete: three_year
-                    -
-                        name: Michael Cooper
-                        status: upcoming
-                        description: Coop, Mike
-                        whenComplete: three_year
-
             -
-                name: 2008-2009 Los Angeles Lakers
+                name: Sequences
                 status: upcoming
-                description: 65-17, Finished 1st in NBA Pacific Division
+                description: "Manage curated DNA sequences.  Annotate them with protocols, and other sequence related metadata (e.g. extract and specimen, primers, or query sequences)."
+                whenComplete: three_year
+            -
+                name: Phylogenetic matrices
+                status: upcoming
+                description: "Create or import traditional qualitative or quantitative phylogenetic matrices.  Annotate characters with notes, images, tags and confidence levels."
+                whenComplete: this_year
+            -
+                name: Anatomical reference systems
+                status: upcoming
+                description: "Create controlled vocabularies describing the morphology of your organisms, with tools to facilitate the transformation of these vocabularies into formal structures like OWL ontologies.  Use these systems to annotate, query, and organize your data by anatomy."
+                whenComplete: three_year
+            -
+                name: Manuscript and datasets export
+                status: upcoming
+                description: "Summarize data into taxonomic descriptions (e.g. nomenclatural history, descriptions, material examined sections) ready for publication.  Export CSV, DWCA, Nexus, and many other data formats."
+                whenComplete: three_year
+            -
+                name: Free text notes and descriptions
+                status: in_progress
+                description: "Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates."
+                whenComplete: this_year
+            -
+                name: Keys 
+                status: upcoming
+                description: "Create dichotomous and multi-entry keys."
+                whenComplete: three_year
+            -
+                name: Advanced anatomical interfaces
+                status: upcoming
+                description: "Describe anatomical features using graphical interfaces.  Drag, drop, and slide to measure, characterize, and qualify observations."
                 whenComplete: three_year
                 features:
                     -
-                        name: Pau Gasol
+                        name: Landmark metadata
                         status: upcoming
-                        description: "Pronunciation: \POW ga-SALL\ (Meal Ticket, ET, Kung Pow)"
-                        whenComplete: three_year
-                    -
-                        name: Kobe Bryant
-                        status: upcoming
-                        description: "Kobe Bean Bryant ▪ Twitter: @kobebryant (Black Mamba, KB24, Vino)"
-                        whenComplete: three_year
-                    -
-                        name: Derek Fisher
-                        status: upcoming
-                        description: "Derek Lamar Fisher ▪ Twitter: @derekfisher (D-Fish)"
-                        whenComplete: three_year
-                    -
-                        name: Lamar Odom
-                        status: upcoming
-                        description: "Lamar Joseph Odom ▪ Twitter: @RealLamarOdom (L.O., Candy Man, The Goods)"
-                        whenComplete: three_year
-                    -
-                        name: Andrew Bynum
-                        status: upcoming
-                        description: "Position: Center ▪ Shoots: Right 7-0, 285lb (213cm, 129kg)"
+                        description: "Create landmark data and tie it to anatomical ontologies for future use and organziation."
                         whenComplete: three_year
     -
-        name: Chicago Bulls
+        name: Specimen and collecting events
         status: complete
-        description: "Location: Chicago, Illinois"
+        description: 
         whenComplete: now
         features:
             -
-                name: 1995-1996 Chicago Bulls
-                status: complete
-                description: 72-10, Finished 1st in NBA Central Division
-                whenComplete: now
-                features:
-                    -
-                        name: Michael Jordan
-                        status: complete
-                        description: Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
-                        whenComplete: now
-
-                    -
-                        name: Scottie Pippen
-                        status: complete
-                        description: Scottie Pippen (Pip, Scott, Batman, Robin)
-                        whenComplete: now
-                    -
-                        name: Dennis Rodman
-                        status: complete
-                        description: Dennis Rodman (The Worm, Dennis the Menace)
-                        whenComplete: now
-                    -
-                        name: Steve Kerr
-                        status: complete
-                        description: Stephen Douglas Kerr (Ice)
-                        whenComplete: now
-                    -
-                        name: Toni Kukoc
-                        status: complete
-                        description: Toni Kukoc (Croatian Sensation, The Waiter, Euro-Magic, The Pink Panther, Spider of Split, Kuki, Alien)
-                        whenComplete: now
+                name: Integrated GIS 
+                status: in_progres 
+                description: "Search and return specimen data spatially. Create georeferences of any shape."
+                whenComplete: this_year 
             -
-                name: 1991-1992 Chicago Bulls
-                status: complete
-                description: 67-15, Finished 1st in NBA Central Division
-                whenComplete: now
+                name: Loan handling 
+                status: in_progres 
+                description: "Manage personal or institutional loans."
+                whenComplete: three_year 
+    -
+        name: Nomenclature
+        status: in_progress
+        description: "Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich coverage of nomenclatural rules are included to ensure adequate metadata are provided."
+        whenComplete: this_year
+        features:
+            -
+                name: Catalog exports
+                status: in_progress
+                description: "Summarize nomenclatural data in print and machine readable formats."
+                whenComplete: this_year
                 features:
                     -
-                        name: Michael Jordan
-                        status: complete
-                        description: Michael Jeffrey Jordan (Mike, Air Jordan, M.J., His Airness, Money, Black Cat, G.O.A.T., Superman)
-                        whenComplete: now
-
+                        name: DWC Checklist
+                        status: upcoming
+                        description: "Export basic nomenclature data as a Darwin Core Checklist."
+                        whenComplete: this_year
                     -
-                        name: Scottie Pippen
-                        status: complete
-                        description: Scottie Pippen (Pip, Scott, Batman, Robin)
-                        whenComplete: now
+                        name: Catalog of Life
+                        status: upcoming
+                        description: "Export basic nomenclature data to the Catlog of Life format."
+                        whenComplete: this_year
                     -
-                        name: Horace Grant
-                        status: complete
-                        description: Horace Junior Grant (The General)
-                        whenComplete: now
-                    -
-                        name: John Paxson
-                        status: complete
-                        description: John MacBeth Paxson (Pax, Johnny Pax)
-                        whenComplete: now
-                    -
-                        name: Bill Cartwright
-                        status: complete
-                        description: James William Cartwright (Mr. Bill, Teach, Dollar Bill, Medical Bill)
-                        whenComplete: now
+                        name: ITIS
+                        status: upcoming
+                        description: "Export basic nomenclature data to the format used by ITIS."
+                        whenComplete: three_year
+            -
+                name: Validation
+                status: complete
+                description: "Use well over a hundred non-constraining validations to ensure data meet plant, animal, and bacterial codes of nomeclature."
+                whenComplete: this_year
+    -
+        name: Import, annotate, and export 
+        status: in progress 
+        description: "Handle data at all stages of the scientific pipeline.  Batch load, annotated and refine, export via files or API."
+        whenComplete: three_year
+        features:
+            -
+                name: Cite everything 
+                status: complete 
+                description: "Tie *all* your data to references that you can import from BibTeX."
+                whenComplete: now 
+            -
+                name: Media and references
+                status: in_progress
+                description: "Load references, images, and other supporting documents.  Link them as citations, depictions, or supporting data to all of the core data classes."
+                whenComplete: this_year
+            -
+                name: Data attributes, alternative value, notes 
+                status: complete 
+                description: "Add your own attributes that optionally reference external controlled vocabularies.  Provide translations, abbreviations, misspellings for existing records."
+                whenComplete: now 
+    -
+        name: Rich support for collaborating developers
+        status: complete 
+        description: "A open-source code base with a community that facilates new collaborators and a long-term development process."
+        whenComplete: this_year
+        features:
+            -
+                name: JSON serving API
+                status: in_progress
+                description: "Work with the TaxonWorks back end through a token-based JSON serving API. Develop in your favourite framework, and integrate natively, or as a stand-alone tool."
+                whenComplete: this_year
+            -
+                name: Unit tests
+                status: in_progress 
+                description: "TaxonWorks has hundreds of unit tests. Tests minimize the likelihood of new features breaking existing functionality.  They clarify intent, and when included in new code make code acceptance straightforward."
+                whenComplete: now 
+            -   
+                name: Support 
+                status: complete
+                description: "A growing group of developers supporting developers on Gitter, Github, and other channels." 
+                whenComplete: now

@@ -1,7 +1,7 @@
 ### For scientists and developers
 
-We seek to surround TaxonWorks with scientists who can affect change in the 
-tools they use, and software carpenters who can affect change in science 
+We seek to surround TaxonWorks with scientists who can effect change in the 
+tools they use, and software carpenters who can effect change in science 
 through their contributions.  
 
 The TaxonWorks community is built around an open software ecosystem that 
