@@ -1,9 +1,11 @@
 const BUILD_DIR = "build/";
 const BUILD_DEV_DIR = BUILD_DIR + "dev/";
-const BUILD_PROD_DIR = BUILD_DIR + "prod/";
+const BUILD_PROD_DIR = BUILD_DIR + "production/";
 const CONFIG_DIR = "config/";
 const IMAGE_DIR = "images/";
 const TEMPLATE_DIR = "templates/";
+const UNTRANSPILED_JS = `${BUILD_DIR}untranspiled.js`;
+const TRANSPILED_JS = `${BUILD_DIR}transpiled.js`;
 
 const INDEX_DEV = BUILD_DEV_DIR + "index.html";
 
@@ -31,6 +33,7 @@ const templateConstants = {
 
 module.exports = {
     BUILD_DIR, BUILD_DEV_DIR, BUILD_PROD_DIR, CONFIG_DIR, IMAGE_DIR, TEMPLATE_DIR,
+    TRANSPILED_JS, UNTRANSPILED_JS,
     INDEX_DEV, INDEX_PROD_WITHOUT_CRITICAL_FILENAME, INDEX_PROD_WITH_CRITICAL_FILENAME,
     MAIN_TEMPLATE, MAIN_STYLUS_SHEET,
     BUILD_DEV_STYLESHEET, BUILD_PROD_STYLESHEET,
