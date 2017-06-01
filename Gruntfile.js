@@ -28,8 +28,13 @@ module.exports = function (grunt) {
             config.benefits5HTML = parseMarkdownFile(config.benefits5Markdown);
         if (config.scopeMarkdown)
             config.scopeHTML = parseMarkdownFile(config.scopeMarkdown);
-        if (config.scopeConfig)
-            config.scopeFeatures = scope.process(parseYamlFile(config.scopeConfig));
+        if (config.scopeConfig) {
+            try {
+                config.scopeFeatures = scope.process(parseYamlFile(config.scopeConfig));
+            } catch(error) {
+                grunt.fail.fatal(error);
+            }
+        }
         if (config.gettingStarted1Markdown)
             config.gettingStarted1HTML = parseMarkdownFile(config.gettingStarted1Markdown);
         if (config.gettingStarted2aMarkdown)
@@ -208,8 +213,13 @@ module.exports = function (grunt) {
     };
 
     grunt.registerMultiTask('buildHTMLWithoutCritical', function() {
-        const homepageHTML = nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig());
-        grunt.file.write(this.data.dest, homepageHTML);
+        const done = this.async();
+        nunjucksEnvironment.render(constants.MAIN_TEMPLATE, getConfig(), (error, homepageHTML) => {
+            if (error)
+                grunt.fail.fatal(error);
+            grunt.file.write(this.data.dest, homepageHTML);
+            done();
+        });
     });
 
     grunt.initConfig(taskConfig);
