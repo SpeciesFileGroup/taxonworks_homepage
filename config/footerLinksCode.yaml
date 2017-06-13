@@ -1,14 +1,14 @@
 -
     name: "Source"
-    href: "http://google.com"
+    href: "https://github.com/SpeciesFileGroup/taxonworksp"
+-
+    name: "Gitter"
+    href: "https://gitter.im/SpeciesFileGroup/taxonworm"
 -
     name: "Rubydoc"
     href: "http://google.com"
 -
     name: "API"
-    href: "http://google.com"
--
-    name: "Gitter"
     href: "http://google.com"
 -
     name: "Open Hub"

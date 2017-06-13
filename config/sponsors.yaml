@@ -1,18 +1,9 @@
 -
-    name: Sponsor 1
-    src: "http://www.placebacon.net/400/300"
+    name: Species File Group
+    src: "images/collaborators/sfg.svg"
 -
-    name: Sponsor 2
-    src: "http://www.placebacon.net/400/300"
+    name: INHS
+    src: "images/collaborators/inhs.svg"
 -
-    name: Sponsor 3
-    src: "http://www.placebacon.net/400/300"
--
-    name: Sponsor 4
-    src: "http://www.placebacon.net/400/300"
--
-    name: Sponsor 5
-    src: "http://www.placebacon.net/400/300"
--
-    name: Sponsor 6
-    src: "http://www.placebacon.net/400/300"
+    name: NSF
+    src: "images/colalborators/nsf.svg"

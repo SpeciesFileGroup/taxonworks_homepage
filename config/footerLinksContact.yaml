@@ -1,9 +1,9 @@
 -
     name: "Submit feedback"
-    href: "http://google.com"
+    href: "https://github.com/SpeciesFileGroup/TaxonWorks/issues"
 -
     name: "Request access"
-    href: "http://google.com"
+    href: "https://github.com/SpeciesFileGroup/taxonworks_doc/blob/master/REGISTRY.md"
 -
     name: "Ask a question"
-    href: "http://google.com"
+    href: "https://gitter.im/SpeciesFileGroup/taxonwork"

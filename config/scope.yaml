@@ -1,10 +1,15 @@
 features:
     -
-        name: Taxon, specimen and anatomical descriptions
+        name: Describe taxa, specimens, and anatomy
         status: upcoming
-        description: "Manage a wide variety of metadata at the taxon, specimen, or anatomical levels."
+        description: "Use a wide range of metadata to describe life."
         whenComplete: three_year
         features:
+            -
+                name: Free text notes and descriptions
+                status: in_progress
+                description: "Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates."
+                whenComplete: this_year
             -
                 name: Biological relationships
                 status: upcoming
@@ -31,12 +36,7 @@ features:
                 description: "Summarize data into taxonomic descriptions (e.g. nomenclatural history, descriptions, material examined sections) ready for publication.  Export CSV, DWCA, Nexus, and many other data formats."
                 whenComplete: three_year
             -
-                name: Free text notes and descriptions
-                status: in_progress
-                description: "Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates."
-                whenComplete: this_year
-            -
-                name: Keys 
+                name: Keys
                 status: upcoming
                 description: "Create dichotomous and multi-entry keys."
                 whenComplete: three_year
@@ -52,21 +52,21 @@ features:
                         description: "Create landmark data and tie it to anatomical ontologies for future use and organziation."
                         whenComplete: three_year
     -
-        name: Specimen and collecting events
+        name: Specimens and collecting events
         status: complete
-        description: 
+        description: "Before you "
         whenComplete: now
         features:
             -
-                name: Integrated GIS 
-                status: in_progres 
+                name: Integrated GIS
+                status: in_progres
                 description: "Search and return specimen data spatially. Create georeferences of any shape."
-                whenComplete: this_year 
+                whenComplete: this_year
             -
-                name: Loan handling 
-                status: in_progres 
+                name: Loan handling
+                status: in_progres
                 description: "Manage personal or institutional loans."
-                whenComplete: three_year 
+                whenComplete: three_year
     -
         name: Nomenclature
         status: in_progress
@@ -100,29 +100,29 @@ features:
                 description: "Use well over a hundred non-constraining validations to ensure data meet plant, animal, and bacterial codes of nomeclature."
                 whenComplete: this_year
     -
-        name: Import, annotate, and export 
-        status: in progress 
+        name: Import, annotate, and export
+        status: in progress
         description: "Handle data at all stages of the scientific pipeline.  Batch load, annotated and refine, export via files or API."
         whenComplete: three_year
         features:
             -
-                name: Cite everything 
-                status: complete 
+                name: Cite everything
+                status: complete
                 description: "Tie *all* your data to references that you can import from BibTeX."
-                whenComplete: now 
+                whenComplete: now
             -
                 name: Media and references
                 status: in_progress
                 description: "Load references, images, and other supporting documents.  Link them as citations, depictions, or supporting data to all of the core data classes."
                 whenComplete: this_year
             -
-                name: Data attributes, alternative value, notes 
-                status: complete 
+                name: Data attributes, alternative value, notes
+                status: complete
                 description: "Add your own attributes that optionally reference external controlled vocabularies.  Provide translations, abbreviations, misspellings for existing records."
-                whenComplete: now 
+                whenComplete: now
     -
         name: Rich support for collaborating developers
-        status: complete 
+        status: complete
         description: "A open-source code base with a community that facilates new collaborators and a long-term development process."
         whenComplete: this_year
         features:
@@ -133,11 +133,11 @@ features:
                 whenComplete: this_year
             -
                 name: Unit tests
-                status: in_progress 
+                status: in_progress
                 description: "TaxonWorks has hundreds of unit tests. Tests minimize the likelihood of new features breaking existing functionality.  They clarify intent, and when included in new code make code acceptance straightforward."
-                whenComplete: now 
-            -   
-                name: Support 
+                whenComplete: now
+            -
+                name: Support
                 status: complete
-                description: "A growing group of developers supporting developers on Gitter, Github, and other channels." 
+                description: "A growing group of developers supporting developers on Gitter, Github, and other channels."
                 whenComplete: now
