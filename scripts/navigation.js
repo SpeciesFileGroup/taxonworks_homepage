@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const fullThreshold = benefitsSectionNode.getBoundingClientRect().top;
     const mobileButtonNode = document.querySelector('.js-navigation-mobile-button');
     const mobileMenuNode = document.querySelector('.js-navigation-links');
+    const linkAnchorNodes = Array.from(document.querySelectorAll('.js-navigation-link-anchor'));
 
     addEventListeners();
 
@@ -26,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function addEventListeners() {
         mobileButtonNode.addEventListener('click', toggleMobileMenu, false);
+        linkAnchorNodes.forEach(linkAnchorNode => {
+            linkAnchorNode.addEventListener('click', closeMobileMenu, false);
+        });
     }
 
     function toggleMobileMenu() {
