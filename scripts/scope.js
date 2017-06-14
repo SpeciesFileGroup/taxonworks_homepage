@@ -440,10 +440,14 @@ function scope() {
 
     function expandButtonClicked(event) {
         const featureId = this.getAttribute(Attributes.FeatureRef);
-        const featureCard = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId);
-        featureCard.classList.remove(Classes.CardCollapsed);
-        resetChildFeatures(featureId);
-        scrollTo(featureCard);
+        const featureNode = featureCardNodes.find(node => node.getAttribute(Attributes.FeatureId) === featureId);
+        expandFeature( featureNode );
+        scrollTo(featureNode);
+    }
+
+    function expandFeature(featureNode) {
+        featureNode.classList.remove(Classes.CardCollapsed);
+        resetChildFeatures( featureNode.getAttribute(Attributes.FeatureId) );
     }
 
     function resetChildFeatures(featureId) {
@@ -511,9 +515,10 @@ function scope() {
 
     function activeFeatureIdAndDeactivateAllOthers(featureIdToActivate) {
         topLevelFeatureCardNodes.forEach(node => {
-            if (node.getAttribute(Attributes.FeatureId) === featureIdToActivate)
+            if (node.getAttribute(Attributes.FeatureId) === featureIdToActivate) {
                 setFeatureNodeAsActive(node);
-            else
+                expandFeature(node);
+            } else
                 setFeatureNodeAsInactive(node);
         });
     }
