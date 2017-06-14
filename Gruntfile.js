@@ -45,8 +45,6 @@ module.exports = function (grunt) {
             config.fundingHTML = parseMarkdownFile(config.funding);
         if (config.disclaimer)
             config.disclaimerHTML = parseMarkdownFile(config.disclaimer);
-        if (config.builtBy)
-            config.builtByHTML = parseMarkdown(config.builtBy);
         if (config.footerLinksCode)
             config.footerLinksCode = parseYamlFile(config.footerLinksCode);
         if (config.footerLinksContact)
