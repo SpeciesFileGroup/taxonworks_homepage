@@ -2,6 +2,22 @@
 const CollapsedClassName = 'navigation__links__mobile--collapsed';
 
 document.addEventListener("DOMContentLoaded", function() {
+    const Classes = {
+        ShowFull: "navigation--show-full-bar"
+    };
+
+    const benefitsSectionNode = document.querySelector('.js-benefits-section');
+    const navigationNode = document.querySelector('.js-navigation');
+    const fullThreshold = benefitsSectionNode.getBoundingClientRect().top;
+
+    window.onscroll = function() {
+        const scrollPosition = document.getElementsByTagName("body")[0].scrollTop;
+        if (scrollPosition < fullThreshold)
+            navigationNode.classList.remove(Classes.ShowFull);
+        else
+            navigationNode.classList.add(Classes.ShowFull);
+    };
+
     return;
 
     const twHeader = document.querySelector('header');

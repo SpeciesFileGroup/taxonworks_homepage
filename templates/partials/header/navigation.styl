@@ -1,10 +1,11 @@
 .navigation
     height header-navbar-bar-height
-    // pointer-events none
+    left 0
     position fixed
-    top -(header-navbar-bar-height)
-    width 100%
+    right 0
     z-index 10
+
+    showFullBarModifier = selector() + --show-full-bar
 
     &__bar
         align-items center
@@ -17,6 +18,9 @@
         height 48px
         margin-left 16px
         object-fit contain
+        opacity 0
+        transform translateX(-150%) rotate(-360deg)
+        transition all 400ms 100ms cubic-bezier(0, 0, 0.3, 1)
         width 48px
 
         +breakpoint(small)
@@ -24,10 +28,17 @@
             margin-left 8px
             width 36px
 
-    &__text
+    {showFullBarModifier} &__logo
+        opacity 1
+        transform translateX(0) rotate(0)
+
+    &__title
         height 27px
         margin-left 16px
         object-fit contain
+        opacity 0
+        transform translateY(-100%)
+        transition all 300ms ease-in-out
         width 204px
 
         +breakpoint(medium)
@@ -37,6 +48,10 @@
         +breakpoint(small)
             margin-left 8px
             width 172px
+
+    {showFullBarModifier} &__title
+        opacity 1
+        transform translateY(0)
 
     &__links
         display flex
@@ -59,7 +74,7 @@
 
             &--collapsed
                 display none
-                
+
             &__list
                 list-style-image none
                 list-style-type none
