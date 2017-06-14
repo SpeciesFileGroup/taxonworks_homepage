@@ -58,40 +58,18 @@
         margin-left auto
 
         +breakpoint(small)
-            display none
-
-        &__mobile
             background-color color-brown
-            bottom header-navbar-mobile-height
             display block
-            height header-navbar-mobile-height
-            position relative
-            visibility hidden
-            z-index -5
+            left 0
+            position absolute
+            top 100%
+            transform translateY(-101%)
+            transition transform 250ms ease-in-out
+            right 0
+            z-index -1
 
-            +breakpoint(small)
-                visibility initial
-
-            &--collapsed
-                display none
-
-            &__list
-                list-style-image none
-                list-style-type none
-                margin 0
-                padding 0
-
-                &--anchor-text
-                    border-bottom 2px solid color-brown
-                    color color-teal
-                    display block
-                    padding 10px 0
-                    text-align center
-                    text-decoration none
-
-                    &:hover
-                        background-color color-teal
-                        color color-cocoa
+            &--open
+                transform translateY(0)
 
     &__link-anchor
         color color-teal
@@ -109,6 +87,18 @@
 
         +breakpoint(medium)
             padding 8px 16px
+
+        +breakpoint(small)
+            border-bottom 2px solid color-brown
+            color color-teal
+            display block
+            padding 10px 0
+            text-align center
+            text-decoration none
+
+            &:hover
+                background-color color-teal
+                color color-cocoa
 
     &__link-anchor-text
         position relative
@@ -137,5 +127,11 @@
         position relative
         width 36px
 
+        &:after
+            content "\2630"
+
         +breakpoint(small)
             display inline-block
+
+        &--menu-open:after
+            content "\00D7"

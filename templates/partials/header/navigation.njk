@@ -2,14 +2,14 @@
     <div class="navigation__bar">
         <img class="navigation__logo" src="{{ navLogo }}">
         <img class="navigation__title" src="{{ navText }}">
-        <div class="navigation__links">
+        <div class="navigation__links js-navigation-links">
             {% for navBarLink in navBarLinks %}
                 <a class="navigation__link-anchor" href="{{ navBarLink.href }}">
                     <span class="navigation__link-anchor-text">{{ navBarLink.name }}</span>
                 </a>
             {% endfor %}
         </div>
-        <button class="navigation__toggle-button js-navigation-mobile-button">&#9776;</button>
+        <button class="navigation__toggle-button js-navigation-mobile-button"></button>
     </div>
 </nav>
 

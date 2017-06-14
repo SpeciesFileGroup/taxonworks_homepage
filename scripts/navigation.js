@@ -3,12 +3,18 @@ const CollapsedClassName = 'navigation__links__mobile--collapsed';
 
 document.addEventListener("DOMContentLoaded", function() {
     const Classes = {
-        ShowFull: "navigation--show-full-bar"
+        ShowFull: "navigation--show-full-bar",
+        MobileButtonMenuOpen: "navigation__toggle-button--menu-open",
+        MobileMenuOpen: 'navigation__links--open'
     };
 
     const benefitsSectionNode = document.querySelector('.js-benefits-section');
     const navigationNode = document.querySelector('.js-navigation');
     const fullThreshold = benefitsSectionNode.getBoundingClientRect().top;
+    const mobileButtonNode = document.querySelector('.js-navigation-mobile-button');
+    const mobileMenuNode = document.querySelector('.js-navigation-links');
+
+    addEventListeners();
 
     window.onscroll = function() {
         const scrollPosition = document.getElementsByTagName("body")[0].scrollTop;
@@ -18,13 +24,28 @@ document.addEventListener("DOMContentLoaded", function() {
             navigationNode.classList.add(Classes.ShowFull);
     };
 
+    function addEventListeners() {
+        mobileButtonNode.addEventListener('click', toggleMobileMenu, false);
+    }
+
+    function toggleMobileMenu() {
+        const isMenuOpen = mobileButtonNode.classList.contains(Classes.MobileButtonMenuOpen);
+        if (isMenuOpen) {
+            mobileMenuNode.classList.remove(Classes.MobileMenuOpen);
+            mobileButtonNode.classList.remove(Classes.MobileButtonMenuOpen);
+        }
+        else {
+            mobileMenuNode.classList.add(Classes.MobileMenuOpen);
+            mobileButtonNode.classList.add(Classes.MobileButtonMenuOpen);
+        }
+    }
+
     return;
 
     const twHeader = document.querySelector('header');
     const twNavBar = document.querySelector('.js-navigation');
     const twMain   = document.querySelector('main');
 
-    const twMobileButton = document.querySelector('.js-navigation-mobile-button');
     const twMobileLinks  = document.querySelector('.js-mobile-links');
     const twMobileLink   = document.querySelector('.js-mobile-link-anchor');
 
@@ -52,19 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     };
-
-    twMobileButton.addEventListener('click', function() {
-        const isCollapsed = checkIfCollapsed(twMobileLinks);
-        this.disabled = true;
-
-        if( isCollapsed ){
-            getExpandingAnimation();
-        }
-        else {
-            getCollapsingAnimation();
-        }
-
-    });
 
     twMobileLink.addEventListener('click', function() {
         getCollapsingAnimation();
