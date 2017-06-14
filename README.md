@@ -50,7 +50,6 @@ Config properties are as follows:
 - `navText`: Path to image to use in place of text in the navigation bar
 - `navBarLinkListConfig`: Path to yaml to configure the nav bar links. Expects each nav bar item to have `name` and `href`.
 - `sponsor`: Text to include in the sponsor part of the footer
-- `builtBy`: Raw markdown to include in the footer to represent the "Built by".
 - `funding`: Path to markdown representing the funding blurb in the footer
 - `disclaimer`: Path to markdown to insert a disclaimer at the very bottom
 - `twitterUrl`: URL to twitter profile page

@@ -21,7 +21,6 @@ navLogo: images/inhs-nav-logo.svg
 navText: images/inhs-nav-text.svg
 navBarLinkListConfig: nav.yaml
 sponsor: Illinois Natural History Survey Prairie Research Institute
-builtBy: Built by [Pixo](http://www.pixotech.com)
 funding: footerFunding.md
 disclaimer: footerDisclaimer.md
 twitterUrl: https://twitter.com/TaxonWorks
