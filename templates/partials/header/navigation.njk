@@ -4,7 +4,7 @@
         <img class="navigation__title" src="{{ navText }}">
         <div class="navigation__links js-navigation-links">
             {% for navBarLink in navBarLinks %}
-                <a class="navigation__link-anchor" href="{{ navBarLink.href }}">
+                <a class="navigation__link-anchor js-navigation-link-anchor" href="{{ navBarLink.href }}">
                     <span class="navigation__link-anchor-text">{{ navBarLink.name }}</span>
                 </a>
             {% endfor %}

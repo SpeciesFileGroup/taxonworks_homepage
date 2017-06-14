@@ -30,14 +30,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function toggleMobileMenu() {
         const isMenuOpen = mobileButtonNode.classList.contains(Classes.MobileButtonMenuOpen);
-        if (isMenuOpen) {
-            mobileMenuNode.classList.remove(Classes.MobileMenuOpen);
-            mobileButtonNode.classList.remove(Classes.MobileButtonMenuOpen);
-        }
-        else {
-            mobileMenuNode.classList.add(Classes.MobileMenuOpen);
-            mobileButtonNode.classList.add(Classes.MobileButtonMenuOpen);
-        }
+        if (isMenuOpen)
+            closeMobileMenu();
+        else
+            openMobileMenu();
+    }
+
+    function closeMobileMenu() {
+        mobileMenuNode.classList.remove(Classes.MobileMenuOpen);
+        mobileButtonNode.classList.remove(Classes.MobileButtonMenuOpen);
+    }
+
+    function openMobileMenu() {
+        mobileMenuNode.classList.add(Classes.MobileMenuOpen);
+        mobileButtonNode.classList.add(Classes.MobileButtonMenuOpen);
     }
 
     return;
