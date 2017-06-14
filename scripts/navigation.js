@@ -2,6 +2,8 @@
 const CollapsedClassName = 'navigation__links__mobile--collapsed';
 
 document.addEventListener("DOMContentLoaded", function() {
+    return;
+
     const twHeader = document.querySelector('header');
     const twNavBar = document.querySelector('.js-navigation');
     const twMain   = document.querySelector('main');

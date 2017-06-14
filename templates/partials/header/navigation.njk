@@ -9,17 +9,7 @@
                 </a>
             {% endfor %}
         </div>
-        <button class="navigation__button js-navigation-mobile-button">&#9776;</button>
-    </div>
-
-    <div class="navigation__links__mobile navigation__links__mobile--collapsed js-mobile-links">
-        <ul class="navigation__links__mobile__list">
-            {% for navBarLink in navBarLinks %}
-                <li class="navigation__links__mobile__list--link js-mobile-link-anchor">
-                    <a class="navigation__links__mobile__list--anchor-text" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+        <button class="navigation__toggle-button js-navigation-mobile-button">&#9776;</button>
     </div>
 </nav>
 
