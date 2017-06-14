@@ -1,25 +1,15 @@
 <nav class="navigation js-navigation">
     <div class="navigation__bar">
         <img class="navigation__logo" src="{{ navLogo }}">
-        <img class="navigation__text" src="{{ navText }}">
-        <div class="navigation__links">
+        <img class="navigation__title" src="{{ navText }}">
+        <div class="navigation__links js-navigation-links">
             {% for navBarLink in navBarLinks %}
-                <a class="navigation__link-anchor" href="{{ navBarLink.href }}">
+                <a class="navigation__link-anchor js-navigation-link-anchor" href="{{ navBarLink.href }}">
                     <span class="navigation__link-anchor-text">{{ navBarLink.name }}</span>
                 </a>
             {% endfor %}
         </div>
-        <button class="navigation__button js-navigation-mobile-button">&#9776;</button>
-    </div>
-
-    <div class="navigation__links__mobile navigation__links__mobile--collapsed js-mobile-links">
-        <ul class="navigation__links__mobile__list">
-            {% for navBarLink in navBarLinks %}
-                <li class="navigation__links__mobile__list--link js-mobile-link-anchor">
-                    <a class="navigation__links__mobile__list--anchor-text" href="{{ navBarLink.href }}">{{ navBarLink.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+        <button class="navigation__toggle-button js-navigation-mobile-button"></button>
     </div>
 </nav>
 
