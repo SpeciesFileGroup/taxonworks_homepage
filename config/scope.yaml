@@ -53,18 +53,23 @@ features:
                         whenComplete: three_year
     -
         name: Specimens and collecting events
-        status: complete
-        description: "Before you "
+        status: in_progress
+        description: "The best descriptions are those tied directly to specimens and collections. Capture these data at the personal or institutional level."
         whenComplete: now
         features:
             -
+                name: Digitization workflows
+                status: in_progress
+                description: "Capture detail for collecting events and specimens with features like customizable, fine grained attributes, lockable values, and varying levels of form complexity. Built in OCR and image processing."
+                whenComplete: this_year
+            -
                 name: Integrated GIS
-                status: in_progres
-                description: "Search and return specimen data spatially. Create georeferences of any shape."
+                status: in_progress
+                description: "Search and return specimen data spatially. Create georeferences of any shape.  Also wraps GeoLocate."
                 whenComplete: this_year
             -
                 name: Loan handling
-                status: in_progres
+                status: in_progress
                 description: "Manage personal or institutional loans."
                 whenComplete: three_year
     -
@@ -101,7 +106,7 @@ features:
                 whenComplete: this_year
     -
         name: Import, annotate, and export
-        status: in progress
+        status: in_progress
         description: "Handle data at all stages of the scientific pipeline.  Batch load, annotated and refine, export via files or API."
         whenComplete: three_year
         features:
@@ -122,7 +127,7 @@ features:
                 whenComplete: now
     -
         name: Rich support for collaborating developers
-        status: complete
+        status: in_progress 
         description: "A open-source code base with a community that facilates new collaborators and a long-term development process."
         whenComplete: this_year
         features:
