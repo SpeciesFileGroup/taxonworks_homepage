@@ -1,8 +1,11 @@
 .sponsor-grid
-    display grid
-    grid-auto-flow row
-    grid-template-columns repeat(auto-fit, 160px)
-    grid-gap 16px
+    align-items center
+    display flex
+    flex-wrap wrap
+
+    &__sponsor
+        margin 0 16px 16px 0
+        max-width 160px
 
     +breakpoint(benefits-4-small)
         justify-content center
