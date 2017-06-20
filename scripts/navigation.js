@@ -14,19 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     addEventListeners();
 
-    window.onscroll = function() {
-        const scrollPosition = document.getElementsByTagName("body")[0].scrollTop;
-        if (scrollPosition < fullThreshold)
-            navigationNode.classList.remove(Classes.ShowFull);
-        else
-            navigationNode.classList.add(Classes.ShowFull);
-    };
-
     function addEventListeners() {
+        window.addEventListener('scroll', updateNavigationClass, false);
         mobileButtonNode.addEventListener('click', toggleMobileMenu, false);
         linkAnchorNodes.forEach(linkAnchorNode => {
             linkAnchorNode.addEventListener('click', closeMobileMenu, false);
         });
+    }
+
+    function updateNavigationClass() {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition < fullThreshold)
+            navigationNode.classList.remove(Classes.ShowFull);
+        else
+            navigationNode.classList.add(Classes.ShowFull);
     }
 
     function toggleMobileMenu() {
