@@ -165,6 +165,10 @@ module.exports = function (grunt) {
                     {
                         src: `${constants.IMAGE_DIR}**/*`,
                         dest: constants.BUILD_PROD_DIR
+                    },
+                    {
+                        src: `CNAME`,
+                        dest: constants.BUILD_PROD_DIR
                     }
                 ]
             }
