@@ -1,0 +1,29 @@
+name: homepage
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Node packages
+        run: npm install
+          
+      - name: Build home page
+        run: npx grunt build-prod
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # Pinning for security reasons (action not provided by GitHub)
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/production
