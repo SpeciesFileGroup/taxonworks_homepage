@@ -1,0 +1,105 @@
+.getting-started-section
+    background-color color-grey
+
+    &__leaves-container
+        overflow hidden
+
+        +breakpoint(large)
+            padding 0 section-padding-large-x
+
+        +breakpoint(medium)
+            padding 0 section-padding-medium-x
+
+        +breakpoint(small)
+            padding 0 section-padding-small-x
+
+    &__leaves
+        display block
+        margin 0 auto
+        max-width 100%
+        vertical-align bottom
+
+        +breakpoint(small)
+            display none
+
+    &__leaves-small
+        display none
+        margin 0 auto
+        max-width 100%
+        vertical-align bottom
+
+        +breakpoint(small)
+            display block
+
+    &__container-1
+    &__container-2
+        @extends $sectionContainer
+
+    &__container-1
+        display flex
+        margin-bottom 112px
+        padding-top 56px
+        padding-bottom 0
+
+        +breakpoint(small)
+            margin-bottom 64px
+            padding-top 24px
+
+    &__container-2
+        display flex
+        padding-top 0
+
+    &__section
+        h3
+            @extends $mediumHeader
+            margin-bottom 12px
+
+        ul
+            @extends $list
+            margin-bottom 48px
+
+        li
+            &:not(:last-child)
+                margin-bottom 8px
+
+        a:not([class])
+            @extends $button
+
+    &__section-text
+        flex 1 1 0
+        margin-right 32px
+
+        +breakpoint(small)
+            margin-bottom 32px
+            margin-right 0
+
+    &__title
+        @extends $bigHeader
+        color color-black
+        margin-bottom 16px
+
+    &__logo-image
+        height 59px
+        object-fit contain
+        max-width 100%
+
+        +breakpoint(medium)
+            height 44px
+            width 340px
+
+        +breakpoint(small)
+            height 36px
+
+    &__copy-1
+        @extends $promoCopyText
+        flex 1 1 0
+
+    &__copy
+        @extends $normalCopyText
+        flex 1 1 0
+
+        &--with-gutter
+            margin-right 32px
+
+            +breakpoint(small)
+                margin-right 0

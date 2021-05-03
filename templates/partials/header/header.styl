@@ -1,0 +1,127 @@
+.header-section
+    align-items center
+    background-color color-brown
+    display flex
+    height 960px
+    overflow hidden
+    position relative
+    text-align center
+
+    +breakpoint(medium)
+        height auto
+
+    +breakpoint(small)
+        height auto
+
+    &__container
+        display flex
+        padding 0 section-padding-desired
+        width 100%
+
+        +breakpoint(large)
+            padding 0 section-padding-large
+
+        +breakpoint(medium)
+            padding section-padding-large
+
+        +breakpoint(small)
+            flex-flow column wrap
+            padding section-padding-small
+
+    &__text-title
+        color color-white
+
+        &-logo
+            margin-bottom 16px
+
+            +breakpoint(medium)
+                margin-bottom 8px
+                max-width 340px
+                width 100%
+
+            +breakpoint(small)
+                margin-bottom 12px
+                width 272px
+
+    &__logo
+        flex 1 1 200px
+        min-width 50%
+        position relative
+        text-align left
+        top -52px
+        z-index 5
+
+        +breakpoint(small)
+            flex-basis 200px
+            height 200px
+            min-width auto
+            top 0
+
+    &__logo-image
+        left -700px
+        object-fit contain
+        position absolute
+        top -700px
+
+        +breakpoint(large)
+            display none
+
+        +breakpoint(medium)
+            display none
+
+        +breakpoint(small)
+            display none
+
+    &__logo-image-medium
+        display none
+        height 1200px
+        left -530px
+        object-fit contain
+        position absolute
+        top -500px
+        width 1200px
+
+        +breakpoint(large)
+            display block
+
+        +breakpoint(medium-header)
+            display block
+
+        +breakpoint(small-medium-header)
+            display block
+            height 800px
+            left -350px
+            top -300px
+            width 800px
+
+    &__logo-image-small
+        display none
+        height 700px
+        left -300px
+        object-fit contain
+        position absolute
+        top -300px
+        width 700px
+
+        +breakpoint(small)
+            display block
+
+    &__text
+        flex 1 1 200px
+        text-align left
+        z-index 5
+
+    &__text-slogan
+        @extends $bigHeader
+        color color-teal
+        margin-bottom 32px
+
+        +breakpoint(small)
+            margin-bottom 24px
+        
+    &__text-copy
+        @extends $promoCopy
+        border-top 2px solid color-teal
+        color color-white
+        font-weight 400
+        padding-top 24px

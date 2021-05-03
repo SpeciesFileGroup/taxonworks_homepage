@@ -1,0 +1,91 @@
+.feature-card
+    color color-white
+    overflow hidden
+    position relative
+
+    collapsedSelector = '.feature-card--collapsed'
+
+    &__top-border-line
+        background-color color-teal
+        height 2px
+        left 0
+        position absolute
+        right 0
+        top 0
+
+    &[data-inactive]
+        display none
+
+    &__content
+        {collapsedSelector} > &
+            display none
+
+    &__feature-content
+        background-color color-cocoa
+        padding 16px
+
+    &__name
+        @extend $mediumHeader
+        font-weight 400
+        margin-bottom 12px
+
+    &__description
+        color color-beige
+        font-weight 400
+        margin-bottom 16px
+
+    &__details
+        display flex
+        justify-content space-between
+
+        +breakpoint(small)
+            display block
+
+    &__status
+    &__available
+        font-weight 600
+
+        &-label
+        &-value
+            display inline-block
+
+        &-label
+            margin-right 6px
+
+        & .status-upcoming
+        & .available-next-or-three-years
+            color status-color-orange
+        
+        & .status-in-progress
+        & .available-this-year
+            color status-color-teal
+
+        & .status-complete
+        & .available-now
+            color status-color-blue
+
+    &__sub-features
+        list-style none inside
+
+    &__sub-feature-item
+        margin-top 2px
+
+    &__sub-feature-item-button
+        @extend $buttonHelper
+        background-color color-cocoa
+        color color-teal
+        display block
+        padding 14px 16px
+        text-align left
+        transition background-color 300ms, color 300ms
+
+        &:hover
+        &:focus
+            background-color color-teal
+            color color-cocoa
+
+    &__expand-button-container
+        display none
+
+        {collapsedSelector} > &
+            display block

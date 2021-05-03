@@ -1,4 +1,45 @@
-@import 'styles/resets'
+// Imports
+@import 'styles/global/variables/**'
 
-//@import 'pages/**'
-//@import 'partials/**'
+@import 'styles/flex'
+@import 'styles/hind.css'
+@import 'styles/resets'
+@import 'styles/headers'
+@import 'styles/lists'
+@import 'styles/copy'
+@import 'styles/buttons'
+
+@import 'pages/**'
+@import 'partials/**'
+
+// Base elements
+body
+    color color-brown
+    font-family "Hind", "Open Sans", "Arial", sans-serif
+    font-size 20px
+    font-stretch normal
+    font-style normal
+    letter-spacing normal
+    line-height 1.4
+
+a
+    text-decoration none
+
+a:not([class])
+    color color-moss
+    text-decoration underline
+
+    &:hover
+    &:focus
+        color darken(color-moss, 25%)
+        text-decoration none
+
+// Accessibility
+.hidden
+    border 0
+    clip rect(0 0 0 0)
+    height 1px
+    margin -1px
+    overflow hidden
+    padding 0
+    position absolute

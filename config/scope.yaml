@@ -1,0 +1,148 @@
+features:
+    -
+        name: Describe taxa, specimens, and anatomy
+        status: upcoming
+        description: "Use a wide range of metadata to describe life."
+        whenComplete: three_year
+        features:
+            -
+                name: Free text notes and descriptions
+                status: in_progress
+                description: "Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates."
+                whenComplete: this_year
+            -
+                name: Biological relationships
+                status: upcoming
+                description: "Create and manage biological relationships between taxa or specimens or some combination of both.  For example host-parasites."
+                whenComplete: three_year
+            -
+                name: Sequences
+                status: upcoming
+                description: "Manage curated DNA sequences.  Annotate them with protocols, and other sequence related metadata (e.g. extract and specimen, primers, or query sequences)."
+                whenComplete: three_year
+            -
+                name: Phylogenetic matrices
+                status: upcoming
+                description: "Create or import traditional qualitative or quantitative phylogenetic matrices.  Annotate characters with notes, images, tags and confidence levels."
+                whenComplete: this_year
+            -
+                name: Anatomical reference systems
+                status: upcoming
+                description: "Create controlled vocabularies describing the morphology of your organisms, with tools to facilitate the transformation of these vocabularies into formal structures like OWL ontologies.  Use these systems to annotate, query, and organize your data by anatomy."
+                whenComplete: three_year
+            -
+                name: Manuscript and datasets export
+                status: upcoming
+                description: "Summarize data into taxonomic descriptions (e.g. nomenclatural history, descriptions, material examined sections) ready for publication.  Export CSV, DWCA, Nexus, and many other data formats."
+                whenComplete: three_year
+            -
+                name: Keys
+                status: upcoming
+                description: "Create dichotomous and multi-entry keys."
+                whenComplete: three_year
+            -
+                name: Advanced anatomical interfaces
+                status: upcoming
+                description: "Describe anatomical features using graphical interfaces.  Drag, drop, and slide to measure, characterize, and qualify observations."
+                whenComplete: three_year
+                features:
+                    -
+                        name: Landmark metadata
+                        status: upcoming
+                        description: "Create landmark data and tie it to anatomical ontologies for future use and organziation."
+                        whenComplete: three_year
+    -
+        name: Specimens and collecting events
+        status: in_progress
+        description: "The best descriptions are those tied directly to specimens and collections. Capture these data at the personal or institutional level."
+        whenComplete: now
+        features:
+            -
+                name: Digitization workflows
+                status: in_progress
+                description: "Capture detail for collecting events and specimens with features like customizable, fine grained attributes, lockable values, and varying levels of form complexity. Built in OCR and image processing."
+                whenComplete: this_year
+            -
+                name: Integrated GIS
+                status: in_progress
+                description: "Search and return specimen data spatially. Create georeferences of any shape.  Also wraps GeoLocate."
+                whenComplete: this_year
+            -
+                name: Loan handling
+                status: in_progress
+                description: "Manage personal or institutional loans."
+                whenComplete: three_year
+    -
+        name: Nomenclature
+        status: in_progress
+        description: "Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich coverage of nomenclatural rules are included to ensure adequate metadata are provided."
+        whenComplete: this_year
+        features:
+            -
+                name: Catalog exports
+                status: in_progress
+                description: "Summarize nomenclatural data in print and machine readable formats."
+                whenComplete: this_year
+                features:
+                    -
+                        name: DWC Checklist
+                        status: upcoming
+                        description: "Export basic nomenclature data as a Darwin Core Checklist."
+                        whenComplete: this_year
+                    -
+                        name: Catalog of Life
+                        status: upcoming
+                        description: "Export basic nomenclature data to the Catlog of Life format."
+                        whenComplete: this_year
+                    -
+                        name: ITIS
+                        status: upcoming
+                        description: "Export basic nomenclature data to the format used by ITIS."
+                        whenComplete: three_year
+            -
+                name: Validation
+                status: complete
+                description: "Use well over a hundred non-constraining validations to ensure data meet plant, animal, and bacterial codes of nomeclature."
+                whenComplete: this_year
+    -
+        name: Import, annotate, and export
+        status: in_progress
+        description: "Handle data at all stages of the scientific pipeline.  Batch load, annotated and refine, export via files or API."
+        whenComplete: three_year
+        features:
+            -
+                name: Cite everything
+                status: complete
+                description: "Tie *all* your data to references that you can import from BibTeX."
+                whenComplete: now
+            -
+                name: Media and references
+                status: in_progress
+                description: "Load references, images, and other supporting documents.  Link them as citations, depictions, or supporting data to all of the core data classes."
+                whenComplete: this_year
+            -
+                name: Data attributes, alternative value, notes
+                status: complete
+                description: "Add your own attributes that optionally reference external controlled vocabularies.  Provide translations, abbreviations, misspellings for existing records."
+                whenComplete: now
+    -
+        name: Rich support for collaborating developers
+        status: in_progress 
+        description: "A open-source code base with a community that facilates new collaborators and a long-term development process."
+        whenComplete: this_year
+        features:
+            -
+                name: JSON serving API
+                status: in_progress
+                description: "Work with the TaxonWorks back end through a token-based JSON serving API. Develop in your favourite framework, and integrate natively, or as a stand-alone tool."
+                whenComplete: this_year
+            -
+                name: Unit tests
+                status: in_progress
+                description: "TaxonWorks has hundreds of unit tests. Tests minimize the likelihood of new features breaking existing functionality.  They clarify intent, and when included in new code make code acceptance straightforward."
+                whenComplete: now
+            -
+                name: Support
+                status: complete
+                description: "A growing group of developers supporting developers on Gitter, Github, and other channels."
+                whenComplete: now

@@ -1,0 +1,18 @@
+<header class="header-section">
+    <div class="header-section__container">
+        <div class="header-section__logo">
+            <img class="header-section__logo-image" src="images/{{ logo }}" alt="This is the logo of {{ title }}">
+            <img class="header-section__logo-image-medium" src="images/{{ logoMedium }}" alt="This is the logo of {{ title }}">
+            <img class="header-section__logo-image-small" src="images/{{ logoSmall }}" alt="This is the logo of {{ title }}">
+        </div>
+
+        <div class="header-section__text">
+            <h1 class="header-section__text-title hidden">{{ title }}</h1>
+            <img class="header-section__text-title-logo" src="{{ titleLogo }}" alt="{{ title }}">
+            <div class="header-section__text-slogan">{{ slogan }}</div>
+            <div class="header-section__text-copy">
+                {{ introHTML | safe }}
+            </div>
+        </div>
+    </div>
+</header>

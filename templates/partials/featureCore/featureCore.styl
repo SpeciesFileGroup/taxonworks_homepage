@@ -1,0 +1,146 @@
+.feature-core
+    display flex
+    position relative
+
+    $gradient
+        background-image linear-gradient(to bottom, gradient-brown, color-brown)
+        height 288px
+        left 50%
+        position absolute
+        right 0
+        top 24px
+        transform translateX(-50%)
+        width 100vw
+        z-index -1
+
+    +breakpoint(medium)
+        display block
+
+    +breakpoint(small)
+        display block
+
+    &__gradient-big
+        @extends .feature-core $gradient
+
+        +breakpoint(medium)
+            display none
+
+        +breakpoint(small)
+            display none
+
+    &__controls
+        color color-beige
+        display none
+        justify-content space-between
+        padding 0
+
+        +breakpoint(medium)
+            display flex
+
+        +breakpoint(small)
+            display flex
+
+    &__controls-description
+        align-items center
+        display flex
+        text-align center
+
+    &__previous-button
+    &__next-button
+        @extend $buttonReset
+
+        &-content
+            align-items center
+            background-color cocoa
+            border 2px solid color-khaki
+            display flex
+            height 56px
+            justify-content center
+            width @height
+
+    &__dots
+        display none
+        list-style none inside
+        justify-content center
+        margin 0 auto
+        padding 16px 0
+
+        +breakpoint(medium)
+            display flex
+
+        +breakpoint(small)
+            display flex
+
+    &__dot
+        background-color color-cocoa
+        border 2px solid color-teal
+        border-radius 50%
+        height 14px
+        transition background-color 222ms
+        width @height
+
+        &:not(:first-child)
+            margin-left 16px
+
+        &--active
+            background-color color-teal
+
+    &__feature-menu
+        flex 1 1 0
+        list-style none inside
+        margin-right 8px
+
+        +breakpoint(medium)
+            display none
+
+        +breakpoint(small)
+            display none
+
+    &__feature-menu-item
+        margin-bottom 8px
+
+    &__feature-menu-button
+        @extend $buttonReset
+        @extend $promoCopyText
+        background-color color-cocoa
+        border solid 2px color-khaki
+        color color-teal
+        display block
+        outline none
+        padding 22px 24px
+        text-align left
+        transition background-color 250ms, color 250ms, border-color 250ms
+        width 100%
+
+        &:hover
+        &:focus
+            background-color color-teal
+            color color-cocoa
+
+        &--active-feature
+            border-color color-teal
+            color white
+
+    &__feature-card-container
+        flex 1 1 0
+        margin-left 8px
+        overflow hidden
+        position relative
+
+        +breakpoint(medium)
+            margin-left 0
+            overflow visible
+
+        +breakpoint(small)
+            margin-left 0
+            overflow visible
+
+    &__gradient-small
+        @extends .feature-core $gradient
+        display none
+
+        +breakpoint(medium)
+            display block
+
+        +breakpoint(small)
+            display block

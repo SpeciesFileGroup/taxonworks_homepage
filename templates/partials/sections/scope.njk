@@ -1,0 +1,16 @@
+<article class="scope-section">
+    <div class="scope-section__container-1" id="scope">
+        <h2 class="scope-section__title">{{ scopeTitle  }}</h2>
+        <div class="scope-section__copy">
+            {{ scopeHTML | safe }}
+        </div>
+    </div>
+    <div class="scope-section__container-2" id="scope-2">
+        <h3 class="scope-section__feature-intro">Explore current & upcoming features</h3>
+        <div class="scope-section__features">
+            <div class="scope-section__feature-core-container">
+                {% include 'partials/featureCore/featureCore.njk' %}
+            </div>
+        </div>
+    </div>
+</article>

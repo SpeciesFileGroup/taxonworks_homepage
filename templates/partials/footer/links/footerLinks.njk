@@ -1,0 +1,13 @@
+{% import 'partials/footer/links/footerLinkList.njk' as footerLinkList %}
+
+<div class="footer-links">
+    <div class="footer-links__list-container">
+        {{ footerLinkList.footerLinkList('Code', footerLinksCode) }}
+    </div>
+    <div class="footer-links__list-container">
+        {{ footerLinkList.footerLinkList('Contact', footerLinksContact) }}
+    </div>
+    <div class="footer-links__list-container">
+        {{ footerLinkList.footerLinkList('Social', footerLinksSocial) }}
+    </div>
+</div>

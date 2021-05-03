@@ -1,0 +1,78 @@
+.footer-section
+    background-color color-white
+    height footer-height
+
+    &__container
+        @extends $sectionContainer
+        align-items flex-start
+        display flex
+        padding-top footer-padding-y
+        padding-bottom footer-padding-y
+
+        +breakpoint(small)
+            flex-flow column wrap
+
+    &__details
+        float left
+        width 50%
+
+        +breakpoint(small)
+            margin-bottom 48px
+            width 100%
+
+        &--with-gutter
+            padding-right 32px
+
+    &__footer-links
+        @extend $normalFlexItem
+
+    &__logo
+        @extend $normalFlexItem
+        max-width 336px
+
+    &__logo
+    &__funding
+    &__built-by
+        margin footer-details-margin
+
+    &__funding
+    &__built-by
+        max-width 336px
+
+        p 
+            color color-khaki
+            font-size 20px
+            line-height 28px
+
+    &__logo
+        object-fit contain
+        width 100%
+
+        +breakpoint(medium)
+            height auto
+            width 100%
+
+        +breakpoint(large)
+            height 77px
+            width 336px
+
+        +breakpoint(full)
+            height 77px
+            width 336px
+
+    &__pixo-logo
+        height 24px
+        vertical-align top
+        width auto
+
+    &__disclaimer-container
+        @extends $hasContentGutters
+        padding-bottom footer-padding-y
+
+    &__disclaimer
+        font-size 12px
+        line-height 20px
+        padding-left 50%
+
+        +breakpoint(small)
+            padding-left 0

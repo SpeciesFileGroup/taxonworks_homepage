@@ -1,0 +1,68 @@
+.scope-section
+    background-color color-brown
+
+    &__container-1
+    &__container-2
+        @extends $sectionContainer
+
+    &__container-1
+        display flex
+
+        +breakpoint(large)
+            padding 160px 160px 144px 160px
+
+        +breakpoint(small)
+            display block
+            margin-bottom 24px
+
+    &__container-2
+        overflow hidden
+        padding-top 0
+        position relative
+        z-index 2
+
+        +breakpoint(large)
+            padding 0 160px 160px 160px
+
+    &__title
+        @extends $normalFlexItem
+        @extends $bigHeader
+        @extends $makeGap
+        color color-teal
+
+        +breakpoint(small)
+            margin-bottom 24px
+
+    &__copy
+        @extends $normalFlexItem
+        @extends $promoCopy
+        color color-white
+
+    &__feature-intro 
+        @extends $mediumHeader
+        color color-white
+        margin-bottom 32px
+
+    &__features
+        display flex
+
+        +breakpoint(small)
+            flex-direction column
+
+    &__feature-cards
+    &__feature-core-container
+        flex 1 1 0
+
+    &__feature-core-container
+        +breakpoint(medium)
+            margin-right 16px
+
+        +breakpoint(large)
+            margin-right 16px
+
+    &__feature-cards
+        +breakpoint(medium)
+            margin-left 16px
+            
+        +breakpoint(large)
+            margin-left 16px

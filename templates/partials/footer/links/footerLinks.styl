@@ -1,0 +1,22 @@
+.footer-links
+    display flex
+
+    +breakpoint(medium)
+        flex-flow row wrap
+        height auto
+
+    +breakpoint(small)
+        flex-flow column
+
+    $linkList
+        flex 1 1 0
+        list-style none inside
+
+    &__list-container
+        @extends .footer-links $linkList
+
+        &:not(:last-child)
+            margin-right footer-space-between
+
+            +breakpoint(small)
+                margin-bottom 32px

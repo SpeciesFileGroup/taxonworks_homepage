@@ -1,2 +1,29 @@
 title: TaxonWorks
+titleLogo: images/taxonworks-white.svg
+slogan: Describe life.
 introMarkdown: intro.md
+benefitsTitle: A digital companion for discovering biodiversity
+benefits1Markdown: benefits-1.md
+benefits2Markdown: benefits-2.md
+benefits3Markdown: benefits-3.md
+benefits4Markdown: benefits-4.md
+sponsorsConfig: sponsors.yaml
+scopeTitle: Like life, TaxonWorks is ever-evolving
+scopeMarkdown: scope.md
+scopeConfig: scope.yaml
+gettingStartedTitle: Get started with
+gettingStarted1Markdown: gettingStarted-1.md
+gettingStarted2aMarkdown: gettingStarted-2a.md
+gettingStarted2bMarkdown: gettingStarted-2b.md
+gettingStartedLogo: images/taxonworks-black.svg
+footerLogo: images/inhs-footer-logo.svg
+navLogo: images/inhs-nav-logo.svg
+navText: images/inhs-nav-text.svg
+navBarLinkListConfig: nav.yaml
+sponsor: Illinois Natural History Survey Prairie Research Institute
+funding: footerFunding.md
+disclaimer: footerDisclaimer.md
+twitterUrl: https://twitter.com/TaxonWorks
+footerLinksCode: footerLinksCode.yaml
+footerLinksContact: footerLinksContact.yaml
+footerLinksSocial: footerLinksSocial.yaml

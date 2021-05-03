@@ -1,0 +1,26 @@
+<footer class="footer-section">
+    <div class="footer-section__container">
+        <div class="footer-section__details footer-section__details--with-gutter">
+            <img class="footer-section__logo" src="{{ footerLogo }}" alt="{{ sponsor }}">
+
+            <div class="footer-section__funding">
+                {{ fundingHTML | safe }}
+            </div>
+
+            <div class="footer-section__built-by">
+                Built by <a href="//pixotech.com"><img class="footer-section__pixo-logo" src="images/pixo-logo.svg" alt="Pixo"></a>
+            </div>
+        </div>
+
+        <div class="footer-section__footer-links">
+            {% include 'partials/footer/links/footerLinks.njk' %}
+        </div>
+    </div>
+
+    <div class="footer-section__disclaimer-container">
+        <div class="footer-section__disclaimer">
+            {{ disclaimerHTML | safe }}
+        </div>
+    </div>
+</footer>
+

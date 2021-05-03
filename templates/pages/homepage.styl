@@ -1,0 +1,45 @@
+$makeGap
+    margin-right 32px
+
+    +breakpoint(small)
+        margin-right 0
+
+$sectionContainer
+    margin 0 auto
+    padding section-padding
+
+    +breakpoint(large)
+        padding section-padding-large
+
+    +breakpoint(medium)
+        padding section-padding-medium
+
+    +breakpoint(small)
+        flex-flow column wrap
+        padding section-padding-small
+
+$sectionContainerWithModifiedPadding
+    display flex
+    padding 0 section-padding-desired
+
+    +breakpoint(large)
+        padding 0 section-padding-large-x
+
+    +breakpoint(medium)
+        padding 0 section-padding-medium-x
+
+    +breakpoint(small)
+        flex-direction column
+        padding section-padding-small-y section-padding-small-x 0
+
+$hasContentGutters
+    padding 0 section-padding-desired
+
+    +breakpoint(large)
+        padding 0 section-padding-large-x
+
+    +breakpoint(medium)
+        padding 0 section-padding-medium-x
+
+    +breakpoint(small)
+        padding 0 section-padding-small-x

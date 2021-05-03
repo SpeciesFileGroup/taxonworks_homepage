@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Install all project dependencies
+npm prune
+npm update
+npm install

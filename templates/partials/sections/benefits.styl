@@ -1,0 +1,212 @@
+.benefits-section
+    idealSectionHeight = 824px
+
+    &__container
+        @extends $sectionContainer
+        display flex
+        position relative
+
+        &--less-padding-below
+            padding-bottom 40px
+
+        &:nth-child(2)
+            padding-top 0
+            padding-bottom 0
+
+    &__section-2
+    &__section-3
+    &__section-4
+        min-height idealSectionHeight
+
+        +breakpoint(small)
+            min-height 0
+
+    &__section-2
+    &__section-4
+        background-color color-grey
+
+    &__section-1
+        background-color color-teal
+        position relative
+        z-index 1
+
+        &-title
+            @extends $bigHeader
+            @extends $normalFlexItem
+            margin-right 32px
+
+            +breakpoint(small)
+                flex-basis auto
+                margin-bottom 24px
+                margin-right 0
+
+        &-copy
+            @extends $normalFlexItem
+            @extends $promoCopy
+
+    condensedLeafBreakpoint = 500px
+
+    &__leaves
+        max-width content-max-width
+        margin 0 auto
+        transform translateY(32px)
+
+        +breakpoint(large)
+            padding 0 section-padding-large-x
+
+        +breakpoint(medium)
+            padding 0 section-padding-medium-x
+
+        +breakpoint(small)
+            padding 0 section-padding-small-x 64px
+            position relative
+            transform translateY(0)
+
+    &__leaves-image
+        display block
+        height auto
+        margin 0 auto
+        max-width 100%
+        vertical-align bottom
+
+    &__connecting-lines
+        bottom 0
+        left 0
+        overflow hidden
+        position absolute
+        right section-padding-desired
+        top 0
+
+        +breakpoint(large)
+            right section-padding-large-x
+
+        +breakpoint(medium)
+            right section-padding-medium-x
+
+        +breakpoint(small)
+            right section-padding-small-x
+
+        &-image
+            height auto
+            position absolute
+            right 0
+            top 50%
+            transform translateY(-50%)
+            width 348px
+
+            +breakpoint(small)
+                bottom 0
+                left 50%
+                right auto
+                transform translateX(-50%)
+                top auto
+
+    &__section-2
+        @extends $sectionContainerWithModifiedPadding
+        align-items center
+        position relative
+
+        +breakpoint(small)
+            display block
+            padding-bottom section-padding-small-y
+
+        &-copy
+            @extends $normalCopy
+            flex 0 1 50%
+            margin-right 32px
+            position relative
+
+            +breakpoint(small)
+                margin-bottom 32px
+
+        &-images
+            flex 0 0 424px
+            margin-left auto
+            position relative
+
+            +breakpoint(medium)
+                flex 0 1 50%
+
+        &-images-image
+            display block
+            margin 0 auto
+            max-width 100%
+            vertical-align bottom
+
+    &__section-3
+        @extends $sectionContainerWithModifiedPadding
+        align-items center
+        background-color color-white
+        display flex
+
+        &-image-container
+            flex 0 0 467px
+
+            +breakpoint(medium)
+                align-self flex-end
+                flex 1 1 348px
+
+            +breakpoint(small)
+                order 1
+
+        &-image
+            max-width 100%
+            vertical-align bottom
+
+        &-copy
+            @extends $normalCopy
+            flex 1 1 50%
+            margin-left 32px
+
+            +breakpoint(small)
+                margin-bottom 32px
+                margin-left 0
+
+    &__section-4
+        @extends $sectionContainerWithModifiedPadding
+        align-items center
+        display flex
+
+        +breakpoint(benefits-4-small)
+            background-image none
+            display block
+            padding 48px 0 64px
+
+        &-content
+            flex 0 1 50%
+            margin-right 32px
+
+            +breakpoint(benefits-4-small)
+                margin-right 0
+                padding 0 section-padding-small-x
+
+        &-copy
+            @extends $normalCopy
+
+    treeWidth = 425px
+
+    &__tree
+        align-self flex-start
+        flex 0 1 treeWidth
+        margin-left auto
+        overflow hidden
+
+        +breakpoint(benefits-4-medium)
+            flex-basis 50%
+
+        +breakpoint(benefits-4-small)
+            display block
+
+        &-image
+            margin 0 auto
+            vertical-align bottom
+            width 100%
+
+            +breakpoint(benefits-4-small)
+                left 50%
+                position relative
+                transform translateX(-50%)
+                width treeWidth
+
+    &__sponsor-grid
+        margin-top 24px
