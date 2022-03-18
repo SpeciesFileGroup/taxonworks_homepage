@@ -1,5 +1,5 @@
 ### Want to explore?
-+ [Find an instance of TaxonWorks](https://github.com/SpeciesFileGroup/taxonworks_doc/blob/master/REGISTRY.md)
++ [Find an instance of TaxonWorks](https://docs.taxonworks.org/guide/start-a-project.html#finding-a-collaborating-provider)
 + [See a live dashboard highlighting TaxonWorks use](https://stats.taxonworks.org)
 
 ### Have technical chops?
