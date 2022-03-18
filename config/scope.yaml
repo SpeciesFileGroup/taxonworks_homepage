@@ -3,28 +3,28 @@ features:
         name: Describe taxa, specimens, and anatomy
         status: upcoming
         description: "Use a wide range of metadata to describe life."
-        whenComplete: three_year
+        whenComplete: now 
         features:
+            -
+                name: Phylogenetic matrices
+                status: in_progress
+                description: "Create traditional qualitative or quantitative phylogenetic matrices.  Annotate characters with notes, images, tags and confidence levels."
+                whenComplete: now 
             -
                 name: Free text notes and descriptions
                 status: in_progress
                 description: "Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates."
-                whenComplete: this_year
+                whenComplete: now 
             -
                 name: Biological relationships
-                status: upcoming
+                status: in_progress 
                 description: "Create and manage biological relationships between taxa or specimens or some combination of both.  For example host-parasites."
-                whenComplete: three_year
+                whenComplete: now 
             -
                 name: Sequences
                 status: upcoming
-                description: "Manage curated DNA sequences.  Annotate them with protocols, and other sequence related metadata (e.g. extract and specimen, primers, or query sequences)."
+                description: "Manage curated DNA sequences. Annotate them with protocols, and other sequence related metadata (e.g. extract and specimen, primers, or query sequences)."
                 whenComplete: three_year
-            -
-                name: Phylogenetic matrices
-                status: upcoming
-                description: "Create or import traditional qualitative or quantitative phylogenetic matrices.  Annotate characters with notes, images, tags and confidence levels."
-                whenComplete: this_year
             -
                 name: Anatomical reference systems
                 status: upcoming
@@ -32,13 +32,18 @@ features:
                 whenComplete: three_year
             -
                 name: Manuscript and datasets export
-                status: upcoming
+                status: in_progress
                 description: "Summarize data into taxonomic descriptions (e.g. nomenclatural history, descriptions, material examined sections) ready for publication.  Export CSV, DWCA, Nexus, and many other data formats."
                 whenComplete: three_year
             -
-                name: Keys
+                name: Multi-entry keys
+                status: in_progress 
+                description: "Use a multiple-entry key interface, with support for multiple languages, to analyze, build, and refine your observations."
+                whenComplete: now 
+            -
+                name: Traditional diagnostic keys 
                 status: upcoming
-                description: "Create dichotomous and multi-entry keys."
+                description: "Create dichotomous keys, particularly useful for keeping past keys at your fingertips with enhanced navigation."
                 whenComplete: three_year
             -
                 name: Advanced anatomical interfaces
@@ -61,22 +66,22 @@ features:
                 name: Digitization workflows
                 status: in_progress
                 description: "Capture detail for collecting events and specimens with features like customizable, fine grained attributes, lockable values, and varying levels of form complexity. Built in OCR and image processing."
-                whenComplete: this_year
+                whenComplete: now 
             -
                 name: Integrated GIS
                 status: in_progress
                 description: "Search and return specimen data spatially. Create georeferences of any shape.  Also wraps GeoLocate."
-                whenComplete: this_year
+                whenComplete: now 
             -
                 name: Loan handling
                 status: in_progress
                 description: "Manage personal or institutional loans."
-                whenComplete: three_year
+                whenComplete: now 
     -
         name: Nomenclature
         status: in_progress
         description: "Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich coverage of nomenclatural rules are included to ensure adequate metadata are provided."
-        whenComplete: this_year
+        whenComplete: now 
         features:
             -
                 name: Catalog exports
@@ -85,20 +90,15 @@ features:
                 whenComplete: this_year
                 features:
                     -
-                        name: DWC Checklist
+                        name: DwC Checklist
                         status: upcoming
                         description: "Export basic nomenclature data as a Darwin Core Checklist."
                         whenComplete: this_year
                     -
                         name: Catalog of Life
-                        status: upcoming
+                        status: in_progress
                         description: "Export basic nomenclature data to the Catlog of Life format."
-                        whenComplete: this_year
-                    -
-                        name: ITIS
-                        status: upcoming
-                        description: "Export basic nomenclature data to the format used by ITIS."
-                        whenComplete: three_year
+                        whenComplete: now 
             -
                 name: Validation
                 status: complete
@@ -111,6 +111,11 @@ features:
         whenComplete: three_year
         features:
             -
+                name: Darwin Core (DwC) occurrence import and export
+                status: in_progress
+                description: "Import and export DwC occurence data validating it along the way."
+                whenComplete: now 
+            -
                 name: Cite everything
                 status: complete
                 description: "Tie *all* your data to references that you can import from BibTeX."
@@ -119,7 +124,7 @@ features:
                 name: Media and references
                 status: in_progress
                 description: "Load references, images, and other supporting documents.  Link them as citations, depictions, or supporting data to all of the core data classes."
-                whenComplete: this_year
+                whenComplete: now
             -
                 name: Data attributes, alternative value, notes
                 status: complete
@@ -135,7 +140,7 @@ features:
                 name: JSON serving API
                 status: in_progress
                 description: "Work with the TaxonWorks back end through a token-based JSON serving API. Develop in your favourite framework, and integrate natively, or as a stand-alone tool."
-                whenComplete: this_year
+                whenComplete: now
             -
                 name: Unit tests
                 status: in_progress
