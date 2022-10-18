@@ -2,8 +2,8 @@
     name: "Submit feedback"
     href: "https://github.com/SpeciesFileGroup/TaxonWorks/issues"
 -
-    name: "Request access"
-    href: "https://github.com/SpeciesFileGroup/taxonworks_doc/blob/master/REGISTRY.md"
+    name: "Start a project"
+    href: "https://docs.taxonworks.org/guide/start-a-project.html"
 -
     name: "Ask a question"
     href: "https://gitter.im/SpeciesFileGroup/taxonwork"

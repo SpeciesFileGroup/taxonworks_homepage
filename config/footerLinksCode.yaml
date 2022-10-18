@@ -2,14 +2,15 @@
     name: "Source"
     href: "https://github.com/SpeciesFileGroup/taxonworks"
 -
+    name: "Docs"
+    href: "https://docs.taxonworks.org"
+-
     name: "Gitter"
     href: "https://gitter.im/SpeciesFileGroup/taxonworks"
 -
     name: "Rubydoc"
-    href: "http://www.rubydoc.info/github/SpeciesFileGroup/taxonworks"
+    href: "https://rdoc.taxonworks.org"
 -
     name: "API"
-    href: "https://github.com/SpeciesFileGroup/taxonworks_api"
--
-    name: "Open Hub"
-    href: "https://www.openhub.net/p/taxonworks"
+    href: "https://api.taxonworks.org"
+
