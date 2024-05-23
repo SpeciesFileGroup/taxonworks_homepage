@@ -1,6 +1,6 @@
--
-    name: "@TaxonWorks"
-    href: "https://twitter.com/TaxonWorks"
--
-    name: "Species File Group blog"
-    href: "http://speciesfilegroup.org/blog"
+- name: 'Mastodon'
+  rel: 'me'
+  href: 'https://fosstodon.org/@TaxonWorks'
+
+- name: 'Species File Group blog'
+  href: 'http://speciesfilegroup.org/blog'
