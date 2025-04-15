@@ -20,7 +20,7 @@ jobs:
         run: npm install
           
       - name: Build home page
-        run: npx grunt build-prod
+        run: export OPENSSL_CONF=/dev/null && npx grunt build-prod
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # Pinning for security reasons (action not provided by GitHub)
