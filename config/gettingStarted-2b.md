@@ -1,6 +1,8 @@
 ### You can also
-+ [Talk with the community on Gitter](https://gitter.im/SpeciesFileGroup/taxonworks)
-+ [Install TaxonWorks](https://github.com/SpeciesFileGroup/install_taxonworks)
++ [Join our weekly community consults](https://illinois.zoom.us/my/sfgcommons?pwd=eVI4UkdIUzdIYXRIcUhreVdES2ZQQT09)
++ [Follow announcements on Bsky](https://bsky.app/profile/taxonworks.bsky.social)
++ [Chat with community](https://gitter.im/SpeciesFileGroup/taxonworks)
++ [Install TaxonWorks](https://docs.taxonworks.org/develop/Install/)
 + [See what we're working on](https://github.com/SpeciesFileGroup/TaxonWorks/issues)
-+ [Read documentation](https://github.com/SpeciesFileGroup/taxonworks_doc)
++ [Read documentation](https://docs.taxonworks.org)
 + [Contact the founders](mailto:dlpaul@illinois.edu)
