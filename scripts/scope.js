@@ -67,13 +67,13 @@ function scope() {
         const cardLabelValue = cardLabelElement.innerHTML;
 
         if (cardLabelValue === 'Upcoming') {
-            cardLabelElement.className += ' status-upcoming';
+            cardLabelElement.className += ' status-in-discussion';
         }
         else if (cardLabelValue === 'In Progress') {
-            cardLabelElement.className += ' status-in-progress';
+            cardLabelElement.className += ' status-in-development';
         }
         else if (cardLabelValue === 'Complete') {
-            cardLabelElement.className += ' status-complete';
+            cardLabelElement.className += ' status-in-use';
         }
 
     }
