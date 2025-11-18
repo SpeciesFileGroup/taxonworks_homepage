@@ -1,6 +1,6 @@
-- name: 'Mastodon'
-  rel: 'me'
-  href: 'https://fosstodon.org/@TaxonWorks'
-
-- name: 'Species File Group blog'
-  href: 'http://speciesfilegroup.org/blog'
+-
+    name: "Bluesky"
+    href: "https://bsky.app/profile/taxonworks.bsky.social"
+-
+    name: "YouTube"
+    href: "https://youtube.com/@taxonworks"

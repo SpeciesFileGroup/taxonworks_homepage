@@ -7,7 +7,7 @@ function makeMockData() {
         features: [
             {
                 name: 'Nomenclature',
-                status: 'upcoming',
+                status: 'in_discussion',
                 description: 'Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich and deep coverage of nomenclatural rules are included to ensure adequate metadata are provided. Produce highly annotated nomenclatural catalogs for print.',
                 whenComplete: 'this_year',
                 features: [
@@ -16,7 +16,7 @@ function makeMockData() {
             },
             {
                 name: 'Taxon, specimen and anatomical descriptions',
-                status: 'upcoming',
+                status: 'in_discussion',
                 description: 'Make descriptions and take notes using free-text, qualitative, quantitative (including measurements), or rich semantic data.',
                 whenComplete: 'three_year',
                 features: [
@@ -26,13 +26,13 @@ function makeMockData() {
             },
             {
                 name: 'Jimmy Buckets',
-                status: "in_progress",
+                status: "in_development",
                 description: "Jimmy Gets Buckets",
                 whenComplete: "now",
                 features: [
                     makeMockFeature({
                         name: 'Kleenex',
-                        status: 'upcoming',
+                        status: 'in_discussion',
                         description: 'Blow your nose.',
                         whenComplete: 'this_year',
                         features: [makeMockFeature()],
@@ -43,7 +43,7 @@ function makeMockData() {
             },
             {
                 name: "Michael Jordan",
-                status: "complete",
+                status: "in_use",
                 description: "His Airness",
                 whenComplete: "next_year",
                 features: [
@@ -60,7 +60,7 @@ function mockFrozenData() {
     return data;
 }
 
-function makeMockFeature({ name = 'Nomenclature', status = 'upcoming', description = "foo", whenComplete = 'this_year', features = [] } = {}) {
+function makeMockFeature({ name = 'Nomenclature', status = 'in_discussion', description = "foo", whenComplete = 'this_year', features = [] } = {}) {
     return { name, status, description, whenComplete, features };
 }
 
@@ -167,7 +167,7 @@ describe(`the scope content model`, () => {
                 ]
             });
 
-            const expectedMessage = `{"name":"Nomenclature","status":"upcoming","description":"foo","whenComplete":"this_year","features":Array(2)}`;
+            const expectedMessage = `{"name":"Nomenclature","status":"in_discussion","description":"foo","whenComplete":"this_year","features":Array(2)}`;
 
             expect(scope.getFeatureMessageForError(feature)).to.equal(expectedMessage);
         });
@@ -205,15 +205,15 @@ describe(`the scope content model`, () => {
             });
         });
 
-        it(`should copy the status, defaulting to upcoming if none is given`, () => {
+        it(`should copy the status, defaulting to in_discussion if none is given`, () => {
             const data = makeMockData();
             delete data.features[2].status;
 
             const expectedStatuses = [
-                'upcoming',
-                'upcoming',
-                'upcoming',
-                'complete'
+                'in_discussion',
+                'in_discussion',
+                'in_discussion',
+                'in_use'
             ];
 
             deepFreeze(data);
@@ -225,17 +225,17 @@ describe(`the scope content model`, () => {
             });
         });
 
-        it(`should set status to upcoming if a value not in the enum is given`, () => {
+        it(`should set status to in_discussion if a value not in the enum is given`, () => {
             const data = {
                 features: [
-                    makeMockFeature({ status: 'in_progress' }),
-                    makeMockFeature({ status: 'complete' }),
+                    makeMockFeature({ status: 'in_development' }),
+                    makeMockFeature({ status: 'in_use' }),
                     makeMockFeature({ status: Math.random().toString(36) }),
                     makeMockFeature({ status: Math.random().toString(36) })
                 ]
             };
 
-            const expectedStatuses = ['in_progress', 'complete', 'upcoming', 'upcoming'];
+            const expectedStatuses = ['in_development', 'in_use', 'in_discussion', 'in_discussion'];
 
             const actual = scope.process(data);
 

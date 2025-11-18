@@ -1,153 +1,167 @@
 features:
-    -
-        name: Describe taxa, specimens, and anatomy
-        status: upcoming
-        description: "Use a wide range of metadata to describe life."
-        whenComplete: now 
-        features:
-            -
-                name: Phylogenetic matrices
-                status: in_progress
-                description: "Create traditional qualitative or quantitative phylogenetic matrices.  Annotate characters with notes, images, tags and confidence levels."
-                whenComplete: now 
-            -
-                name: Free text notes and descriptions
-                status: in_progress
-                description: "Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates."
-                whenComplete: now 
-            -
-                name: Biological relationships
-                status: in_progress 
-                description: "Create and manage biological relationships between taxa or specimens or some combination of both.  For example host-parasites."
-                whenComplete: now 
-            -
-                name: Sequences
-                status: upcoming
-                description: "Manage curated DNA sequences. Annotate them with protocols, and other sequence related metadata (e.g. extract and specimen, primers, or query sequences)."
-                whenComplete: three_year
-            -
-                name: Anatomical reference systems
-                status: upcoming
-                description: "Create controlled vocabularies describing the morphology of your organisms, with tools to facilitate the transformation of these vocabularies into formal structures like OWL ontologies.  Use these systems to annotate, query, and organize your data by anatomy."
-                whenComplete: three_year
-            -
-                name: Manuscript and datasets export
-                status: in_progress
-                description: "Summarize data into taxonomic descriptions (e.g. nomenclatural history, descriptions, material examined sections) ready for publication.  Export CSV, DWCA, Nexus, and many other data formats."
-                whenComplete: three_year
-            -
-                name: Multi-entry keys
-                status: in_progress 
-                description: "Use a multiple-entry key interface, with support for multiple languages, to analyze, build, and refine your observations."
-                whenComplete: now 
-            -
-                name: Traditional diagnostic keys 
-                status: upcoming
-                description: "Create dichotomous keys, particularly useful for keeping past keys at your fingertips with enhanced navigation."
-                whenComplete: three_year
-            -
-                name: Advanced anatomical interfaces
-                status: upcoming
-                description: "Describe anatomical features using graphical interfaces.  Drag, drop, and slide to measure, characterize, and qualify observations."
-                whenComplete: three_year
-                features:
-                    -
-                        name: Landmark metadata
-                        status: upcoming
-                        description: "Create landmark data and tie it to anatomical ontologies for future use and organziation."
-                        whenComplete: three_year
-    -
-        name: Specimens and collecting events
-        status: in_progress
-        description: "The best descriptions are those tied directly to specimens and collections. Capture these data at the personal or institutional level."
+  - name: Describe taxa, specimens, and anatomy
+    status: in_use
+    description: 'Use a wide range of data to describe life.'
+    whenComplete: now
+    features:
+      - name: Phylogenetic matrices
+        status: in_use
+        description: 'Create traditional qualitative or quantitative phylogenetic matrices.  Annotate data throughout with notes, images, tags and confidence levels.'
         whenComplete: now
-        features:
-            -
-                name: Digitization workflows
-                status: in_progress
-                description: "Capture detail for collecting events and specimens with features like customizable, fine grained attributes, lockable values, and varying levels of form complexity. Built in OCR and image processing."
-                whenComplete: now 
-            -
-                name: Integrated GIS
-                status: in_progress
-                description: "Search and return specimen data spatially. Create georeferences of any shape.  Also wraps GeoLocate."
-                whenComplete: now 
-            -
-                name: Loan handling
-                status: in_progress
-                description: "Manage personal or institutional loans."
-                whenComplete: now 
-    -
-        name: Nomenclature
-        status: in_progress
-        description: "Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich coverage of nomenclatural rules are included to ensure adequate metadata are provided."
-        whenComplete: now 
-        features:
-            -
-                name: Catalog exports
-                status: in_progress
-                description: "Summarize nomenclatural data in print and machine readable formats."
-                whenComplete: this_year
-                features:
-                    -
-                        name: DwC Checklist
-                        status: upcoming
-                        description: "Export basic nomenclature data as a Darwin Core Checklist."
-                        whenComplete: this_year
-                    -
-                        name: Catalog of Life
-                        status: in_progress
-                        description: "Export basic nomenclature data to the Catlog of Life format."
-                        whenComplete: now 
-            -
-                name: Validation
-                status: complete
-                description: "Use well over a hundred non-constraining validations to ensure data meet plant, animal, and bacterial codes of nomeclature."
-                whenComplete: this_year
-    -
-        name: Import, annotate, and export
-        status: in_progress
-        description: "Handle data at all stages of the scientific pipeline.  Batch load, annotated and refine, export via files or API."
+      - name: Free text notes and descriptions
+        status: in_use
+        description: 'Edit textual descriptions per topic for taxa. Cite, figure, and annotate them.  Compare, clone, and copy from your own templates.'
+        whenComplete: now
+      - name: Biological relationships
+        status: in_use
+        description: 'Create and manage biological relationships between taxa, specimens or field occurrences, or some combination of both. For example host-parasites.'
+        whenComplete: now
+      - name: Anatomical reference systems
+        status: in_development
+        description: 'Use ontologies to annotate the morphology of taxa, specimens, or field occurrences.  Use these systems to annotate, query, and organize your data by anatomy.'
+        whenComplete: this_year
+      - name: Manuscript and datasets export
+        status: in_development
+        description: 'Summarize data into taxonomic descriptions (e.g. nomenclatural history, descriptions, material examined sections) ready for publication.  Export CSV, DWCA, Nexus, and many other data formats.'
+        whenComplete: three_year
+      - name: Multi-entry keys
+        status: in_use
+        description: 'Use a multiple-entry key interface, with support for multiple languages, to analyze, build, and refine your observations.'
+        whenComplete: now
+      - name: Traditional diagnostic keys
+        status: in_use
+        description: 'Create dichotomous keys, particularly useful for keeping past keys at your fingertips with enhanced navigation.'
+        whenComplete: now
+      - name: Advanced anatomical interfaces
+        status: in_discussion
+        description: 'Describe anatomical features using graphical interfaces.  Drag, drop, and slide to measure, characterize, and qualify observations.'
         whenComplete: three_year
         features:
-            -
-                name: Darwin Core (DwC) occurrence import and export
-                status: in_progress
-                description: "Import and export DwC occurence data validating it along the way."
-                whenComplete: now 
-            -
-                name: Cite everything
-                status: complete
-                description: "Tie *all* your data to references that you can import from BibTeX."
-                whenComplete: now
-            -
-                name: Media and references
-                status: in_progress
-                description: "Load references, images, and other supporting documents.  Link them as citations, depictions, or supporting data to all of the core data classes."
-                whenComplete: now
-            -
-                name: Data attributes, alternative value, notes
-                status: complete
-                description: "Add your own attributes that optionally reference external controlled vocabularies.  Provide translations, abbreviations, misspellings for existing records."
-                whenComplete: now
-    -
-        name: Rich support for collaborating developers
-        status: in_progress 
-        description: "A open-source code base with a community that facilates new collaborators and a long-term development process."
-        whenComplete: this_year
+          - name: Landmark metadata
+            status: in_discussion
+            description: 'Create landmark data and tie it to anatomical ontologies for future use and organziation.'
+            whenComplete: three_year
+          - name: Sequences
+            status: in_discussion
+            description: 'Manage curated DNA sequences and metadata. Annotate them with protocols, and other sequence related metadata (e.g. extract and specimen, primers, or query sequences).'
+            whenComplete: three_year
+  - name: Specimens and collecting events
+    status: in_use
+    description: 'The best descriptions are those tied directly to specimens and collections. Capture these data at the personal or institutional level.'
+    whenComplete: now
+    features:
+      - name: Digitization workflows
+        status: in_use
+        description: 'Capture detail for collecting events and specimens with features like customizable, fine grained attributes, lockable values, and varying levels of form complexity. Built in OCR and image processing.'
+        whenComplete: now
+      - name: Draw-to-digitize
+        status: in_use
+        description: 'Automatically stub collection objects by drawing a ROIs (regions of interest) within an image.'
+        whenComplete: now
+      - name: Grid digitization
+        status: in_use
+        description: 'Semi-automatic breakdown of images into grids each cell generating a new collection object. Add identifiers in sequence, and add metadata throughout all objects.'
+        whenComplete: now
+      - name: Integrated GIS
+        status: in_use
+        description: 'Search and return specimen, literature, and field-occurrence data spatially. Create georeferences of any shape.  Also wraps GeoLocate.'
+        whenComplete: now
+      - name: Loans
+        status: in_use
+        description: 'Manage personal or institutional loans with many ways to add, annotate, and return collection objects.'
+        whenComplete: now
+  - name: Nomenclature
+    status: in_use
+    description: 'Curate all levels of nomenclature with specific reference to the governing codes of nomenclature, plants and animals are covered. Rich coverage of nomenclatural rules are included to ensure adequate metadata are provided.'
+    whenComplete: now
+    features:
+      - name: Catalog exports
+        status: in_use
+        description: 'Summarize nomenclatural data in print and machine readable formats.'
+        whenComplete: now
         features:
-            -
-                name: JSON serving API
-                status: in_progress
-                description: "Work with the TaxonWorks back end through a token-based JSON serving API. Develop in your favourite framework, and integrate natively, or as a stand-alone tool."
-                whenComplete: now
-            -
-                name: Unit tests
-                status: in_progress
-                description: "TaxonWorks has hundreds of unit tests. Tests minimize the likelihood of new features breaking existing functionality.  They clarify intent, and when included in new code make code acceptance straightforward."
-                whenComplete: now
-            -
-                name: Support
-                status: complete
-                description: "A growing group of developers supporting developers on Gitter, Github, and other channels."
-                whenComplete: now
+          - name: DwC Checklist
+            status: in_discussion
+            description: 'Export basic nomenclature data as a Darwin Core Checklist.'
+            whenComplete: three_year
+          - name: Catalog of Life
+            status: in_use
+            description: 'Export basic nomenclature data to the Catlog of Life format.'
+            whenComplete: now
+          - name: '"Paper" formats'
+            status: in_use
+            description: 'Export nomenclature and distribution data to a classic in-print catalog format for use in Markdown, HTML, e-books, or Word conversions.'
+            whenComplete: now
+          - name: TaxonPages public websites
+            status: in_use
+            description: 'Create publicly accessible websites in minutes wrapping TaxonWorks API with the TaxonPages framework.'
+            whenComplete: now
+      - name: Validation
+        status: in_use
+        description: 'Use well over a hundred non-constraining validations to ensure data meet plant, animal, and bacterial codes of nomeclature.'
+        whenComplete: now
+  - name: Import, annotate, and export
+    status: in_use
+    description: 'Handle data at all stages of the scientific pipeline.  Batch load, annotated and refine, export via files or API.'
+    whenComplete: now
+    features:
+      - name: Darwin Core (DwC) occurrence import and export
+        status: in_use
+        description: 'Import and export DwC occurence data validating it along the way.'
+        whenComplete: now
+      - name: Cite everything
+        status: in_use
+        description: 'Tie *all* your data to references that you can import from BibTeX.'
+        whenComplete: now
+      - name: Media and references
+        status: in_use
+        description: 'Load references, images, and other supporting documents.  Link them as citations, depictions, or supporting data to all of the core data classes.'
+        whenComplete: now
+      - name: Data attributes, alternative value, notes
+        status: in_use
+        description: 'Add your own attributes that optionally reference external controlled vocabularies.  Provide translations, abbreviations, misspellings for existing records.'
+        whenComplete: now
+  - name: Images, sounds, documents
+    status: in_use
+    description: 'Depict, convey, and document data throughout your project.'
+    whenComplete: now
+    features:
+      - name: Images 
+        status: in_use
+        description: 'Depict not just specimens, but collecting event, observations, and even data elements like taxon names.'
+        whenComplete: now
+      - name: Sounds 
+        status: in_use
+        description: 'Convey the relationship between recorded sounds and observations, specimens, and collecting events.'
+        whenComplete: now
+      - name: Documents
+        status: in_use
+        description: 'Document where your data come from, not just PDFs for refrences, but but also lab protocols, field notes, and phylogenetic matrices.'
+        whenComplete: now
+  - name: Rich support for collaborating developers
+    status: in_use
+    description: 'A open-source code base with a community that facilates new collaborators and a long-term development process.'
+    whenComplete: now
+    features:
+      - name: Get help
+        status: in_use
+        description: 'A growing number of developers support interactions throughout the TaxonWorks ecosystem.'
+        whenComplete: now
+      - name: Cross-platform docker and native development environments
+        status: in_use
+        description: 'Quickly initialize a local instance of TaxonWorks using Docker or native configurations.'
+        whenComplete: now
+      - name: JSON serving API
+        status: in_use
+        description: 'Work with the TaxonWorks back end through a token-based JSON serving API. Develop in your favourite framework, and integrate natively, or as a stand-alone tool.'
+        whenComplete: now
+      - name: Unit tests
+        status: in_use
+        description: 'TaxonWorks has thousands of unit tests. Tests minimize the likelihood of new features breaking existing functionality.  They clarify intent, and when included in new code make code acceptance straightforward.'
+        whenComplete: now
+      - name: AI friendly code-base
+        status: in_development
+        description: 'Use LLMs to rapidly prototype then refine to add new features, data importers, and API wrappers.'
+        whenComplete: three_year
+
+

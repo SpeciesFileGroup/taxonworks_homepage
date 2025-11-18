@@ -6,9 +6,9 @@ const WhenCompleteEnum = {
 };
 
 const StatusEnum = {
-    Complete: `complete`,
-    InProgress: `in_progress`,
-    Upcoming: `upcoming`
+    InUse: `in_use`,                 // was:  Complete: `complete`
+    InDevelopment: `in_development`, // was: InProgress: `in_progress`,
+    InDiscussion: `in_discussion`    //  was: Upcoming: `upcoming`
 };
 
 const DefaultStatus = StatusEnum.Upcoming;
@@ -21,9 +21,9 @@ const WhenCompleteTemplate = {
 };
 
 const StatusTemplate = {
-    [StatusEnum.Complete]: "Complete",
-    [StatusEnum.InProgress]: "In Progress",
-    [StatusEnum.Upcoming]: "Upcoming"
+    [StatusEnum.InUse]: "In use",
+    [StatusEnum.InDevelopment]: "In development",
+    [StatusEnum.InDiscussion]: "In discussion"
 };
 
 function process(data) {

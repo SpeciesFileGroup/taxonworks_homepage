@@ -5,12 +5,9 @@
     name: "Docs"
     href: "https://docs.taxonworks.org"
 -
-    name: "Gitter"
-    href: "https://gitter.im/SpeciesFileGroup/taxonworks"
--
-    name: "Rubydoc"
-    href: "https://rdoc.taxonworks.org"
--
     name: "API"
     href: "https://api.taxonworks.org"
+-
+    name: "Chat"
+    href: "https://matrix.to/#/#taxonworks:gitter.im"
 
