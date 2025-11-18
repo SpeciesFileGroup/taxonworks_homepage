@@ -4,7 +4,11 @@
   "description": "Homepage of TaxonWorks",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/test"
+    "test": "mocha src/test",
+    "build": "grunt build",
+    "publish": "grunt publish",
+    "build-production": "grunt build-production",
+    "build-dev": "grunt build-dev"
   },
   "repository": {
     "type": "git",
