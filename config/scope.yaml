@@ -121,6 +121,23 @@ features:
         status: in_use
         description: 'Add your own attributes that optionally reference external controlled vocabularies.  Provide translations, abbreviations, misspellings for existing records.'
         whenComplete: now
+  - name: Images, sounds, documents
+    status: in_use
+    description: 'Depict, convey, and document data throughout your project.'
+    whenComplete: now
+    features:
+      - name: Images 
+        status: in_use
+        description: 'Depict not just specimens, but collecting event, observations, and even data elements like taxon names.'
+        whenComplete: now
+      - name: Sounds 
+        status: in_use
+        description: 'Convey the relationship between recorded sounds and observations, specimens, and collecting events.'
+        whenComplete: now
+      - name: Documents
+        status: in_use
+        description: 'Document where your data come from, not just PDFs for refrences, but but also lab protocols, field notes, and phylogenetic matrices.'
+        whenComplete: now
   - name: Rich support for collaborating developers
     status: in_use
     description: 'A open-source code base with a community that facilates new collaborators and a long-term development process.'
@@ -146,3 +163,5 @@ features:
         status: in_development
         description: 'Use LLMs to rapidly prototype then refine to add new features, data importers, and API wrappers.'
         whenComplete: three_year
+
+

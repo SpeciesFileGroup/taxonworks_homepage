@@ -5,8 +5,9 @@
     name: "Docs"
     href: "https://docs.taxonworks.org"
 -
-    name: "Chat"
-    href: "https://matrix.to/#/#taxonworks:gitter.im"
--
     name: "API"
     href: "https://api.taxonworks.org"
+-
+    name: "Chat"
+    href: "https://matrix.to/#/#taxonworks:gitter.im"
+
