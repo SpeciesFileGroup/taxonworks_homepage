@@ -64,18 +64,15 @@ function scope() {
     }
 
     function addStatusColorClass(cardLabelElement) {
-        const cardLabelValue = cardLabelElement.innerHTML;
+        const cardLabelValue = cardLabelElement.innerHTML
 
-        if (cardLabelValue === 'Upcoming') {
-            cardLabelElement.className += ' status-in-discussion';
+        if (cardLabelValue === 'In discussion') {
+            cardLabelElement.className += ' status-in-discussion'
+        } else if (cardLabelValue === 'In development') {
+            cardLabelElement.className += ' status-in-development'
+        } else if (cardLabelValue === 'In use') {
+            cardLabelElement.className += ' status-in-use'
         }
-        else if (cardLabelValue === 'In Progress') {
-            cardLabelElement.className += ' status-in-development';
-        }
-        else if (cardLabelValue === 'Complete') {
-            cardLabelElement.className += ' status-in-use';
-        }
-
     }
 
     function setAvailableColor(card) {
